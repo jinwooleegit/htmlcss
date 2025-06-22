@@ -48,118 +48,251 @@
     <!-- 메인 콘텐츠 -->
     <main class="main">
         <div class="tutorial-container-full">
-            <!-- 레벨 선택 섹션 -->
-            <div class="level-selector">
-                <div class="level-navigation">
-                    <h2>웹사이트 배포 학습</h2>
-                    <div class="level-cards">
-                        <div class="level-card active">
-                            <span class="level-badge current">실무</span>
-                            <h3>배포 완전정복</h3>
-                            <p>호스팅부터 도메인 연결까지 실무에서 사용하는 모든 배포 기술</p>
+            <!-- 히어로 섹션 -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-highlight">웹사이트 배포</span><br>
+                            완전 정복
+                        </h1>
+                        <p class="hero-description">
+                            완성된 웹사이트를 실제 서버에 올리고<br>
+                            전 세계에 공개하는 모든 방법을 배워보세요
+                        </p>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">5</span>
+                                <span class="stat-label">배포 방법</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">무료</span>
+                                <span class="stat-label">부터 시작</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">10분</span>
+                                <span class="stat-label">만에 완료</span>
+                            </div>
+                        </div>
+                        <div class="hero-buttons">
+                            <a href="#hosting-basics" class="btn btn-primary btn-large">
+                                <span>배포 시작하기</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                            <a href="#github-pages" class="btn btn-outline btn-large">
+                                <span>무료 배포</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                                    <line x1="9" y1="9" x2="9.01" y2="9"/>
+                                    <line x1="15" y1="9" x2="15.01" y2="9"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="code-window">
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <span class="code-title">https://mywebsite.com</span>
+                            </div>
+                            <div class="code-content">
+                                <div class="code-line">
+                                    <span class="line-number">💻</span>
+                                    <span class="code-text">
+                                        <span class="string">내 컴퓨터</span>
+                                    </span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">⬆️</span>
+                                    <span class="code-text">
+                                        <span class="tag">git push</span> <span class="attr">origin</span> <span class="string">main</span>
+                                    </span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">☁️</span>
+                                    <span class="code-text">
+                                        <span class="string">GitHub Pages</span>
+                                    </span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">🌐</span>
+                                    <span class="code-text">
+                                        <span class="attr">Deploy:</span> <span class="string">Success!</span>
+                                    </span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">✨</span>
+                                    <span class="code-text">
+                                        <span class="string">전 세계에 공개 완료</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="floating-elements">
+                            <div class="floating-element html">HOST</div>
+                            <div class="floating-element css">DNS</div>
+                            <div class="floating-element js">SSL</div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- 학습 경로 섹션 -->
+            <section class="learning-path-section">
+                <div class="container">
+                    <h2>배포 마스터 로드맵</h2>
+                    <p class="section-subtitle">단계별 학습으로 전문적인 웹사이트 배포 및 운영</p>
+                    
+                    <div class="learning-steps">
+                        <div class="learning-step">
+                            <div class="step-number">1</div>
+                            <h3>무료 배포</h3>
+                            <p>GitHub Pages로 비용 없이 시작하기</p>
+                            <div class="step-links">
+                                <a href="#github-pages" class="step-link">GitHub Pages</a>
+                                <a href="#netlify" class="step-link">Netlify</a>
+                            </div>
+                        </div>
+
+                        <div class="learning-step">
+                            <div class="step-number">2</div>
+                            <h3>도메인 연결</h3>
+                            <p>나만의 도메인 구입 및 연결</p>
+                            <div class="step-links">
+                                <a href="#domain-purchase" class="step-link">도메인 구매</a>
+                                <a href="#dns-setup" class="step-link">DNS 설정</a>
+                            </div>
+                        </div>
+
+                        <div class="learning-step">
+                            <div class="step-number">3</div>
+                            <h3>전문 호스팅</h3>
+                            <p>유료 호스팅으로 본격적인 운영</p>
+                            <div class="step-links">
+                                <a href="#paid-hosting" class="step-link">호스팅 선택</a>
+                                <a href="#server-setup" class="step-link">서버 설정</a>
+                            </div>
+                        </div>
+
+                        <div class="learning-step">
+                            <div class="step-number">4</div>
+                            <h3>보안 & 관리</h3>
+                            <p>SSL, 백업, 모니터링으로 안전하게</p>
+                            <div class="step-links">
+                                <a href="#ssl-setup" class="step-link">SSL 인증서</a>
+                                <a href="#maintenance" class="step-link">유지관리</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 특징 섹션 -->
+            <section class="features-section">
+                <div class="container">
+                    <h2>왜 웹사이트 배포를 배워야 할까요?</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M2 12h20"/>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                </svg>
+                            </div>
+                            <h3>전 세계 접근</h3>
+                            <p>완성된 웹사이트를 전 세계 어디서나 접근할 수 있게 만들어 더 많은 사람들과 공유하세요</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"/>
+                                    <path d="M12 1v6m0 6v6"/>
+                                    <path d="M1 12h6m6 0h6"/>
+                                </svg>
+                            </div>
+                            <h3>무료로 시작</h3>
+                            <p>GitHub Pages, Netlify 등 무료 서비스로 부담 없이 시작하고 필요에 따라 업그레이드하세요</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                                </svg>
+                            </div>
+                            <h3>빠른 속도</h3>
+                            <p>CDN과 최적화된 서버로 전 세계 어디서나 빠른 로딩 속도를 제공하는 웹사이트를 만들어보세요</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                    <circle cx="12" cy="16" r="1"/>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                </svg>
+                            </div>
+                            <h3>보안 강화</h3>
+                            <p>SSL 인증서, 백업, 모니터링 등 전문적인 보안 기능으로 안전한 웹사이트를 운영하세요</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/>
+                                    <path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                                    <path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/>
+                                    <path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5s.67-1.5 1.5-1.5z"/>
+                                    <path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/>
+                                    <path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/>
+                                    <path d="M10 9.5c0 .83-.67 1.5-1.5 1.5h-5C2.67 11 2 10.33 2 9.5S2.67 8 3.5 8h5c.83 0 1.5.67 1.5 1.5z"/>
+                                    <path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/>
+                                </svg>
+                            </div>
+                            <h3>확장성</h3>
+                            <p>트래픽 증가에 따라 서버 자원을 쉽게 확장하고 더 많은 사용자를 수용할 수 있습니다</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                    <path d="M2 17l10 5 10-5"/>
+                                    <path d="M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <h3>실무 경험</h3>
+                            <p>실제 운영 환경에서의 경험을 쌓아 웹 개발자로서의 실무 역량을 크게 향상시킬 수 있습니다</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- 메인 콘텐츠 -->
             <div class="tutorial-content">
-                <!-- 튜토리얼 헤더 -->
-                <div class="tutorial-header">
-                    <h1>웹사이트 배포 및 도메인 관리</h1>
-                    <p class="subtitle">완성된 웹사이트를 실제 서버에 올리고, 도메인을 구입하여 전 세계에 공개하는 방법을 배워보세요!</p>
-                </div>
 
                 <!-- 1. 배포 개념 소개 -->
                 <section id="deployment-intro" class="tutorial-section">
-                    <h2>웹사이트 배포 완전 정복</h2>
+                    <h2>웹사이트 배포란?</h2>
                     
-                    <div class="deployment-hero">
-                        <div class="hero-content">
-                            <div class="hero-text">
-                                <h3>💻 → 🌐 웹사이트를 전 세계에 공개하기</h3>
-                                <p>완성된 웹사이트를 실제 서버에 올려서 전 세계 사람들이 접근할 수 있게 만드는 모든 과정을 배워보세요!</p>
-                                <div class="deployment-stats">
-                                    <div class="stat-item">
-                                        <span class="stat-number">5</span>
-                                        <span class="stat-label">가지 배포 방법</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-number">무료</span>
-                                        <span class="stat-label">부터 시작</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-number">10분</span>
-                                        <span class="stat-label">만에 완료</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="hero-visual">
-                                <div class="deployment-flow">
-                                    <div class="flow-step">
-                                        <div class="step-icon">💻</div>
-                                        <div class="step-label">내 컴퓨터</div>
-                                    </div>
-                                    <div class="flow-arrow">→</div>
-                                    <div class="flow-step">
-                                        <div class="step-icon">☁️</div>
-                                        <div class="step-label">서버 업로드</div>
-                                    </div>
-                                    <div class="flow-arrow">→</div>
-                                    <div class="flow-step">
-                                        <div class="step-icon">🌐</div>
-                                        <div class="step-label">전 세계 공개</div>
-                                    </div>
-                                </div>
-                                <div class="deployment-preview">
-                                    <div class="browser-mockup">
-                                        <div class="browser-header">
-                                            <div class="browser-dots">
-                                                <div class="dot red"></div>
-                                                <div class="dot yellow"></div>
-                                                <div class="dot green"></div>
-                                            </div>
-                                            <div class="url-bar">https://mywebsite.com</div>
-                                        </div>
-                                        <div class="browser-content">
-                                            <div class="demo-website">
-                                                <div class="demo-header">My Portfolio</div>
-                                                <div class="demo-content">
-                                                    <div class="demo-section">About</div>
-                                                    <div class="demo-section">Projects</div>
-                                                    <div class="demo-section">Contact</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="concept-explanation">
+                        <div class="concept-main">
+                            <h3>인터넷상의 집 임대하기</h3>
+                            <p>웹사이트 배포란 완성된 HTML, CSS, JavaScript 파일들을 24시간 켜져있는 서버 컴퓨터에 저장하여, 전 세계 어디서나 접근할 수 있게 만드는 과정입니다.</p>
                         </div>
                         
-                        <div class="learning-objectives">
-                            <h3>🎯 이 과정에서 배우는 것들</h3>
-                            <div class="objectives-grid">
-                                <div class="objective-item">
-                                    <div class="objective-icon">🆓</div>
-                                    <h4>무료 배포</h4>
-                                    <p>GitHub Pages, Netlify로 비용 없이 시작하기</p>
-                                </div>
-                                <div class="objective-item">
-                                    <div class="objective-icon">🏢</div>
-                                    <h4>전문 호스팅</h4>
-                                    <p>유료 호스팅으로 본격적인 웹사이트 운영</p>
-                                </div>
-                                <div class="objective-item">
-                                    <div class="objective-icon">🌍</div>
-                                    <h4>도메인 관리</h4>
-                                    <p>나만의 도메인 구입부터 연결까지</p>
-                                </div>
-                                <div class="objective-item">
-                                    <div class="objective-icon">🔒</div>
-                                    <h4>보안 & 유지관리</h4>
-                                    <p>SSL, 백업, 모니터링으로 안전하게</p>
-                                </div>
-                            </div>
+                        <div class="analogy-box">
+                            <h4>배포 과정 이해하기</h4>
+                            <ul>
+                                <li><strong>내 컴퓨터</strong> → 웹사이트 파일 완성</li>
+                                <li><strong>서버 업로드</strong> → 호스팅 서비스에 파일 전송</li>
+                                <li><strong>도메인 연결</strong> → 기억하기 쉬운 주소 설정</li>
+                                <li><strong>전 세계 공개</strong> → 누구나 접근 가능한 웹사이트 완성</li>
+                            </ul>
                         </div>
                     </div>
                 </section>
