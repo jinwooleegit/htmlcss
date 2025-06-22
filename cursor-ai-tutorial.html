@@ -45,13 +45,12 @@
         </nav>
     </header>
 
-    <!-- 메인 콘텐츠 -->
     <main class="main">
         <div class="tutorial-container-full">
             <!-- 레벨 선택 섹션 -->
             <div class="level-selector">
                 <div class="level-navigation">
-                    <h2>Cursor AI 학습</h2>
+                    <h2>AI 도구 학습</h2>
                     <div class="level-cards">
                         <div class="level-card active">
                             <span class="level-badge current">AI 활용</span>
@@ -95,73 +94,138 @@
 
                 <!-- 2. Cursor AI 핵심 기능 -->
                 <section id="cursor-features" class="tutorial-section">
-                    <h2>Cursor AI 핵심 기능</h2>
+                    <h2>Cursor AI 핵심 기능 마스터하기</h2>
 
-                    <div class="single-column-section">
-                        <h4>Cursor AI 핵심 기능 완전 가이드</h4>
-                        <div class="features-grid">
-                            <div class="feature-item">
-                                <div class="feature-content">
-                                    <h5>Chat 기능 (Ctrl+L)</h5>
-                                    <p>자연어로 대화하며 코드 생성</p>
-                                    <div class="feature-example">
-                                        <strong>예시:</strong> "빨간색 버튼 만들어줘"<br>
-                                        <span>→ CSS 코드 자동 생성</span>
-                                    </div>
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <h4>Chat 기능 (Ctrl+L)</h4>
+                            <p>자연어로 대화하며 즉시 코드 생성</p>
+                            <div class="chat-simulation">
+                                <div class="chat-message user">
+                                    <strong>사용자:</strong> "빨간색 버튼을 만들어줘. 호버하면 어두워지게 하고 싶어"
                                 </div>
-                            </div>
-
-                            <div class="feature-item">
-                                <div class="feature-content">
-                                    <h5>Quick Edit (Ctrl+K)</h5>
-                                    <p>선택한 코드를 즉시 수정</p>
-                                    <div class="feature-example">
-                                        <strong>예시:</strong> "이 버튼을 더 크게 만들어줘"<br>
-                                        <span>→ 선택 영역만 빠르게 수정</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="feature-item">
-                                <div class="feature-content">
-                                    <h5>Composer (Ctrl+I)</h5>
-                                    <p>전체 프로젝트 파악 후 코드 생성</p>
-                                    <div class="feature-example">
-                                        <strong>활용:</strong> 여러 파일 동시 수정<br>
-                                        <span>→ 파일 간 연결성 고려한 개발</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="feature-item">
-                                <div class="feature-content">
-                                    <h5>Tab 자동완성</h5>
-                                    <p>타이핑하면 AI가 다음 코드 예측</p>
-                                    <div class="feature-example">
-                                        <strong>사용법:</strong> 코드 입력 중 Tab 키<br>
-                                        <span>→ 즉시 코드 자동완성</span>
-                                    </div>
+                                <div class="chat-message ai">
+                                    <strong>Cursor AI:</strong> 네! 빨간색 버튼을 만들어드릴게요.
                                 </div>
                             </div>
                         </div>
+                        <div class="tag-result">
+                            <h4>생성된 코드</h4>
+                            <pre><code>.red-button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-                        <h4 style="margin-top: 40px;">Cursor AI의 주요 장점</h4>
-                        <div class="advantages-grid">
-                            <div class="advantage-card">
-                                <h4>초보자 친화적</h4>
-                                <p>코딩 지식이 부족해도 자연어로 소통하며 전문적인 웹사이트 제작 가능</p>
+.red-button:hover {
+  background-color: #c0392b;
+}</code></pre>
+                            <div class="live-demo">
+                                <button class="demo-button red-button">데모 버튼</button>
                             </div>
-                            <div class="advantage-card">
-                                <h4>개발 속도 향상</h4>
-                                <p>기존 대비 3-5배 빠른 개발 속도로 프로젝트를 신속하게 완성</p>
+                        </div>
+                    </div>
+
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <h4>Quick Edit (Ctrl+K)</h4>
+                            <p>선택한 코드를 즉시 수정</p>
+                            <div class="edit-steps">
+                                <div class="step-item">
+                                    <span class="step-num">1</span>
+                                    <span>코드 선택</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-num">2</span>
+                                    <span>Ctrl+K 누르기</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-num">3</span>
+                                    <span>수정 요청 입력</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-num">4</span>
+                                    <span>즉시 적용</span>
+                                </div>
                             </div>
-                            <div class="advantage-card">
-                                <h4>실시간 문제 해결</h4>
-                                <p>막히는 부분이 있으면 즉시 AI에게 질문하고 맞춤형 해결책 제공</p>
+                        </div>
+                        <div class="tag-result">
+                            <h4>수정 예시</h4>
+                            <div class="before-after">
+                                <div class="before">
+                                    <strong>수정 전:</strong>
+                                    <pre><code>&lt;h1&gt;안녕하세요&lt;/h1&gt;</code></pre>
+                                </div>
+                                <div class="arrow">→</div>
+                                <div class="after">
+                                    <strong>수정 후:</strong>
+                                    <pre><code>&lt;h1 class="gradient-title"&gt;안녕하세요&lt;/h1&gt;</code></pre>
+                                </div>
                             </div>
-                            <div class="advantage-card">
-                                <h4>학습 효과</h4>
-                                <p>AI가 생성한 코드를 통해 자연스럽게 프로그래밍 개념과 패턴 학습</p>
+                        </div>
+                    </div>
+
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <h4>Composer (Ctrl+I)</h4>
+                            <p>전체 프로젝트를 이해하고 복합적인 작업 수행</p>
+                            <pre><code>"웹사이트 전체를 다크 모드로 변경해줘.
+모든 페이지의 배경을 어둡게 하고,
+텍스트는 밝게 해줘."</code></pre>
+                        </div>
+                        <div class="tag-result">
+                            <h4>동시 수정되는 파일들</h4>
+                            <div class="file-changes">
+                                <div class="file-change">
+                                    <span class="file-name">index.html</span>
+                                    <span class="change-badge">수정됨</span>
+                                </div>
+                                <div class="file-change">
+                                    <span class="file-name">style.css</span>
+                                    <span class="change-badge">수정됨</span>
+                                </div>
+                                <div class="file-change">
+                                    <span class="file-name">script.js</span>
+                                    <span class="change-badge">수정됨</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="comparison-section">
+                        <h3>Cursor AI를 사용해야 하는 이유</h3>
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <h4>기존 방식</h4>
+                                <ul>
+                                    <li>문법을 외워야 함</li>
+                                    <li>구글링으로 시간 소모</li>
+                                    <li>디버깅에 많은 시간</li>
+                                    <li>복잡한 기능 구현 어려움</li>
+                                </ul>
+                            </div>
+                            <div class="tag-result">
+                                <h4>Cursor AI 방식</h4>
+                                <ul>
+                                    <li>자연어로 요청만 하면 됨</li>
+                                    <li>즉시 코드 생성</li>
+                                    <li>자동 오류 수정</li>
+                                    <li>복잡한 기능도 쉽게 구현</li>
+                                </ul>
+                                <div class="speed-comparison">
+                                    <div class="speed-item">
+                                        <span class="method">기존 방식</span>
+                                        <div class="time-bar traditional">5시간</div>
+                                    </div>
+                                    <div class="speed-item">
+                                        <span class="method">Cursor AI</span>
+                                        <div class="time-bar cursor">1시간</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -213,369 +277,295 @@
 
                 <!-- 3. Cursor 설치 및 설정 -->
                 <section id="cursor-installation" class="tutorial-section">
-                    <h2>Cursor 설치 및 설정</h2>
+                    <h2>Cursor 설치부터 첫 코딩까지</h2>
 
-                    <div class="single-column-section">
-                        <h4>1단계: Cursor 다운로드</h4>
-                        <div class="code-example">
-                            <pre><code>1. cursor.sh 웹사이트 접속
-2. "Download for Windows/Mac" 클릭
-3. 다운로드된 파일 실행
-4. 설치 마법사 따라 진행
-5. Cursor 실행</code></pre>
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <h4>3분만에 설치 완료!</h4>
+                            <div class="installation-steps">
+                                <div class="step-item">
+                                    <span class="step-num">1</span>
+                                    <span>cursor.sh 접속</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-num">2</span>
+                                    <span>다운로드 클릭</span>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-num">3</span>
+                                    <span>설치 및 실행</span>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <div class="step-by-step">
-                            <div class="step">
-                                <div class="step-number">1</div>
-                                <div class="step-content">
-                                    <h4>계정 생성</h4>
-                                    <p>Google 또는 GitHub 계정으로 간편 가입</p>
+                        <div class="tag-result">
+                            <h4>설치 화면 미리보기</h4>
+                            <div class="browser-window">
+                                <div class="browser-header">
+                                    <div class="browser-dots">
+                                        <div class="dot red"></div>
+                                        <div class="dot yellow"></div>
+                                        <div class="dot green"></div>
+                                    </div>
+                                    <div class="url-bar">cursor.sh</div>
+                                </div>
+                                <div class="browser-content">
+                                    <div class="download-section">
+                                        <h4>The AI-first Code Editor</h4>
+                                        <p>Built to make you extraordinarily productive</p>
+                                        <div class="download-options">
+                                            <div class="os-option">
+                                                <span>Windows</span>
+                                                <button class="download-btn">다운로드</button>
+                                            </div>
+                                            <div class="os-option">
+                                                <span>macOS</span>
+                                                <button class="download-btn">다운로드</button>
+                                            </div>
+                                            <div class="os-option">
+                                                <span>Linux</span>
+                                                <button class="download-btn">다운로드</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="step">
-                                <div class="step-number">2</div>
-                                <div class="step-content">
-                                    <h4>프로젝트 폴더 생성</h4>
-                                    <p>File → New Folder로 웹사이트 프로젝트 폴더 생성</p>
+                        </div>
+                    </div>
+
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <h4>초기 설정 가이드</h4>
+                            <ol>
+                                <li>Cursor 실행 후 계정 생성</li>
+                                <li>AI 모델 선택 (GPT-4 권장)</li>
+                                <li>프로젝트 폴더 설정</li>
+                                <li>테마 및 확장 프로그램 설치</li>
+                            </ol>
+                        </div>
+                        <div class="tag-result">
+                            <h4>설정 완료 화면</h4>
+                            <div class="cursor-interface">
+                                <div class="interface-header">
+                                    <span>Cursor - AI Code Editor</span>
                                 </div>
-                            </div>
-                            <div class="step">
-                                <div class="step-number">3</div>
-                                <div class="step-content">
-                                    <h4>AI 기능 활성화</h4>
-                                    <p>Cmd+L (또는 Ctrl+L)로 AI 채팅 창 열기</p>
+                                <div class="interface-content">
+                                    <div class="sidebar">
+                                        <div class="folder-item">📁 my-website</div>
+                                        <div class="file-item">📄 index.html</div>
+                                        <div class="file-item">🎨 style.css</div>
+                                    </div>
+                                    <div class="editor-area">
+                                        <div class="code-line">1 &lt;!DOCTYPE html&gt;</div>
+                                        <div class="code-line">2 &lt;html lang="ko"&gt;</div>
+                                        <div class="code-line">3   &lt;head&gt;</div>
+                                        <div class="ai-suggestion">AI가 제안하는 코드...</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- 4. 첫 번째 웹페이지 만들기 -->
-                <section id="first-webpage" class="tutorial-section">
-                    <h2>AI와 함께 첫 웹페이지 만들기</h2>
+                <!-- 4. 실제 웹사이트 제작 과정 -->
+                <section id="website-creation" class="tutorial-section">
+                    <h2>실제 웹사이트 제작 과정</h2>
 
-                    <div class="single-column-section">
-                        <h4>프롬프트 예시</h4>
-                        <div class="code-example">
-                            <pre><code>💬 AI에게 이렇게 요청해보세요:
-
-"개인 포트폴리오 웹사이트의 메인 페이지를 만들어줘. 
-다음 요소들을 포함해줘:
-- 상단 네비게이션 바
-- 히어로 섹션 (이름과 직업)
-- 자기소개 섹션
-- 포트폴리오 섹션
-- 연락처 섹션
-- 푸터
-
-색상은 파란색 계열로 하고, 현대적이고 깔끔한 디자인으로 해줘."</code></pre>
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <h4>1단계: 기본 구조 생성</h4>
+                            <div class="prompt-example">
+                                <strong>프롬프트:</strong>
+                                <p>"카페 홈페이지를 만들어줘. 헤더, 메인 콘텐츠, 푸터가 있는 기본 HTML 구조로 만들어줘."</p>
+                            </div>
                         </div>
-                        
-                        <div class="concept-box">
-                            <h3>좋은 프롬프트 작성법</h3>
-                            <ul>
-                                <li><strong>구체적으로:</strong> "버튼" 보다는 "파란색 둥근 모서리 버튼"</li>
-                                <li><strong>구조 명시:</strong> 원하는 섹션들을 나열</li>
-                                <li><strong>스타일 지정:</strong> 색상, 분위기, 레이아웃 스타일</li>
-                                <li><strong>기능 설명:</strong> 클릭하면 어떤 동작을 할지</li>
-                            </ul>
+                        <div class="tag-result">
+                            <h4>생성된 HTML 구조</h4>
+                            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;카페 홈페이지&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;nav&gt;카페 로고 및 메뉴&lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;section&gt;메인 콘텐츠&lt;/section&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+        &lt;p&gt;카페 정보&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <h4>2단계: 스타일링 추가</h4>
+                            <div class="prompt-example">
+                                <strong>프롬프트:</strong>
+                                <p>"카페 느낌의 따뜻한 색상으로 CSS를 만들어줘. 브라운 계열 색상을 사용하고 모던한 디자인으로 해줘."</p>
+                            </div>
+                        </div>
+                        <div class="tag-result">
+                            <h4>생성된 CSS 스타일</h4>
+                            <pre><code>body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #f5f3f0;
+    color: #3c2415;
+}
+
+header {
+    background-color: #8b4513;
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <h4>3단계: 반응형 디자인</h4>
+                            <div class="prompt-example">
+                                <strong>프롬프트:</strong>
+                                <p>"모바일에서도 잘 보이도록 반응형 CSS를 추가해줘. 768px 이하에서는 메뉴가 햄버거 버튼으로 바뀌게 해줘."</p>
+                            </div>
+                        </div>
+                        <div class="tag-result">
+                            <h4>반응형 CSS 추가</h4>
+                            <pre><code>@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #8b4513;
+    }
+    
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+}</code></pre>
                         </div>
                     </div>
                 </section>
 
-                <!-- 5. 단계별 웹사이트 제작 -->
-                <section id="step-by-step" class="tutorial-section">
-                    <h2>단계별 웹사이트 제작 과정</h2>
-
-                    <div class="deployment-methods">
-                        <div class="method-tab">
-                            <button class="tab-button active" data-tab="structure">구조 설계</button>
-                            <button class="tab-button" data-tab="styling">스타일링</button>
-                            <button class="tab-button" data-tab="interactive">인터랙션</button>
-                        </div>
-
-                        <div class="tab-content active" id="structure">
-                            <div class="single-column-section">
-                                <h4>1단계: HTML 구조 생성</h4>
-                                <div class="code-example">
-                                    <pre><code>💬 프롬프트:
-"index.html 파일을 만들어줘. 
-포트폴리오 웹사이트의 기본 구조를 만들어줘:
-
-1. header - 네비게이션
-2. main 
-   - hero 섹션
-   - about 섹션  
-   - portfolio 섹션
-   - contact 섹션
-3. footer
-
-시맨틱 태그를 사용하고 SEO에 최적화해줘."</code></pre>
-                                </div>
-                                
-                                <div class="practice-tip">
-                                    <h4>AI 활용 팁</h4>
-                                    <ul>
-                                        <li>큰 구조부터 만들고 세부사항은 나중에</li>
-                                        <li>파일별로 나누어서 요청</li>
-                                        <li>생성된 코드를 확인하고 수정 요청</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tab-content" id="styling">
-                            <div class="tag-demo">
-                                <div class="tag-code">
-                                    <h4>2단계: CSS 스타일링</h4>
-                                    <pre><code>💬 프롬프트:
-"style.css 파일을 만들어서 방금 만든 HTML에 스타일을 적용해줘:
-
-- 전체적으로 모던하고 미니멀한 디자인
-- 색상: 메인 #2563eb, 서브 #64748b, 배경 #f8fafc
-- 폰트: 깔끔한 sans-serif
-- 네비게이션은 고정형으로
-- 히어로 섹션은 전체 화면 높이
-- 각 섹션마다 적절한 여백
-- 반응형으로 모바일에서도 잘 보이게"</code></pre>
-                                </div>
-                                <div class="tag-result">
-                                    <div class="best-practices">
-                                        <h4>스타일링 요청 팁</h4>
-                                        <ul>
-                                            <li>색상 코드를 구체적으로 명시</li>
-                                            <li>레이아웃 방식 지정 (Flexbox, Grid)</li>
-                                            <li>반응형 디자인 요구사항 포함</li>
-                                            <li>애니메이션이나 효과 원하면 명시</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tab-content" id="interactive">
-                            <div class="tag-demo">
-                                <div class="tag-code">
-                                    <h4>3단계: JavaScript 인터랙션</h4>
-                                    <pre><code>💬 프롬프트:
-"script.js 파일을 만들어서 다음 기능들을 추가해줘:
-
-1. 스크롤할 때 네비게이션 배경 변경
-2. 네비게이션 메뉴 클릭하면 해당 섹션으로 부드럽게 이동
-3. 포트폴리오 이미지에 호버 효과
-4. 연락처 폼 유효성 검사
-5. 모바일에서 햄버거 메뉴 동작
-
-모든 기능은 부드럽고 자연스럽게 동작하게 해줘."</code></pre>
-                                </div>
-                                <div class="tag-result">
-                                    <div class="practice-tip">
-                                        <h4>인터랙션 개발 팁</h4>
-                                        <ul>
-                                            <li>원하는 동작을 구체적으로 설명</li>
-                                            <li>사용자 경험(UX)을 고려한 요청</li>
-                                            <li>브라우저 호환성 고려 요청</li>
-                                            <li>성능 최적화도 함께 요청</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. AI 프롬프트 고급 기법 -->
-                <div class="tutorial-section">
-                    <h2>효과적인 AI 프롬프트 작성법</h2>
+                <!-- 5. 고급 기능과 최적화 -->
+                <section id="advanced-features" class="tutorial-section">
+                    <h2>고급 기능과 최적화</h2>
 
                     <div class="tag-demo">
                         <div class="tag-code">
-                            <h4>고급 프롬프트 예시</h4>
-                            <pre><code>🎯 구체적이고 상세한 요청:
-
-"현재 포트폴리오 섹션을 개선해줘:
-- 3x2 그리드 레이아웃으로 6개 프로젝트 표시
-- 각 카드에 이미지, 제목, 설명, 기술 스택 태그
-- 호버 시 카드가 살짝 위로 올라가는 애니메이션
-- 클릭하면 프로젝트 상세 페이지로 이동
-- 카드 디자인은 그림자와 둥근 모서리로 모던하게
-- 모바일에서는 1열로 변경되게
-- 로딩 시 카드들이 순차적으로 나타나는 효과"</code></pre>
+                            <h4>JavaScript 인터랙션 추가</h4>
+                            <div class="prompt-example">
+                                <strong>프롬프트:</strong>
+                                <p>"이미지 슬라이더를 만들어줘. 자동으로 3초마다 이미지가 바뀌고, 좌우 버튼으로도 조작할 수 있게 해줘."</p>
+                            </div>
                         </div>
                         <div class="tag-result">
-                            <div class="attributes-grid">
-                                <div class="attribute-item">
-                                    <h4>명확한 목표</h4>
-                                    <p>무엇을 만들고 싶은지 구체적으로 설명</p>
-                                </div>
-                                <div class="attribute-item">
-                                    <h4>시각적 디테일</h4>
-                                    <p>색상, 크기, 레이아웃, 애니메이션 명시</p>
-                                </div>
-                                <div class="attribute-item">
-                                    <h4>기능적 요구사항</h4>
-                                    <p>클릭, 호버, 스크롤 등 인터랙션 설명</p>
-                                </div>
-                                <div class="attribute-item">
-                                    <h4>반응형 고려</h4>
-                                    <p>다양한 화면 크기에서의 동작 방식</p>
-                                </div>
-                            </div>
+                            <h4>생성된 JavaScript</h4>
+                            <pre><code>class ImageSlider {
+    constructor(container) {
+        this.container = container;
+        this.images = container.querySelectorAll('img');
+        this.currentIndex = 0;
+        this.init();
+    }
+    
+    init() {
+        this.createControls();
+        this.autoPlay();
+    }
+    
+    nextImage() {
+        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+        this.updateSlider();
+    }
+    
+    autoPlay() {
+        setInterval(() => this.nextImage(), 3000);
+    }
+}</code></pre>
                         </div>
                     </div>
-                </div>
-
-                <!-- 6. 문제 해결과 디버깅 -->
-                <div class="tutorial-section">
-                    <h2>AI와 함께하는 문제 해결</h2>
 
                     <div class="tag-demo">
                         <div class="tag-code">
-                            <h4>문제 해결 프롬프트</h4>
-                            <pre><code>🔧 문제 상황별 요청 방법:
-
-📱 반응형 문제:
-"모바일에서 네비게이션이 깨져보여. 
-화면 크기 768px 이하에서 햄버거 메뉴로 바뀌게 수정해줘."
-
-🎨 디자인 문제:
-"히어로 섹션의 텍스트가 배경 이미지와 구분이 안 돼. 
-텍스트에 반투명한 배경을 추가하거나 그림자 효과를 줘."
-
-⚡ 성능 문제:
-"페이지 로딩이 너무 느려. 이미지 최적화와 CSS/JS 압축을 해줘."
-
-🐛 기능 오류:
-"연락처 폼에서 이메일 전송이 안 돼. 
-PHP나 JavaScript로 실제 작동하는 폼을 만들어줘."</code></pre>
+                            <h4>SEO 최적화</h4>
+                            <div class="prompt-example">
+                                <strong>프롬프트:</strong>
+                                <p>"SEO에 좋도록 메타 태그들을 추가해줘. 카페 홈페이지에 맞는 키워드와 설명을 포함해줘."</p>
+                            </div>
                         </div>
                         <div class="tag-result">
-                            <div class="best-practices">
-                                <h4>효과적인 디버깅 방법</h4>
-                                <ul>
-                                    <li>문제 상황을 구체적으로 설명</li>
-                                    <li>에러 메시지가 있다면 함께 제공</li>
-                                    <li>어떤 브라우저/기기에서 발생하는지 명시</li>
-                                    <li>원하는 결과를 명확히 설명</li>
-                                </ul>
-                            </div>
+                            <h4>SEO 메타 태그</h4>
+                            <pre><code>&lt;meta name="description" content="따뜻한 분위기의 카페, 신선한 원두와 수제 디저트를 제공합니다."&gt;
+&lt;meta name="keywords" content="카페, 커피, 디저트, 원두, 핸드드립"&gt;
+&lt;meta property="og:title" content="따뜻한 카페 - 신선한 원두와 수제 디저트"&gt;
+&lt;meta property="og:description" content="편안한 분위기에서 즐기는 프리미엄 커피"&gt;
+&lt;meta property="og:image" content="cafe-main-image.jpg"&gt;</code></pre>
                         </div>
                     </div>
-                </div>
-
-                <!-- 7. 실제 프로젝트 예시 -->
-                <div class="tutorial-section">
-                    <h2>실제 프로젝트: 카페 웹사이트 만들기</h2>
 
                     <div class="tag-demo">
                         <div class="tag-code">
-                            <h4>프로젝트 전체 플랜</h4>
-                            <pre><code>☕ 카페 웹사이트 제작 계획:
-
-1단계: 기본 구조
-"카페 웹사이트를 만들어줘. 
-페이지: 홈, 메뉴, 매장소개, 연락처
-따뜻하고 아늑한 분위기의 갈색 톤 디자인"
-
-2단계: 메뉴 페이지
-"메뉴 페이지에 커피, 디저트, 베이커리 카테고리로 
-상품들을 카드 형태로 표시해줘. 
-각 상품에 이미지, 이름, 가격, 설명 포함"
-
-3단계: 예약 시스템
-"매장소개 페이지에 테이블 예약 폼을 추가해줘.
-날짜, 시간, 인원수, 연락처를 입력받고
-달력 위젯으로 날짜 선택하게 해줘"
-
-4단계: 지도 연동
-"연락처 페이지에 Google Maps 연동하고
-매장 위치, 운영시간, 전화번호 표시해줘"</code></pre>
+                            <h4>성능 최적화</h4>
+                            <div class="prompt-example">
+                                <strong>프롬프트:</strong>
+                                <p>"웹사이트 로딩 속도를 빠르게 하려면 어떻게 해야 해? 이미지 최적화와 CSS 압축도 해줘."</p>
+                            </div>
                         </div>
                         <div class="tag-result">
-                            <div class="project-requirements">
-                                <h3>프로젝트 성공 요소</h3>
-                                <ul>
-                                    <li>단계별로 나누어 진행</li>
-                                    <li>각 단계마다 테스트 및 검토</li>
-                                    <li>사용자 관점에서 기능 확인</li>
-                                    <li>모바일 최적화 필수</li>
-                                    <li>실제 데이터로 테스트</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 8. 최적화 및 마무리 -->
-                <div class="tutorial-section">
-                    <h2>웹사이트 최적화 및 마무리</h2>
-
-                    <div class="tag-demo">
-                        <div class="tag-code">
                             <h4>최적화 체크리스트</h4>
-                            <pre><code>🚀 최종 최적화 요청:
-
-"웹사이트를 최종 검토하고 다음 사항들을 최적화해줘:
-
-1. SEO 최적화
-- 각 페이지에 적절한 title, meta description
-- 이미지에 alt 속성 추가
-- 구조화된 데이터 마크업
-
-2. 성능 최적화  
-- 이미지 압축 및 WebP 형식 사용
-- CSS/JS 파일 압축
-- 불필요한 코드 제거
-
-3. 접근성 개선
-- 키보드 네비게이션 지원
-- 적절한 색상 대비
-- 스크린 리더 지원
-
-4. 브라우저 호환성
-- 구형 브라우저에서도 작동하게
-- CSS fallback 추가"</code></pre>
-                        </div>
-                        <div class="tag-result">
-                            <div class="security-checklist">
+                            <div class="optimization-checklist">
                                 <div class="checklist">
                                     <label>
-                                        <input type="checkbox"> 모든 페이지 반응형 테스트 완료
+                                        <input type="checkbox"> 이미지 WebP 포맷 변환
                                     </label>
                                     <label>
-                                        <input type="checkbox"> 이미지 최적화 및 alt 속성 추가
+                                        <input type="checkbox"> CSS/JS 파일 압축
                                     </label>
                                     <label>
-                                        <input type="checkbox"> SEO 메타 태그 설정 완료
+                                        <input type="checkbox"> 불필요한 코드 제거
                                     </label>
                                     <label>
-                                        <input type="checkbox"> 폼 유효성 검사 구현
+                                        <input type="checkbox"> 폰트 최적화
                                     </label>
                                     <label>
-                                        <input type="checkbox"> 로딩 속도 최적화 완료
+                                        <input type="checkbox"> 캐싱 설정
                                     </label>
                                     <label>
-                                        <input type="checkbox"> 크로스 브라우저 테스트 완료
-                                    </label>
-                                    <label>
-                                        <input type="checkbox"> 접근성 가이드라인 준수
-                                    </label>
-                                    <label>
-                                        <input type="checkbox"> 최종 코드 정리 및 주석 추가
+                                        <input type="checkbox"> 지연 로딩 적용
                                     </label>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <!-- 6. AI 활용 팁과 주의사항 -->
                 <section id="tips-and-cautions" class="tutorial-section">
                     <h2>Cursor AI 활용 팁과 주의사항</h2>
 
-                    <div class="maintenance-grid">
-                        <div class="maintenance-card">
+                    <div class="tag-demo">
+                        <div class="tag-code">
                             <h4>효과적인 활용법</h4>
                             <ul>
                                 <li>큰 구조부터 세부사항 순으로 진행</li>
@@ -584,7 +574,7 @@ PHP나 JavaScript로 실제 작동하는 폼을 만들어줘."</code></pre>
                                 <li>실제 데이터로 테스트</li>
                             </ul>
                         </div>
-                        <div class="maintenance-card">
+                        <div class="tag-result">
                             <h4>주의사항</h4>
                             <ul>
                                 <li>AI가 생성한 코드 검토 필수</li>
@@ -593,7 +583,10 @@ PHP나 JavaScript로 실제 작동하는 폼을 만들어줘."</code></pre>
                                 <li>과도한 의존보다는 학습 도구로 활용</li>
                             </ul>
                         </div>
-                        <div class="maintenance-card">
+                    </div>
+
+                    <div class="tag-demo">
+                        <div class="tag-code">
                             <h4>학습 효과 극대화</h4>
                             <ul>
                                 <li>생성된 코드의 원리 이해하기</li>
@@ -602,6 +595,23 @@ PHP나 JavaScript로 실제 작동하는 폼을 만들어줘."</code></pre>
                                 <li>AI 없이도 기본 코딩 연습하기</li>
                             </ul>
                         </div>
+                        <div class="tag-result">
+                            <h4>프롬프트 작성 팁</h4>
+                            <div class="prompt-tips">
+                                <div class="tip-item">
+                                    <strong>구체적으로 요청하기</strong>
+                                    <p>"버튼 만들어줘" → "빨간색 둥근 모서리 버튼을 만들어줘. 호버시 어두워지게 해줘"</p>
+                                </div>
+                                <div class="tip-item">
+                                    <strong>맥락 제공하기</strong>
+                                    <p>"카페 홈페이지용 네비게이션 메뉴를 만들어줘. 로고, 메뉴, 연락처 링크가 필요해"</p>
+                                </div>
+                                <div class="tip-item">
+                                    <strong>단계별 진행하기</strong>
+                                    <p>한 번에 모든 것을 요청하지 말고, 기본 구조 → 스타일링 → 기능 추가 순으로</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -609,32 +619,29 @@ PHP나 JavaScript로 실제 작동하는 폼을 만들어줘."</code></pre>
                 <section id="final-project" class="tutorial-section">
                     <h2>최종 프로젝트: AI와 함께 완성하는 비즈니스 웹사이트</h2>
                     
-                    <div class="project-description">
-                        <p>Cursor AI를 활용해 실제 비즈니스에서 사용할 수 있는 전문적인 웹사이트를 제작해보세요!</p>
-                    </div>
-
-                    <div class="project-requirements">
-                        <h3>프로젝트 요구사항</h3>
-                        <ul>
-                            <li>홈, 서비스, 회사소개, 연락처 페이지</li>
-                            <li>반응형 디자인 (모바일, 태블릿, 데스크톱)</li>
-                            <li>연락처 폼과 이메일 발송 기능</li>
-                            <li>Google Maps 연동</li>
-                            <li>SEO 최적화 완료</li>
-                            <li>로딩 속도 최적화</li>
-                            <li>접근성 가이드라인 준수</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-tips">
-                        <h3>성공적인 프로젝트를 위한 팁</h3>
-                        <ul>
-                            <li>프로젝트 시작 전 전체 구조와 디자인 컨셉 정하기</li>
-                            <li>각 단계마다 실제 브라우저에서 테스트하기</li>
-                            <li>다양한 기기와 브라우저에서 확인하기</li>
-                            <li>실제 사용자 관점에서 사용성 테스트하기</li>
-                            <li>완성 후 지인들에게 피드백 받기</li>
-                        </ul>
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <h4>프로젝트 요구사항</h4>
+                            <ul>
+                                <li>홈, 서비스, 회사소개, 연락처 페이지</li>
+                                <li>반응형 디자인 (모바일, 태블릿, 데스크톱)</li>
+                                <li>연락처 폼과 이메일 발송 기능</li>
+                                <li>Google Maps 연동</li>
+                                <li>SEO 최적화 완료</li>
+                                <li>로딩 속도 최적화</li>
+                                <li>접근성 가이드라인 준수</li>
+                            </ul>
+                        </div>
+                        <div class="tag-result">
+                            <h4>성공적인 프로젝트를 위한 팁</h4>
+                            <ul>
+                                <li>프로젝트 시작 전 전체 구조와 디자인 컨셉 정하기</li>
+                                <li>각 단계마다 실제 브라우저에서 테스트하기</li>
+                                <li>다양한 기기와 브라우저에서 확인하기</li>
+                                <li>실제 사용자 관점에서 사용성 테스트하기</li>
+                                <li>완성 후 지인들에게 피드백 받기</li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
 
@@ -705,21 +712,6 @@ PHP나 JavaScript로 실제 작동하는 폼을 만들어줘."</code></pre>
     </footer>
 
     <script>
-        // 탭 기능
-        document.querySelectorAll('.tab-button').forEach(button => {
-            button.addEventListener('click', () => {
-                const tabId = button.getAttribute('data-tab');
-                
-                // 모든 탭 버튼과 콘텐츠 비활성화
-                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-                
-                // 선택된 탭 활성화
-                button.classList.add('active');
-                document.getElementById(tabId).classList.add('active');
-            });
-        });
-
         // 체크리스트 기능
         document.querySelectorAll('.checklist input[type="checkbox"]').forEach(checkbox => {
             checkbox.addEventListener('change', () => {
@@ -732,6 +724,21 @@ PHP나 JavaScript로 실제 작동하는 폼을 만들어줘."</code></pre>
                 }
             });
         });
+
+        // 햄버거 메뉴 기능
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // 네비게이션 링크 클릭시 메뉴 닫기
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
     </script>
 </body>
 </html> 

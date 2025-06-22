@@ -1456,3 +1456,158 @@ document.addEventListener('DOMContentLoaded', function() {
     initSearchFunction();
     initBookmarkSystem();
 });
+
+// ===== CURSOR AI TUTORIAL TAB FUNCTIONALITY =====
+
+// Tab functionality for installation guide
+document.addEventListener('DOMContentLoaded', function() {
+    // Setup tabs functionality
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-tab');
+            
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Show corresponding content
+            const targetContent = document.getElementById(targetTab);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        });
+    });
+
+    // Add hover effects to demo elements
+    const demoButtons = document.querySelectorAll('.demo-button');
+    demoButtons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px) scale(1.05)';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+
+    // Animate mini webpages on scroll
+    const observeElements = document.querySelectorAll('.mini-webpage, .prompt-demo, .feature-demo');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    observeElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+
+    // Add click-to-copy functionality for prompt examples
+    const promptBoxes = document.querySelectorAll('.prompt-box');
+    promptBoxes.forEach(box => {
+        box.style.cursor = 'pointer';
+        box.title = '클릭하여 복사';
+        
+        box.addEventListener('click', function() {
+            const text = this.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                // Show copy success feedback
+                const originalBg = this.style.backgroundColor;
+                this.style.backgroundColor = '#d4edda';
+                this.style.borderLeftColor = '#28a745';
+                
+                setTimeout(() => {
+                    this.style.backgroundColor = originalBg;
+                    this.style.borderLeftColor = 'var(--primary-color)';
+                }, 1000);
+                
+                // Show tooltip
+                showTooltip(this, '복사 완료!');
+            });
+        });
+    });
+
+    // Tooltip function
+    function showTooltip(element, message) {
+        const tooltip = document.createElement('div');
+        tooltip.textContent = message;
+        tooltip.style.cssText = `
+            position: absolute;
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        `;
+        
+        document.body.appendChild(tooltip);
+        
+        const rect = element.getBoundingClientRect();
+        tooltip.style.left = rect.left + rect.width / 2 - tooltip.offsetWidth / 2 + 'px';
+        tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + 'px';
+        
+        setTimeout(() => tooltip.style.opacity = '1', 10);
+        
+        setTimeout(() => {
+            tooltip.style.opacity = '0';
+            setTimeout(() => document.body.removeChild(tooltip), 300);
+        }, 2000);
+    }
+
+    // Add smooth scrolling for internal links
+    const internalLinks = document.querySelectorAll('a[href^="#"]');
+    internalLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Progressive enhancement for speed bars
+    const speedBars = document.querySelectorAll('.bar-fill');
+    const speedObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const bar = entry.target;
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    speedBars.forEach(bar => {
+        speedObserver.observe(bar);
+    });
+});
