@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CSS 기초부터 고급까지 체계적으로 배우는 튜토리얼">
+    <title>CSS 튜토리얼 - WebLearn</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 헤더 및 네비게이션 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">WebLearn</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">홈</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="html-tutorial.html" class="nav-link">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="css-tutorial.html" class="nav-link active">CSS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="js-tutorial.html" class="nav-link">JavaScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="practice.html" class="nav-link">실습</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="quiz.html" class="nav-link">퀴즈</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main">
+        <div class="tutorial-container">
+            <!-- 사이드바 -->
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <h3>CSS 목차</h3>
+                    <nav class="tutorial-nav">
+                        <ul>
+                            <li><a href="#intro" class="tutorial-link active">CSS 소개</a></li>
+                            <li><a href="#selectors" class="tutorial-link">선택자</a></li>
+                            <li><a href="#properties" class="tutorial-link">속성과 값</a></li>
+                            <li><a href="#colors" class="tutorial-link">색상</a></li>
+                            <li><a href="#fonts" class="tutorial-link">폰트</a></li>
+                            <li><a href="#box-model" class="tutorial-link">박스 모델</a></li>
+                            <li><a href="#layout" class="tutorial-link">레이아웃</a></li>
+                            <li><a href="#flexbox" class="tutorial-link">Flexbox</a></li>
+                            <li><a href="#grid" class="tutorial-link">Grid</a></li>
+                            <li><a href="#responsive" class="tutorial-link">반응형 디자인</a></li>
+                        </ul>
+                    </nav>
+                    <div class="progress-section">
+                        <h4>학습 진도</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0% 완료</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- 튜토리얼 콘텐츠 -->
+            <div class="tutorial-content">
+                <!-- CSS 소개 -->
+                <section id="intro" class="tutorial-section">
+                    <h1>CSS 튜토리얼</h1>
+                    <h2>CSS란 무엇인가요?</h2>
+                    <p>
+                        CSS(Cascading Style Sheets)는 HTML 문서의 스타일을 정의하는 언어입니다. 
+                        웹 페이지의 색상, 레이아웃, 폰트 등 시각적 표현을 담당합니다.
+                    </p>
+                    
+                    <div class="info-box">
+                        <h3>💡 CSS의 장점</h3>
+                        <ul>
+                            <li>HTML과 디자인을 분리하여 관리가 용이합니다</li>
+                            <li>하나의 CSS 파일로 여러 HTML 페이지를 스타일링할 수 있습니다</li>
+                            <li>반응형 디자인을 구현할 수 있습니다</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>간단한 CSS 예제</h4>
+                        <div class="code-comparison">
+                            <div class="code-section">
+                                <h5>HTML</h5>
+                                <pre><code>&lt;h1 class="title"&gt;안녕하세요!&lt;/h1&gt;
+&lt;p class="description"&gt;이것은 스타일이 적용된 텍스트입니다.&lt;/p&gt;</code></pre>
+                            </div>
+                            <div class="code-section">
+                                <h5>CSS</h5>
+                                <pre><code>.title {
+    color: blue;
+    font-size: 2em;
+}
+
+.description {
+    color: gray;
+    font-style: italic;
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 선택자 -->
+                <section id="selectors" class="tutorial-section">
+                    <h2>CSS 선택자</h2>
+                    <p>선택자는 스타일을 적용할 HTML 요소를 선택하는 방법입니다.</p>
+
+                    <div class="selectors-grid">
+                        <div class="selector-item">
+                            <h4>요소 선택자</h4>
+                            <p>HTML 태그명으로 선택</p>
+                            <div class="selector-example">
+                                <code>h1 { color: red; }</code>
+                            </div>
+                        </div>
+
+                        <div class="selector-item">
+                            <h4>클래스 선택자</h4>
+                            <p>class 속성으로 선택</p>
+                            <div class="selector-example">
+                                <code>.my-class { color: blue; }</code>
+                            </div>
+                        </div>
+
+                        <div class="selector-item">
+                            <h4>ID 선택자</h4>
+                            <p>id 속성으로 선택</p>
+                            <div class="selector-example">
+                                <code>#my-id { color: green; }</code>
+                            </div>
+                        </div>
+
+                        <div class="selector-item">
+                            <h4>전체 선택자</h4>
+                            <p>모든 요소를 선택</p>
+                            <div class="selector-example">
+                                <code>* { margin: 0; }</code>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 박스 모델 -->
+                <section id="box-model" class="tutorial-section">
+                    <h2>CSS 박스 모델</h2>
+                    <p>모든 HTML 요소는 박스 형태로 구성되며, 다음과 같은 구조를 가집니다:</p>
+
+                    <div class="box-model-demo">
+                        <div class="box-model-visual">
+                            <div class="margin-box">
+                                <div class="margin-label">Margin</div>
+                                <div class="border-box">
+                                    <div class="border-label">Border</div>
+                                    <div class="padding-box">
+                                        <div class="padding-label">Padding</div>
+                                        <div class="content-box">
+                                            <div class="content-label">Content</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="box-model-explanation">
+                            <div class="explanation-item">
+                                <strong>Content</strong>
+                                <p>실제 내용이 들어가는 영역</p>
+                            </div>
+                            <div class="explanation-item">
+                                <strong>Padding</strong>
+                                <p>내용과 테두리 사이의 여백</p>
+                            </div>
+                            <div class="explanation-item">
+                                <strong>Border</strong>
+                                <p>요소의 테두리</p>
+                            </div>
+                            <div class="explanation-item">
+                                <strong>Margin</strong>
+                                <p>다른 요소와의 외부 여백</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>박스 모델 CSS 예제</h4>
+                        <pre><code>.box {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 10px;
+}</code></pre>
+                    </div>
+                </section>
+
+                <!-- 실습 버튼 -->
+                <div class="practice-section">
+                    <h3>🎨 CSS 스타일링을 직접 해보세요!</h3>
+                    <p>다양한 CSS 속성들을 사용해보고 실시간으로 결과를 확인해보세요.</p>
+                    <a href="practice.html?topic=css-basic" class="btn btn-primary">CSS 기초 실습하기</a>
+                </div>
+
+                <!-- 다음 단계 -->
+                <div class="next-section">
+                    <div class="next-content">
+                        <h3>다음 학습</h3>
+                        <p>JavaScript를 배워서 동적인 웹사이트를 만들어보세요</p>
+                        <a href="js-tutorial.html" class="btn btn-outline">JavaScript 배우기</a>
+                    </div>
+                    <div class="progress-info">
+                        <span>진도: 40%</span>
+                        <div class="mini-progress">
+                            <div class="mini-progress-fill" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>WebLearn</h3>
+                    <p>웹 개발을 배우는 가장 쉬운 방법</p>
+                </div>
+                <div class="footer-section">
+                    <h4>학습 과정</h4>
+                    <ul>
+                        <li><a href="html-tutorial.html">HTML 튜토리얼</a></li>
+                        <li><a href="css-tutorial.html">CSS 튜토리얼</a></li>
+                        <li><a href="js-tutorial.html">JavaScript 튜토리얼</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>도구</h4>
+                    <ul>
+                        <li><a href="practice.html">코드 실습</a></li>
+                        <li><a href="quiz.html">퀴즈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WebLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML, CSS, JavaScript를 배우는 최고의 온라인 학습 플랫폼">
+    <title>Web Development Learning Hub - HTML, CSS, JS 배우기</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 헤더 및 네비게이션 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">WebLearn</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">홈</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="html-tutorial.html" class="nav-link">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="css-tutorial.html" class="nav-link">CSS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="js-tutorial.html" class="nav-link">JavaScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="practice.html" class="nav-link">실습</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="quiz.html" class="nav-link">퀴즈</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main">
+        <!-- 히어로 섹션 -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">웹 개발의 기초를<br>쉽고 재미있게 배워보세요</h1>
+                    <p class="hero-description">
+                        HTML, CSS, JavaScript를 단계별로 학습하고 
+                        실습을 통해 실력을 향상시켜보세요.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="html-tutorial.html" class="btn btn-primary">학습 시작하기</a>
+                        <a href="practice.html" class="btn btn-secondary">실습해보기</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="code-preview">
+                        <div class="code-header">
+                            <div class="code-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="code-title">index.html</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;title&gt;My First Website&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;안녕하세요!&lt;/h1&gt;
+    &lt;p&gt;웹 개발의 세계에 오신 것을 환영합니다.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 학습 로드맵 섹션 -->
+        <section class="roadmap">
+            <div class="container">
+                <h2 class="section-title">학습 로드맵</h2>
+                <p class="section-description">체계적인 단계별 학습으로 웹 개발 전문가가 되어보세요</p>
+                
+                <div class="roadmap-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3 class="step-title">HTML 기초</h3>
+                            <p class="step-description">웹 페이지의 구조를 만드는 마크업 언어를 배워보세요</p>
+                            <ul class="step-topics">
+                                <li>HTML 태그와 속성</li>
+                                <li>문서 구조와 시맨틱</li>
+                                <li>폼과 입력 요소</li>
+                            </ul>
+                            <a href="html-tutorial.html" class="step-link">HTML 배우기 →</a>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3 class="step-title">CSS 스타일링</h3>
+                            <p class="step-description">아름답고 반응형인 웹 디자인을 만들어보세요</p>
+                            <ul class="step-topics">
+                                <li>선택자와 속성</li>
+                                <li>레이아웃과 Flexbox</li>
+                                <li>애니메이션과 효과</li>
+                            </ul>
+                            <a href="css-tutorial.html" class="step-link">CSS 배우기 →</a>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3 class="step-title">JavaScript 프로그래밍</h3>
+                            <p class="step-description">동적이고 인터랙티브한 웹사이트를 만들어보세요</p>
+                            <ul class="step-topics">
+                                <li>변수와 함수</li>
+                                <li>DOM 조작</li>
+                                <li>이벤트 처리</li>
+                            </ul>
+                            <a href="js-tutorial.html" class="step-link">JavaScript 배우기 →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 특징 섹션 -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">왜 WebLearn을 선택해야 할까요?</h2>
+                
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">📚</div>
+                        <h3 class="feature-title">체계적인 커리큘럼</h3>
+                        <p class="feature-description">기초부터 고급까지 단계별로 구성된 학습 과정</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">💻</div>
+                        <h3 class="feature-title">실시간 실습</h3>
+                        <p class="feature-description">코드를 직접 작성하고 즉시 결과를 확인할 수 있는 환경</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">🎯</div>
+                        <h3 class="feature-title">퀴즈와 평가</h3>
+                        <p class="feature-description">학습한 내용을 확인하고 실력을 점검할 수 있는 시스템</p>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon">📱</div>
+                        <h3 class="feature-title">반응형 학습</h3>
+                        <p class="feature-description">PC, 태블릿, 모바일 어디서나 편리하게 학습</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA 섹션 -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">지금 바로 시작해보세요!</h2>
+                    <p class="cta-description">무료로 웹 개발의 기초를 배우고 실력을 향상시켜보세요</p>
+                    <div class="cta-buttons">
+                        <a href="html-tutorial.html" class="btn btn-primary btn-large">HTML부터 시작하기</a>
+                        <a href="practice.html" class="btn btn-outline btn-large">실습 환경 체험하기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>WebLearn</h3>
+                    <p>웹 개발을 배우는 가장 쉬운 방법</p>
+                </div>
+                <div class="footer-section">
+                    <h4>학습 과정</h4>
+                    <ul>
+                        <li><a href="html-tutorial.html">HTML 튜토리얼</a></li>
+                        <li><a href="css-tutorial.html">CSS 튜토리얼</a></li>
+                        <li><a href="js-tutorial.html">JavaScript 튜토리얼</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>도구</h4>
+                    <ul>
+                        <li><a href="practice.html">코드 실습</a></li>
+                        <li><a href="quiz.html">퀴즈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>연락처</h4>
+                    <p>이메일: info@weblearn.com</p>
+                    <p>전화: 02-1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WebLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

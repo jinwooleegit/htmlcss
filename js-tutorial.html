@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript 기초부터 고급까지 체계적으로 배우는 튜토리얼">
+    <title>JavaScript 튜토리얼 - WebLearn</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 헤더 및 네비게이션 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">WebLearn</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">홈</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="html-tutorial.html" class="nav-link">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="css-tutorial.html" class="nav-link">CSS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="js-tutorial.html" class="nav-link active">JavaScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="practice.html" class="nav-link">실습</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="quiz.html" class="nav-link">퀴즈</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main">
+        <div class="tutorial-container">
+            <!-- 사이드바 -->
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <h3>JavaScript 목차</h3>
+                    <nav class="tutorial-nav">
+                        <ul>
+                            <li><a href="#intro" class="tutorial-link active">JavaScript 소개</a></li>
+                            <li><a href="#variables" class="tutorial-link">변수와 데이터 타입</a></li>
+                            <li><a href="#functions" class="tutorial-link">함수</a></li>
+                            <li><a href="#dom" class="tutorial-link">DOM 조작</a></li>
+                            <li><a href="#events" class="tutorial-link">이벤트</a></li>
+                        </ul>
+                    </nav>
+                    <div class="progress-section">
+                        <h4>학습 진도</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0% 완료</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- 튜토리얼 콘텐츠 -->
+            <div class="tutorial-content">
+                <!-- JavaScript 소개 -->
+                <section id="intro" class="tutorial-section">
+                    <h1>JavaScript 튜토리얼</h1>
+                    <h2>JavaScript란 무엇인가요?</h2>
+                    <p>
+                        JavaScript는 웹 페이지에 동적인 기능을 추가하는 프로그래밍 언어입니다. 
+                        사용자와의 상호작용, 데이터 처리, 애니메이션 등을 구현할 수 있습니다.
+                    </p>
+                    
+                    <div class="info-box">
+                        <h3>🚀 JavaScript로 할 수 있는 것들</h3>
+                        <ul>
+                            <li>버튼 클릭, 폼 제출 등의 이벤트 처리</li>
+                            <li>웹 페이지 내용을 동적으로 변경</li>
+                            <li>애니메이션과 시각적 효과 구현</li>
+                            <li>서버와 데이터 통신</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>JavaScript 체험해보기</h4>
+                        <pre><code>document.getElementById('demo-button').addEventListener('click', function() {
+    document.getElementById('demo-text').textContent = '텍스트가 바뀌었습니다!';
+});</code></pre>
+                    </div>
+                </section>
+
+                <!-- 변수와 데이터 타입 -->
+                <section id="variables" class="tutorial-section">
+                    <h2>변수와 데이터 타입</h2>
+                    <p>JavaScript에서 데이터를 저장하고 사용하는 방법을 배워보세요.</p>
+
+                    <div class="example-box">
+                        <h4>변수 선언</h4>
+                        <pre><code>let name = "홍길동";
+const age = 25;
+var city = "서울";
+
+let text = "문자열";        // String
+let number = 42;           // Number
+let isTrue = true;         // Boolean
+let items = [1, 2, 3];     // Array
+let person = {name: "김철수"}; // Object</code></pre>
+                    </div>
+                </section>
+
+                <!-- 함수 -->
+                <section id="functions" class="tutorial-section">
+                    <h2>함수 (Functions)</h2>
+                    <p>재사용 가능한 코드 블록을 만드는 방법입니다.</p>
+
+                    <div class="example-box">
+                        <h4>기본 함수</h4>
+                        <pre><code>function greet(name) {
+    return "안녕하세요, " + name + "님!";
+}
+
+// 함수 호출
+let message = greet("홍길동");
+console.log(message); // "안녕하세요, 홍길동님!"</code></pre>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>화살표 함수</h4>
+                        <pre><code>const add = (a, b) => {
+    return a + b;
+};
+
+// 간단한 형태
+const multiply = (a, b) => a * b;
+
+console.log(add(5, 3));      // 8
+console.log(multiply(4, 2)); // 8</code></pre>
+                    </div>
+                </section>
+
+                <!-- DOM 조작 -->
+                <section id="dom" class="tutorial-section">
+                    <h2>DOM 조작</h2>
+                    <p>JavaScript로 HTML 요소를 선택하고 조작하는 방법을 배워보세요.</p>
+
+                    <div class="example-box">
+                        <h4>요소 선택하기</h4>
+                        <pre><code>// ID로 선택
+let element = document.getElementById('my-id');
+
+// 클래스로 선택
+let elements = document.getElementsByClassName('my-class');
+
+// CSS 선택자로 선택
+let element = document.querySelector('.my-class');
+let elements = document.querySelectorAll('p');</code></pre>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>내용 변경하기</h4>
+                        <pre><code>// 텍스트 내용 변경
+element.textContent = '새로운 텍스트';
+
+// HTML 내용 변경
+element.innerHTML = '&lt;strong&gt;굵은 텍스트&lt;/strong&gt;';
+
+// 스타일 변경
+element.style.color = 'red';
+element.style.fontSize = '20px';</code></pre>
+                    </div>
+                </section>
+
+                <!-- 실습 버튼 -->
+                <div class="practice-section">
+                    <h3>⚡ JavaScript 코딩을 시작해보세요!</h3>
+                    <p>변수, 함수, DOM 조작을 직접 실습해보고 결과를 확인해보세요.</p>
+                    <a href="practice.html?topic=js-basic" class="btn btn-primary">JavaScript 기초 실습하기</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>WebLearn</h3>
+                    <p>웹 개발을 배우는 가장 쉬운 방법</p>
+                </div>
+                <div class="footer-section">
+                    <h4>학습 과정</h4>
+                    <ul>
+                        <li><a href="html-tutorial.html">HTML 튜토리얼</a></li>
+                        <li><a href="css-tutorial.html">CSS 튜토리얼</a></li>
+                        <li><a href="js-tutorial.html">JavaScript 튜토리얼</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>도구</h4>
+                    <ul>
+                        <li><a href="practice.html">코드 실습</a></li>
+                        <li><a href="quiz.html">퀴즈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WebLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

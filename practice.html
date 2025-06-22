@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML, CSS, JavaScript를 실시간으로 연습할 수 있는 코드 에디터">
+    <title>코드 실습 - WebLearn</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 헤더 및 네비게이션 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">WebLearn</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">홈</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="html-tutorial.html" class="nav-link">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="css-tutorial.html" class="nav-link">CSS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="js-tutorial.html" class="nav-link">JavaScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="practice.html" class="nav-link active">실습</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="quiz.html" class="nav-link">퀴즈</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main">
+        <div class="practice-container">
+            <!-- 제어 패널 -->
+            <div class="control-panel">
+                <h1>🚀 라이브 코드 에디터</h1>
+                <div class="controls">
+                    <div class="control-group">
+                        <label>예제 선택:</label>
+                        <select id="example-select">
+                            <option value="basic">기본 HTML</option>
+                            <option value="css-styling">CSS 스타일링</option>
+                            <option value="js-interactive">JavaScript 상호작용</option>
+                            <option value="responsive">반응형 디자인</option>
+                            <option value="form">폼 만들기</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <button id="run-code" class="btn btn-primary">▶ 실행</button>
+                        <button id="clear-code" class="btn btn-secondary">🗑 초기화</button>
+                        <button id="save-code" class="btn btn-outline">💾 저장</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 코드 에디터 영역 -->
+            <div class="editor-container">
+                <!-- HTML 에디터 -->
+                <div class="editor-section">
+                    <div class="editor-header">
+                        <h3>📄 HTML</h3>
+                        <div class="editor-tools">
+                            <button class="tool-btn" title="들여쓰기 정리">🔧</button>
+                        </div>
+                    </div>
+                    <textarea id="html-editor" class="code-editor" placeholder="HTML 코드를 여기에 작성하세요..."><!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>내 첫 번째 웹페이지</title>
+</head>
+<body>
+    <h1>안녕하세요!</h1>
+    <p>이것은 내 첫 번째 HTML 페이지입니다.</p>
+    <button onclick="alert('버튼이 클릭되었습니다!')">클릭해보세요</button>
+</body>
+</html></textarea>
+                </div>
+
+                <!-- CSS 에디터 -->
+                <div class="editor-section">
+                    <div class="editor-header">
+                        <h3>🎨 CSS</h3>
+                        <div class="editor-tools">
+                            <button class="tool-btn" title="색상 팔레트">🎨</button>
+                        </div>
+                    </div>
+                    <textarea id="css-editor" class="code-editor" placeholder="CSS 코드를 여기에 작성하세요...">body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}</textarea>
+                </div>
+
+                <!-- JavaScript 에디터 -->
+                <div class="editor-section">
+                    <div class="editor-header">
+                        <h3>⚡ JavaScript</h3>
+                        <div class="editor-tools">
+                            <button class="tool-btn" title="콘솔 보기">📊</button>
+                        </div>
+                    </div>
+                    <textarea id="js-editor" class="code-editor" placeholder="JavaScript 코드를 여기에 작성하세요...">// JavaScript 코드를 여기에 작성하세요
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('페이지가 로드되었습니다!');
+    
+    // 동적으로 요소 추가
+    const newParagraph = document.createElement('p');
+    newParagraph.textContent = 'JavaScript로 추가된 텍스트입니다!';
+    newParagraph.style.color = 'green';
+    newParagraph.style.fontWeight = 'bold';
+    
+    document.body.appendChild(newParagraph);
+});</textarea>
+                </div>
+            </div>
+
+            <!-- 결과 미리보기 -->
+            <div class="preview-container">
+                <div class="preview-header">
+                    <h3>🖥 미리보기</h3>
+                    <div class="preview-tools">
+                        <button id="toggle-responsive" class="tool-btn" title="반응형 테스트">📱</button>
+                        <button id="open-fullscreen" class="tool-btn" title="전체화면">🔍</button>
+                    </div>
+                </div>
+                <iframe id="preview-frame" class="preview-frame"></iframe>
+            </div>
+
+            <!-- 콘솔 -->
+            <div class="console-container">
+                <div class="console-header">
+                    <h3>📊 콘솔</h3>
+                    <button id="clear-console" class="tool-btn">🗑</button>
+                </div>
+                <div id="console-output" class="console-output">
+                    <div class="console-message info">
+                        <span class="console-time">[00:00:00]</span>
+                        <span class="console-text">코드 에디터가 준비되었습니다. '실행' 버튼을 클릭하여 코드를 실행해보세요!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 도움말 섹션 -->
+        <div class="help-section">
+            <div class="container">
+                <h2>💡 에디터 사용법</h2>
+                <div class="help-grid">
+                    <div class="help-item">
+                        <h4>1. 코드 작성</h4>
+                        <p>HTML, CSS, JavaScript 에디터에 코드를 작성하세요</p>
+                    </div>
+                    <div class="help-item">
+                        <h4>2. 실시간 미리보기</h4>
+                        <p>'실행' 버튼을 클릭하면 오른쪽에서 결과를 확인할 수 있습니다</p>
+                    </div>
+                    <div class="help-item">
+                        <h4>3. 예제 활용</h4>
+                        <p>상단의 예제 선택 메뉴에서 다양한 템플릿을 불러올 수 있습니다</p>
+                    </div>
+                    <div class="help-item">
+                        <h4>4. 콘솔 확인</h4>
+                        <p>JavaScript 오류나 console.log 출력을 하단 콘솔에서 확인하세요</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 예제 갤러리 -->
+        <div class="examples-section">
+            <div class="container">
+                <h2>📚 예제 갤러리</h2>
+                <div class="examples-grid">
+                    <div class="example-card" data-example="basic">
+                        <h4>기본 HTML 구조</h4>
+                        <p>HTML의 기본 구조와 주요 태그들을 연습해보세요</p>
+                        <button class="btn btn-outline">불러오기</button>
+                    </div>
+                    <div class="example-card" data-example="css-styling">
+                        <h4>CSS 스타일링</h4>
+                        <p>색상, 폰트, 레이아웃 등 CSS 스타일링을 배워보세요</p>
+                        <button class="btn btn-outline">불러오기</button>
+                    </div>
+                    <div class="example-card" data-example="js-interactive">
+                        <h4>JavaScript 상호작용</h4>
+                        <p>버튼 클릭, 폼 처리 등 동적 기능을 구현해보세요</p>
+                        <button class="btn btn-outline">불러오기</button>
+                    </div>
+                    <div class="example-card" data-example="responsive">
+                        <h4>반응형 디자인</h4>
+                        <p>다양한 화면 크기에 대응하는 반응형 웹을 만들어보세요</p>
+                        <button class="btn btn-outline">불러오기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>WebLearn</h3>
+                    <p>웹 개발을 배우는 가장 쉬운 방법</p>
+                </div>
+                <div class="footer-section">
+                    <h4>학습 과정</h4>
+                    <ul>
+                        <li><a href="html-tutorial.html">HTML 튜토리얼</a></li>
+                        <li><a href="css-tutorial.html">CSS 튜토리얼</a></li>
+                        <li><a href="js-tutorial.html">JavaScript 튜토리얼</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>도구</h4>
+                    <ul>
+                        <li><a href="practice.html">코드 실습</a></li>
+                        <li><a href="quiz.html">퀴즈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WebLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
