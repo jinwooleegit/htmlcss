@@ -676,7 +676,7 @@ a:hover {
 
 /* 레벨 선택 섹션 */
 .level-selector {
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 12px;
     padding: 2rem;
@@ -713,8 +713,8 @@ a:hover {
 }
 
 .level-card.active {
-    border-color: #0369a1;
-    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-color: #64748b;
+    background: #f8fafc;
 }
 
 .level-badge {
@@ -729,7 +729,7 @@ a:hover {
 }
 
 .level-badge.current {
-    background: #0369a1;
+    background: #1a202c;
 }
 
 .level-card h3 {
@@ -745,20 +745,20 @@ a:hover {
 }
 
 .level-link {
-    color: #0369a1;
+    color: #64748b;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.2s ease;
 }
 
 .level-link:hover {
-    color: #0284c7;
+    color: #1a202c;
 }
 
 /* 다음 단계 섹션 */
 .next-steps {
-    background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
-    border: 1px solid #fbbf24;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     border-radius: 12px;
     padding: 3rem 2rem;
     margin-top: 4rem;
@@ -766,7 +766,7 @@ a:hover {
 }
 
 .next-steps h2 {
-    color: #92400e;
+    color: #1a202c;
     margin-bottom: 2rem;
     font-weight: 700;
 }
@@ -780,19 +780,19 @@ a:hover {
 
 .next-card {
     background: #ffffff;
-    border: 1px solid #f59e0b;
+    border: 1px solid #e2e8f0;
     border-radius: 8px;
     padding: 1.5rem;
     transition: all 0.2s ease;
 }
 
 .next-card:hover {
-    border-color: #d97706;
+    border-color: #cbd5e0;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .next-card h3 {
-    color: #92400e;
+    color: #1a202c;
     margin-bottom: 0.75rem;
     font-weight: 600;
 }
@@ -2228,6 +2228,10 @@ pre code {
     margin-top: 1rem;
 }
 
+.tag-result * {
+    margin-top: 0 !important;
+}
+
 .practice-tip {
     background: linear-gradient(135deg, #28a745, #20c997);
     color: white;
@@ -2362,9 +2366,7 @@ pre code {
 }
 
 .list-types {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    display: block;
     margin: 2rem 0;
 }
 
@@ -2373,6 +2375,7 @@ pre code {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
 }
 
 .list-type h3 {
@@ -2412,9 +2415,7 @@ pre code {
 }
 
 .input-examples {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    display: block;
     margin: 2rem 0;
 }
 
@@ -2423,6 +2424,7 @@ pre code {
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
 }
 
 .input-example h4 {
@@ -2564,11 +2566,11 @@ pre code {
         grid-template-columns: 1fr;
     }
     
-    .link-examples, .image-examples, .input-examples {
+    .link-examples, .image-examples {
         grid-template-columns: 1fr;
     }
     
-    .list-types, .semantic-grid {
+    .semantic-grid {
         grid-template-columns: 1fr;
     }
     
@@ -3374,6 +3376,10 @@ pre code {
     display: flex;
     align-items: flex-start;
     overflow-y: auto;
+}
+
+.tag-result > *:first-child {
+    margin-top: 0 !important;
 }
 
 .practice-challenge {
