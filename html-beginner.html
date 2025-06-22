@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML 초급편 - HTML이 무엇인지부터 기본 문법까지 체계적으로 배우는 튜토리얼">
+    <title>HTML 초급편 - WebLearn</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 헤더 및 네비게이션 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">WebLearn</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">홈</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="html-tutorial.html" class="nav-link active">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="css-tutorial.html" class="nav-link">CSS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="js-tutorial.html" class="nav-link">JavaScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="deployment-tutorial.html" class="nav-link">배포하기</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="practice.html" class="nav-link">실습</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="quiz.html" class="nav-link">퀴즈</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main">
+        <div class="tutorial-container full-width">
+            <!-- 튜토리얼 헤더 -->
+            <div class="tutorial-header">
+                <h1>🌱 HTML 초급편</h1>
+                <p class="subtitle">HTML이 무엇인지부터 기본 문법까지 차근차근 배워보세요</p>
+                <div class="learning-path">
+                    <span class="path-item active">초급편</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-item">중급편</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-item">고급편</span>
+                </div>
+            </div>
+
+            <!-- 1. HTML이란 무엇인가? -->
+            <section class="tutorial-section">
+                <h2>🤔 HTML이란 무엇인가요?</h2>
+                
+                <div class="concept-explanation">
+                    <div class="concept-main">
+                        <h3>HTML = HyperText Markup Language</h3>
+                        <div class="concept-breakdown">
+                            <div class="concept-part">
+                                <strong>HyperText</strong>
+                                <p>링크로 연결된 텍스트</p>
+                            </div>
+                            <div class="concept-part">
+                                <strong>Markup</strong>
+                                <p>구조를 표시하는 방법</p>
+                            </div>
+                            <div class="concept-part">
+                                <strong>Language</strong>
+                                <p>컴퓨터가 이해하는 언어</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="analogy-box">
+                        <h4>🏠 쉬운 비유로 이해하기</h4>
+                        <p><strong>웹페이지를 집이라고 생각해보세요:</strong></p>
+                        <ul>
+                            <li><strong>HTML</strong> = 집의 뼈대 (기둥, 벽, 방)</li>
+                            <li><strong>CSS</strong> = 집의 인테리어 (색깔, 가구, 장식)</li>
+                            <li><strong>JavaScript</strong> = 집의 전자제품 (조명, 에어컨, TV)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="why-learn-html">
+                    <h3>🎯 왜 HTML을 배워야 할까요?</h3>
+                    <div class="reasons-grid">
+                        <div class="reason-item">
+                            <div class="reason-icon">🌐</div>
+                            <h4>모든 웹사이트의 기초</h4>
+                            <p>구글, 페이스북, 유튜브 모두 HTML로 만들어졌어요</p>
+                        </div>
+                        <div class="reason-item">
+                            <div class="reason-icon">⚡</div>
+                            <h4>배우기 쉬움</h4>
+                            <p>프로그래밍 경험이 없어도 하루만에 기초를 익힐 수 있어요</p>
+                        </div>
+                        <div class="reason-item">
+                            <div class="reason-icon">💼</div>
+                            <h4>취업에 도움</h4>
+                            <p>웹 개발자, 디자이너, 마케터 모두에게 필수 기술이에요</p>
+                        </div>
+                        <div class="reason-item">
+                            <div class="reason-icon">🚀</div>
+                            <h4>즉시 결과 확인</h4>
+                            <p>코드를 작성하면 바로 웹페이지에서 결과를 볼 수 있어요</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. HTML 문법의 기초 -->
+            <section class="tutorial-section">
+                <h2>📝 HTML 문법의 기초</h2>
+                
+                <div class="grammar-explanation">
+                    <h3>HTML의 기본 구조: 태그(Tag)</h3>
+                    <div class="tag-anatomy">
+                        <div class="tag-visual">
+                            <span class="tag-bracket">&lt;</span>
+                            <span class="tag-name">태그이름</span>
+                            <span class="tag-bracket">&gt;</span>
+                            <span class="tag-content">내용</span>
+                            <span class="tag-bracket">&lt;/</span>
+                            <span class="tag-name">태그이름</span>
+                            <span class="tag-bracket">&gt;</span>
+                        </div>
+                        <div class="tag-parts">
+                            <div class="part-explanation">
+                                <strong>여는 태그</strong>: &lt;태그이름&gt;
+                            </div>
+                            <div class="part-explanation">
+                                <strong>내용</strong>: 실제 표시될 텍스트
+                            </div>
+                            <div class="part-explanation">
+                                <strong>닫는 태그</strong>: &lt;/태그이름&gt;
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-rules">
+                        <h4>🔤 HTML 문법 규칙</h4>
+                        <div class="rules-grid">
+                            <div class="rule-item">
+                                <div class="rule-icon">✅</div>
+                                <strong>대소문자 구분 안함</strong>
+                                <p>&lt;H1&gt;과 &lt;h1&gt;은 같음</p>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-icon">✅</div>
+                                <strong>태그는 중첩 가능</strong>
+                                <p>&lt;div&gt;&lt;p&gt;내용&lt;/p&gt;&lt;/div&gt;</p>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-icon">✅</div>
+                                <strong>빈 태그도 있음</strong>
+                                <p>&lt;br&gt;, &lt;img&gt; 등</p>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-icon">✅</div>
+                                <strong>들여쓰기 권장</strong>
+                                <p>코드를 읽기 쉽게 만듦</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <h4>✏️ 첫 번째 실습</h4>
+                    <p>아래 코드를 따라 써보세요:</p>
+                    <pre><code>&lt;h1&gt;안녕하세요!&lt;/h1&gt;
+&lt;p&gt;이것은 내 첫 번째 HTML 태그입니다.&lt;/p&gt;</code></pre>
+                    <div class="result-preview">
+                        <strong>결과:</strong>
+                        <div class="preview-content">
+                            <h1 style="font-size: 1.5em; margin: 10px 0;">안녕하세요!</h1>
+                            <p style="margin: 10px 0;">이것은 내 첫 번째 HTML 태그입니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. HTML 문서의 기본 구조 -->
+            <section class="tutorial-section">
+                <h2>🏗️ HTML 문서의 기본 구조</h2>
+                
+                <div class="document-structure">
+                    <h3>모든 HTML 문서는 이런 구조를 가져요</h3>
+                    <div class="structure-visual">
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;페이지 제목&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 여기에 콘텐츠가 들어갑니다 --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                    
+                    <div class="structure-explanation">
+                        <div class="structure-part">
+                            <h4>&lt;!DOCTYPE html&gt;</h4>
+                            <p><strong>역할:</strong> "이 문서는 HTML5로 작성되었습니다"라고 브라우저에게 알려줍니다</p>
+                            <p><strong>위치:</strong> 문서의 맨 첫 줄</p>
+                        </div>
+                        
+                        <div class="structure-part">
+                            <h4>&lt;html&gt;</h4>
+                            <p><strong>역할:</strong> HTML 문서의 시작과 끝을 나타냅니다</p>
+                            <p><strong>속성:</strong> lang="ko"는 한국어 문서임을 표시합니다</p>
+                        </div>
+                        
+                        <div class="structure-part">
+                            <h4>&lt;head&gt;</h4>
+                            <p><strong>역할:</strong> 웹페이지의 정보를 담습니다 (사용자에게는 보이지 않음)</p>
+                            <p><strong>포함 내용:</strong> 제목, 인코딩, CSS 링크 등</p>
+                        </div>
+                        
+                        <div class="structure-part">
+                            <h4>&lt;body&gt;</h4>
+                            <p><strong>역할:</strong> 실제 웹페이지에 표시될 모든 내용을 담습니다</p>
+                            <p><strong>포함 내용:</strong> 텍스트, 이미지, 링크 등 모든 콘텐츠</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="head-details">
+                    <h3>&lt;head&gt; 태그 안에 들어가는 중요한 것들</h3>
+                    <div class="head-items">
+                        <div class="head-item">
+                            <code>&lt;meta charset="UTF-8"&gt;</code>
+                            <p>한글이 깨지지 않게 하는 인코딩 설정</p>
+                        </div>
+                        <div class="head-item">
+                            <code>&lt;title&gt;페이지 제목&lt;/title&gt;</code>
+                            <p>브라우저 탭에 표시되는 제목</p>
+                        </div>
+                        <div class="head-item">
+                            <code>&lt;meta name="viewport" content="width=device-width"&gt;</code>
+                            <p>모바일에서 제대로 보이게 하는 설정</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 다음 단계 안내 -->
+            <div class="next-steps">
+                <h2>🎊 HTML 기초 개념을 배웠습니다!</h2>
+                <p>이제 실제 태그들을 배워볼 차례입니다.</p>
+                
+                <div class="next-level-cards">
+                    <div class="next-card">
+                        <h3>🌿 HTML 중급편</h3>
+                        <p>실제 태그들과 활용법을 배워보세요</p>
+                        <a href="html-intermediate.html" class="next-btn">중급편 시작하기</a>
+                    </div>
+                    
+                    <div class="next-card">
+                        <h3>🎨 CSS 배우기</h3>
+                        <p>웹페이지를 예쁘게 꾸며보세요</p>
+                        <a href="css-tutorial.html" class="next-btn">CSS 시작하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>WebLearn</h3>
+                <p>HTML, CSS, JavaScript를 쉽게 배우는 온라인 튜토리얼</p>
+            </div>
+            <div class="footer-section">
+                <h4>학습 과정</h4>
+                <ul>
+                    <li><a href="html-beginner.html">HTML 초급편</a></li>
+                    <li><a href="html-intermediate.html">HTML 중급편</a></li>
+                    <li><a href="html-advanced.html">HTML 고급편</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>실습</h4>
+                <ul>
+                    <li><a href="practice.html">코드 에디터</a></li>
+                    <li><a href="quiz.html">퀴즈</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 WebLearn. 모든 권리 보유.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

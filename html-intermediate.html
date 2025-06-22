@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML 중급편 - 실제 태그 활용법부터 폼, 테이블, 멀티미디어까지">
+    <title>HTML 중급편 - WebLearn</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 헤더 및 네비게이션 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">WebLearn</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">홈</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="html-tutorial.html" class="nav-link active">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="css-tutorial.html" class="nav-link">CSS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="js-tutorial.html" class="nav-link">JavaScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="deployment-tutorial.html" class="nav-link">배포하기</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="practice.html" class="nav-link">실습</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="quiz.html" class="nav-link">퀴즈</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main">
+        <div class="tutorial-container full-width">
+            <!-- 튜토리얼 헤더 -->
+            <div class="tutorial-header">
+                <h1>🌿 HTML 중급편</h1>
+                <p class="subtitle">실제 태그 활용법부터 폼, 테이블, 멀티미디어까지</p>
+                <div class="learning-path">
+                    <span class="path-item">초급편</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-item active">중급편</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-item">고급편</span>
+                </div>
+            </div>
+
+            <!-- 1. 텍스트 태그 완전 정복 -->
+            <section class="tutorial-section">
+                <h2>📄 텍스트 태그 완전 정복</h2>
+                
+                <div class="text-tags-advanced">
+                    <h3>제목 태그 (Heading Tags) 실전 활용</h3>
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <pre><code>&lt;h1&gt;웹사이트 메인 제목 (페이지당 1개)&lt;/h1&gt;
+&lt;h2&gt;주요 섹션 제목&lt;/h2&gt;
+&lt;h3&gt;하위 섹션 제목&lt;/h3&gt;
+&lt;h4&gt;세부 항목 제목&lt;/h4&gt;
+&lt;h5&gt;더 세부적인 제목&lt;/h5&gt;
+&lt;h6&gt;가장 작은 제목&lt;/h6&gt;</code></pre>
+                        </div>
+                        <div class="tag-result">
+                            <h1 style="font-size: 2em; margin: 10px 0;">웹사이트 메인 제목 (페이지당 1개)</h1>
+                            <h2 style="font-size: 1.7em; margin: 10px 0;">주요 섹션 제목</h2>
+                            <h3 style="font-size: 1.4em; margin: 10px 0;">하위 섹션 제목</h3>
+                            <h4 style="font-size: 1.2em; margin: 10px 0;">세부 항목 제목</h4>
+                            <h5 style="font-size: 1em; margin: 10px 0;">더 세부적인 제목</h5>
+                            <h6 style="font-size: 0.9em; margin: 10px 0;">가장 작은 제목</h6>
+                        </div>
+                    </div>
+                    
+                    <div class="best-practices">
+                        <h4>💡 제목 태그 사용 가이드라인</h4>
+                        <ul>
+                            <li><strong>h1</strong>: 페이지의 메인 주제 (SEO에 중요)</li>
+                            <li><strong>h2</strong>: 주요 섹션 구분</li>
+                            <li><strong>h3-h6</strong>: 하위 구조 표현</li>
+                            <li>제목 레벨을 건너뛰지 마세요 (h1 → h3 ❌)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="text-formatting-advanced">
+                    <h3>텍스트 서식 태그 심화</h3>
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <pre><code>&lt;p&gt;
+    &lt;strong&gt;중요한 내용&lt;/strong&gt; (굵게, 의미적 강조)&lt;br&gt;
+    &lt;b&gt;단순히 굵게&lt;/b&gt; (시각적 효과만)&lt;br&gt;
+    &lt;em&gt;강조하고 싶은 내용&lt;/em&gt; (기울임, 의미적 강조)&lt;br&gt;
+    &lt;i&gt;단순히 기울임&lt;/i&gt; (시각적 효과만)&lt;br&gt;
+    &lt;mark&gt;형광펜 효과&lt;/mark&gt;&lt;br&gt;
+    &lt;del&gt;삭제된 텍스트&lt;/del&gt;&lt;br&gt;
+    &lt;ins&gt;추가된 텍스트&lt;/ins&gt;&lt;br&gt;
+    &lt;sub&gt;아래첨자&lt;/sub&gt; H&lt;sub&gt;2&lt;/sub&gt;O&lt;br&gt;
+    &lt;sup&gt;위첨자&lt;/sup&gt; E=mc&lt;sup&gt;2&lt;/sup&gt;&lt;br&gt;
+    &lt;small&gt;작은 글씨 (저작권 등)&lt;/small&gt;&lt;br&gt;
+    &lt;code&gt;console.log('코드')&lt;/code&gt;
+&lt;/p&gt;</code></pre>
+                        </div>
+                        <div class="tag-result">
+                            <p style="margin: 10px 0; line-height: 1.8;">
+                                <strong>중요한 내용</strong> (굵게, 의미적 강조)<br>
+                                <b>단순히 굵게</b> (시각적 효과만)<br>
+                                <em>강조하고 싶은 내용</em> (기울임, 의미적 강조)<br>
+                                <i>단순히 기울임</i> (시각적 효과만)<br>
+                                <mark>형광펜 효과</mark><br>
+                                <del>삭제된 텍스트</del><br>
+                                <ins>추가된 텍스트</ins><br>
+                                아래첨자 H<sub>2</sub>O<br>
+                                위첨자 E=mc<sup>2</sup><br>
+                                <small>작은 글씨 (저작권 등)</small><br>
+                                <code style="background: #f4f4f4; padding: 2px 4px;">console.log('코드')</code>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. 링크와 이미지 고급 활용 -->
+            <section class="tutorial-section">
+                <h2>🔗 링크와 이미지 고급 활용</h2>
+                
+                <div class="links-advanced">
+                    <h3>링크 타입별 활용법</h3>
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <pre><code>&lt;!-- 외부 링크 --&gt;
+&lt;a href="https://www.google.com" target="_blank" rel="noopener"&gt;
+    구글 (새 창에서 열기)
+&lt;/a&gt;
+
+&lt;!-- 내부 링크 --&gt;
+&lt;a href="css-tutorial.html"&gt;CSS 튜토리얼&lt;/a&gt;
+
+&lt;!-- 페이지 내 이동 --&gt;
+&lt;a href="#section1"&gt;섹션 1로 이동&lt;/a&gt;
+
+&lt;!-- 이메일 링크 --&gt;
+&lt;a href="mailto:contact@example.com?subject=문의&amp;body=안녕하세요"&gt;
+    이메일 보내기
+&lt;/a&gt;
+
+&lt;!-- 전화 링크 --&gt;
+&lt;a href="tel:+82-10-1234-5678"&gt;전화걸기&lt;/a&gt;
+
+&lt;!-- 파일 다운로드 --&gt;
+&lt;a href="document.pdf" download="내문서.pdf"&gt;PDF 다운로드&lt;/a&gt;</code></pre>
+                        </div>
+                        <div class="tag-result">
+                            <p style="line-height: 2;">
+                                <a href="https://www.google.com" target="_blank" rel="noopener" style="color: #007bff;">구글 (새 창에서 열기)</a><br>
+                                <a href="css-tutorial.html" style="color: #007bff;">CSS 튜토리얼</a><br>
+                                <a href="#section1" style="color: #007bff;">섹션 1로 이동</a><br>
+                                <a href="mailto:contact@example.com?subject=문의&body=안녕하세요" style="color: #007bff;">이메일 보내기</a><br>
+                                <a href="tel:+82-10-1234-5678" style="color: #007bff;">전화걸기</a><br>
+                                <a href="#" style="color: #007bff;">PDF 다운로드</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="images-advanced">
+                    <h3>이미지 완전 활용법</h3>
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <pre><code>&lt;!-- 기본 이미지 --&gt;
+&lt;img src="photo.jpg" alt="사진 설명" width="300" height="200"&gt;
+
+&lt;!-- 반응형 이미지 --&gt;
+&lt;img src="photo-large.jpg" 
+     srcset="photo-small.jpg 480w, photo-medium.jpg 800w, photo-large.jpg 1200w"
+     sizes="(max-width: 480px) 100vw, (max-width: 800px) 50vw, 25vw"
+     alt="반응형 이미지"&gt;
+
+&lt;!-- 이미지 맵 (클릭 가능한 영역) --&gt;
+&lt;img src="worldmap.jpg" alt="세계지도" usemap="#worldmap"&gt;
+&lt;map name="worldmap"&gt;
+    &lt;area shape="rect" coords="0,0,100,100" href="korea.html" alt="한국"&gt;
+    &lt;area shape="circle" coords="200,200,50" href="usa.html" alt="미국"&gt;
+&lt;/map&gt;
+
+&lt;!-- 이미지와 캡션 --&gt;
+&lt;figure&gt;
+    &lt;img src="sunset.jpg" alt="아름다운 석양"&gt;
+    &lt;figcaption&gt;제주도에서 본 아름다운 석양&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="image-tips">
+                        <h4>🎯 이미지 최적화 팁</h4>
+                        <ul>
+                            <li><strong>alt 속성</strong>: 항상 의미 있는 설명 작성</li>
+                            <li><strong>파일 크기</strong>: 웹용으로 압축 (보통 100KB 이하)</li>
+                            <li><strong>파일 형식</strong>: JPEG(사진), PNG(투명배경), WebP(최신)</li>
+                            <li><strong>로딩 최적화</strong>: loading="lazy" 속성 활용</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. 목록과 테이블 -->
+            <section class="tutorial-section">
+                <h2>📝 목록과 테이블 마스터하기</h2>
+                
+                <div class="lists-advanced">
+                    <h3>다양한 목록 활용법</h3>
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <pre><code>&lt;!-- 중첩된 순서 없는 목록 --&gt;
+&lt;ul&gt;
+    &lt;li&gt;프론트엔드
+        &lt;ul&gt;
+            &lt;li&gt;HTML&lt;/li&gt;
+            &lt;li&gt;CSS&lt;/li&gt;
+            &lt;li&gt;JavaScript&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;백엔드
+        &lt;ul&gt;
+            &lt;li&gt;Node.js&lt;/li&gt;
+            &lt;li&gt;Python&lt;/li&gt;
+            &lt;li&gt;Java&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- 설명 목록 --&gt;
+&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;웹페이지의 구조를 만드는 마크업 언어&lt;/dd&gt;
+    
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;웹페이지의 스타일을 꾸미는 언어&lt;/dd&gt;
+    
+    &lt;dt&gt;JavaScript&lt;/dt&gt;
+    &lt;dd&gt;웹페이지에 동적 기능을 추가하는 프로그래밍 언어&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                        </div>
+                        <div class="tag-result">
+                            <ul style="margin: 10px 0; padding-left: 20px;">
+                                <li>프론트엔드
+                                    <ul style="margin: 5px 0; padding-left: 20px;">
+                                        <li>HTML</li>
+                                        <li>CSS</li>
+                                        <li>JavaScript</li>
+                                    </ul>
+                                </li>
+                                <li>백엔드
+                                    <ul style="margin: 5px 0; padding-left: 20px;">
+                                        <li>Node.js</li>
+                                        <li>Python</li>
+                                        <li>Java</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            
+                            <dl style="margin: 15px 0;">
+                                <dt style="font-weight: bold; margin-top: 10px;">HTML</dt>
+                                <dd style="margin-left: 20px; margin-bottom: 10px;">웹페이지의 구조를 만드는 마크업 언어</dd>
+                                <dt style="font-weight: bold; margin-top: 10px;">CSS</dt>
+                                <dd style="margin-left: 20px; margin-bottom: 10px;">웹페이지의 스타일을 꾸미는 언어</dd>
+                                <dt style="font-weight: bold; margin-top: 10px;">JavaScript</dt>
+                                <dd style="margin-left: 20px; margin-bottom: 10px;">웹페이지에 동적 기능을 추가하는 프로그래밍 언어</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tables-complete">
+                    <h3>테이블 완전 정복</h3>
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <pre><code>&lt;table&gt;
+    &lt;caption&gt;2024년 웹 기술 학습 계획&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;월&lt;/th&gt;
+            &lt;th&gt;기술&lt;/th&gt;
+            &lt;th&gt;난이도&lt;/th&gt;
+            &lt;th&gt;완료율&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1월&lt;/td&gt;
+            &lt;td&gt;HTML&lt;/td&gt;
+            &lt;td&gt;초급&lt;/td&gt;
+            &lt;td&gt;100%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2월&lt;/td&gt;
+            &lt;td&gt;CSS&lt;/td&gt;
+            &lt;td&gt;중급&lt;/td&gt;
+            &lt;td&gt;80%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td rowspan="2"&gt;3월&lt;/td&gt;
+            &lt;td&gt;JavaScript&lt;/td&gt;
+            &lt;td&gt;고급&lt;/td&gt;
+            &lt;td&gt;60%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;React&lt;/td&gt;
+            &lt;td&gt;고급&lt;/td&gt;
+            &lt;td&gt;20%&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan="3"&gt;평균 완료율&lt;/td&gt;
+            &lt;td&gt;65%&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+                        </div>
+                        <div class="tag-result">
+                            <table style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+                                <caption style="font-weight: bold; margin-bottom: 10px;">2024년 웹 기술 학습 계획</caption>
+                                <thead>
+                                    <tr style="background-color: #f8f9fa;">
+                                        <th style="border: 1px solid #ddd; padding: 8px;">월</th>
+                                        <th style="border: 1px solid #ddd; padding: 8px;">기술</th>
+                                        <th style="border: 1px solid #ddd; padding: 8px;">난이도</th>
+                                        <th style="border: 1px solid #ddd; padding: 8px;">완료율</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">1월</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">HTML</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">초급</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">100%</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">2월</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">CSS</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">중급</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">80%</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2" style="border: 1px solid #ddd; padding: 8px; vertical-align: middle;">3월</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">JavaScript</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">고급</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">60%</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">React</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">고급</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">20%</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr style="background-color: #f8f9fa; font-weight: bold;">
+                                        <td colspan="3" style="border: 1px solid #ddd; padding: 8px;">평균 완료율</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">65%</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="table-tips">
+                        <h4>📊 테이블 구조 이해하기</h4>
+                        <ul>
+                            <li><strong>caption</strong>: 테이블 제목</li>
+                            <li><strong>thead</strong>: 헤더 영역</li>
+                            <li><strong>tbody</strong>: 데이터 영역</li>
+                            <li><strong>tfoot</strong>: 푸터 영역 (합계 등)</li>
+                            <li><strong>colspan</strong>: 열 병합</li>
+                            <li><strong>rowspan</strong>: 행 병합</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. 폼(Forms) 완전 정복 -->
+            <section class="tutorial-section">
+                <h2>📋 폼(Forms) 완전 정복</h2>
+                
+                <div class="forms-complete">
+                    <h3>회원가입 폼 만들기</h3>
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <pre><code>&lt;form action="/signup" method="post"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;개인정보&lt;/legend&gt;
+        
+        &lt;label for="username"&gt;사용자명 (필수):&lt;/label&gt;
+        &lt;input type="text" id="username" name="username" required&gt;
+        
+        &lt;label for="email"&gt;이메일 (필수):&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" required&gt;
+        
+        &lt;label for="password"&gt;비밀번호 (필수):&lt;/label&gt;
+        &lt;input type="password" id="password" name="password" 
+               minlength="8" required&gt;
+        
+        &lt;label for="birthdate"&gt;생년월일:&lt;/label&gt;
+        &lt;input type="date" id="birthdate" name="birthdate"&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;fieldset&gt;
+        &lt;legend&gt;선호사항&lt;/legend&gt;
+        
+        &lt;label&gt;성별:&lt;/label&gt;
+        &lt;input type="radio" id="male" name="gender" value="male"&gt;
+        &lt;label for="male"&gt;남성&lt;/label&gt;
+        &lt;input type="radio" id="female" name="gender" value="female"&gt;
+        &lt;label for="female"&gt;여성&lt;/label&gt;
+        
+        &lt;label&gt;관심분야 (복수선택 가능):&lt;/label&gt;
+        &lt;input type="checkbox" id="html" name="interests" value="html"&gt;
+        &lt;label for="html"&gt;HTML&lt;/label&gt;
+        &lt;input type="checkbox" id="css" name="interests" value="css"&gt;
+        &lt;label for="css"&gt;CSS&lt;/label&gt;
+        &lt;input type="checkbox" id="js" name="interests" value="js"&gt;
+        &lt;label for="js"&gt;JavaScript&lt;/label&gt;
+        
+        &lt;label for="country"&gt;국가:&lt;/label&gt;
+        &lt;select id="country" name="country"&gt;
+            &lt;option value=""&gt;선택하세요&lt;/option&gt;
+            &lt;option value="kr"&gt;한국&lt;/option&gt;
+            &lt;option value="us"&gt;미국&lt;/option&gt;
+            &lt;option value="jp"&gt;일본&lt;/option&gt;
+        &lt;/select&gt;
+        
+        &lt;label for="bio"&gt;자기소개:&lt;/label&gt;
+        &lt;textarea id="bio" name="bio" rows="4" cols="50" 
+                  placeholder="간단한 자기소개를 입력하세요"&gt;&lt;/textarea&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;fieldset&gt;
+        &lt;legend&gt;약관 동의&lt;/legend&gt;
+        &lt;input type="checkbox" id="terms" name="terms" required&gt;
+        &lt;label for="terms"&gt;이용약관에 동의합니다 (필수)&lt;/label&gt;
+        
+        &lt;input type="checkbox" id="newsletter" name="newsletter"&gt;
+        &lt;label for="newsletter"&gt;뉴스레터 수신에 동의합니다 (선택)&lt;/label&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;button type="submit"&gt;회원가입&lt;/button&gt;
+    &lt;button type="reset"&gt;초기화&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+                        <div class="tag-result">
+                            <form style="max-width: 500px; margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
+                                <fieldset style="margin-bottom: 20px; padding: 15px; border: 1px solid #ccc;">
+                                    <legend style="font-weight: bold; padding: 0 10px;">개인정보</legend>
+                                    
+                                    <div style="margin-bottom: 15px;">
+                                        <label for="demo-username" style="display: block; margin-bottom: 5px;">사용자명 (필수):</label>
+                                        <input type="text" id="demo-username" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 3px;">
+                                    </div>
+                                    
+                                    <div style="margin-bottom: 15px;">
+                                        <label for="demo-email" style="display: block; margin-bottom: 5px;">이메일 (필수):</label>
+                                        <input type="email" id="demo-email" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 3px;">
+                                    </div>
+                                    
+                                    <div style="margin-bottom: 15px;">
+                                        <label for="demo-password" style="display: block; margin-bottom: 5px;">비밀번호 (필수):</label>
+                                        <input type="password" id="demo-password" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 3px;">
+                                    </div>
+                                    
+                                    <div style="margin-bottom: 15px;">
+                                        <label for="demo-birthdate" style="display: block; margin-bottom: 5px;">생년월일:</label>
+                                        <input type="date" id="demo-birthdate" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 3px;">
+                                    </div>
+                                </fieldset>
+                                
+                                <fieldset style="margin-bottom: 20px; padding: 15px; border: 1px solid #ccc;">
+                                    <legend style="font-weight: bold; padding: 0 10px;">선호사항</legend>
+                                    
+                                    <div style="margin-bottom: 15px;">
+                                        <label style="display: block; margin-bottom: 5px;">성별:</label>
+                                        <input type="radio" id="demo-male" name="demo-gender" style="margin-right: 5px;">
+                                        <label for="demo-male" style="margin-right: 15px;">남성</label>
+                                        <input type="radio" id="demo-female" name="demo-gender" style="margin-right: 5px;">
+                                        <label for="demo-female">여성</label>
+                                    </div>
+                                    
+                                    <div style="margin-bottom: 15px;">
+                                        <label style="display: block; margin-bottom: 5px;">관심분야:</label>
+                                        <input type="checkbox" id="demo-html" style="margin-right: 5px;">
+                                        <label for="demo-html" style="margin-right: 15px;">HTML</label>
+                                        <input type="checkbox" id="demo-css" style="margin-right: 5px;">
+                                        <label for="demo-css" style="margin-right: 15px;">CSS</label>
+                                        <input type="checkbox" id="demo-js" style="margin-right: 5px;">
+                                        <label for="demo-js">JavaScript</label>
+                                    </div>
+                                    
+                                    <div style="margin-bottom: 15px;">
+                                        <label for="demo-country" style="display: block; margin-bottom: 5px;">국가:</label>
+                                        <select id="demo-country" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 3px;">
+                                            <option>선택하세요</option>
+                                            <option>한국</option>
+                                            <option>미국</option>
+                                            <option>일본</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div style="margin-bottom: 15px;">
+                                        <label for="demo-bio" style="display: block; margin-bottom: 5px;">자기소개:</label>
+                                        <textarea id="demo-bio" rows="4" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 3px;" placeholder="간단한 자기소개를 입력하세요"></textarea>
+                                    </div>
+                                </fieldset>
+                                
+                                <div style="margin-bottom: 20px;">
+                                    <input type="checkbox" id="demo-terms" style="margin-right: 5px;">
+                                    <label for="demo-terms">이용약관에 동의합니다 (필수)</label><br>
+                                    <input type="checkbox" id="demo-newsletter" style="margin-right: 5px; margin-top: 10px;">
+                                    <label for="demo-newsletter">뉴스레터 수신에 동의합니다 (선택)</label>
+                                </div>
+                                
+                                <button type="button" style="padding: 10px 20px; margin-right: 10px; background-color: #007bff; color: white; border: none; border-radius: 3px; cursor: pointer;">회원가입</button>
+                                <button type="button" style="padding: 10px 20px; background-color: #6c757d; color: white; border: none; border-radius: 3px; cursor: pointer;">초기화</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="form-tips">
+                        <h4>📋 폼 구성 요소 설명</h4>
+                        <ul>
+                            <li><strong>fieldset + legend</strong>: 관련 입력 요소들을 그룹화</li>
+                            <li><strong>label</strong>: 입력 요소의 설명 (for 속성으로 연결)</li>
+                            <li><strong>input type="text"</strong>: 일반 텍스트 입력</li>
+                            <li><strong>input type="email"</strong>: 이메일 형식 검증</li>
+                            <li><strong>input type="password"</strong>: 비밀번호 (숨김 표시)</li>
+                            <li><strong>input type="radio"</strong>: 단일 선택</li>
+                            <li><strong>input type="checkbox"</strong>: 다중 선택</li>
+                            <li><strong>select + option</strong>: 드롭다운 목록</li>
+                            <li><strong>textarea</strong>: 여러 줄 텍스트 입력</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. 멀티미디어 -->
+            <section class="tutorial-section">
+                <h2>🎵 멀티미디어 활용</h2>
+                
+                <div class="multimedia-section">
+                    <h3>오디오와 비디오</h3>
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <pre><code>&lt;!-- 오디오 --&gt;
+&lt;audio controls&gt;
+    &lt;source src="music.mp3" type="audio/mpeg"&gt;
+    &lt;source src="music.ogg" type="audio/ogg"&gt;
+    브라우저가 오디오를 지원하지 않습니다.
+&lt;/audio&gt;
+
+&lt;!-- 비디오 --&gt;
+&lt;video width="400" height="300" controls poster="thumbnail.jpg"&gt;
+    &lt;source src="movie.mp4" type="video/mp4"&gt;
+    &lt;source src="movie.webm" type="video/webm"&gt;
+    &lt;track src="subtitles.vtt" kind="subtitles" srclang="ko" label="한국어"&gt;
+    브라우저가 비디오를 지원하지 않습니다.
+&lt;/video&gt;
+
+&lt;!-- YouTube 임베드 --&gt;
+&lt;iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/VIDEO_ID" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen&gt;
+&lt;/iframe&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="multimedia-tips">
+                        <h4>🎬 멀티미디어 최적화 팁</h4>
+                        <ul>
+                            <li><strong>여러 포맷 제공</strong>: 브라우저 호환성을 위해</li>
+                            <li><strong>controls 속성</strong>: 재생 컨트롤 표시</li>
+                            <li><strong>poster 속성</strong>: 비디오 썸네일 이미지</li>
+                            <li><strong>자막 지원</strong>: track 태그로 접근성 향상</li>
+                            <li><strong>적절한 크기</strong>: 파일 크기와 품질의 균형</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 다음 단계 안내 -->
+            <div class="next-steps">
+                <h2>🎊 HTML 중급편을 완주하셨습니다!</h2>
+                <p>이제 고급 기능과 최신 웹 표준을 배워볼 차례입니다.</p>
+                
+                <div class="next-level-cards">
+                    <div class="next-card">
+                        <h3>🌳 HTML 고급편</h3>
+                        <p>시맨틱 HTML, SEO, 웹 접근성을 배워보세요</p>
+                        <a href="html-advanced.html" class="next-btn">고급편 시작하기</a>
+                    </div>
+                    
+                    <div class="next-card">
+                        <h3>🎨 CSS 배우기</h3>
+                        <p>웹페이지를 아름답게 꾸며보세요</p>
+                        <a href="css-tutorial.html" class="next-btn">CSS 시작하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>WebLearn</h3>
+                <p>HTML, CSS, JavaScript를 쉽게 배우는 온라인 튜토리얼</p>
+            </div>
+            <div class="footer-section">
+                <h4>학습 과정</h4>
+                <ul>
+                    <li><a href="html-beginner.html">HTML 초급편</a></li>
+                    <li><a href="html-intermediate.html">HTML 중급편</a></li>
+                    <li><a href="html-advanced.html">HTML 고급편</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>실습</h4>
+                <ul>
+                    <li><a href="practice.html">코드 에디터</a></li>
+                    <li><a href="quiz.html">퀴즈</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 WebLearn. 모든 권리 보유.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+</rewritten_file>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HTML 기초부터 고급까지 체계적으로 배우는 튜토리얼">
-    <title>HTML 튜토리얼 - WebLearn</title>
+    <meta name="description" content="HTML 학습 단계를 선택하여 체계적으로 배우는 튜토리얼">
+    <title>HTML 학습 - WebLearn</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -49,209 +49,133 @@
 
     <!-- 메인 콘텐츠 -->
     <main class="main">
-        <div class="tutorial-container">
-            <!-- 사이드바 -->
-            <aside class="sidebar">
-                <div class="sidebar-content">
-                    <h3>HTML 목차</h3>
-                    <nav class="tutorial-nav">
-                        <ul>
-                            <li><a href="#intro" class="tutorial-link active">HTML 소개</a></li>
-                            <li><a href="#basic-structure" class="tutorial-link">기본 구조</a></li>
-                            <li><a href="#common-tags" class="tutorial-link">기본 태그들</a></li>
-                            <li><a href="#attributes" class="tutorial-link">속성(Attributes)</a></li>
-                            <li><a href="#text-formatting" class="tutorial-link">텍스트 서식</a></li>
-                            <li><a href="#links" class="tutorial-link">링크와 이미지</a></li>
-                            <li><a href="#lists" class="tutorial-link">목록</a></li>
-                            <li><a href="#tables" class="tutorial-link">테이블</a></li>
-                            <li><a href="#forms" class="tutorial-link">폼(Forms)</a></li>
-                            <li><a href="#semantic" class="tutorial-link">시맨틱 HTML</a></li>
-                        </ul>
-                    </nav>
-                    <div class="progress-section">
-                        <h4>학습 진도</h4>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%"></div>
+        <div class="tutorial-container full-width">
+            <!-- HTML 학습 레벨 선택 -->
+            <div class="level-selector">
+                <h2>HTML 학습 단계를 선택하세요</h2>
+                <p class="level-description">체계적인 단계별 학습으로 HTML을 완전히 마스터하세요!</p>
+                
+                <div class="level-cards">
+                    <div class="level-card beginner">
+                        <div class="level-icon">🌱</div>
+                        <h3>초급편</h3>
+                        <p class="level-subtitle">HTML 기초부터 차근차근</p>
+                        <div class="level-topics">
+                            <span>HTML이란 무엇인가?</span>
+                            <span>기본 문법과 구조</span>
+                            <span>기본 태그 활용법</span>
+                            <span>첫 웹페이지 만들기</span>
                         </div>
-                        <span class="progress-text">0% 완료</span>
+                        <div class="level-stats">
+                            <span>📚 8개 챕터</span>
+                            <span>⏱️ 2-3시간</span>
+                            <span>🎯 완전 초보자</span>
+                        </div>
+                        <a href="html-beginner.html" class="level-btn primary">초급편 시작하기</a>
+                    </div>
+                    
+                    <div class="level-card intermediate">
+                        <div class="level-icon">🌿</div>
+                        <h3>중급편</h3>
+                        <p class="level-subtitle">실무에 필요한 핵심 기능들</p>
+                        <div class="level-topics">
+                            <span>고급 텍스트 서식</span>
+                            <span>폼과 입력 요소</span>
+                            <span>테이블 완전 정복</span>
+                            <span>멀티미디어 활용</span>
+                        </div>
+                        <div class="level-stats">
+                            <span>📚 5개 챕터</span>
+                            <span>⏱️ 3-4시간</span>
+                            <span>🎯 기초 완료자</span>
+                        </div>
+                        <a href="html-intermediate.html" class="level-btn secondary">중급편 시작하기</a>
+                    </div>
+                    
+                    <div class="level-card advanced">
+                        <div class="level-icon">🌳</div>
+                        <h3>고급편</h3>
+                        <p class="level-subtitle">전문가 수준의 고급 기술</p>
+                        <div class="level-topics">
+                            <span>시맨틱 HTML</span>
+                            <span>SEO 최적화</span>
+                            <span>웹 접근성</span>
+                            <span>최신 HTML5 기능</span>
+                        </div>
+                        <div class="level-stats">
+                            <span>📚 4개 챕터</span>
+                            <span>⏱️ 4-5시간</span>
+                            <span>🎯 중급 완료자</span>
+                        </div>
+                        <a href="html-advanced.html" class="level-btn advanced-btn">고급편 시작하기</a>
                     </div>
                 </div>
-            </aside>
-
-            <!-- 튜토리얼 콘텐츠 -->
-            <div class="tutorial-content">
-                <!-- HTML 소개 -->
-                <section id="intro" class="tutorial-section">
-                    <h1>HTML 튜토리얼</h1>
-                    <h2>HTML이란 무엇인가요?</h2>
-                    <p>
-                        HTML(HyperText Markup Language)은 웹 페이지의 구조를 만드는 마크업 언어입니다. 
-                        HTML은 웹 브라우저에게 콘텐츠를 어떻게 표시할지 알려주는 역할을 합니다.
-                    </p>
-                    
-                    <div class="info-box">
-                        <h3>💡 알아두면 좋은 점</h3>
-                        <ul>
-                            <li>HTML은 프로그래밍 언어가 아닌 마크업 언어입니다</li>
-                            <li>모든 웹사이트의 기본 구조를 담당합니다</li>
-                            <li>배우기 쉽고 즉시 결과를 확인할 수 있습니다</li>
-                        </ul>
-                    </div>
-
-                    <div class="example-box">
-                        <h4>간단한 HTML 예제</h4>
-                        <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;내 첫 번째 웹페이지&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;안녕하세요!&lt;/h1&gt;
-    &lt;p&gt;이것은 내 첫 번째 HTML 페이지입니다.&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-                    </div>
-                </section>
-
-                <!-- 기본 구조 -->
-                <section id="basic-structure" class="tutorial-section">
-                    <h2>HTML 문서의 기본 구조</h2>
-                    <p>모든 HTML 문서는 다음과 같은 기본 구조를 가집니다:</p>
-
-                    <div class="structure-explanation">
-                        <div class="code-block">
-                            <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="ko"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;페이지 제목&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- 여기에 콘텐츠가 들어갑니다 --&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-                        </div>
-                        
-                        <div class="explanation-list">
-                            <div class="explanation-item">
-                                <strong>&lt;!DOCTYPE html&gt;</strong>
-                                <p>HTML5 문서임을 선언합니다</p>
-                            </div>
-                            <div class="explanation-item">
-                                <strong>&lt;html&gt;</strong>
-                                <p>HTML 문서의 루트 요소입니다</p>
-                            </div>
-                            <div class="explanation-item">
-                                <strong>&lt;head&gt;</strong>
-                                <p>문서의 메타정보를 포함합니다</p>
-                            </div>
-                            <div class="explanation-item">
-                                <strong>&lt;body&gt;</strong>
-                                <p>실제 웹페이지에 표시될 콘텐츠를 포함합니다</p>
+                
+                <div class="learning-path-visual">
+                    <h3>🗺️ 학습 로드맵</h3>
+                    <div class="roadmap">
+                        <div class="roadmap-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>초급편 (2-3시간)</h4>
+                                <p>HTML 기초 개념과 기본 태그들을 배웁니다</p>
                             </div>
                         </div>
-                    </div>
-                </section>
-
-                <!-- 기본 태그들 -->
-                <section id="common-tags" class="tutorial-section">
-                    <h2>자주 사용하는 HTML 태그들</h2>
-                    
-                    <div class="tags-grid">
-                        <div class="tag-item">
-                            <h4>&lt;h1&gt; ~ &lt;h6&gt;</h4>
-                            <p>제목 태그 (크기 순서대로)</p>
-                            <div class="tag-example">
-                                <code>&lt;h1&gt;가장 큰 제목&lt;/h1&gt;</code>
+                        <div class="roadmap-arrow">→</div>
+                        <div class="roadmap-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>중급편 (3-4시간)</h4>
+                                <p>폼, 테이블, 멀티미디어 등 실무 기능을 익힙니다</p>
                             </div>
                         </div>
-
-                        <div class="tag-item">
-                            <h4>&lt;p&gt;</h4>
-                            <p>문단(paragraph) 태그</p>
-                            <div class="tag-example">
-                                <code>&lt;p&gt;이것은 문단입니다.&lt;/p&gt;</code>
+                        <div class="roadmap-arrow">→</div>
+                        <div class="roadmap-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>고급편 (4-5시간)</h4>
+                                <p>시맨틱 HTML, SEO, 접근성 등 전문 기술을 마스터합니다</p>
                             </div>
-                        </div>
-
-                        <div class="tag-item">
-                            <h4>&lt;br&gt;</h4>
-                            <p>줄바꿈 태그</p>
-                            <div class="tag-example">
-                                <code>첫 번째 줄&lt;br&gt;두 번째 줄</code>
-                            </div>
-                        </div>
-
-                        <div class="tag-item">
-                            <h4>&lt;div&gt;</h4>
-                            <p>구역을 나누는 컨테이너 태그</p>
-                            <div class="tag-example">
-                                <code>&lt;div&gt;콘텐츠 그룹&lt;/div&gt;</code>
-                            </div>
-                        </div>
-
-                        <div class="tag-item">
-                            <h4>&lt;span&gt;</h4>
-                            <p>인라인 요소를 그룹화하는 태그</p>
-                            <div class="tag-example">
-                                <code>&lt;span&gt;특별한 텍스트&lt;/span&gt;</code>
-                            </div>
-                        </div>
-
-                        <div class="tag-item">
-                            <h4>&lt;strong&gt;</h4>
-                            <p>중요한 텍스트 (굵게 표시)</p>
-                            <div class="tag-example">
-                                <code>&lt;strong&gt;중요한 내용&lt;/strong&gt;</code>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 실습 버튼 -->
-                <div class="practice-section">
-                    <h3>🚀 지금까지 배운 내용을 실습해보세요!</h3>
-                    <p>HTML 태그들을 직접 사용해보고 결과를 확인해보세요.</p>
-                    <a href="practice.html?topic=html-basic" class="btn btn-primary">HTML 기초 실습하기</a>
-                </div>
-
-                <!-- 다음 단계 -->
-                <div class="next-section">
-                    <div class="next-content">
-                        <h3>다음 학습</h3>
-                        <p>HTML 속성(Attributes)에 대해 배워보세요</p>
-                        <a href="#attributes" class="btn btn-outline">속성 배우기</a>
-                    </div>
-                    <div class="progress-info">
-                        <span>진도: 30%</span>
-                        <div class="mini-progress">
-                            <div class="mini-progress-fill" style="width: 30%"></div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </main>
 
     <!-- 푸터 -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>WebLearn</h3>
-                    <p>웹 개발을 배우는 가장 쉬운 방법</p>
-                </div>
-                <div class="footer-section">
-                    <h4>학습 과정</h4>
-                    <ul>
-                        <li><a href="html-tutorial.html">HTML 튜토리얼</a></li>
-                        <li><a href="css-tutorial.html">CSS 튜토리얼</a></li>
-                        <li><a href="js-tutorial.html">JavaScript 튜토리얼</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>도구</h4>
-                    <ul>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>WebLearn</h3>
+                <p>HTML, CSS, JavaScript를 쉽게 배우는 온라인 튜토리얼</p>
+            </div>
+            <div class="footer-section">
+                <h4>HTML 학습 과정</h4>
+                <ul>
+                    <li><a href="html-beginner.html">HTML 초급편</a></li>
+                    <li><a href="html-intermediate.html">HTML 중급편</a></li>
+                    <li><a href="html-advanced.html">HTML 고급편</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>실습</h4>
+                <ul>
+                    <li><a href="practice.html">코드 에디터</a></li>
+                    <li><a href="quiz.html">퀴즈</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 WebLearn. 모든 권리 보유.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
                         <li><a href="practice.html">코드 실습</a></li>
                         <li><a href="quiz.html">퀴즈</a></li>
                     </ul>

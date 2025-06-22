@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML 고급편 - 시맨틱 HTML, SEO 최적화, 웹 접근성까지">
+    <title>HTML 고급편 - WebLearn</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 헤더 및 네비게이션 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">WebLearn</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">홈</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="html-tutorial.html" class="nav-link active">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="css-tutorial.html" class="nav-link">CSS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="js-tutorial.html" class="nav-link">JavaScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="deployment-tutorial.html" class="nav-link">배포하기</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="practice.html" class="nav-link">실습</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="quiz.html" class="nav-link">퀴즈</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main">
+        <div class="tutorial-container full-width">
+            <!-- 튜토리얼 헤더 -->
+            <div class="tutorial-header">
+                <h1>🌳 HTML 고급편</h1>
+                <p class="subtitle">시맨틱 HTML, SEO 최적화, 웹 접근성까지</p>
+                <div class="learning-path">
+                    <span class="path-item">초급편</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-item">중급편</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-item active">고급편</span>
+                </div>
+            </div>
+
+            <!-- 1. 시맨틱 HTML -->
+            <section class="tutorial-section">
+                <h2>🏗️ 시맨틱 HTML 마스터하기</h2>
+                
+                <div class="semantic-intro">
+                    <h3>시맨틱 HTML이란?</h3>
+                    <p><strong>시맨틱(Semantic)</strong>은 '의미가 있는'이라는 뜻입니다. 시맨틱 HTML은 각 태그가 명확한 의미를 가지도록 구조화하는 것입니다.</p>
+                    
+                    <div class="comparison">
+                        <div class="bad-example">
+                            <h4>❌ 의미 없는 구조</h4>
+                            <pre><code>&lt;div class="header"&gt;
+    &lt;div class="logo"&gt;사이트명&lt;/div&gt;
+    &lt;div class="menu"&gt;메뉴&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="content"&gt;
+    &lt;div class="main"&gt;메인 콘텐츠&lt;/div&gt;
+    &lt;div class="sidebar"&gt;사이드바&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="footer"&gt;푸터&lt;/div&gt;</code></pre>
+                        </div>
+                        <div class="good-example">
+                            <h4>✅ 시맨틱 구조</h4>
+                            <pre><code>&lt;header&gt;
+    &lt;h1&gt;사이트명&lt;/h1&gt;
+    &lt;nav&gt;메뉴&lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;article&gt;메인 콘텐츠&lt;/article&gt;
+    &lt;aside&gt;사이드바&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;푸터&lt;/footer&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="semantic-tags">
+                    <h3>주요 시맨틱 태그들</h3>
+                    <div class="tags-grid">
+                        <div class="tag-card">
+                            <h4>&lt;header&gt;</h4>
+                            <p>페이지나 섹션의 헤더</p>
+                            <div class="usage">로고, 제목, 네비게이션</div>
+                        </div>
+                        <div class="tag-card">
+                            <h4>&lt;nav&gt;</h4>
+                            <p>네비게이션 링크 그룹</p>
+                            <div class="usage">메뉴, 목차, 브레드크럼</div>
+                        </div>
+                        <div class="tag-card">
+                            <h4>&lt;main&gt;</h4>
+                            <p>페이지의 주요 콘텐츠</p>
+                            <div class="usage">페이지당 하나만 사용</div>
+                        </div>
+                        <div class="tag-card">
+                            <h4>&lt;article&gt;</h4>
+                            <p>독립적인 콘텐츠</p>
+                            <div class="usage">블로그 포스트, 뉴스 기사</div>
+                        </div>
+                        <div class="tag-card">
+                            <h4>&lt;section&gt;</h4>
+                            <p>관련 콘텐츠 그룹</p>
+                            <div class="usage">장, 절, 탭 콘텐츠</div>
+                        </div>
+                        <div class="tag-card">
+                            <h4>&lt;aside&gt;</h4>
+                            <p>부가적인 콘텐츠</p>
+                            <div class="usage">사이드바, 광고, 관련 링크</div>
+                        </div>
+                        <div class="tag-card">
+                            <h4>&lt;footer&gt;</h4>
+                            <p>페이지나 섹션의 푸터</p>
+                            <div class="usage">저작권, 연락처, 링크</div>
+                        </div>
+                        <div class="tag-card">
+                            <h4>&lt;figure&gt;</h4>
+                            <p>독립적인 콘텐츠</p>
+                            <div class="usage">이미지, 다이어그램, 코드</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="semantic-example">
+                    <h3>완전한 시맨틱 페이지 구조</h3>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;블로그 - 웹 개발 이야기&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;웹 개발 블로그&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;홈&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;글 목록&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;소개&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;header&gt;
+                &lt;h2&gt;HTML 시맨틱 태그의 중요성&lt;/h2&gt;
+                &lt;p&gt;&lt;time datetime="2024-01-15"&gt;2024년 1월 15일&lt;/time&gt;&lt;/p&gt;
+            &lt;/header&gt;
+            
+            &lt;section&gt;
+                &lt;h3&gt;시맨틱 태그란?&lt;/h3&gt;
+                &lt;p&gt;시맨틱 태그는 의미를 가진 HTML 태그입니다...&lt;/p&gt;
+            &lt;/section&gt;
+            
+            &lt;section&gt;
+                &lt;h3&gt;사용법&lt;/h3&gt;
+                &lt;figure&gt;
+                    &lt;img src="semantic-example.jpg" alt="시맨틱 구조 예제"&gt;
+                    &lt;figcaption&gt;시맨틱 HTML 구조 예시&lt;/figcaption&gt;
+                &lt;/figure&gt;
+            &lt;/section&gt;
+            
+            &lt;footer&gt;
+                &lt;p&gt;작성자: 홍길동&lt;/p&gt;
+                &lt;p&gt;태그: &lt;a href="#"&gt;HTML&lt;/a&gt;, &lt;a href="#"&gt;시맨틱&lt;/a&gt;&lt;/p&gt;
+            &lt;/footer&gt;
+        &lt;/article&gt;
+        
+        &lt;aside&gt;
+            &lt;h3&gt;관련 글&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;CSS 기초 가이드&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;JavaScript 시작하기&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2024 웹 개발 블로그. 모든 권리 보유.&lt;/p&gt;
+        &lt;address&gt;
+            연락처: &lt;a href="mailto:contact@blog.com"&gt;contact@blog.com&lt;/a&gt;
+        &lt;/address&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- 2. SEO 최적화 -->
+            <section class="tutorial-section">
+                <h2>🔍 SEO 최적화 완전 가이드</h2>
+                
+                <div class="seo-intro">
+                    <h3>SEO란 무엇인가요?</h3>
+                    <p><strong>SEO(Search Engine Optimization)</strong>는 검색엔진 최적화를 의미합니다. 구글, 네이버 등에서 웹페이지가 잘 검색되도록 하는 기술입니다.</p>
+                </div>
+
+                <div class="meta-tags">
+                    <h3>필수 메타 태그들</h3>
+                    <pre><code>&lt;head&gt;
+    &lt;!-- 기본 메타 태그 --&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;페이지 제목 - 사이트명&lt;/title&gt;
+    &lt;meta name="description" content="페이지 설명 (150자 이내)"&gt;
+    &lt;meta name="keywords" content="키워드1, 키워드2, 키워드3"&gt;
+    &lt;meta name="author" content="작성자명"&gt;
+    
+    &lt;!-- Open Graph (소셜 미디어) --&gt;
+    &lt;meta property="og:title" content="페이지 제목"&gt;
+    &lt;meta property="og:description" content="페이지 설명"&gt;
+    &lt;meta property="og:image" content="https://example.com/image.jpg"&gt;
+    &lt;meta property="og:url" content="https://example.com/page"&gt;
+    &lt;meta property="og:type" content="website"&gt;
+    
+    &lt;!-- Twitter Card --&gt;
+    &lt;meta name="twitter:card" content="summary_large_image"&gt;
+    &lt;meta name="twitter:title" content="페이지 제목"&gt;
+    &lt;meta name="twitter:description" content="페이지 설명"&gt;
+    &lt;meta name="twitter:image" content="https://example.com/image.jpg"&gt;
+    
+    &lt;!-- 검색엔진 지시사항 --&gt;
+    &lt;meta name="robots" content="index, follow"&gt;
+    &lt;link rel="canonical" href="https://example.com/page"&gt;
+&lt;/head&gt;</code></pre>
+                </div>
+
+                <div class="structured-data">
+                    <h3>구조화된 데이터 (Schema.org)</h3>
+                    <p>검색엔진이 콘텐츠를 더 잘 이해할 수 있도록 도와주는 마크업입니다.</p>
+                    <pre><code>&lt;article itemscope itemtype="https://schema.org/BlogPosting"&gt;
+    &lt;header&gt;
+        &lt;h1 itemprop="headline"&gt;블로그 포스트 제목&lt;/h1&gt;
+        &lt;p&gt;
+            작성자: &lt;span itemprop="author"&gt;홍길동&lt;/span&gt; | 
+            작성일: &lt;time itemprop="datePublished" datetime="2024-01-15"&gt;2024년 1월 15일&lt;/time&gt;
+        &lt;/p&gt;
+    &lt;/header&gt;
+    
+    &lt;div itemprop="articleBody"&gt;
+        &lt;p&gt;블로그 포스트 내용...&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;카테고리: &lt;span itemprop="about"&gt;웹 개발&lt;/span&gt;&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;</code></pre>
+                </div>
+
+                <div class="seo-checklist">
+                    <h3>SEO 체크리스트</h3>
+                    <div class="checklist">
+                        <div class="check-item">
+                            <input type="checkbox" id="title-check">
+                            <label for="title-check">제목 태그가 60자 이내이고 키워드를 포함하는가?</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="desc-check">
+                            <label for="desc-check">메타 설명이 150자 이내이고 매력적인가?</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="h1-check">
+                            <label for="h1-check">h1 태그가 페이지당 하나이고 키워드를 포함하는가?</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="heading-check">
+                            <label for="heading-check">제목 태그들이 계층 구조를 이루는가?</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="alt-check">
+                            <label for="alt-check">모든 이미지에 alt 속성이 있는가?</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="internal-check">
+                            <label for="internal-check">내부 링크가 적절히 연결되어 있는가?</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="mobile-check">
+                            <label for="mobile-check">모바일 친화적인가?</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="speed-check">
+                            <label for="speed-check">페이지 로딩 속도가 빠른가?</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. 웹 접근성 -->
+            <section class="tutorial-section">
+                <h2>♿ 웹 접근성 완전 가이드</h2>
+                
+                <div class="accessibility-intro">
+                    <h3>웹 접근성이란?</h3>
+                    <p>모든 사용자가 신체적 제약이나 기술적 환경에 관계없이 웹을 이용할 수 있도록 하는 것입니다.</p>
+                    
+                    <div class="accessibility-benefits">
+                        <h4>웹 접근성의 이점</h4>
+                        <ul>
+                            <li>시각 장애인도 스크린 리더로 웹사이트 이용 가능</li>
+                            <li>키보드만으로도 모든 기능 사용 가능</li>
+                            <li>색맹 사용자도 정보 구분 가능</li>
+                            <li>느린 인터넷 환경에서도 이용 가능</li>
+                            <li>SEO 향상 효과</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="aria-attributes">
+                    <h3>ARIA 속성 활용하기</h3>
+                    <p>ARIA(Accessible Rich Internet Applications)는 스크린 리더 등 보조 기술에 추가 정보를 제공합니다.</p>
+                    
+                    <div class="aria-examples">
+                        <h4>주요 ARIA 속성들</h4>
+                        <pre><code>&lt;!-- 역할 정의 --&gt;
+&lt;div role="button" tabindex="0"&gt;클릭 가능한 영역&lt;/div&gt;
+&lt;nav role="navigation"&gt;네비게이션&lt;/nav&gt;
+&lt;main role="main"&gt;주요 콘텐츠&lt;/main&gt;
+
+&lt;!-- 라벨 제공 --&gt;
+&lt;button aria-label="메뉴 열기"&gt;☰&lt;/button&gt;
+&lt;input type="search" aria-labelledby="search-label"&gt;
+&lt;label id="search-label"&gt;검색어 입력&lt;/label&gt;
+
+&lt;!-- 상태 표시 --&gt;
+&lt;button aria-expanded="false"&gt;드롭다운 메뉴&lt;/button&gt;
+&lt;div aria-hidden="true"&gt;숨겨진 콘텐츠&lt;/div&gt;
+&lt;div aria-live="polite"&gt;동적 업데이트 영역&lt;/div&gt;
+
+&lt;!-- 관계 설정 --&gt;
+&lt;input type="password" aria-describedby="pwd-help"&gt;
+&lt;div id="pwd-help"&gt;8자 이상 입력하세요&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="keyboard-navigation">
+                    <h3>키보드 네비게이션</h3>
+                    <p>마우스 없이도 모든 기능을 사용할 수 있어야 합니다.</p>
+                    
+                    <div class="keyboard-examples">
+                        <h4>키보드 접근성 구현</h4>
+                        <pre><code>&lt;!-- 탭 순서 설정 --&gt;
+&lt;input type="text" tabindex="1"&gt;
+&lt;button tabindex="2"&gt;버튼&lt;/button&gt;
+&lt;div tabindex="0"&gt;포커스 가능한 div&lt;/div&gt;
+&lt;div tabindex="-1"&gt;프로그램으로만 포커스 가능&lt;/div&gt;
+
+&lt;!-- 스킵 링크 --&gt;
+&lt;a href="#main-content" class="skip-link"&gt;본문으로 바로가기&lt;/a&gt;
+
+&lt;!-- 포커스 표시 --&gt;
+&lt;style&gt;
+.focus-visible {
+    outline: 2px solid #005fcc;
+    outline-offset: 2px;
+}
+&lt;/style&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="accessibility-checklist">
+                    <h3>접근성 체크리스트</h3>
+                    <div class="checklist">
+                        <div class="check-item">
+                            <input type="checkbox" id="alt-images">
+                            <label for="alt-images">모든 이미지에 적절한 alt 텍스트가 있는가?</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="keyboard-nav">
+                            <label for="keyboard-nav">키보드만으로 모든 기능을 사용할 수 있는가?</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="color-contrast">
+                            <label for="color-contrast">색상 대비비가 4.5:1 이상인가?</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="form-labels">
+                            <label for="form-labels">모든 폼 요소에 라벨이 있는가?</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="heading-structure">
+                            <label for="heading-structure">제목 구조가 논리적인가?</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" id="focus-visible">
+                            <label for="focus-visible">포커스 상태가 명확히 보이는가?</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. 최신 HTML5 기능 -->
+            <section class="tutorial-section">
+                <h2>🚀 최신 HTML5 기능들</h2>
+                
+                <div class="html5-apis">
+                    <h3>HTML5 API들</h3>
+                    
+                    <div class="api-example">
+                        <h4>Geolocation API</h4>
+                        <pre><code>&lt;button onclick="getLocation()"&gt;내 위치 확인&lt;/button&gt;
+&lt;p id="location"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        document.getElementById("location").innerHTML = 
+            "Geolocation을 지원하지 않습니다.";
+    }
+}
+
+function showPosition(position) {
+    document.getElementById("location").innerHTML = 
+        "위도: " + position.coords.latitude + 
+        ", 경도: " + position.coords.longitude;
+}
+&lt;/script&gt;</code></pre>
+                    </div>
+
+                    <div class="api-example">
+                        <h4>Web Storage</h4>
+                        <pre><code>&lt;input type="text" id="nameInput" placeholder="이름 입력"&gt;
+&lt;button onclick="saveName()"&gt;저장&lt;/button&gt;
+&lt;button onclick="loadName()"&gt;불러오기&lt;/button&gt;
+&lt;p id="savedName"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function saveName() {
+    const name = document.getElementById('nameInput').value;
+    localStorage.setItem('userName', name);
+    alert('저장되었습니다!');
+}
+
+function loadName() {
+    const name = localStorage.getItem('userName');
+    document.getElementById('savedName').innerHTML = 
+        name ? '저장된 이름: ' + name : '저장된 이름이 없습니다.';
+}
+&lt;/script&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="progressive-enhancement">
+                    <h3>점진적 향상 (Progressive Enhancement)</h3>
+                    <p>기본 기능은 모든 브라우저에서 작동하고, 최신 브라우저에서는 향상된 기능을 제공하는 방식입니다.</p>
+                    
+                    <pre><code>&lt;!-- 기본 폼 --&gt;
+&lt;form action="/submit" method="post"&gt;
+    &lt;input type="email" name="email" required&gt;
+    &lt;input type="date" name="date"&gt;
+    &lt;input type="range" name="rating" min="1" max="5"&gt;
+    &lt;button type="submit"&gt;제출&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;!-- JavaScript로 향상된 기능 추가 --&gt;
+&lt;script&gt;
+// 최신 브라우저에서만 실행
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+}
+
+// 오프라인 감지
+window.addEventListener('online', function() {
+    document.body.classList.remove('offline');
+});
+
+window.addEventListener('offline', function() {
+    document.body.classList.add('offline');
+});
+&lt;/script&gt;</code></pre>
+                </div>
+            </section>
+
+            <!-- 최종 프로젝트 -->
+            <section class="tutorial-section">
+                <h2>🎯 최종 프로젝트: 완벽한 웹페이지 만들기</h2>
+                
+                <div class="final-project">
+                    <h3>모든 것을 종합한 완벽한 HTML 페이지</h3>
+                    <p>지금까지 배운 모든 내용을 적용해서 완벽한 웹페이지를 만들어보세요.</p>
+                    
+                    <div class="project-requirements">
+                        <h4>프로젝트 요구사항</h4>
+                        <ul>
+                            <li>✅ 시맨틱 HTML 구조 사용</li>
+                            <li>✅ SEO 최적화 메타 태그 포함</li>
+                            <li>✅ 웹 접근성 준수</li>
+                            <li>✅ 반응형 디자인 고려</li>
+                            <li>✅ 폼과 테이블 포함</li>
+                            <li>✅ 멀티미디어 콘텐츠 포함</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-template">
+                        <h4>프로젝트 템플릿</h4>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;나의 포트폴리오 - 웹 개발자 홍길동&lt;/title&gt;
+    &lt;meta name="description" content="웹 개발자 홍길동의 포트폴리오 사이트입니다."&gt;
+    &lt;meta name="keywords" content="웹개발, 포트폴리오, HTML, CSS, JavaScript"&gt;
+    
+    &lt;!-- Open Graph --&gt;
+    &lt;meta property="og:title" content="홍길동 포트폴리오"&gt;
+    &lt;meta property="og:description" content="웹 개발자 홍길동의 작품들을 만나보세요"&gt;
+    
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;a href="#main-content" class="skip-link"&gt;본문으로 바로가기&lt;/a&gt;
+    
+    &lt;header role="banner"&gt;
+        &lt;h1&gt;홍길동 포트폴리오&lt;/h1&gt;
+        &lt;nav role="navigation" aria-label="주 메뉴"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#about"&gt;소개&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#projects"&gt;프로젝트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#contact"&gt;연락처&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main id="main-content" role="main"&gt;
+        &lt;section id="about" aria-labelledby="about-heading"&gt;
+            &lt;h2 id="about-heading"&gt;소개&lt;/h2&gt;
+            &lt;figure&gt;
+                &lt;img src="profile.jpg" alt="홍길동 프로필 사진"&gt;
+                &lt;figcaption&gt;웹 개발자 홍길동&lt;/figcaption&gt;
+            &lt;/figure&gt;
+            &lt;p&gt;안녕하세요! 웹 개발을 사랑하는 홍길동입니다.&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section id="projects" aria-labelledby="projects-heading"&gt;
+            &lt;h2 id="projects-heading"&gt;프로젝트&lt;/h2&gt;
+            &lt;article&gt;
+                &lt;h3&gt;쇼핑몰 웹사이트&lt;/h3&gt;
+                &lt;p&gt;React와 Node.js로 개발한 풀스택 쇼핑몰입니다.&lt;/p&gt;
+                &lt;a href="#" aria-label="쇼핑몰 프로젝트 자세히 보기"&gt;자세히 보기&lt;/a&gt;
+            &lt;/article&gt;
+        &lt;/section&gt;
+
+        &lt;section id="contact" aria-labelledby="contact-heading"&gt;
+            &lt;h2 id="contact-heading"&gt;연락처&lt;/h2&gt;
+            &lt;form action="/contact" method="post"&gt;
+                &lt;fieldset&gt;
+                    &lt;legend&gt;연락처 정보&lt;/legend&gt;
+                    
+                    &lt;label for="name"&gt;이름 (필수)&lt;/label&gt;
+                    &lt;input type="text" id="name" name="name" required 
+                           aria-describedby="name-help"&gt;
+                    &lt;div id="name-help"&gt;실명을 입력해주세요&lt;/div&gt;
+                    
+                    &lt;label for="email"&gt;이메일 (필수)&lt;/label&gt;
+                    &lt;input type="email" id="email" name="email" required&gt;
+                    
+                    &lt;label for="message"&gt;메시지&lt;/label&gt;
+                    &lt;textarea id="message" name="message" rows="5"&gt;&lt;/textarea&gt;
+                &lt;/fieldset&gt;
+                
+                &lt;button type="submit"&gt;메시지 보내기&lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer role="contentinfo"&gt;
+        &lt;p&gt;&copy; 2024 홍길동. 모든 권리 보유.&lt;/p&gt;
+        &lt;address&gt;
+            이메일: &lt;a href="mailto:hong@example.com"&gt;hong@example.com&lt;/a&gt;
+        &lt;/address&gt;
+    &lt;/footer&gt;
+
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 완주 축하 -->
+            <div class="completion-celebration">
+                <h2>🎉 축하합니다! HTML 마스터가 되셨습니다!</h2>
+                <p>초급편부터 고급편까지 모든 과정을 완주하셨습니다. 이제 다음 단계로 나아갈 준비가 되었어요!</p>
+                
+                <div class="next-level-cards">
+                    <div class="next-card">
+                        <h3>🎨 CSS 마스터하기</h3>
+                        <p>아름다운 웹페이지 디자인을 배워보세요</p>
+                        <a href="css-tutorial.html" class="next-btn">CSS 시작하기</a>
+                    </div>
+                    
+                    <div class="next-card">
+                        <h3>⚡ JavaScript 배우기</h3>
+                        <p>동적이고 인터랙티브한 웹을 만들어보세요</p>
+                        <a href="js-tutorial.html" class="next-btn">JavaScript 시작하기</a>
+                    </div>
+                    
+                    <div class="next-card">
+                        <h3>🚀 실전 프로젝트</h3>
+                        <p>배운 내용을 실제 프로젝트에 적용해보세요</p>
+                        <a href="practice.html" class="next-btn">프로젝트 시작하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>WebLearn</h3>
+                <p>HTML, CSS, JavaScript를 쉽게 배우는 온라인 튜토리얼</p>
+            </div>
+            <div class="footer-section">
+                <h4>HTML 학습 과정</h4>
+                <ul>
+                    <li><a href="html-beginner.html">HTML 초급편</a></li>
+                    <li><a href="html-intermediate.html">HTML 중급편</a></li>
+                    <li><a href="html-advanced.html">HTML 고급편</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>실습</h4>
+                <ul>
+                    <li><a href="practice.html">코드 에디터</a></li>
+                    <li><a href="quiz.html">퀴즈</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 WebLearn. 모든 권리 보유.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
