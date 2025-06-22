@@ -45,49 +45,63 @@
         </nav>
     </header>
 
-    <main class="main-content">
+    <!-- 메인 콘텐츠 -->
+    <main class="main">
         <div class="tutorial-container-full">
             <!-- 레벨 선택 섹션 -->
-            <section class="level-selector">
+            <div class="level-selector">
                 <div class="level-navigation">
-                    <h2>웹사이트 배포 마스터</h2>
-                    <p class="level-description">완성된 웹사이트를 전 세계에 공개하는 방법을 배워보세요</p>
-                </div>
-
-                <div class="level-cards">
-                    <div class="level-card active">
-                        <div class="level-badge current">실무</div>
-                        <h3>배포 완전정복</h3>
-                        <p>호스팅부터 도메인 연결까지 실무에서 사용하는 모든 배포 기술</p>
+                    <h2>웹사이트 배포 학습</h2>
+                    <div class="level-cards">
+                        <div class="level-card active">
+                            <span class="level-badge current">실무</span>
+                            <h3>배포 완전정복</h3>
+                            <p>호스팅부터 도메인 연결까지 실무에서 사용하는 모든 배포 기술</p>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <!-- 튜토리얼 콘텐츠 -->
+            <!-- 메인 콘텐츠 -->
             <div class="tutorial-content">
-                <div class="tutorial-section">
+                <!-- 튜토리얼 헤더 -->
+                <div class="tutorial-header">
                     <h1>웹사이트 배포 및 도메인 관리</h1>
                     <p class="subtitle">완성된 웹사이트를 실제 서버에 올리고, 도메인을 구입하여 전 세계에 공개하는 방법을 배워보세요!</p>
-
-                    <div class="info-box">
-                        <h3>이 과정에서 배울 내용</h3>
-                        <ul>
-                            <li>웹 호스팅의 기본 개념과 종류</li>
-                            <li>도메인 구입 및 연결 방법</li>
-                            <li>GitHub Pages를 이용한 무료 배포</li>
-                            <li>유료 호스팅 서비스 활용법</li>
-                            <li>웹사이트 유지관리 및 보안</li>
-                        </ul>
-                    </div>
                 </div>
 
-                <!-- 1. 웹 호스팅 기초 -->
-                <div class="tutorial-section">
+                <!-- 1. 배포 개념 소개 -->
+                <section id="deployment-intro" class="tutorial-section">
+                    <h2>웹사이트 배포란?</h2>
+                    
+                    <div class="concept-explanation">
+                        <div class="concept-main">
+                            <h3>배포 = 웹사이트를 전 세계에 공개하는 과정</h3>
+                            <p>완성된 웹사이트 파일들을 인터넷에 연결된 서버에 올려서, 전 세계 사람들이 접근할 수 있게 하는 것입니다.</p>
+                        </div>
+                        
+                        <div class="analogy-box">
+                            <h4>이 과정에서 배울 내용</h4>
+                            <ul>
+                                <li>웹 호스팅의 기본 개념과 종류</li>
+                                <li>도메인 구입 및 연결 방법</li>
+                                <li>GitHub Pages를 이용한 무료 배포</li>
+                                <li>유료 호스팅 서비스 활용법</li>
+                                <li>웹사이트 유지관리 및 보안</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. 웹 호스팅 기초 -->
+                <section id="hosting-basics" class="tutorial-section">
                     <h2>웹 호스팅 기초 이해</h2>
                     
-                    <div class="concept-box">
-                        <h3>웹 호스팅이란?</h3>
-                        <p>웹 호스팅은 여러분의 웹사이트 파일들을 인터넷에 연결된 서버에 저장하여, 전 세계 사람들이 접근할 수 있게 하는 서비스입니다.</p>
+                    <div class="concept-explanation">
+                        <div class="concept-main">
+                            <h3>웹 호스팅이란?</h3>
+                            <p>웹 호스팅은 여러분의 웹사이트 파일들을 인터넷에 연결된 서버에 저장하여, 전 세계 사람들이 접근할 수 있게 하는 서비스입니다.</p>
+                        </div>
                     </div>
 
                     <div class="tag-demo">
@@ -126,10 +140,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <!-- 2. 호스팅 서비스 종류 -->
-                <div class="tutorial-section">
+                <!-- 3. 호스팅 서비스 종류 -->
+                <section id="hosting-types" class="tutorial-section">
                     <h2>호스팅 서비스 종류</h2>
 
                     <div class="comparison-table">
@@ -180,10 +194,10 @@
                         <h3>초보자 추천 경로</h3>
                         <p><strong>1단계:</strong> GitHub Pages (무료) → <strong>2단계:</strong> 카페24/가비아 공유호스팅 → <strong>3단계:</strong> AWS/DigitalOcean VPS</p>
                     </div>
-                </div>
+                </section>
 
-                <!-- 3. GitHub Pages 배포 -->
-                <div class="tutorial-section">
+                <!-- 4. GitHub Pages 배포 -->
+                <section id="github-pages" class="tutorial-section">
                     <h2>GitHub Pages로 무료 배포하기</h2>
 
                     <div class="tag-demo">
@@ -269,10 +283,10 @@ my-awesome-portfolio-website.co.kr  ← 너무 김</code></pre>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <!-- 5. 실제 배포 단계 -->
-                <div class="tutorial-section">
+                <section id="deployment-steps" class="tutorial-section">
                     <h2>실제 배포 단계별 가이드</h2>
 
                     <div class="deployment-methods">
@@ -345,10 +359,10 @@ my-awesome-portfolio-website.co.kr  ← 너무 김</code></pre>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <!-- 6. 유지관리 및 모니터링 -->
-                <div class="tutorial-section">
+                <section id="maintenance" class="tutorial-section">
                     <h2>웹사이트 유지관리</h2>
 
                     <div class="maintenance-grid">
@@ -395,10 +409,10 @@ my-awesome-portfolio-website.co.kr  ← 너무 김</code></pre>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <!-- 7. 보안 체크리스트 -->
-                <div class="tutorial-section">
+                <section id="security-checklist" class="tutorial-section">
                     <h2>웹사이트 보안 체크리스트</h2>
 
                     <div class="security-checklist">
@@ -429,10 +443,10 @@ my-awesome-portfolio-website.co.kr  ← 너무 김</code></pre>
                             </label>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <!-- 8. 비용 계산기 -->
-                <div class="tutorial-section">
+                <section id="cost-calculator" class="tutorial-section">
                     <h2>배포 비용 계획</h2>
 
                     <div class="cost-calculator">
@@ -466,10 +480,10 @@ my-awesome-portfolio-website.co.kr  ← 너무 김</code></pre>
                             <li>Let's Encrypt로 무료 SSL 인증서 사용</li>
                         </ul>
                     </div>
-                </div>
+                </section>
 
-                <!-- 최종 프로젝트 -->
-                <div class="final-project">
+                <!-- 9. 최종 프로젝트 -->
+                <section id="final-project" class="tutorial-section">
                     <h2>실습 프로젝트: 나만의 포트폴리오 사이트 배포하기</h2>
                     
                     <div class="project-description">
@@ -498,15 +512,16 @@ my-awesome-portfolio-website.co.kr  ← 너무 김</code></pre>
                             <li>Google Analytics 연동으로 방문자 추적</li>
                         </ul>
                     </div>
-                </div>
+                </section>
 
-                <div class="tutorial-section">
-                    <div class="info-box">
-                        <h3>축하합니다! 웹사이트 배포 마스터가 되셨습니다!</h3>
+                <!-- 완료 메시지 -->
+                <section class="tutorial-section">
+                    <div class="completion-message">
+                        <h2>축하합니다! 웹사이트 배포 마스터가 되셨습니다!</h2>
                         <p>이제 여러분은 웹사이트를 전 세계에 공개할 수 있는 모든 기술을 습득했습니다. 
                         계속해서 새로운 기술을 학습하고 더 나은 웹사이트를 만들어보세요!</p>
                     </div>
-                </div>
+                </section>
             </div>
 
             <!-- 다음 단계 안내 -->
@@ -516,16 +531,19 @@ my-awesome-portfolio-website.co.kr  ← 너무 김</code></pre>
                 
                 <div class="next-level-cards">
                     <div class="next-card">
-                        <h3>고급 웹 개발</h3>
-                        <p>React, Vue.js 등 프론트엔드 프레임워크 학습</p>
+                        <h3>HTML 기초부터 고급까지</h3>
+                        <p>체계적인 HTML 학습으로 웹 개발 기초 다지기</p>
+                        <a href="html-tutorial.html" class="next-link">배우러 가기 →</a>
                     </div>
                     <div class="next-card">
-                        <h3>백엔드 개발</h3>
-                        <p>Node.js, Python Django 등 서버 개발 기술</p>
+                        <h3>CSS 마스터하기</h3>
+                        <p>전문적인 디자인과 애니메이션 기술</p>
+                        <a href="css-tutorial.html" class="next-link">배우러 가기 →</a>
                     </div>
                     <div class="next-card">
-                        <h3>DevOps</h3>
-                        <p>Docker, CI/CD 등 개발 운영 자동화</p>
+                        <h3>Cursor AI 활용</h3>
+                        <p>AI의 도움을 받아 빠른 웹 개발하기</p>
+                        <a href="cursor-ai-tutorial.html" class="next-link">배우러 가기 →</a>
                     </div>
                 </div>
             </section>
