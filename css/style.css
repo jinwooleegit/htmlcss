@@ -484,6 +484,13 @@ a:hover {
     min-height: calc(100vh - 80px);
 }
 
+.tutorial-container-full {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    min-height: calc(100vh - 80px);
+}
+
 /* Sidebar */
 .sidebar {
     background: #ffffff;
@@ -603,6 +610,197 @@ a:hover {
     background-color: #f1f5f9;
     color: #334155;
     border-color: #e2e8f0;
+}
+
+/* 드롭다운 메뉴 스타일 */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: " ▼";
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.dropdown:hover .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #64748b;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background-color: #f8fafc;
+    color: #334155;
+}
+
+.dropdown-item.active {
+    background-color: #0f172a;
+    color: #ffffff;
+}
+
+/* 레벨 선택 섹션 */
+.level-selector {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.level-navigation h2 {
+    text-align: center;
+    color: #1a202c;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.level-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.level-card {
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.level-card:hover {
+    border-color: #cbd5e0;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+.level-card.active {
+    border-color: #0369a1;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.level-badge {
+    background: #64748b;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.level-badge.current {
+    background: #0369a1;
+}
+
+.level-card h3 {
+    color: #1a202c;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.level-card p {
+    color: #64748b;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.level-link {
+    color: #0369a1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.level-link:hover {
+    color: #0284c7;
+}
+
+/* 다음 단계 섹션 */
+.next-steps {
+    background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
+    border: 1px solid #fbbf24;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.next-steps h2 {
+    color: #92400e;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.next-level-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.next-card {
+    background: #ffffff;
+    border: 1px solid #f59e0b;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.next-card:hover {
+    border-color: #d97706;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.next-card h3 {
+    color: #92400e;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.next-card p {
+    color: #78716c;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
 /* Progress Section */
@@ -1115,6 +1313,42 @@ pre code {
     
     .control-group {
         justify-content: space-between;
+    }
+
+    .tutorial-container-full {
+        padding: 1rem;
+    }
+
+    .level-selector {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .level-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .next-level-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .next-steps {
+        padding: 2rem 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .dropdown-menu {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%) translateY(-10px);
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        transform: translateX(-50%) translateY(0);
     }
 }
 

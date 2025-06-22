@@ -19,8 +19,13 @@
                     <li class="nav-item">
                         <a href="index.html" class="nav-link">홈</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="html-tutorial.html" class="nav-link active">HTML</a>
+                    <li class="nav-item dropdown">
+                        <a href="html-tutorial.html" class="nav-link active dropdown-toggle">HTML</a>
+                        <div class="dropdown-menu">
+                            <a href="html-tutorial.html" class="dropdown-item active">초급편 - HTML 기초</a>
+                            <a href="html-intermediate.html" class="dropdown-item">중급편 - HTML 심화</a>
+                            <a href="html-advanced.html" class="dropdown-item">고급편 - HTML 마스터</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a href="css-tutorial.html" class="nav-link">CSS</a>
@@ -49,33 +54,32 @@
 
     <!-- 메인 콘텐츠 -->
     <main class="main">
-        <div class="tutorial-container">
-            <!-- 사이드바 -->
-            <aside class="sidebar">
-                <div class="sidebar-content">
-                    <h3>HTML 기초 학습</h3>
-                    <div class="level-info">
-                        <span class="level-badge">초급편</span>
-                        <p>HTML의 기본 개념부터 핵심 태그까지</p>
-                    </div>
-                    
-                    <div class="navigation-links">
-                        <h4>다른 레벨</h4>
-                        <ul>
-                            <li><a href="html-intermediate.html" class="nav-link">중급편 →</a></li>
-                            <li><a href="html-advanced.html" class="nav-link">고급편 →</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="quick-links">
-                        <h4>빠른 이동</h4>
-                        <ul>
-                            <li><a href="practice.html" class="nav-link">실습하기</a></li>
-                            <li><a href="quiz.html" class="nav-link">퀴즈 풀기</a></li>
-                        </ul>
+        <div class="tutorial-container-full">
+            <!-- 레벨 선택 섹션 -->
+            <div class="level-selector">
+                <div class="level-navigation">
+                    <h2>HTML 학습 단계</h2>
+                    <div class="level-cards">
+                        <div class="level-card active">
+                            <span class="level-badge current">초급편</span>
+                            <h3>HTML 기초</h3>
+                            <p>HTML의 기본 개념부터 핵심 태그까지</p>
+                        </div>
+                        <div class="level-card">
+                            <span class="level-badge">중급편</span>
+                            <h3>HTML 심화</h3>
+                            <p>폼 고급 기능, 멀티미디어, 접근성</p>
+                            <a href="html-intermediate.html" class="level-link">학습하기 →</a>
+                        </div>
+                        <div class="level-card">
+                            <span class="level-badge">고급편</span>
+                            <h3>HTML 마스터</h3>
+                            <p>웹 컴포넌트, API 연동, 최적화</p>
+                            <a href="html-advanced.html" class="level-link">학습하기 →</a>
+                        </div>
                     </div>
                 </div>
-            </aside>
+            </div>
 
             <!-- 메인 콘텐츠 -->
             <div class="tutorial-content">
@@ -1180,6 +1184,28 @@
                         </details>
                     </div>
                 </section>
+
+                <!-- 다음 단계 안내 -->
+                <div class="next-steps">
+                    <h2>다음 단계로 넘어가세요!</h2>
+                    <div class="next-level-cards">
+                        <div class="next-card">
+                            <h3>중급편으로 이동</h3>
+                            <p>폼 고급 기능, 멀티미디어 태그, 접근성 등을 배워보세요</p>
+                            <a href="html-intermediate.html" class="btn btn-primary">중급편 시작하기</a>
+                        </div>
+                        <div class="next-card">
+                            <h3>실습으로 연습</h3>
+                            <p>배운 내용을 실제로 코딩해보며 실력을 향상시켜보세요</p>
+                            <a href="practice.html" class="btn btn-outline">실습하러 가기</a>
+                        </div>
+                        <div class="next-card">
+                            <h3>퀴즈로 확인</h3>
+                            <p>HTML 기초 지식을 퀴즈로 점검하고 부족한 부분을 찾아보세요</p>
+                            <a href="quiz.html" class="btn btn-outline">퀴즈 풀기</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
