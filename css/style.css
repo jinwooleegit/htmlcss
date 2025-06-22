@@ -3035,7 +3035,7 @@ pre code {
 
 .tag-demo {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     gap: 0;
     margin: 2rem 0;
     background: #ffffff;
@@ -3043,12 +3043,16 @@ pre code {
     overflow: hidden;
     border: 1px solid #e2e8f0;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    min-height: 200px;
 }
 
 .tag-code {
     background: #0f172a;
     padding: 1.5rem;
     border-right: 1px solid #334155;
+    display: flex;
+    align-items: flex-start;
+    overflow-x: auto;
 }
 
 .tag-code pre {
@@ -3058,12 +3062,17 @@ pre code {
     font-size: 0.875rem;
     line-height: 1.7;
     font-weight: 400;
+    white-space: pre;
+    flex: 1;
 }
 
 .tag-result {
     padding: 1.5rem;
     background: #fafbfc;
     border-left: 2px solid #64748b;
+    display: flex;
+    align-items: flex-start;
+    overflow-y: auto;
 }
 
 .practice-challenge {
@@ -3233,16 +3242,21 @@ pre code {
     
     .tag-demo {
         grid-template-columns: 1fr;
+        min-height: auto;
     }
     
     .tag-code {
         order: 1;
+        border-right: none;
+        border-bottom: 1px solid #334155;
+        min-height: 150px;
     }
     
     .tag-result {
         order: 2;
         border-left: none;
-        border-top: 3px solid var(--primary-color);
+        border-top: 2px solid #64748b;
+        min-height: 120px;
     }
     
     .parts-grid {
