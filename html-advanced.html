@@ -92,10 +92,11 @@
                     <h3>시맨틱 HTML이란?</h3>
                     <p><strong>시맨틱(Semantic)</strong>은 '의미가 있는'이라는 뜻입니다. 시맨틱 HTML은 각 태그가 명확한 의미를 가지도록 구조화하는 것입니다.</p>
                     
-                    <div class="comparison">
-                        <div class="bad-example">
-                            <h4>❌ 의미 없는 구조</h4>
-                            <pre><code>&lt;div class="header"&gt;
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <h4>의미 없는 구조 vs 시맨틱 구조</h4>
+                            <pre><code>&lt;!-- 의미 없는 구조 --&gt;
+&lt;div class="header"&gt;
     &lt;div class="logo"&gt;사이트명&lt;/div&gt;
     &lt;div class="menu"&gt;메뉴&lt;/div&gt;
 &lt;/div&gt;
@@ -103,11 +104,10 @@
     &lt;div class="main"&gt;메인 콘텐츠&lt;/div&gt;
     &lt;div class="sidebar"&gt;사이드바&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="footer"&gt;푸터&lt;/div&gt;</code></pre>
-                        </div>
-                        <div class="good-example">
-                            <h4>✅ 시맨틱 구조</h4>
-                            <pre><code>&lt;header&gt;
+&lt;div class="footer"&gt;푸터&lt;/div&gt;
+
+&lt;!-- 시맨틱 구조 --&gt;
+&lt;header&gt;
     &lt;h1&gt;사이트명&lt;/h1&gt;
     &lt;nav&gt;메뉴&lt;/nav&gt;
 &lt;/header&gt;
@@ -116,6 +116,22 @@
     &lt;aside&gt;사이드바&lt;/aside&gt;
 &lt;/main&gt;
 &lt;footer&gt;푸터&lt;/footer&gt;</code></pre>
+                        </div>
+                        <div class="tag-result">
+                            <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0;">
+                                <div style="background: #f8f9fa; padding: 10px; margin-bottom: 10px; border-left: 4px solid #dc3545;">
+                                    <strong>의미 없는 구조:</strong> div 태그만 사용, 의미 파악 어려움
+                                </div>
+                                <div style="background: #f8f9fa; padding: 10px; border-left: 4px solid #28a745;">
+                                    <strong>시맨틱 구조:</strong> 각 영역의 역할이 명확히 정의됨
+                                    <ul style="margin: 10px 0; padding-left: 20px;">
+                                        <li>검색엔진 최적화 향상</li>
+                                        <li>스크린 리더 접근성 개선</li>
+                                        <li>코드 가독성 증가</li>
+                                        <li>유지보수 용이성</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -168,7 +184,9 @@
 
                 <div class="semantic-example">
                     <h3>완전한 시맨틱 페이지 구조</h3>
-                    <pre><code>&lt;!DOCTYPE html&gt;
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="ko"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
@@ -229,6 +247,52 @@
     &lt;/footer&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
+                        </div>
+                        <div class="tag-result">
+                            <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; font-family: Arial, sans-serif;">
+                                <header style="background: #f8f9fa; padding: 10px; margin-bottom: 15px; border-bottom: 2px solid #007bff;">
+                                    <h1 style="margin: 0; color: #007bff; font-size: 1.5em;">웹 개발 블로그</h1>
+                                    <nav style="margin-top: 10px;">
+                                        <a href="#" style="margin-right: 15px; color: #007bff;">홈</a>
+                                        <a href="#" style="margin-right: 15px; color: #007bff;">글 목록</a>
+                                        <a href="#" style="color: #007bff;">소개</a>
+                                    </nav>
+                                </header>
+                                
+                                <main style="display: flex; gap: 20px;">
+                                    <article style="flex: 2; background: #fff; padding: 15px;">
+                                        <header style="border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 15px;">
+                                            <h2 style="margin: 0; color: #333;">HTML 시맨틱 태그의 중요성</h2>
+                                            <p style="margin: 5px 0 0 0; color: #666; font-size: 0.9em;">2024년 1월 15일</p>
+                                        </header>
+                                        <section style="margin-bottom: 15px;">
+                                            <h3 style="color: #007bff; font-size: 1.1em;">시맨틱 태그란?</h3>
+                                            <p style="line-height: 1.6;">시맨틱 태그는 의미를 가진 HTML 태그입니다...</p>
+                                        </section>
+                                        <footer style="border-top: 1px solid #eee; padding-top: 10px; margin-top: 15px; font-size: 0.9em; color: #666;">
+                                            <p>작성자: 홍길동</p>
+                                            <p>태그: <a href="#" style="color: #007bff;">HTML</a>, <a href="#" style="color: #007bff;">시맨틱</a></p>
+                                        </footer>
+                                    </article>
+                                    
+                                    <aside style="flex: 1; background: #f8f9fa; padding: 15px;">
+                                        <h3 style="margin-top: 0; color: #333; font-size: 1.1em;">관련 글</h3>
+                                        <ul style="list-style: none; padding: 0;">
+                                            <li style="margin-bottom: 8px;"><a href="#" style="color: #007bff;">CSS 기초 가이드</a></li>
+                                            <li><a href="#" style="color: #007bff;">JavaScript 시작하기</a></li>
+                                        </ul>
+                                    </aside>
+                                </main>
+                                
+                                <footer style="background: #333; color: white; padding: 15px; margin-top: 15px; text-align: center; font-size: 0.9em;">
+                                    <p style="margin: 0 0 5px 0;">&copy; 2024 웹 개발 블로그. 모든 권리 보유.</p>
+                                    <address style="font-style: normal;">
+                                        연락처: <a href="mailto:contact@blog.com" style="color: #87ceeb;">contact@blog.com</a>
+                                    </address>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -243,7 +307,9 @@
 
                 <div class="meta-tags">
                     <h3>필수 메타 태그들</h3>
-                    <pre><code>&lt;head&gt;
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <pre><code>&lt;head&gt;
     &lt;!-- 기본 메타 태그 --&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
@@ -269,12 +335,38 @@
     &lt;meta name="robots" content="index, follow"&gt;
     &lt;link rel="canonical" href="https://example.com/page"&gt;
 &lt;/head&gt;</code></pre>
+                        </div>
+                        <div class="tag-result">
+                            <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0;">
+                                <h4 style="margin-top: 0; color: #007bff;">SEO 메타 태그 효과</h4>
+                                <div style="background: #f8f9fa; padding: 12px; margin-bottom: 12px; border-left: 4px solid #28a745;">
+                                    <strong>검색 결과 표시:</strong>
+                                    <div style="margin-top: 8px; padding: 10px; background: white; border: 1px solid #ddd;">
+                                        <div style="color: #1a0dab; font-size: 18px; margin-bottom: 4px;">페이지 제목 - 사이트명</div>
+                                        <div style="color: #006621; font-size: 14px; margin-bottom: 4px;">https://example.com/page</div>
+                                        <div style="color: #545454; font-size: 13px; line-height: 1.4;">페이지 설명 (150자 이내) - 검색 결과에서 이 부분이 표시됩니다.</div>
+                                    </div>
+                                </div>
+                                <div style="background: #f8f9fa; padding: 12px; border-left: 4px solid #007bff;">
+                                    <strong>소셜 미디어 공유 시:</strong>
+                                    <div style="margin-top: 8px; padding: 10px; background: white; border: 1px solid #ddd; max-width: 300px;">
+                                        <div style="background: #eee; height: 60px; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; color: #666;">이미지 영역</div>
+                                        <div style="font-weight: bold; margin-bottom: 4px;">페이지 제목</div>
+                                        <div style="font-size: 13px; color: #666;">페이지 설명</div>
+                                        <div style="font-size: 12px; color: #999; margin-top: 4px;">example.com</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="structured-data">
                     <h3>구조화된 데이터 (Schema.org)</h3>
                     <p>검색엔진이 콘텐츠를 더 잘 이해할 수 있도록 도와주는 마크업입니다.</p>
-                    <pre><code>&lt;article itemscope itemtype="https://schema.org/BlogPosting"&gt;
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <pre><code>&lt;article itemscope itemtype="https://schema.org/BlogPosting"&gt;
     &lt;header&gt;
         &lt;h1 itemprop="headline"&gt;블로그 포스트 제목&lt;/h1&gt;
         &lt;p&gt;
@@ -291,6 +383,37 @@
         &lt;p&gt;카테고리: &lt;span itemprop="about"&gt;웹 개발&lt;/span&gt;&lt;/p&gt;
     &lt;/footer&gt;
 &lt;/article&gt;</code></pre>
+                        </div>
+                        <div class="tag-result">
+                            <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0;">
+                                <h4 style="margin-top: 0; color: #007bff;">구조화된 데이터 적용 효과</h4>
+                                <div style="background: #f8f9fa; padding: 12px; border-left: 4px solid #28a745;">
+                                    <strong>검색 결과에서 리치 스니펫 표시:</strong>
+                                    <div style="margin-top: 8px; padding: 10px; background: white; border: 1px solid #ddd;">
+                                        <div style="color: #1a0dab; font-size: 18px; margin-bottom: 4px;">블로그 포스트 제목</div>
+                                        <div style="color: #006621; font-size: 14px; margin-bottom: 4px;">https://example.com/blog/post</div>
+                                        <div style="color: #545454; font-size: 13px; line-height: 1.4; margin-bottom: 8px;">블로그 포스트 내용...</div>
+                                        <div style="font-size: 12px; color: #666;">
+                                            <span style="margin-right: 15px;">작성자: 홍길동</span>
+                                            <span style="margin-right: 15px;">2024년 1월 15일</span>
+                                            <span>카테고리: 웹 개발</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="background: #e3f2fd; padding: 12px; border-left: 4px solid #2196f3; margin-top: 12px;">
+                                    <strong>주요 Schema.org 타입:</strong>
+                                    <ul style="margin: 8px 0; padding-left: 20px;">
+                                        <li>BlogPosting - 블로그 포스트</li>
+                                        <li>Article - 기사</li>
+                                        <li>Product - 제품</li>
+                                        <li>Organization - 조직</li>
+                                        <li>Person - 인물</li>
+                                        <li>Event - 이벤트</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="seo-checklist">
@@ -358,7 +481,9 @@
                     
                     <div class="aria-examples">
                         <h4>주요 ARIA 속성들</h4>
-                        <pre><code>&lt;!-- 역할 정의 --&gt;
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;!-- 역할 정의 --&gt;
 &lt;div role="button" tabindex="0"&gt;클릭 가능한 영역&lt;/div&gt;
 &lt;nav role="navigation"&gt;네비게이션&lt;/nav&gt;
 &lt;main role="main"&gt;주요 콘텐츠&lt;/main&gt;
@@ -376,6 +501,40 @@
 &lt;!-- 관계 설정 --&gt;
 &lt;input type="password" aria-describedby="pwd-help"&gt;
 &lt;div id="pwd-help"&gt;8자 이상 입력하세요&lt;/div&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0;">
+                                    <h4 style="margin-top: 0; color: #007bff;">ARIA 속성 활용 예시</h4>
+                                    <div style="background: #f8f9fa; padding: 12px; margin-bottom: 12px;">
+                                        <div style="margin-bottom: 10px;">
+                                            <button style="padding: 8px 12px; background: #007bff; color: white; border: none; cursor: pointer;" aria-label="메뉴 열기">☰</button>
+                                            <span style="margin-left: 10px; font-size: 0.9em; color: #666;">스크린 리더: "메뉴 열기 버튼"</span>
+                                        </div>
+                                        <div style="margin-bottom: 10px;">
+                                            <input type="search" placeholder="검색어 입력" style="padding: 8px; border: 1px solid #ddd; width: 200px;">
+                                            <span style="margin-left: 10px; font-size: 0.9em; color: #666;">라벨과 연결된 검색 입력</span>
+                                        </div>
+                                        <div style="margin-bottom: 10px;">
+                                            <button style="padding: 8px 12px; background: #6c757d; color: white; border: none; cursor: pointer;">드롭다운 메뉴</button>
+                                            <span style="margin-left: 10px; font-size: 0.9em; color: #666;">확장 상태: 닫힘</span>
+                                        </div>
+                                        <div style="margin-bottom: 10px;">
+                                            <input type="password" placeholder="비밀번호" style="padding: 8px; border: 1px solid #ddd; width: 200px;">
+                                            <div style="margin-top: 5px; font-size: 0.9em; color: #666;">8자 이상 입력하세요</div>
+                                        </div>
+                                    </div>
+                                    <div style="background: #e8f5e8; padding: 12px; border-left: 4px solid #28a745;">
+                                        <strong>접근성 개선 효과:</strong>
+                                        <ul style="margin: 8px 0; padding-left: 20px;">
+                                            <li>스크린 리더 사용자에게 명확한 정보 제공</li>
+                                            <li>키보드 네비게이션 향상</li>
+                                            <li>동적 콘텐츠 변화 알림</li>
+                                            <li>폼 입력 시 도움말 제공</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -385,7 +544,9 @@
                     
                     <div class="keyboard-examples">
                         <h4>키보드 접근성 구현</h4>
-                        <pre><code>&lt;!-- 탭 순서 설정 --&gt;
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;!-- 탭 순서 설정 --&gt;
 &lt;input type="text" tabindex="1"&gt;
 &lt;button tabindex="2"&gt;버튼&lt;/button&gt;
 &lt;div tabindex="0"&gt;포커스 가능한 div&lt;/div&gt;
@@ -401,6 +562,35 @@
     outline-offset: 2px;
 }
 &lt;/style&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0;">
+                                    <h4 style="margin-top: 0; color: #007bff;">키보드 네비게이션 데모</h4>
+                                    <div style="background: #f8f9fa; padding: 12px; margin-bottom: 12px;">
+                                        <div style="margin-bottom: 10px;">
+                                            <input type="text" placeholder="탭 순서 1번" style="padding: 8px; border: 2px solid #007bff; margin-right: 10px;">
+                                            <span style="font-size: 0.9em; color: #666;">Tab 키로 이동 가능</span>
+                                        </div>
+                                        <div style="margin-bottom: 10px;">
+                                            <button style="padding: 8px 12px; background: #28a745; color: white; border: 2px solid #28a745; cursor: pointer; margin-right: 10px;">탭 순서 2번</button>
+                                            <span style="font-size: 0.9em; color: #666;">Enter나 Space로 실행</span>
+                                        </div>
+                                        <div style="margin-bottom: 10px; padding: 8px; background: #e9ecef; border: 2px dashed #6c757d; display: inline-block; margin-right: 10px;">포커스 가능한 div</div>
+                                        <span style="font-size: 0.9em; color: #666;">tabindex="0"으로 포커스 가능</span>
+                                    </div>
+                                    <div style="background: #fff3cd; padding: 12px; border-left: 4px solid #ffc107;">
+                                        <strong>키보드 단축키:</strong>
+                                        <ul style="margin: 8px 0; padding-left: 20px;">
+                                            <li><kbd>Tab</kbd> - 다음 요소로 이동</li>
+                                            <li><kbd>Shift + Tab</kbd> - 이전 요소로 이동</li>
+                                            <li><kbd>Enter</kbd> - 링크 실행, 버튼 클릭</li>
+                                            <li><kbd>Space</kbd> - 버튼 클릭, 체크박스 토글</li>
+                                            <li><kbd>화살표 키</kbd> - 라디오 버튼, 메뉴 이동</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -444,7 +634,9 @@
                     
                     <div class="api-example">
                         <h4>Geolocation API</h4>
-                        <pre><code>&lt;button onclick="getLocation()"&gt;내 위치 확인&lt;/button&gt;
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;button onclick="getLocation()"&gt;내 위치 확인&lt;/button&gt;
 &lt;p id="location"&gt;&lt;/p&gt;
 
 &lt;script&gt;
@@ -463,11 +655,36 @@ function showPosition(position) {
         ", 경도: " + position.coords.longitude;
 }
 &lt;/script&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0;">
+                                    <h4 style="margin-top: 0; color: #007bff;">Geolocation API 데모</h4>
+                                    <div style="background: #f8f9fa; padding: 12px; margin-bottom: 12px;">
+                                        <button onclick="alert('실제 환경에서는 위치 정보를 요청합니다.')" style="padding: 10px 15px; background: #007bff; color: white; border: none; cursor: pointer; margin-bottom: 10px;">내 위치 확인</button>
+                                        <div id="demo-location" style="padding: 10px; background: white; border: 1px solid #ddd; font-family: monospace;">
+                                            위치 정보가 여기에 표시됩니다.<br>
+                                            예: 위도: 37.5665, 경도: 126.9780
+                                        </div>
+                                    </div>
+                                    <div style="background: #e3f2fd; padding: 12px; border-left: 4px solid #2196f3;">
+                                        <strong>Geolocation API 특징:</strong>
+                                        <ul style="margin: 8px 0; padding-left: 20px;">
+                                            <li>사용자의 현재 위치 정보 제공</li>
+                                            <li>사용자 동의 필요 (보안)</li>
+                                            <li>GPS, Wi-Fi, IP 주소 등을 활용</li>
+                                            <li>HTTPS에서만 정상 작동</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="api-example">
                         <h4>Web Storage</h4>
-                        <pre><code>&lt;input type="text" id="nameInput" placeholder="이름 입력"&gt;
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;input type="text" id="nameInput" placeholder="이름 입력"&gt;
 &lt;button onclick="saveName()"&gt;저장&lt;/button&gt;
 &lt;button onclick="loadName()"&gt;불러오기&lt;/button&gt;
 &lt;p id="savedName"&gt;&lt;/p&gt;
@@ -485,6 +702,49 @@ function loadName() {
         name ? '저장된 이름: ' + name : '저장된 이름이 없습니다.';
 }
 &lt;/script&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0;">
+                                    <h4 style="margin-top: 0; color: #007bff;">Web Storage 데모</h4>
+                                    <div style="background: #f8f9fa; padding: 12px; margin-bottom: 12px;">
+                                        <div style="margin-bottom: 10px;">
+                                            <input type="text" id="demoNameInput" placeholder="이름 입력" style="padding: 8px; border: 1px solid #ddd; margin-right: 10px; width: 150px;">
+                                            <button onclick="saveDemoName()" style="padding: 8px 12px; background: #28a745; color: white; border: none; cursor: pointer; margin-right: 8px;">저장</button>
+                                            <button onclick="loadDemoName()" style="padding: 8px 12px; background: #007bff; color: white; border: none; cursor: pointer;">불러오기</button>
+                                        </div>
+                                        <div id="demoSavedName" style="padding: 10px; background: white; border: 1px solid #ddd; min-height: 20px;">
+                                            저장된 데이터가 여기에 표시됩니다.
+                                        </div>
+                                    </div>
+                                    <div style="background: #fff3cd; padding: 12px; border-left: 4px solid #ffc107;">
+                                        <strong>Web Storage 종류:</strong>
+                                        <ul style="margin: 8px 0; padding-left: 20px;">
+                                            <li><strong>localStorage</strong> - 브라우저를 닫아도 데이터 유지</li>
+                                            <li><strong>sessionStorage</strong> - 탭을 닫으면 데이터 삭제</li>
+                                            <li>쿠키보다 용량이 크고 서버로 전송되지 않음</li>
+                                            <li>문자열 데이터만 저장 가능</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <script>
+                                function saveDemoName() {
+                                    const name = document.getElementById('demoNameInput').value;
+                                    if (name) {
+                                        localStorage.setItem('demoUserName', name);
+                                        document.getElementById('demoSavedName').innerHTML = '저장되었습니다: ' + name;
+                                    } else {
+                                        alert('이름을 입력하세요.');
+                                    }
+                                }
+                                
+                                function loadDemoName() {
+                                    const name = localStorage.getItem('demoUserName');
+                                    document.getElementById('demoSavedName').innerHTML = 
+                                        name ? '저장된 이름: ' + name : '저장된 이름이 없습니다.';
+                                }
+                                </script>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -492,7 +752,9 @@ function loadName() {
                     <h3>점진적 향상 (Progressive Enhancement)</h3>
                     <p>기본 기능은 모든 브라우저에서 작동하고, 최신 브라우저에서는 향상된 기능을 제공하는 방식입니다.</p>
                     
-                    <pre><code>&lt;!-- 기본 폼 --&gt;
+                    <div class="tag-demo">
+                        <div class="tag-code">
+                            <pre><code>&lt;!-- 기본 폼 --&gt;
 &lt;form action="/submit" method="post"&gt;
     &lt;input type="email" name="email" required&gt;
     &lt;input type="date" name="date"&gt;
@@ -516,6 +778,40 @@ window.addEventListener('offline', function() {
     document.body.classList.add('offline');
 });
 &lt;/script&gt;</code></pre>
+                        </div>
+                        <div class="tag-result">
+                            <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0;">
+                                <h4 style="margin-top: 0; color: #007bff;">점진적 향상 데모</h4>
+                                <div style="background: #f8f9fa; padding: 12px; margin-bottom: 12px;">
+                                    <form style="background: white; padding: 15px; border: 1px solid #ddd;">
+                                        <div style="margin-bottom: 10px;">
+                                            <label style="display: block; margin-bottom: 5px;">이메일:</label>
+                                            <input type="email" placeholder="example@email.com" required style="padding: 8px; border: 1px solid #ddd; width: 200px;">
+                                        </div>
+                                        <div style="margin-bottom: 10px;">
+                                            <label style="display: block; margin-bottom: 5px;">날짜:</label>
+                                            <input type="date" style="padding: 8px; border: 1px solid #ddd;">
+                                        </div>
+                                        <div style="margin-bottom: 10px;">
+                                            <label style="display: block; margin-bottom: 5px;">평점: <span id="ratingValue">3</span></label>
+                                            <input type="range" min="1" max="5" value="3" oninput="document.getElementById('ratingValue').textContent = this.value" style="width: 200px;">
+                                        </div>
+                                        <button type="button" onclick="alert('실제로는 서버로 전송됩니다.')" style="padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer;">제출</button>
+                                    </form>
+                                </div>
+                                <div style="background: #e8f5e8; padding: 12px; border-left: 4px solid #28a745;">
+                                    <strong>점진적 향상의 원칙:</strong>
+                                    <ul style="margin: 8px 0; padding-left: 20px;">
+                                        <li>기본 HTML로 핵심 기능 제공</li>
+                                        <li>CSS로 시각적 향상</li>
+                                        <li>JavaScript로 상호작용 추가</li>
+                                        <li>최신 기능은 지원하는 브라우저에서만</li>
+                                        <li>모든 사용자에게 기본 접근성 보장</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
