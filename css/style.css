@@ -1514,4 +1514,391 @@ pre code {
 .btn-sm { 
     padding: 0.25rem 0.5rem; 
     font-size: 0.875rem; 
+}
+
+/* 배포 튜토리얼 전용 스타일 */
+.comparison-table {
+    overflow-x: auto;
+    margin: 2rem 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    min-width: 600px;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table th {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.comparison-table tr:hover {
+    background: var(--light-bg);
+}
+
+.recommendation-box {
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.recommendation-box h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.step-by-step {
+    margin: 2rem 0;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--primary-color);
+}
+
+.step-number {
+    background: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.domain-extensions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.extension {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.registrar-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.registrar {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.registrar h5 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.deployment-methods {
+    margin: 2rem 0;
+}
+
+.method-tab {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tab-button {
+    background: transparent;
+    border: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.tab-button.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    background: var(--light-bg);
+}
+
+.tab-button:hover {
+    background: var(--light-bg);
+}
+
+.tab-content {
+    display: none;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.deployment-steps {
+    margin: 1.5rem 0;
+}
+
+.deploy-step {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.deploy-step h5 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.maintenance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.maintenance-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--accent-color);
+}
+
+.maintenance-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.monitoring-tools {
+    margin: 3rem 0;
+}
+
+.tool-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.tool {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.tool h5 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.security-checklist {
+    margin: 2rem 0;
+}
+
+.checklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.checklist label {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checklist label:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.checklist input[type="checkbox"] {
+    margin-right: 1rem;
+    transform: scale(1.2);
+}
+
+.backup-strategy {
+    margin: 3rem 0;
+}
+
+.backup-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.backup-type {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--secondary-color);
+}
+
+.backup-type h5 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.cost-calculator {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+}
+
+.cost-breakdown {
+    margin-top: 1.5rem;
+}
+
+.cost-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cost-item:last-child {
+    border-bottom: none;
+}
+
+.cost-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-top: 2px solid var(--primary-color);
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.cost-label {
+    color: var(--text-color);
+}
+
+.cost-value {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.cost-tips {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.cost-tips h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.cost-tips ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cost-tips li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.cost-tips li::before {
+    content: "💡";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .method-tab {
+        flex-direction: column;
+    }
+    
+    .tab-button {
+        text-align: center;
+    }
+    
+    .step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-number {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .domain-extensions {
+        justify-content: center;
+    }
+    
+    .cost-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .cost-total {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
 } 

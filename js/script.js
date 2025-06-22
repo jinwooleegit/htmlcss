@@ -3,6 +3,17 @@
 // DOM Content Loaded Event
 document.addEventListener('DOMContentLoaded', function() {
     initializeWebsite();
+    initMobileNavigation();
+    initProgressTracking();
+    initAdvancedPracticeEditor();
+    initAdvancedQuizSystem();
+    initScrollAnimations();
+    initThemeToggle();
+    initSearchFunction();
+    initBookmarkSystem();
+    initDeploymentTabs();
+    initSecurityChecklist();
+    initCostCalculator();
 });
 
 // Initialize Website Functions
@@ -1062,4 +1073,64 @@ window.WebLearn = {
     restartQuiz,
     addBookmark,
     performSearch
-}; 
+};
+
+// 배포 튜토리얼 탭 기능
+function initDeploymentTabs() {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetTab = button.getAttribute('data-tab');
+            
+            // 모든 탭 버튼과 콘텐츠 비활성화
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // 클릭된 탭 활성화
+            button.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+}
+
+// 보안 체크리스트 기능
+function initSecurityChecklist() {
+    const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+    
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            const label = checkbox.parentElement;
+            if (checkbox.checked) {
+                label.style.background = 'var(--success-color)';
+                label.style.color = 'white';
+            } else {
+                label.style.background = 'white';
+                label.style.color = 'var(--text-color)';
+            }
+        });
+    });
+}
+
+// 비용 계산기 기능
+function initCostCalculator() {
+    const costItems = document.querySelectorAll('.cost-item');
+    let totalCost = 0;
+    
+    costItems.forEach(item => {
+        const valueElement = item.querySelector('.cost-value');
+        if (valueElement && valueElement.textContent.includes('원')) {
+            const cost = parseInt(valueElement.textContent.replace(/[^0-9]/g, ''));
+            if (!isNaN(cost)) {
+                totalCost += cost;
+            }
+        }
+    });
+    
+    // 총 비용 업데이트
+    const totalElement = document.querySelector('.cost-total .cost-value');
+    if (totalElement) {
+        totalElement.textContent = `${totalCost.toLocaleString()}원/년`;
+    }
+} 
