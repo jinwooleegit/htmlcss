@@ -49,23 +49,44 @@
 
     <!-- 메인 콘텐츠 -->
     <main class="main">
-        <div class="tutorial-container full-width">
-            <!-- 튜토리얼 헤더 -->
-            <div class="tutorial-header">
-                <h1>🌿 HTML 중급편</h1>
-                <p class="subtitle">실제 태그 활용법부터 폼, 테이블, 멀티미디어까지</p>
-                <div class="learning-path">
-                    <span class="path-item">초급편</span>
-                    <span class="path-arrow">→</span>
-                    <span class="path-item active">중급편</span>
-                    <span class="path-arrow">→</span>
-                    <span class="path-item">고급편</span>
+        <div class="tutorial-container-full">
+            <!-- 레벨 선택 섹션 -->
+            <div class="level-selector">
+                <div class="level-navigation">
+                    <h2>HTML 학습 단계</h2>
+                    <div class="level-cards">
+                        <div class="level-card">
+                            <span class="level-badge">초급편</span>
+                            <h3>HTML 기초</h3>
+                            <p>HTML의 기본 개념부터 핵심 태그까지</p>
+                            <a href="html-tutorial.html" class="level-link">학습하기 →</a>
+                        </div>
+                        <div class="level-card active">
+                            <span class="level-badge current">중급편</span>
+                            <h3>HTML 심화</h3>
+                            <p>실제 태그 활용법부터 폼, 테이블, 멀티미디어까지</p>
+                        </div>
+                        <div class="level-card">
+                            <span class="level-badge">고급편</span>
+                            <h3>HTML 마스터</h3>
+                            <p>시맨틱 HTML, SEO 최적화, 웹 접근성까지</p>
+                            <a href="html-advanced.html" class="level-link">학습하기 →</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <!-- 메인 콘텐츠 -->
+            <div class="tutorial-content">
+                <!-- 튜토리얼 헤더 -->
+                <div class="tutorial-header">
+                    <h1>HTML 중급편 완전 정복</h1>
+                    <p class="subtitle">실제 태그 활용법부터 폼, 테이블, 멀티미디어까지 실무에 필요한 HTML 기술을 배워보세요</p>
+                </div>
+
             <!-- 1. 텍스트 태그 완전 정복 -->
             <section class="tutorial-section">
-                <h2>📄 텍스트 태그 완전 정복</h2>
+                <h2>텍스트 태그 완전 정복</h2>
                 
                 <div class="text-tags-advanced">
                     <h3>제목 태그 (Heading Tags) 실전 활용</h3>
@@ -89,7 +110,7 @@
                     </div>
                     
                     <div class="best-practices">
-                        <h4>💡 제목 태그 사용 가이드라인</h4>
+                        <h4>제목 태그 사용 가이드라인</h4>
                         <ul>
                             <li><strong>h1</strong>: 페이지의 메인 주제 (SEO에 중요)</li>
                             <li><strong>h2</strong>: 주요 섹션 구분</li>
@@ -138,7 +159,7 @@
 
             <!-- 2. 링크와 이미지 고급 활용 -->
             <section class="tutorial-section">
-                <h2>🔗 링크와 이미지 고급 활용</h2>
+                <h2>링크와 이미지 고급 활용</h2>
                 
                 <div class="links-advanced">
                     <h3>링크 타입별 활용법</h3>
@@ -221,7 +242,7 @@
 
             <!-- 3. 목록과 테이블 -->
             <section class="tutorial-section">
-                <h2>📝 목록과 테이블 마스터하기</h2>
+                <h2>목록과 테이블 마스터하기</h2>
                 
                 <div class="lists-advanced">
                     <h3>다양한 목록 활용법</h3>
@@ -396,7 +417,7 @@
 
             <!-- 4. 폼(Forms) 완전 정복 -->
             <section class="tutorial-section">
-                <h2>📋 폼(Forms) 완전 정복</h2>
+                <h2>폼(Forms) 완전 정복</h2>
                 
                 <div class="forms-complete">
                     <h3>회원가입 폼 만들기</h3>
@@ -540,7 +561,7 @@
                     </div>
                     
                     <div class="form-tips">
-                        <h4>📋 폼 구성 요소 설명</h4>
+                        <h4>폼 구성 요소 설명</h4>
                         <ul>
                             <li><strong>fieldset + legend</strong>: 관련 입력 요소들을 그룹화</li>
                             <li><strong>label</strong>: 입력 요소의 설명 (for 속성으로 연결)</li>
@@ -558,7 +579,7 @@
 
             <!-- 5. 멀티미디어 -->
             <section class="tutorial-section">
-                <h2>🎵 멀티미디어 활용</h2>
+                <h2>멀티미디어 활용</h2>
                 
                 <div class="multimedia-section">
                     <h3>오디오와 비디오</h3>
@@ -591,7 +612,7 @@
                     </div>
                     
                     <div class="multimedia-tips">
-                        <h4>🎬 멀티미디어 최적화 팁</h4>
+                        <h4>멀티미디어 최적화 팁</h4>
                         <ul>
                             <li><strong>여러 포맷 제공</strong>: 브라우저 호환성을 위해</li>
                             <li><strong>controls 속성</strong>: 재생 컨트롤 표시</li>
@@ -603,22 +624,29 @@
                 </div>
             </section>
 
-            <!-- 다음 단계 안내 -->
-            <div class="next-steps">
-                <h2>🎊 HTML 중급편을 완주하셨습니다!</h2>
-                <p>이제 고급 기능과 최신 웹 표준을 배워볼 차례입니다.</p>
-                
-                <div class="next-level-cards">
-                    <div class="next-card">
-                        <h3>🌳 HTML 고급편</h3>
-                        <p>시맨틱 HTML, SEO, 웹 접근성을 배워보세요</p>
-                        <a href="html-advanced.html" class="next-btn">고급편 시작하기</a>
-                    </div>
+                <!-- 다음 단계 안내 -->
+                <div class="next-steps">
+                    <h2>HTML 중급편을 완주하셨습니다!</h2>
+                    <p>이제 고급 기능과 최신 웹 표준을 배워볼 차례입니다.</p>
                     
-                    <div class="next-card">
-                        <h3>🎨 CSS 배우기</h3>
-                        <p>웹페이지를 아름답게 꾸며보세요</p>
-                        <a href="css-tutorial.html" class="next-btn">CSS 시작하기</a>
+                    <div class="next-level-cards">
+                        <div class="next-card">
+                            <h3>HTML 고급편</h3>
+                            <p>시맨틱 HTML, SEO, 웹 접근성을 배워보세요</p>
+                            <a href="html-advanced.html" class="btn btn-primary">고급편 시작하기</a>
+                        </div>
+                        
+                        <div class="next-card">
+                            <h3>CSS 배우기</h3>
+                            <p>웹페이지를 아름답게 꾸며보세요</p>
+                            <a href="css-tutorial.html" class="btn btn-outline">CSS 시작하기</a>
+                        </div>
+                        
+                                                 <div class="next-card">
+                             <h3>실습하기</h3>
+                            <p>배운 내용을 실제로 코딩해보며 실력을 향상시켜보세요</p>
+                            <a href="practice.html" class="btn btn-outline">실습하러 가기</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -656,4 +684,3 @@
     <script src="js/script.js"></script>
 </body>
 </html>
-</rewritten_file>

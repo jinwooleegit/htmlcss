@@ -49,23 +49,44 @@
 
     <!-- 메인 콘텐츠 -->
     <main class="main">
-        <div class="tutorial-container full-width">
-            <!-- 튜토리얼 헤더 -->
-            <div class="tutorial-header">
-                <h1>🌳 HTML 고급편</h1>
-                <p class="subtitle">시맨틱 HTML, SEO 최적화, 웹 접근성까지</p>
-                <div class="learning-path">
-                    <span class="path-item">초급편</span>
-                    <span class="path-arrow">→</span>
-                    <span class="path-item">중급편</span>
-                    <span class="path-arrow">→</span>
-                    <span class="path-item active">고급편</span>
+        <div class="tutorial-container-full">
+            <!-- 레벨 선택 섹션 -->
+            <div class="level-selector">
+                <div class="level-navigation">
+                    <h2>HTML 학습 단계</h2>
+                    <div class="level-cards">
+                        <div class="level-card">
+                            <span class="level-badge">초급편</span>
+                            <h3>HTML 기초</h3>
+                            <p>HTML의 기본 개념부터 핵심 태그까지</p>
+                            <a href="html-tutorial.html" class="level-link">학습하기 →</a>
+                        </div>
+                        <div class="level-card">
+                            <span class="level-badge">중급편</span>
+                            <h3>HTML 심화</h3>
+                            <p>실제 태그 활용법부터 폼, 테이블, 멀티미디어까지</p>
+                            <a href="html-intermediate.html" class="level-link">학습하기 →</a>
+                        </div>
+                        <div class="level-card active">
+                            <span class="level-badge current">고급편</span>
+                            <h3>HTML 마스터</h3>
+                            <p>시맨틱 HTML, SEO 최적화, 웹 접근성까지</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <!-- 메인 콘텐츠 -->
+            <div class="tutorial-content">
+                <!-- 튜토리얼 헤더 -->
+                <div class="tutorial-header">
+                    <h1>HTML 고급편 완전 정복</h1>
+                    <p class="subtitle">시맨틱 HTML, SEO 최적화, 웹 접근성까지 전문가 수준의 HTML 기술을 배워보세요</p>
+                </div>
+
             <!-- 1. 시맨틱 HTML -->
             <section class="tutorial-section">
-                <h2>🏗️ 시맨틱 HTML 마스터하기</h2>
+                <h2>시맨틱 HTML 마스터하기</h2>
                 
                 <div class="semantic-intro">
                     <h3>시맨틱 HTML이란?</h3>
@@ -213,7 +234,7 @@
 
             <!-- 2. SEO 최적화 -->
             <section class="tutorial-section">
-                <h2>🔍 SEO 최적화 완전 가이드</h2>
+                <h2>SEO 최적화 완전 가이드</h2>
                 
                 <div class="seo-intro">
                     <h3>SEO란 무엇인가요?</h3>
@@ -313,7 +334,7 @@
 
             <!-- 3. 웹 접근성 -->
             <section class="tutorial-section">
-                <h2>♿ 웹 접근성 완전 가이드</h2>
+                <h2>웹 접근성 완전 가이드</h2>
                 
                 <div class="accessibility-intro">
                     <h3>웹 접근성이란?</h3>
@@ -416,7 +437,7 @@
 
             <!-- 4. 최신 HTML5 기능 -->
             <section class="tutorial-section">
-                <h2>🚀 최신 HTML5 기능들</h2>
+                <h2>최신 HTML5 기능들</h2>
                 
                 <div class="html5-apis">
                     <h3>HTML5 API들</h3>
@@ -500,7 +521,7 @@ window.addEventListener('offline', function() {
 
             <!-- 최종 프로젝트 -->
             <section class="tutorial-section">
-                <h2>🎯 최종 프로젝트: 완벽한 웹페이지 만들기</h2>
+                <h2>최종 프로젝트: 완벽한 웹페이지 만들기</h2>
                 
                 <div class="final-project">
                     <h3>모든 것을 종합한 완벽한 HTML 페이지</h3>
@@ -509,12 +530,12 @@ window.addEventListener('offline', function() {
                     <div class="project-requirements">
                         <h4>프로젝트 요구사항</h4>
                         <ul>
-                            <li>✅ 시맨틱 HTML 구조 사용</li>
-                            <li>✅ SEO 최적화 메타 태그 포함</li>
-                            <li>✅ 웹 접근성 준수</li>
-                            <li>✅ 반응형 디자인 고려</li>
-                            <li>✅ 폼과 테이블 포함</li>
-                            <li>✅ 멀티미디어 콘텐츠 포함</li>
+                            <li>시맨틱 HTML 구조 사용</li>
+                            <li>SEO 최적화 메타 태그 포함</li>
+                            <li>웹 접근성 준수</li>
+                            <li>반응형 디자인 고려</li>
+                            <li>폼과 테이블 포함</li>
+                            <li>멀티미디어 콘텐츠 포함</li>
                         </ul>
                     </div>
 
@@ -605,28 +626,29 @@ window.addEventListener('offline', function() {
                 </div>
             </section>
 
-            <!-- 완주 축하 -->
-            <div class="completion-celebration">
-                <h2>🎉 축하합니다! HTML 마스터가 되셨습니다!</h2>
-                <p>초급편부터 고급편까지 모든 과정을 완주하셨습니다. 이제 다음 단계로 나아갈 준비가 되었어요!</p>
-                
-                <div class="next-level-cards">
-                    <div class="next-card">
-                        <h3>🎨 CSS 마스터하기</h3>
-                        <p>아름다운 웹페이지 디자인을 배워보세요</p>
-                        <a href="css-tutorial.html" class="next-btn">CSS 시작하기</a>
-                    </div>
+                <!-- 다음 단계 안내 -->
+                <div class="next-steps">
+                    <h2>축하합니다! HTML 마스터가 되셨습니다!</h2>
+                    <p>초급편부터 고급편까지 모든 과정을 완주하셨습니다. 이제 다음 단계로 나아갈 준비가 되었어요!</p>
                     
-                    <div class="next-card">
-                        <h3>⚡ JavaScript 배우기</h3>
-                        <p>동적이고 인터랙티브한 웹을 만들어보세요</p>
-                        <a href="js-tutorial.html" class="next-btn">JavaScript 시작하기</a>
-                    </div>
-                    
-                    <div class="next-card">
-                        <h3>🚀 실전 프로젝트</h3>
-                        <p>배운 내용을 실제 프로젝트에 적용해보세요</p>
-                        <a href="practice.html" class="next-btn">프로젝트 시작하기</a>
+                    <div class="next-level-cards">
+                        <div class="next-card">
+                            <h3>CSS 마스터하기</h3>
+                            <p>아름다운 웹페이지 디자인을 배워보세요</p>
+                            <a href="css-tutorial.html" class="btn btn-primary">CSS 시작하기</a>
+                        </div>
+                        
+                        <div class="next-card">
+                            <h3>JavaScript 배우기</h3>
+                            <p>동적이고 인터랙티브한 웹을 만들어보세요</p>
+                            <a href="js-tutorial.html" class="btn btn-outline">JavaScript 시작하기</a>
+                        </div>
+                        
+                        <div class="next-card">
+                            <h3>실전 프로젝트</h3>
+                            <p>배운 내용을 실제 프로젝트에 적용해보세요</p>
+                            <a href="practice.html" class="btn btn-outline">프로젝트 시작하기</a>
+                        </div>
                     </div>
                 </div>
             </div>
