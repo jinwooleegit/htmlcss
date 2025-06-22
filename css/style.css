@@ -2446,9 +2446,7 @@ pre code {
 }
 
 .semantic-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    display: block;
     margin: 2rem 0;
 }
 
@@ -2458,6 +2456,7 @@ pre code {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     border-top: 4px solid var(--accent-color);
+    margin-bottom: 1.5rem;
 }
 
 .semantic-item h4 {
@@ -2570,9 +2569,7 @@ pre code {
         grid-template-columns: 1fr;
     }
     
-    .semantic-grid {
-        grid-template-columns: 1fr;
-    }
+
     
     .final-project {
         padding: 2rem;
