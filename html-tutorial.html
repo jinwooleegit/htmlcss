@@ -53,21 +53,27 @@
             <!-- 사이드바 -->
             <aside class="sidebar">
                 <div class="sidebar-content">
-                    <h3>HTML 학습 목차</h3>
-                    <nav class="tutorial-nav">
+                    <h3>HTML 기초 학습</h3>
+                    <div class="level-info">
+                        <span class="level-badge">초급편</span>
+                        <p>HTML의 기본 개념부터 핵심 태그까지</p>
+                    </div>
+                    
+                    <div class="navigation-links">
+                        <h4>다른 레벨</h4>
                         <ul>
-                            <li><a href="#html-intro" class="nav-item">HTML이란 무엇인가?</a></li>
-                            <li><a href="#html-grammar" class="nav-item">HTML 문법의 기초</a></li>
-                            <li><a href="#html-structure" class="nav-item">HTML 문서 구조</a></li>
-                            <li><a href="#basic-tags" class="nav-item">기본 태그들</a></li>
-                            <li><a href="#text-tags" class="nav-item">텍스트 서식 태그</a></li>
-                            <li><a href="#links-images" class="nav-item">링크와 이미지</a></li>
-                            <li><a href="#lists" class="nav-item">목록 만들기</a></li>
-                            <li><a href="#tables" class="nav-item">테이블 만들기</a></li>
-                            <li><a href="#forms" class="nav-item">폼(Forms) 만들기</a></li>
-                            <li><a href="#semantic-html" class="nav-item">시맨틱 HTML</a></li>
+                            <li><a href="html-intermediate.html" class="nav-link">중급편 →</a></li>
+                            <li><a href="html-advanced.html" class="nav-link">고급편 →</a></li>
                         </ul>
-                    </nav>
+                    </div>
+                    
+                    <div class="quick-links">
+                        <h4>빠른 이동</h4>
+                        <ul>
+                            <li><a href="practice.html" class="nav-link">실습하기</a></li>
+                            <li><a href="quiz.html" class="nav-link">퀴즈 풀기</a></li>
+                        </ul>
+                    </div>
                 </div>
             </aside>
 
@@ -75,8 +81,8 @@
             <div class="tutorial-content">
                 <!-- 튜토리얼 헤더 -->
                 <div class="tutorial-header">
-                    <h1>HTML 완전 정복 튜토리얼</h1>
-                    <p class="subtitle">HTML 기초부터 고급 기술까지 체계적으로 배워보세요</p>
+                    <h1>HTML 기초 완전 정복</h1>
+                    <p class="subtitle">웹 개발의 첫걸음, HTML의 기본 개념부터 핵심 태그까지 차근차근 배워보세요</p>
                 </div>
 
                 <!-- 1. HTML이란 무엇인가? -->
@@ -734,18 +740,445 @@
                 </section>
 
                 <section id="tables" class="tutorial-section">
-                    <h2>📊 테이블 만들기</h2>
-                    <p>데이터를 표 형태로 정리하는 방법을 배워보겠습니다...</p>
+                    <h2>테이블 만들기</h2>
+                    
+                    <div class="table-basics">
+                        <h3>테이블의 기본 구조</h3>
+                        <p>HTML 테이블은 행(row)과 열(column)로 구성된 데이터 표입니다.</p>
+                        
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;이름&lt;/th&gt;
+            &lt;th&gt;나이&lt;/th&gt;
+            &lt;th&gt;직업&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;김철수&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+            &lt;td&gt;개발자&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;이영희&lt;/td&gt;
+            &lt;td&gt;30&lt;/td&gt;
+            &lt;td&gt;디자이너&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <table style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+                                    <thead>
+                                        <tr>
+                                            <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2; text-align: left;">이름</th>
+                                            <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2; text-align: left;">나이</th>
+                                            <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2; text-align: left;">직업</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="border: 1px solid #ddd; padding: 8px;">김철수</td>
+                                            <td style="border: 1px solid #ddd; padding: 8px;">25</td>
+                                            <td style="border: 1px solid #ddd; padding: 8px;">개발자</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border: 1px solid #ddd; padding: 8px;">이영희</td>
+                                            <td style="border: 1px solid #ddd; padding: 8px;">30</td>
+                                            <td style="border: 1px solid #ddd; padding: 8px;">디자이너</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="table-explanation">
+                            <h4>테이블 태그 설명</h4>
+                            <div class="tag-parts">
+                                <div class="part-explanation">
+                                    <strong>&lt;table&gt;</strong>
+                                    <p>전체 테이블을 감싸는 태그</p>
+                                </div>
+                                <div class="part-explanation">
+                                    <strong>&lt;thead&gt;</strong>
+                                    <p>테이블 헤더 영역</p>
+                                </div>
+                                <div class="part-explanation">
+                                    <strong>&lt;tbody&gt;</strong>
+                                    <p>테이블 본문 영역</p>
+                                </div>
+                                <div class="part-explanation">
+                                    <strong>&lt;tr&gt;</strong>
+                                    <p>테이블 행(row)</p>
+                                </div>
+                                <div class="part-explanation">
+                                    <strong>&lt;th&gt;</strong>
+                                    <p>테이블 헤더 셀</p>
+                                </div>
+                                <div class="part-explanation">
+                                    <strong>&lt;td&gt;</strong>
+                                    <p>테이블 데이터 셀</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-challenge">
+                        <h4>실습 도전</h4>
+                        <p>다음과 같은 성적표를 만들어보세요:</p>
+                        <div class="challenge-result">
+                            <table style="border-collapse: collapse; width: 100%; margin: 10px 0;">
+                                <thead>
+                                    <tr>
+                                        <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2;">과목</th>
+                                        <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2;">점수</th>
+                                        <th style="border: 1px solid #ddd; padding: 8px; background-color: #f2f2f2;">등급</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">수학</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">95</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">A</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">영어</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">88</td>
+                                        <td style="border: 1px solid #ddd; padding: 8px;">B</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <details>
+                            <summary>정답 보기</summary>
+                            <pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;과목&lt;/th&gt;
+            &lt;th&gt;점수&lt;/th&gt;
+            &lt;th&gt;등급&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;수학&lt;/td&gt;
+            &lt;td&gt;95&lt;/td&gt;
+            &lt;td&gt;A&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;영어&lt;/td&gt;
+            &lt;td&gt;88&lt;/td&gt;
+            &lt;td&gt;B&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                        </details>
+                    </div>
                 </section>
 
                 <section id="forms" class="tutorial-section">
-                    <h2>📝 폼(Forms) 만들기</h2>
-                    <p>사용자 입력을 받는 폼을 만드는 방법입니다...</p>
+                    <h2>폼(Forms) 만들기</h2>
+                    
+                    <div class="form-basics">
+                        <h3>폼의 기본 구조</h3>
+                        <p>사용자로부터 정보를 입력받기 위한 양식을 만드는 방법입니다.</p>
+                        
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;form&gt;
+    &lt;label for="name"&gt;이름:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    
+    &lt;label for="email"&gt;이메일:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+    
+    &lt;label for="message"&gt;메시지:&lt;/label&gt;
+    &lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;
+    
+    &lt;button type="submit"&gt;전송&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <form style="display: flex; flex-direction: column; gap: 10px; max-width: 300px;">
+                                    <label for="demo-name" style="font-weight: bold;">이름:</label>
+                                    <input type="text" id="demo-name" name="name" style="padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                                    
+                                    <label for="demo-email" style="font-weight: bold;">이메일:</label>
+                                    <input type="email" id="demo-email" name="email" style="padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                                    
+                                    <label for="demo-message" style="font-weight: bold;">메시지:</label>
+                                    <textarea id="demo-message" name="message" style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; height: 60px; resize: vertical;"></textarea>
+                                    
+                                    <button type="button" style="padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">전송</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="input-types">
+                            <h4>다양한 입력 타입</h4>
+                            <div class="input-examples">
+                                <div class="input-example">
+                                    <h4>텍스트 입력</h4>
+                                    <div class="tag-demo">
+                                        <div class="tag-code">
+                                            <pre><code>&lt;input type="text" placeholder="이름을 입력하세요"&gt;
+&lt;input type="password" placeholder="비밀번호"&gt;
+&lt;input type="email" placeholder="이메일 주소"&gt;</code></pre>
+                                        </div>
+                                        <div class="tag-result">
+                                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                                <input type="text" placeholder="이름을 입력하세요" style="padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                                                <input type="password" placeholder="비밀번호" style="padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                                                <input type="email" placeholder="이메일 주소" style="padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="input-example">
+                                    <h4>선택 입력</h4>
+                                    <div class="tag-demo">
+                                        <div class="tag-code">
+                                            <pre><code>&lt;input type="radio" id="male" name="gender" value="male"&gt;
+&lt;label for="male"&gt;남성&lt;/label&gt;
+
+&lt;input type="radio" id="female" name="gender" value="female"&gt;
+&lt;label for="female"&gt;여성&lt;/label&gt;
+
+&lt;input type="checkbox" id="agree" name="agree"&gt;
+&lt;label for="agree"&gt;동의합니다&lt;/label&gt;</code></pre>
+                                        </div>
+                                        <div class="tag-result">
+                                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                                <div>
+                                                    <input type="radio" id="demo-male" name="demo-gender" value="male">
+                                                    <label for="demo-male">남성</label>
+                                                    <input type="radio" id="demo-female" name="demo-gender" value="female" style="margin-left: 15px;">
+                                                    <label for="demo-female">여성</label>
+                                                </div>
+                                                <div>
+                                                    <input type="checkbox" id="demo-agree" name="agree">
+                                                    <label for="demo-agree">동의합니다</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-challenge">
+                        <h4>실습 도전</h4>
+                        <p>회원가입 폼을 만들어보세요 (이름, 이메일, 비밀번호, 성별 선택, 약관 동의):</p>
+                        <details>
+                            <summary>정답 보기</summary>
+                            <pre><code>&lt;form&gt;
+    &lt;label for="username"&gt;이름:&lt;/label&gt;
+    &lt;input type="text" id="username" name="username" required&gt;
+    
+    &lt;label for="user-email"&gt;이메일:&lt;/label&gt;
+    &lt;input type="email" id="user-email" name="email" required&gt;
+    
+    &lt;label for="password"&gt;비밀번호:&lt;/label&gt;
+    &lt;input type="password" id="password" name="password" required&gt;
+    
+    &lt;fieldset&gt;
+        &lt;legend&gt;성별&lt;/legend&gt;
+        &lt;input type="radio" id="m" name="gender" value="male"&gt;
+        &lt;label for="m"&gt;남성&lt;/label&gt;
+        &lt;input type="radio" id="f" name="gender" value="female"&gt;
+        &lt;label for="f"&gt;여성&lt;/label&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;input type="checkbox" id="terms" name="terms" required&gt;
+    &lt;label for="terms"&gt;약관에 동의합니다&lt;/label&gt;
+    
+    &lt;button type="submit"&gt;회원가입&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        </details>
+                    </div>
                 </section>
 
                 <section id="semantic-html" class="tutorial-section">
-                    <h2>🏗️ 시맨틱 HTML</h2>
-                    <p>의미가 있는 HTML 구조를 만드는 방법을 알아보겠습니다...</p>
+                    <h2>시맨틱 HTML</h2>
+                    
+                    <div class="semantic-explanation">
+                        <h3>시맨틱 HTML이란?</h3>
+                        <p>의미가 있는 HTML 태그를 사용하여 문서의 구조와 내용을 명확하게 표현하는 방법입니다.</p>
+                        
+                        <div class="semantic-benefits">
+                            <h4>시맨틱 HTML의 장점</h4>
+                            <ul>
+                                <li><strong>접근성 향상</strong>: 스크린 리더 등 보조 기술이 내용을 더 잘 이해</li>
+                                <li><strong>SEO 개선</strong>: 검색 엔진이 페이지 구조를 더 잘 파악</li>
+                                <li><strong>유지보수성</strong>: 코드의 의미가 명확해져 관리가 쉬워짐</li>
+                                <li><strong>팀 협업</strong>: 다른 개발자가 코드를 이해하기 쉬워짐</li>
+                            </ul>
+                        </div>
+
+                        <div class="semantic-grid">
+                            <div class="semantic-item">
+                                <h4>&lt;header&gt;</h4>
+                                <p>페이지나 섹션의 머리말 영역</p>
+                            </div>
+                            <div class="semantic-item">
+                                <h4>&lt;nav&gt;</h4>
+                                <p>내비게이션 링크 영역</p>
+                            </div>
+                            <div class="semantic-item">
+                                <h4>&lt;main&gt;</h4>
+                                <p>페이지의 주요 콘텐츠 영역</p>
+                            </div>
+                            <div class="semantic-item">
+                                <h4>&lt;section&gt;</h4>
+                                <p>관련된 콘텐츠의 구역</p>
+                            </div>
+                            <div class="semantic-item">
+                                <h4>&lt;article&gt;</h4>
+                                <p>독립적인 콘텐츠 영역</p>
+                            </div>
+                            <div class="semantic-item">
+                                <h4>&lt;aside&gt;</h4>
+                                <p>부수적인 콘텐츠 영역</p>
+                            </div>
+                            <div class="semantic-item">
+                                <h4>&lt;footer&gt;</h4>
+                                <p>페이지나 섹션의 바닥글 영역</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="semantic-example">
+                        <h3>시맨틱 HTML 구조 예제</h3>
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;블로그&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;내 블로그&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#home"&gt;홈&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#about"&gt;소개&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;header&gt;
+                &lt;h2&gt;첫 번째 글&lt;/h2&gt;
+                &lt;time&gt;2024-01-15&lt;/time&gt;
+            &lt;/header&gt;
+            &lt;p&gt;글 내용...&lt;/p&gt;
+        &lt;/article&gt;
+        
+        &lt;aside&gt;
+            &lt;h3&gt;관련 링크&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;참고 자료&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2024 내 블로그&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <div style="border: 1px solid #ddd; padding: 15px; font-family: Arial, sans-serif;">
+                                    <header style="border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 15px;">
+                                        <h2 style="margin: 0; color: #333;">내 블로그</h2>
+                                        <nav style="margin-top: 10px;">
+                                            <ul style="list-style: none; padding: 0; margin: 0; display: flex; gap: 20px;">
+                                                <li><a href="#" style="color: #007bff; text-decoration: none;">홈</a></li>
+                                                <li><a href="#" style="color: #007bff; text-decoration: none;">소개</a></li>
+                                            </ul>
+                                        </nav>
+                                    </header>
+                                    
+                                    <main style="display: flex; gap: 20px;">
+                                        <article style="flex: 2;">
+                                            <header style="margin-bottom: 10px;">
+                                                <h3 style="margin: 0; color: #333;">첫 번째 글</h3>
+                                                <time style="color: #666; font-size: 0.9em;">2024-01-15</time>
+                                            </header>
+                                            <p>글 내용...</p>
+                                        </article>
+                                        
+                                        <aside style="flex: 1; background: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                            <h4 style="margin-top: 0; color: #333;">관련 링크</h4>
+                                            <ul style="padding-left: 20px;">
+                                                <li><a href="#" style="color: #007bff; text-decoration: none;">참고 자료</a></li>
+                                            </ul>
+                                        </aside>
+                                    </main>
+                                    
+                                    <footer style="border-top: 2px solid #eee; padding-top: 10px; margin-top: 15px; text-align: center; color: #666; font-size: 0.9em;">
+                                        <p>&copy; 2024 내 블로그</p>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-challenge">
+                        <h4>실습 도전</h4>
+                        <p>뉴스 기사 페이지의 시맨틱 구조를 만들어보세요 (header, nav, main, article, aside, footer 사용):</p>
+                        <details>
+                            <summary>정답 보기</summary>
+                            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;뉴스 사이트&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;데일리 뉴스&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#politics"&gt;정치&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#economy"&gt;경제&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#sports"&gt;스포츠&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;header&gt;
+                &lt;h2&gt;오늘의 주요 뉴스&lt;/h2&gt;
+                &lt;time datetime="2024-01-15"&gt;2024년 1월 15일&lt;/time&gt;
+            &lt;/header&gt;
+            &lt;p&gt;뉴스 내용...&lt;/p&gt;
+        &lt;/article&gt;
+        
+        &lt;aside&gt;
+            &lt;h3&gt;인기 기사&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;관련 뉴스 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;관련 뉴스 2&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2024 데일리 뉴스. All rights reserved.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </details>
+                    </div>
                 </section>
             </div>
         </div>
