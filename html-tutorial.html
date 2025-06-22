@@ -49,98 +49,705 @@
 
     <!-- 메인 콘텐츠 -->
     <main class="main">
-        <div class="tutorial-container full-width">
-            <!-- HTML 학습 레벨 선택 -->
-            <div class="level-selector">
-                <h2>HTML 학습 단계를 선택하세요</h2>
-                <p class="level-description">체계적인 단계별 학습으로 HTML을 완전히 마스터하세요!</p>
-                
-                <div class="level-cards">
-                    <div class="level-card beginner">
-                        <div class="level-icon">🌱</div>
-                        <h3>초급편</h3>
-                        <p class="level-subtitle">HTML 기초부터 차근차근</p>
-                        <div class="level-topics">
-                            <span>HTML이란 무엇인가?</span>
-                            <span>기본 문법과 구조</span>
-                            <span>기본 태그 활용법</span>
-                            <span>첫 웹페이지 만들기</span>
-                        </div>
-                        <div class="level-stats">
-                            <span>📚 8개 챕터</span>
-                            <span>⏱️ 2-3시간</span>
-                            <span>🎯 완전 초보자</span>
-                        </div>
-                        <a href="html-beginner.html" class="level-btn primary">초급편 시작하기</a>
-                    </div>
-                    
-                    <div class="level-card intermediate">
-                        <div class="level-icon">🌿</div>
-                        <h3>중급편</h3>
-                        <p class="level-subtitle">실무에 필요한 핵심 기능들</p>
-                        <div class="level-topics">
-                            <span>고급 텍스트 서식</span>
-                            <span>폼과 입력 요소</span>
-                            <span>테이블 완전 정복</span>
-                            <span>멀티미디어 활용</span>
-                        </div>
-                        <div class="level-stats">
-                            <span>📚 5개 챕터</span>
-                            <span>⏱️ 3-4시간</span>
-                            <span>🎯 기초 완료자</span>
-                        </div>
-                        <a href="html-intermediate.html" class="level-btn secondary">중급편 시작하기</a>
-                    </div>
-                    
-                    <div class="level-card advanced">
-                        <div class="level-icon">🌳</div>
-                        <h3>고급편</h3>
-                        <p class="level-subtitle">전문가 수준의 고급 기술</p>
-                        <div class="level-topics">
-                            <span>시맨틱 HTML</span>
-                            <span>SEO 최적화</span>
-                            <span>웹 접근성</span>
-                            <span>최신 HTML5 기능</span>
-                        </div>
-                        <div class="level-stats">
-                            <span>📚 4개 챕터</span>
-                            <span>⏱️ 4-5시간</span>
-                            <span>🎯 중급 완료자</span>
-                        </div>
-                        <a href="html-advanced.html" class="level-btn advanced-btn">고급편 시작하기</a>
-                    </div>
+        <div class="tutorial-container">
+            <!-- 사이드바 -->
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <h3>HTML 학습 목차</h3>
+                    <nav class="tutorial-nav">
+                        <ul>
+                            <li><a href="#html-intro" class="nav-item">HTML이란 무엇인가?</a></li>
+                            <li><a href="#html-grammar" class="nav-item">HTML 문법의 기초</a></li>
+                            <li><a href="#html-structure" class="nav-item">HTML 문서 구조</a></li>
+                            <li><a href="#basic-tags" class="nav-item">기본 태그들</a></li>
+                            <li><a href="#text-tags" class="nav-item">텍스트 서식 태그</a></li>
+                            <li><a href="#links-images" class="nav-item">링크와 이미지</a></li>
+                            <li><a href="#lists" class="nav-item">목록 만들기</a></li>
+                            <li><a href="#tables" class="nav-item">테이블 만들기</a></li>
+                            <li><a href="#forms" class="nav-item">폼(Forms) 만들기</a></li>
+                            <li><a href="#semantic-html" class="nav-item">시맨틱 HTML</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                
-                <div class="learning-path-visual">
-                    <h3>🗺️ 학습 로드맵</h3>
-                    <div class="roadmap">
-                        <div class="roadmap-step">
-                            <div class="step-number">1</div>
-                            <div class="step-content">
-                                <h4>초급편 (2-3시간)</h4>
-                                <p>HTML 기초 개념과 기본 태그들을 배웁니다</p>
-                            </div>
-                        </div>
-                        <div class="roadmap-arrow">→</div>
-                        <div class="roadmap-step">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <h4>중급편 (3-4시간)</h4>
-                                <p>폼, 테이블, 멀티미디어 등 실무 기능을 익힙니다</p>
-                            </div>
-                        </div>
-                        <div class="roadmap-arrow">→</div>
-                        <div class="roadmap-step">
-                            <div class="step-number">3</div>
-                            <div class="step-content">
-                                <h4>고급편 (4-5시간)</h4>
-                                <p>시맨틱 HTML, SEO, 접근성 등 전문 기술을 마스터합니다</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </aside>
 
+            <!-- 메인 콘텐츠 -->
+            <div class="tutorial-content">
+                <!-- 튜토리얼 헤더 -->
+                <div class="tutorial-header">
+                    <h1>HTML 완전 정복 튜토리얼</h1>
+                    <p class="subtitle">HTML 기초부터 고급 기술까지 체계적으로 배워보세요</p>
+                </div>
+
+                <!-- 1. HTML이란 무엇인가? -->
+                <section id="html-intro" class="tutorial-section">
+                    <h2>HTML이란 무엇인가요?</h2>
+                    
+                    <div class="concept-explanation">
+                        <div class="concept-main">
+                            <h3>HTML = HyperText Markup Language</h3>
+                            <div class="concept-breakdown">
+                                <div class="concept-part">
+                                    <strong>HyperText</strong>
+                                    <p>링크로 연결된 텍스트</p>
+                                </div>
+                                <div class="concept-part">
+                                    <strong>Markup</strong>
+                                    <p>구조를 표시하는 방법</p>
+                                </div>
+                                <div class="concept-part">
+                                    <strong>Language</strong>
+                                    <p>컴퓨터가 이해하는 언어</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="analogy-box">
+                            <h4>쉬운 비유로 이해하기</h4>
+                            <p><strong>웹페이지를 집이라고 생각해보세요:</strong></p>
+                            <ul>
+                                <li><strong>HTML</strong> = 집의 뼈대 (기둥, 벽, 방)</li>
+                                <li><strong>CSS</strong> = 집의 인테리어 (색깔, 가구, 장식)</li>
+                                <li><strong>JavaScript</strong> = 집의 전자제품 (조명, 에어컨, TV)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="why-learn-html">
+                        <h3>왜 HTML을 배워야 할까요?</h3>
+                        <div class="reasons-grid">
+                            <div class="reason-item">
+                                <h4>모든 웹사이트의 기초</h4>
+                                <p>구글, 페이스북, 유튜브를 포함한 모든 웹사이트가 HTML을 기반으로 구축됩니다. 웹 개발의 첫걸음이자 가장 중요한 기초 기술입니다.</p>
+                            </div>
+                            <div class="reason-item">
+                                <h4>배우기 쉬운 언어</h4>
+                                <p>프로그래밍 경험이 없어도 쉽게 배울 수 있습니다. 직관적인 태그 구조로 누구나 빠르게 익힐 수 있는 마크업 언어입니다.</p>
+                            </div>
+                            <div class="reason-item">
+                                <h4>다양한 분야에서 활용</h4>
+                                <p>웹 개발자뿐만 아니라 디자이너, 마케터, 콘텐츠 제작자 등 다양한 분야에서 필요로 하는 핵심 기술입니다.</p>
+                            </div>
+                            <div class="reason-item">
+                                <h4>즉시 확인 가능한 결과</h4>
+                                <p>코드를 작성하면 브라우저에서 바로 결과를 확인할 수 있어 학습 효과가 뛰어나고 성취감을 빠르게 느낄 수 있습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. HTML 문법의 기초 -->
+                <section id="html-grammar" class="tutorial-section">
+                    <h2>HTML 문법의 기초</h2>
+                    
+                    <div class="grammar-explanation">
+                        <h3>HTML의 기본 구조: 태그(Tag)</h3>
+                        <div class="tag-anatomy">
+                            <div class="tag-visual">
+                                <span class="tag-bracket">&lt;</span>
+                                <span class="tag-name">태그이름</span>
+                                <span class="tag-bracket">&gt;</span>
+                                <span class="tag-content">내용</span>
+                                <span class="tag-bracket">&lt;/</span>
+                                <span class="tag-name">태그이름</span>
+                                <span class="tag-bracket">&gt;</span>
+                            </div>
+                            <div class="tag-parts">
+                                <div class="part-explanation">
+                                    <strong>여는 태그</strong>: &lt;태그이름&gt;
+                                </div>
+                                <div class="part-explanation">
+                                    <strong>내용</strong>: 실제 표시될 텍스트
+                                </div>
+                                <div class="part-explanation">
+                                    <strong>닫는 태그</strong>: &lt;/태그이름&gt;
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grammar-rules">
+                            <h4>HTML 문법 규칙</h4>
+                            <div class="rules-grid">
+                                <div class="rule-item">
+                                    <strong>대소문자 구분 안함</strong>
+                                    <p>&lt;H1&gt;과 &lt;h1&gt;은 동일하게 처리됩니다</p>
+                                </div>
+                                <div class="rule-item">
+                                    <strong>태그는 중첩 가능</strong>
+                                    <p>&lt;div&gt;&lt;p&gt;내용&lt;/p&gt;&lt;/div&gt;</p>
+                                </div>
+                                <div class="rule-item">
+                                    <strong>빈 태그 존재</strong>
+                                    <p>&lt;br&gt;, &lt;img&gt; 등은 닫는 태그가 없습니다</p>
+                                </div>
+                                <div class="rule-item">
+                                    <strong>들여쓰기 권장</strong>
+                                    <p>가독성을 위해 적절한 들여쓰기를 사용하세요</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-box">
+                        <h4>첫 번째 실습</h4>
+                        <p>아래 코드를 따라 써보세요:</p>
+                        <pre><code>&lt;h1&gt;안녕하세요!&lt;/h1&gt;
+&lt;p&gt;이것은 내 첫 번째 HTML 태그입니다.&lt;/p&gt;</code></pre>
+                        <div class="result-preview">
+                            <strong>결과:</strong>
+                            <div class="preview-content">
+                                <h1 style="font-size: 1.5em; margin: 10px 0;">안녕하세요!</h1>
+                                <p style="margin: 10px 0;">이것은 내 첫 번째 HTML 태그입니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. HTML 문서의 기본 구조 -->
+                <section id="html-structure" class="tutorial-section">
+                    <h2>HTML 문서의 기본 구조</h2>
+                    
+                    <div class="document-structure">
+                        <h3>모든 HTML 문서는 이 구조를 가져야 해요</h3>
+                        <div class="structure-demo">
+                            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;페이지 제목&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;여기에 내용을 작성하세요&lt;/h1&gt;
+    &lt;p&gt;이것은 웹페이지의 본문입니다.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                        
+                        <div class="structure-explanation">
+                            <h4>각 부분의 역할</h4>
+                            <div class="parts-grid">
+                                <div class="part-item">
+                                    <strong>&lt;!DOCTYPE html&gt;</strong>
+                                    <p>HTML5 문서임을 선언</p>
+                                </div>
+                                <div class="part-item">
+                                    <strong>&lt;html&gt;</strong>
+                                    <p>HTML 문서의 시작과 끝</p>
+                                </div>
+                                <div class="part-item">
+                                    <strong>&lt;head&gt;</strong>
+                                    <p>페이지 정보 (제목, 설정 등)</p>
+                                </div>
+                                <div class="part-item">
+                                    <strong>&lt;body&gt;</strong>
+                                    <p>실제 화면에 보이는 내용</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. 기본 태그들 -->
+                <section id="basic-tags" class="tutorial-section">
+                    <h2>기본 태그들</h2>
+                    
+                    <div class="basic-tags-intro">
+                        <p>이제 실제로 사용하는 기본 태그들을 배워보겠습니다. 각 태그의 결과를 직접 확인해보세요!</p>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>제목 태그 (Heading Tags)</h3>
+                        <p>제목을 만들 때 사용하는 태그입니다. h1이 가장 크고, h6이 가장 작습니다.</p>
+                        
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;h1&gt;가장 큰 제목&lt;/h1&gt;
+&lt;h2&gt;두 번째 제목&lt;/h2&gt;
+&lt;h3&gt;세 번째 제목&lt;/h3&gt;
+&lt;h4&gt;네 번째 제목&lt;/h4&gt;
+&lt;h5&gt;다섯 번째 제목&lt;/h5&gt;
+&lt;h6&gt;가장 작은 제목&lt;/h6&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <h1 style="font-size: 2em; margin: 10px 0;">가장 큰 제목</h1>
+                                <h2 style="font-size: 1.7em; margin: 10px 0;">두 번째 제목</h2>
+                                <h3 style="font-size: 1.4em; margin: 10px 0;">세 번째 제목</h3>
+                                <h4 style="font-size: 1.2em; margin: 10px 0;">네 번째 제목</h4>
+                                <h5 style="font-size: 1em; margin: 10px 0;">다섯 번째 제목</h5>
+                                <h6 style="font-size: 0.9em; margin: 10px 0;">가장 작은 제목</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>문단 태그 (Paragraph)</h3>
+                        <p>일반적인 텍스트 문단을 만들 때 사용합니다.</p>
+                        
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;p&gt;이것은 첫 번째 문단입니다.&lt;/p&gt;
+&lt;p&gt;이것은 두 번째 문단입니다.&lt;/p&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <p style="margin: 10px 0;">이것은 첫 번째 문단입니다.</p>
+                                <p style="margin: 10px 0;">이것은 두 번째 문단입니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>줄바꿈 태그</h3>
+                        <p>줄을 바꿀 때 사용하는 태그입니다. 닫는 태그가 없어요!</p>
+                        
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;p&gt;첫 번째 줄&lt;br&gt;두 번째 줄&lt;br&gt;세 번째 줄&lt;/p&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <p style="margin: 10px 0;">첫 번째 줄<br>두 번째 줄<br>세 번째 줄</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>텍스트 강조 태그</h3>
+                        <p>텍스트를 강조하거나 꾸밀 때 사용하는 태그들입니다.</p>
+                        
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;p&gt;
+    &lt;strong&gt;굵은 글씨&lt;/strong&gt;&lt;br&gt;
+    &lt;em&gt;기울어진 글씨&lt;/em&gt;&lt;br&gt;
+    &lt;u&gt;밑줄 글씨&lt;/u&gt;&lt;br&gt;
+    &lt;s&gt;취소선 글씨&lt;/s&gt;
+&lt;/p&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <p style="margin: 10px 0; line-height: 1.8;">
+                                    <strong>굵은 글씨</strong><br>
+                                    <em>기울어진 글씨</em><br>
+                                    <u>밑줄 글씨</u><br>
+                                    <s>취소선 글씨</s>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-challenge">
+                        <h4>실습 도전</h4>
+                        <p>다음과 같은 결과가 나오도록 HTML 코드를 작성해보세요:</p>
+                        <div class="challenge-result">
+                            <h2 style="font-size: 1.5em; margin: 10px 0;">내 소개</h2>
+                            <p style="margin: 10px 0;">안녕하세요! 저는 <strong>홍길동</strong>입니다.</p>
+                            <p style="margin: 10px 0;">저는 <em>웹 개발</em>을 배우고 있습니다.<br>HTML이 정말 재미있어요!</p>
+                        </div>
+                        <details>
+                            <summary>정답 보기</summary>
+                            <pre><code>&lt;h2&gt;내 소개&lt;/h2&gt;
+&lt;p&gt;안녕하세요! 저는 &lt;strong&gt;홍길동&lt;/strong&gt;입니다.&lt;/p&gt;
+&lt;p&gt;저는 &lt;em&gt;웹 개발&lt;/em&gt;을 배우고 있습니다.&lt;br&gt;HTML이 정말 재미있어요!&lt;/p&gt;</code></pre>
+                        </details>
+                    </div>
+                </section>
+
+                <section id="text-tags" class="tutorial-section">
+                    <h2>텍스트 서식 태그</h2>
+                    
+                    <div class="text-formatting-intro">
+                        <p>텍스트를 더 의미있고 아름답게 꾸미는 다양한 태그들을 배워보겠습니다.</p>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>의미적 강조 태그</h3>
+                        <p>단순히 모양만 바꾸는 것이 아니라, 의미를 전달하는 태그들입니다.</p>
+                        
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;p&gt;
+    &lt;strong&gt;매우 중요한 내용&lt;/strong&gt; (굵게 + 의미적 강조)&lt;br&gt;
+    &lt;em&gt;강조하고 싶은 내용&lt;/em&gt; (기울임 + 의미적 강조)&lt;br&gt;
+    &lt;mark&gt;하이라이트된 텍스트&lt;/mark&gt; (형광펜 효과)&lt;br&gt;
+    &lt;small&gt;작은 글씨 (저작권, 부가정보)&lt;/small&gt;
+&lt;/p&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <p style="margin: 10px 0; line-height: 1.8;">
+                                    <strong>매우 중요한 내용</strong> (굵게 + 의미적 강조)<br>
+                                    <em>강조하고 싶은 내용</em> (기울임 + 의미적 강조)<br>
+                                    <mark>하이라이트된 텍스트</mark> (형광펜 효과)<br>
+                                    <small>작은 글씨 (저작권, 부가정보)</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>편집 관련 태그</h3>
+                        <p>텍스트의 변경사항을 표시하는 태그들입니다.</p>
+                        
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;p&gt;
+    원래 가격: &lt;del&gt;10,000원&lt;/del&gt;&lt;br&gt;
+    할인 가격: &lt;ins&gt;8,000원&lt;/ins&gt;&lt;br&gt;
+    &lt;s&gt;품절된 상품&lt;/s&gt; → 재입고 완료!
+&lt;/p&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <p style="margin: 10px 0; line-height: 1.8;">
+                                    원래 가격: <del>10,000원</del><br>
+                                    할인 가격: <ins>8,000원</ins><br>
+                                    <s>품절된 상품</s> → 재입고 완료!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>특수 텍스트 태그</h3>
+                        <p>특별한 용도로 사용되는 텍스트 태그들입니다.</p>
+                        
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;p&gt;
+    화학 공식: H&lt;sub&gt;2&lt;/sub&gt;O (아래첨자)&lt;br&gt;
+    수학 공식: E=mc&lt;sup&gt;2&lt;/sup&gt; (위첨자)&lt;br&gt;
+    코드: &lt;code&gt;console.log('Hello')&lt;/code&gt;&lt;br&gt;
+    키보드: &lt;kbd&gt;Ctrl + C&lt;/kbd&gt; (키보드 입력)&lt;br&gt;
+    변수: &lt;var&gt;x + y = z&lt;/var&gt; (수학 변수)
+&lt;/p&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <p style="margin: 10px 0; line-height: 1.8;">
+                                    화학 공식: H<sub>2</sub>O (아래첨자)<br>
+                                    수학 공식: E=mc<sup>2</sup> (위첨자)<br>
+                                    코드: <code style="background: #f4f4f4; padding: 2px 4px; border-radius: 3px;">console.log('Hello')</code><br>
+                                    키보드: <kbd style="background: #f8f8f8; border: 1px solid #ccc; padding: 2px 6px; border-radius: 3px;">Ctrl + C</kbd> (키보드 입력)<br>
+                                    변수: <var style="font-style: italic; color: #6f42c1;">x + y = z</var> (수학 변수)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>인용문 태그</h3>
+                        <p>다른 곳에서 가져온 내용을 표시할 때 사용합니다.</p>
+                        
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;p&gt;스티브 잡스는 이렇게 말했습니다:&lt;/p&gt;
+&lt;blockquote&gt;
+    "혁신은 리더와 팔로워를 구분하는 것이다."
+&lt;/blockquote&gt;
+
+&lt;p&gt;그는 또한 &lt;q&gt;Stay hungry, stay foolish&lt;/q&gt;라고도 했습니다.&lt;/p&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <p style="margin: 10px 0;">스티브 잡스는 이렇게 말했습니다:</p>
+                                <blockquote style="margin: 15px 0; padding: 15px; background: #f8f9fa; border-left: 4px solid #007bff; font-style: italic;">
+                                    "혁신은 리더와 팔로워를 구분하는 것이다."
+                                </blockquote>
+                                <p style="margin: 10px 0;">그는 또한 <q>"Stay hungry, stay foolish"</q>라고도 했습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-challenge">
+                        <h4>실습 도전</h4>
+                        <p>다음과 같은 텍스트를 HTML로 만들어보세요:</p>
+                        <div class="challenge-result">
+                            <h3 style="font-size: 1.3em; margin: 10px 0;">웹 개발 공부 일지</h3>
+                            <p style="margin: 10px 0;"><strong>오늘의 학습:</strong> HTML 텍스트 서식 태그</p>
+                            <p style="margin: 10px 0;"><em>중요한 발견:</em> <mark>의미적 태그</mark>와 시각적 태그의 차이점</p>
+                            <p style="margin: 10px 0;">화학식 예제: H<sub>2</sub>O, 수학식 예제: a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></p>
+                            <p style="margin: 10px 0;"><small>참고: 웹 접근성을 위해 의미적 태그를 사용하자</small></p>
+                        </div>
+                        <details>
+                            <summary>정답 보기</summary>
+                            <pre><code>&lt;h3&gt;웹 개발 공부 일지&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;오늘의 학습:&lt;/strong&gt; HTML 텍스트 서식 태그&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;중요한 발견:&lt;/em&gt; &lt;mark&gt;의미적 태그&lt;/mark&gt;와 시각적 태그의 차이점&lt;/p&gt;
+&lt;p&gt;화학식 예제: H&lt;sub&gt;2&lt;/sub&gt;O, 수학식 예제: a&lt;sup&gt;2&lt;/sup&gt; + b&lt;sup&gt;2&lt;/sup&gt; = c&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;참고: 웹 접근성을 위해 의미적 태그를 사용하자&lt;/small&gt;&lt;/p&gt;</code></pre>
+                        </details>
+                    </div>
+                </section>
+
+                <section id="links-images" class="tutorial-section">
+                    <h2>링크와 이미지</h2>
+                    
+                    <div class="links-section">
+                        <h3>링크 만들기</h3>
+                        <p>다른 페이지나 사이트로 이동할 수 있는 링크를 만드는 방법입니다.</p>
+                        
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;!-- 다른 웹사이트로 링크 --&gt;
+&lt;a href="https://www.google.com"&gt;구글로 이동&lt;/a&gt;
+
+&lt;!-- 새 창에서 열기 --&gt;
+&lt;a href="https://www.naver.com" target="_blank"&gt;네이버 (새 창)&lt;/a&gt;
+
+&lt;!-- 같은 사이트 내 다른 페이지 --&gt;
+&lt;a href="css-tutorial.html"&gt;CSS 튜토리얼&lt;/a&gt;
+
+&lt;!-- 이메일 링크 --&gt;
+&lt;a href="mailto:someone@example.com"&gt;이메일 보내기&lt;/a&gt;
+
+&lt;!-- 전화번호 링크 --&gt;
+&lt;a href="tel:010-1234-5678"&gt;전화걸기&lt;/a&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <p style="line-height: 2;">
+                                    <a href="https://www.google.com" style="color: #007bff; text-decoration: underline;">구글로 이동</a><br>
+                                    <a href="https://www.naver.com" target="_blank" style="color: #007bff; text-decoration: underline;">네이버 (새 창)</a><br>
+                                    <a href="css-tutorial.html" style="color: #007bff; text-decoration: underline;">CSS 튜토리얼</a><br>
+                                    <a href="mailto:someone@example.com" style="color: #007bff; text-decoration: underline;">이메일 보내기</a><br>
+                                    <a href="tel:010-1234-5678" style="color: #007bff; text-decoration: underline;">전화걸기</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <h4>링크 사용 팁</h4>
+                            <ul>
+                                <li><strong>target="_blank"</strong>: 새 창에서 열기</li>
+                                <li><strong>href="#"</strong>: 페이지 맨 위로 이동</li>
+                                <li><strong>href="#section1"</strong>: 같은 페이지 내 특정 위치로 이동</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="images-section">
+                        <h3>이미지 추가하기</h3>
+                        <p>웹페이지에 이미지를 표시하는 방법입니다.</p>
+                        
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;!-- 기본 이미지 --&gt;
+&lt;img src="photo.jpg" alt="사진 설명"&gt;
+
+&lt;!-- 크기 지정 --&gt;
+&lt;img src="photo.jpg" alt="사진" width="300" height="200"&gt;
+
+&lt;!-- 링크가 있는 이미지 --&gt;
+&lt;a href="https://www.example.com"&gt;
+    &lt;img src="logo.jpg" alt="로고"&gt;
+&lt;/a&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <div style="border: 2px dashed #e2e8f0; padding: 20px; text-align: center; margin: 10px 0; background: #f8fafc; border-radius: 8px;">
+                                    <p style="color: #64748b; font-weight: 500;">이미지가 여기에 표시됩니다</p>
+                                    <p style="font-size: 0.875em; color: #94a3b8;">실제로는 이미지 파일이 필요합니다</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="important-note">
+                            <h4>중요한 속성들</h4>
+                            <ul>
+                                <li><strong>src</strong>: 이미지 파일의 경로 (필수)</li>
+                                <li><strong>alt</strong>: 이미지 설명 텍스트 (접근성을 위해 필수)</li>
+                                <li><strong>width, height</strong>: 이미지 크기 (픽셀 단위)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="practice-challenge">
+                        <h4>실습 도전</h4>
+                        <p>다음 요구사항에 맞는 HTML을 작성해보세요:</p>
+                        <ol>
+                            <li>구글로 이동하는 링크 (새 창에서 열기)</li>
+                            <li>이메일 주소로 메일을 보내는 링크</li>
+                            <li>이미지 하나 (alt 속성 포함)</li>
+                        </ol>
+                        <details>
+                            <summary>정답 보기</summary>
+                            <pre><code>&lt;a href="https://www.google.com" target="_blank"&gt;구글로 이동&lt;/a&gt;
+&lt;a href="mailto:your-email@example.com"&gt;이메일 보내기&lt;/a&gt;
+&lt;img src="my-photo.jpg" alt="내 사진"&gt;</code></pre>
+                        </details>
+                    </div>
+                </section>
+
+                <section id="lists" class="tutorial-section">
+                    <h2>목록 만들기</h2>
+                    
+                    <div class="list-types">
+                        <h3>순서 없는 목록 (Unordered List)</h3>
+                        <p>순서가 중요하지 않은 항목들을 나열할 때 사용합니다.</p>
+                        
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;ul&gt;
+    &lt;li&gt;사과&lt;/li&gt;
+    &lt;li&gt;바나나&lt;/li&gt;
+    &lt;li&gt;오렌지&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li>사과</li>
+                                    <li>바나나</li>
+                                    <li>오렌지</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="list-types">
+                        <h3>순서 있는 목록 (Ordered List)</h3>
+                        <p>순서가 중요한 항목들을 나열할 때 사용합니다.</p>
+                        
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;ol&gt;
+    &lt;li&gt;물을 끓인다&lt;/li&gt;
+    &lt;li&gt;라면을 넣는다&lt;/li&gt;
+    &lt;li&gt;3분 기다린다&lt;/li&gt;
+    &lt;li&gt;완성!&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <ol style="margin: 10px 0; padding-left: 20px;">
+                                    <li>물을 끓인다</li>
+                                    <li>라면을 넣는다</li>
+                                    <li>3분 기다린다</li>
+                                    <li>완성!</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="list-types">
+                        <h3>중첩된 목록</h3>
+                        <p>목록 안에 또 다른 목록을 만들 수 있습니다.</p>
+                        
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;ul&gt;
+    &lt;li&gt;과일
+        &lt;ul&gt;
+            &lt;li&gt;사과&lt;/li&gt;
+            &lt;li&gt;바나나&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;채소
+        &lt;ul&gt;
+            &lt;li&gt;당근&lt;/li&gt;
+            &lt;li&gt;양파&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <ul style="margin: 10px 0; padding-left: 20px;">
+                                    <li>과일
+                                        <ul style="margin: 5px 0; padding-left: 20px;">
+                                            <li>사과</li>
+                                            <li>바나나</li>
+                                        </ul>
+                                    </li>
+                                    <li>채소
+                                        <ul style="margin: 5px 0; padding-left: 20px;">
+                                            <li>당근</li>
+                                            <li>양파</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="list-types">
+                        <h3>설명 목록 (Description List)</h3>
+                        <p>용어와 그 설명을 함께 나타낼 때 사용합니다.</p>
+                        
+                        <div class="tag-demo">
+                            <div class="tag-code">
+                                <pre><code>&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;웹페이지의 구조를 만드는 언어&lt;/dd&gt;
+    
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;웹페이지의 디자인을 담당하는 언어&lt;/dd&gt;
+    
+    &lt;dt&gt;JavaScript&lt;/dt&gt;
+    &lt;dd&gt;웹페이지에 동적 기능을 추가하는 언어&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                            </div>
+                            <div class="tag-result">
+                                <dl style="margin: 10px 0;">
+                                    <dt style="font-weight: bold; margin-top: 10px;">HTML</dt>
+                                    <dd style="margin-left: 20px; margin-bottom: 10px;">웹페이지의 구조를 만드는 언어</dd>
+                                    
+                                    <dt style="font-weight: bold; margin-top: 10px;">CSS</dt>
+                                    <dd style="margin-left: 20px; margin-bottom: 10px;">웹페이지의 디자인을 담당하는 언어</dd>
+                                    
+                                    <dt style="font-weight: bold; margin-top: 10px;">JavaScript</dt>
+                                    <dd style="margin-left: 20px; margin-bottom: 10px;">웹페이지에 동적 기능을 추가하는 언어</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-challenge">
+                        <h4>실습 도전</h4>
+                        <p>다음과 같은 목록을 만들어보세요:</p>
+                        <div class="challenge-result">
+                            <h4>내가 좋아하는 것들</h4>
+                            <ol style="margin: 10px 0; padding-left: 20px;">
+                                <li>음식
+                                    <ul style="margin: 5px 0; padding-left: 20px;">
+                                        <li>피자</li>
+                                        <li>치킨</li>
+                                    </ul>
+                                </li>
+                                <li>취미
+                                    <ul style="margin: 5px 0; padding-left: 20px;">
+                                        <li>독서</li>
+                                        <li>영화감상</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                        <details>
+                            <summary>정답 보기</summary>
+                            <pre><code>&lt;h4&gt;내가 좋아하는 것들&lt;/h4&gt;
+&lt;ol&gt;
+    &lt;li&gt;음식
+        &lt;ul&gt;
+            &lt;li&gt;피자&lt;/li&gt;
+            &lt;li&gt;치킨&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;취미
+        &lt;ul&gt;
+            &lt;li&gt;독서&lt;/li&gt;
+            &lt;li&gt;영화감상&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                        </details>
+                    </div>
+                </section>
+
+                <section id="tables" class="tutorial-section">
+                    <h2>📊 테이블 만들기</h2>
+                    <p>데이터를 표 형태로 정리하는 방법을 배워보겠습니다...</p>
+                </section>
+
+                <section id="forms" class="tutorial-section">
+                    <h2>📝 폼(Forms) 만들기</h2>
+                    <p>사용자 입력을 받는 폼을 만드는 방법입니다...</p>
+                </section>
+
+                <section id="semantic-html" class="tutorial-section">
+                    <h2>🏗️ 시맨틱 HTML</h2>
+                    <p>의미가 있는 HTML 구조를 만드는 방법을 알아보겠습니다...</p>
+                </section>
+            </div>
         </div>
     </main>
 

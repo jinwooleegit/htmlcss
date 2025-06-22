@@ -1359,4 +1359,100 @@ function addJSTutorialAnimations() {
         `;
         document.head.appendChild(style);
     }
-} 
+}
+
+// ===== 튜토리얼 네비게이션 =====
+function initTutorialNavigation() {
+    const navItems = document.querySelectorAll('.tutorial-nav .nav-item');
+    const sections = document.querySelectorAll('.tutorial-section');
+    
+    // 네비게이션 클릭 이벤트
+    navItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                // 스무스 스크롤
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // 활성 상태 업데이트
+                navItems.forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+            }
+        });
+    });
+    
+    // 스크롤 감지로 활성 섹션 하이라이트
+    window.addEventListener('scroll', function() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === '#' + current) {
+                item.classList.add('active');
+            }
+        });
+    });
+}
+
+// ===== 메인 초기화 =====
+document.addEventListener('DOMContentLoaded', function() {
+    // 기본 기능 초기화
+    initializeWebsite();
+    initMobileNavigation();
+    initProgressTracking();
+    initScrollAnimations();
+    initThemeToggle();
+    
+    // 페이지별 기능 초기화
+    if (document.querySelector('.practice-container')) {
+        initAdvancedPracticeEditor();
+    }
+    
+    if (document.querySelector('.quiz-categories')) {
+        initAdvancedQuizSystem();
+    }
+    
+    if (document.querySelector('.tutorial-nav')) {
+        initTutorialNavigation();
+    }
+    
+    if (document.querySelector('.method-tab')) {
+        initDeploymentTabs();
+    }
+    
+    if (document.querySelector('.security-checklist')) {
+        initSecurityChecklist();
+    }
+    
+    if (document.querySelector('.cost-calculator')) {
+        initCostCalculator();
+    }
+    
+    // JavaScript 튜토리얼 데모 애니메이션
+    if (document.querySelector('#demo-paragraph')) {
+        addJSTutorialAnimations();
+        
+        // 시간 표시 업데이트
+        if (document.querySelector('#time-display')) {
+            updateTimeDisplay();
+            setInterval(updateTimeDisplay, 1000);
+        }
+    }
+    
+    // 검색 및 북마크 기능
+    initSearchFunction();
+    initBookmarkSystem();
+});
