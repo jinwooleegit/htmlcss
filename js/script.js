@@ -14,6 +14,53 @@ document.addEventListener('DOMContentLoaded', function() {
     initDeploymentTabs();
     initSecurityChecklist();
     initCostCalculator();
+    
+    // JavaScript 튜토리얼 전용 초기화
+    if (document.querySelector('#time-display')) {
+        updateTimeDisplay();
+        setInterval(updateTimeDisplay, 1000);
+    }
+    
+    // 애니메이션 CSS 추가
+    addJSTutorialAnimations();
+    
+    // 데모 버튼 이벤트 리스너 (JavaScript 튜토리얼용)
+    const demoButton = document.getElementById('demo-button');
+    const colorButton = document.getElementById('color-button');
+    
+    if (demoButton) {
+        demoButton.addEventListener('click', function() {
+            const demoText = document.getElementById('demo-text');
+            if (demoText) {
+                const messages = [
+                    '와! JavaScript가 동작합니다! ✨',
+                    '텍스트가 바뀌었어요! 🎉',
+                    'JavaScript는 정말 강력해요! 💪',
+                    '동적인 웹페이지의 시작이에요! 🚀',
+                    '이제 여러분도 개발자가 되어보세요! 👨‍💻'
+                ];
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                demoText.textContent = randomMessage;
+                demoText.style.animation = 'pulse 0.5s ease-in-out';
+            }
+        });
+    }
+    
+    if (colorButton) {
+        colorButton.addEventListener('click', function() {
+            const demoText = document.getElementById('demo-text');
+            if (demoText) {
+                const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#f093fb'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                demoText.style.color = randomColor;
+                demoText.style.textShadow = '2px 2px 4px rgba(0,0,0,0.3)';
+                demoText.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    demoText.style.transform = 'scale(1)';
+                }, 200);
+            }
+        });
+    }
 });
 
 // Initialize Website Functions
@@ -1132,5 +1179,184 @@ function initCostCalculator() {
     const totalElement = document.querySelector('.cost-total .cost-value');
     if (totalElement) {
         totalElement.textContent = `${totalCost.toLocaleString()}원/년`;
+    }
+}
+
+// ===== JAVASCRIPT 튜토리얼 데모 함수들 =====
+function changeText() {
+    const paragraph = document.getElementById('demo-paragraph');
+    if (paragraph) {
+        paragraph.textContent = 'JavaScript가 텍스트를 바꿨습니다! 🎉';
+        paragraph.style.fontWeight = 'bold';
+        paragraph.style.transform = 'scale(1.05)';
+        paragraph.style.transition = 'all 0.3s ease';
+    }
+}
+
+function changeColor() {
+    const paragraph = document.getElementById('demo-paragraph');
+    if (paragraph) {
+        const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#f093fb'];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        paragraph.style.color = randomColor;
+        paragraph.style.textShadow = '2px 2px 4px rgba(0,0,0,0.3)';
+        paragraph.style.transition = 'all 0.3s ease';
+    }
+}
+
+function addElement() {
+    const container = document.getElementById('demo-container');
+    if (container) {
+        const newElement = document.createElement('div');
+        const elementCount = container.children.length + 1;
+        newElement.textContent = `새로운 요소 #${elementCount}이 추가되었습니다!`;
+        newElement.style.background = 'linear-gradient(135deg, #e8f5e8, #d4edda)';
+        newElement.style.padding = '12px';
+        newElement.style.margin = '8px 0';
+        newElement.style.borderRadius = '8px';
+        newElement.style.border = '2px solid #28a745';
+        newElement.style.animation = 'slideInFromTop 0.5s ease-out';
+        newElement.style.boxShadow = '0 2px 8px rgba(40, 167, 69, 0.2)';
+        
+        // 삭제 버튼 추가
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = '×';
+        deleteBtn.style.background = '#dc3545';
+        deleteBtn.style.color = 'white';
+        deleteBtn.style.border = 'none';
+        deleteBtn.style.borderRadius = '50%';
+        deleteBtn.style.width = '25px';
+        deleteBtn.style.height = '25px';
+        deleteBtn.style.float = 'right';
+        deleteBtn.style.cursor = 'pointer';
+        deleteBtn.onclick = () => newElement.remove();
+        
+        newElement.appendChild(deleteBtn);
+        container.appendChild(newElement);
+    }
+}
+
+function showAlert() {
+    alert('🎉 축하합니다! JavaScript 함수가 성공적으로 실행되었습니다!\n\n이것이 바로 JavaScript의 힘입니다!\n\n- 사용자와 상호작용 ✓\n- 동적 콘텐츠 변경 ✓\n- 실시간 반응 ✓');
+}
+
+function resetDemo() {
+    const paragraph = document.getElementById('demo-paragraph');
+    const container = document.getElementById('demo-container');
+    
+    if (paragraph) {
+        paragraph.textContent = '이 텍스트는 JavaScript로 변경될 수 있습니다!';
+        paragraph.style.color = '';
+        paragraph.style.fontWeight = '';
+        paragraph.style.textShadow = '';
+        paragraph.style.transform = '';
+        paragraph.style.transition = '';
+    }
+    
+    if (container) {
+        // 부드러운 애니메이션으로 요소들 제거
+        Array.from(container.children).forEach((child, index) => {
+            setTimeout(() => {
+                child.style.animation = 'fadeOut 0.3s ease-out';
+                setTimeout(() => child.remove(), 300);
+            }, index * 100);
+        });
+    }
+}
+
+// 시간 업데이트 함수 (JavaScript 튜토리얼용)
+function updateTimeDisplay() {
+    const timeDisplay = document.getElementById('time-display');
+    if (timeDisplay) {
+        const now = new Date();
+        const options = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        };
+        const timeString = now.toLocaleDateString('ko-KR', options);
+        timeDisplay.textContent = timeString;
+        timeDisplay.style.color = '#28a745';
+        timeDisplay.style.fontWeight = 'bold';
+    }
+}
+
+// CSS 애니메이션 추가
+function addJSTutorialAnimations() {
+    if (!document.getElementById('js-tutorial-animations')) {
+        const style = document.createElement('style');
+        style.id = 'js-tutorial-animations';
+        style.textContent = `
+            @keyframes bounce {
+                0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+                40% { transform: translateY(-15px); }
+                60% { transform: translateY(-8px); }
+            }
+            @keyframes slideInFromTop {
+                from { 
+                    opacity: 0; 
+                    transform: translateY(-20px) scale(0.9); 
+                }
+                to { 
+                    opacity: 1; 
+                    transform: translateY(0) scale(1); 
+                }
+            }
+            @keyframes fadeOut {
+                from { 
+                    opacity: 1; 
+                    transform: scale(1); 
+                }
+                to { 
+                    opacity: 0; 
+                    transform: scale(0.9); 
+                }
+            }
+            @keyframes pulse {
+                0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+                70% { box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
+                100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+            }
+            .demo-btn {
+                background: linear-gradient(135deg, #007bff, #0056b3);
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                margin: 5px;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+            }
+            .demo-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+            }
+            .demo-btn.reset {
+                background: linear-gradient(135deg, #dc3545, #c82333);
+                box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+            }
+            .demo-btn.reset:hover {
+                box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+            }
+            .demo-output {
+                background: #f8f9fa;
+                border: 2px dashed #dee2e6;
+                border-radius: 10px;
+                padding: 20px;
+                margin: 20px 0;
+                min-height: 100px;
+            }
+            .demo-controls {
+                text-align: center;
+                margin: 20px 0;
+            }
+        `;
+        document.head.appendChild(style);
     }
 } 

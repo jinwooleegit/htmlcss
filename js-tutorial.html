@@ -78,27 +78,183 @@
                 <!-- JavaScript 소개 -->
                 <section id="intro" class="tutorial-section">
                     <h1>JavaScript 튜토리얼</h1>
-                    <h2>JavaScript란 무엇인가요?</h2>
+                    <h2>⚡ JavaScript란 무엇인가요?</h2>
                     <p>
-                        JavaScript는 웹 페이지에 동적인 기능을 추가하는 프로그래밍 언어입니다. 
-                        사용자와의 상호작용, 데이터 처리, 애니메이션 등을 구현할 수 있습니다.
+                        JavaScript는 웹 페이지에 <strong>생명을 불어넣는</strong> 프로그래밍 언어입니다. 
+                        HTML이 구조를, CSS가 디자인을 담당한다면, JavaScript는 <strong>동적인 기능과 상호작용</strong>을 만들어냅니다.
                     </p>
                     
+                    <div class="js-comparison">
+                        <div class="comparison-item">
+                            <h3>JavaScript 없는 웹페이지</h3>
+                            <div class="static-demo">
+                                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #dee2e6;">
+                                    <h4>정적인 웹페이지</h4>
+                                    <p>이 텍스트는 항상 같습니다.</p>
+                                    <button style="background: #6c757d; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: not-allowed;" disabled>클릭해도 아무 일이 없음</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comparison-item">
+                            <h3>JavaScript가 있는 웹페이지</h3>
+                            <div class="dynamic-demo">
+                                <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px; border-radius: 8px;">
+                                    <h4>동적인 웹페이지</h4>
+                                    <p id="demo-text">이 텍스트는 변경될 수 있습니다!</p>
+                                    <button id="demo-button" style="background: #28a745; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px;">텍스트 변경</button>
+                                    <button id="color-button" style="background: #dc3545; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">색상 변경</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="info-box">
-                        <h3>🚀 JavaScript로 할 수 있는 것들</h3>
-                        <ul>
-                            <li>버튼 클릭, 폼 제출 등의 이벤트 처리</li>
-                            <li>웹 페이지 내용을 동적으로 변경</li>
-                            <li>애니메이션과 시각적 효과 구현</li>
-                            <li>서버와 데이터 통신</li>
-                        </ul>
+                        <h3>🚀 JavaScript로 할 수 있는 놀라운 것들</h3>
+                        <div class="capabilities-showcase">
+                            <div class="capability-item">
+                                <h4>🎯 사용자 상호작용</h4>
+                                <p>버튼 클릭, 마우스 움직임, 키보드 입력에 반응</p>
+                                <div class="mini-demo">
+                                    <button onclick="alert('안녕하세요! JavaScript가 실행되었습니다!')" style="background: #007bff; color: white; padding: 5px 10px; border: none; border-radius: 3px; cursor: pointer; font-size: 12px;">클릭해보세요!</button>
+                                </div>
+                            </div>
+                            <div class="capability-item">
+                                <h4>🎨 동적 콘텐츠 변경</h4>
+                                <p>실시간으로 텍스트, 이미지, 스타일 변경</p>
+                                <div class="mini-demo">
+                                    <span id="time-display" style="font-weight: bold; color: #28a745;">현재 시간 로딩 중...</span>
+                                </div>
+                            </div>
+                            <div class="capability-item">
+                                <h4>✨ 애니메이션 효과</h4>
+                                <p>부드러운 움직임과 시각적 효과 구현</p>
+                                <div class="mini-demo">
+                                    <div id="bouncing-ball" style="width: 20px; height: 20px; background: #ff6b6b; border-radius: 50%; animation: bounce 1s infinite; display: inline-block;"></div>
+                                </div>
+                            </div>
+                            <div class="capability-item">
+                                <h4>🔄 데이터 처리</h4>
+                                <p>계산, 검증, 데이터 변환 등의 로직 처리</p>
+                                <div class="mini-demo">
+                                    <input type="number" id="calc-input" placeholder="숫자 입력" style="width: 60px; padding: 2px;">
+                                    <button onclick="document.getElementById('calc-result').textContent = '결과: ' + (document.getElementById('calc-input').value * 2)" style="background: #ffc107; color: black; padding: 2px 8px; border: none; border-radius: 3px; cursor: pointer; font-size: 12px;">×2</button>
+                                    <span id="calc-result" style="margin-left: 10px; font-weight: bold;"></span>
+                                </div>
+                            </div>
+                            <div class="capability-item">
+                                <h4>📡 서버 통신</h4>
+                                <p>웹 서버와 데이터를 주고받아 실시간 정보 업데이트</p>
+                            </div>
+                            <div class="capability-item">
+                                <h4>📱 반응형 기능</h4>
+                                <p>화면 크기에 따른 동적 레이아웃 조정</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="example-box">
-                        <h4>JavaScript 체험해보기</h4>
-                        <pre><code>document.getElementById('demo-button').addEventListener('click', function() {
-    document.getElementById('demo-text').textContent = '텍스트가 바뀌었습니다!';
-});</code></pre>
+                    <div class="js-evolution">
+                        <h3>🌟 JavaScript의 진화</h3>
+                        <div class="evolution-timeline">
+                            <div class="timeline-item">
+                                <div class="year">1995</div>
+                                <div class="content">
+                                    <h4>JavaScript 탄생</h4>
+                                    <p>브렌던 아이크가 10일 만에 개발</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="year">2000s</div>
+                                <div class="content">
+                                    <h4>웹 2.0 시대</h4>
+                                    <p>AJAX와 동적 웹 애플리케이션</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="year">2009</div>
+                                <div class="content">
+                                    <h4>Node.js 등장</h4>
+                                    <p>서버 사이드 JavaScript</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="year">2015</div>
+                                <div class="content">
+                                    <h4>ES6 (ES2015)</h4>
+                                    <p>현대적 JavaScript 문법</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="year">현재</div>
+                                <div class="content">
+                                    <h4>어디든 JavaScript</h4>
+                                    <p>웹, 앱, 서버, IoT 등 모든 곳에서 사용</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="learning-approach">
+                        <h3>📚 이 튜토리얼의 학습 방법</h3>
+                        <div class="approach-grid">
+                            <div class="approach-item">
+                                <h4>🧠 개념 이해</h4>
+                                <p>각 개념을 쉬운 예제와 함께 설명</p>
+                            </div>
+                            <div class="approach-item">
+                                <h4>💻 실습 중심</h4>
+                                <p>직접 코드를 작성하고 결과 확인</p>
+                            </div>
+                            <div class="approach-item">
+                                <h4>🎯 실무 적용</h4>
+                                <p>실제 웹사이트에서 사용하는 기능들</p>
+                            </div>
+                            <div class="approach-item">
+                                <h4>🚀 단계적 학습</h4>
+                                <p>기초부터 고급까지 체계적 진행</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="interactive-demo">
+                        <h3>🎮 JavaScript 체험해보기</h3>
+                        <p>아래 버튼들을 클릭해서 JavaScript의 힘을 직접 느껴보세요!</p>
+                        <div class="demo-area">
+                            <div class="demo-controls">
+                                <button onclick="changeText()" class="demo-btn">텍스트 변경</button>
+                                <button onclick="changeColor()" class="demo-btn">색상 변경</button>
+                                <button onclick="addElement()" class="demo-btn">요소 추가</button>
+                                <button onclick="showAlert()" class="demo-btn">알림 표시</button>
+                                <button onclick="resetDemo()" class="demo-btn reset">초기화</button>
+                            </div>
+                            <div id="demo-output" class="demo-output">
+                                <p id="demo-paragraph">이 텍스트는 JavaScript로 변경될 수 있습니다!</p>
+                                <div id="demo-container"></div>
+                            </div>
+                        </div>
+                        <div class="demo-code">
+                            <h4>위 데모의 JavaScript 코드:</h4>
+                            <pre><code>function changeText() {
+    document.getElementById('demo-paragraph').textContent = 
+        'JavaScript가 텍스트를 바꿨습니다! 🎉';
+}
+
+function changeColor() {
+    const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    document.getElementById('demo-paragraph').style.color = randomColor;
+}
+
+function addElement() {
+    const container = document.getElementById('demo-container');
+    const newElement = document.createElement('div');
+    newElement.textContent = '새로운 요소가 추가되었습니다!';
+    newElement.style.background = '#e8f5e8';
+    newElement.style.padding = '10px';
+    newElement.style.margin = '5px 0';
+    newElement.style.borderRadius = '5px';
+    container.appendChild(newElement);
+}</code></pre>
+                        </div>
                     </div>
                 </section>
 
