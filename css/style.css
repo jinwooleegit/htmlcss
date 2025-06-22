@@ -4199,3 +4199,235 @@ pre code {
         margin-top: 0;
     }
 }
+
+/* Cursor AI 페이지 전용 스타일 */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.feature-item {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border-left: 4px solid #3b82f6;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+}
+
+.feature-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dbeafe;
+    border-radius: 8px;
+}
+
+.feature-content h5 {
+    margin: 0 0 8px 0;
+    color: #1e293b;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.feature-content p {
+    margin: 0 0 10px 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.feature-example {
+    padding: 10px;
+    background: #e0f2fe;
+    border-radius: 6px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.feature-example strong {
+    color: #0369a1;
+}
+
+.feature-example span {
+    color: #0891b2;
+    font-style: italic;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.advantage-card {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.advantage-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.advantage-card h4 {
+    margin: 0 0 12px 0;
+    color: #1e293b;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.advantage-card p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* 동영상 리소스 스타일 */
+.video-resources {
+    margin: 40px 0;
+    padding: 30px;
+    background: #fefefe;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+}
+
+.video-resources h3 {
+    margin: 0 0 12px 0;
+    color: #1e293b;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.video-resources > p {
+    margin: 0 0 30px 0;
+    color: #64748b;
+    font-size: 16px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.video-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.video-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.video-thumbnail {
+    position: relative;
+    height: 180px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-button {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #3b82f6;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+}
+
+.video-info {
+    padding: 20px;
+}
+
+.video-info h4 {
+    margin: 0 0 8px 0;
+    color: #1e293b;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.video-channel {
+    margin: 0 0 8px 0;
+    color: #3b82f6;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.video-description {
+    margin: 0 0 16px 0;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.video-link {
+    display: inline-flex;
+    align-items: center;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.video-link:hover {
+    color: #2563eb;
+}
+
+/* Cursor AI 페이지 반응형 디자인 */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .advantages-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .video-resources {
+        padding: 20px;
+        margin: 30px 0;
+    }
+}
