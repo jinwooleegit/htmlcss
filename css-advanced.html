@@ -1,0 +1,2526 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 고급편 - WebLearn</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Header & Navigation Override */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .nav {
+            padding: var(--spacing-md) 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .logo a {
+            color: var(--primary-color);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-lg);
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            font-weight: 500;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+            text-decoration: none;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            background-color: var(--light-gray);
+        }
+
+        .nav-link.active {
+            color: var(--primary-color);
+            background-color: rgba(0, 123, 255, 0.1);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 10px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 8px 20px;
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+            color: #495057;
+        }
+
+        .dropdown-item.active {
+            color: #007bff;
+            background-color: rgba(0, 123, 255, 0.05);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-primary);
+            border-radius: 2px;
+            transition: all var(--transition-fast);
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        .tutorial-container-full {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #ffffff;
+            min-height: 100vh;
+        }
+
+        .level-selector {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .level-navigation h2 {
+            color: #212529;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .level-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .level-card {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .level-card:hover {
+            border-color: #6c757d;
+            transform: translateY(-2px);
+        }
+
+        .level-card.active {
+            border-color: #007bff;
+            background: #f0f7ff;
+        }
+
+        .level-badge {
+            background: #6c757d;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .level-badge.current {
+            background: #007bff;
+        }
+
+        .level-card h3 {
+            color: #212529;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .level-card p {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .level-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .level-link:hover {
+            color: #0056b3;
+        }
+
+        .tutorial-content {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        .tutorial-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .tutorial-header h1 {
+            color: #212529;
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .tutorial-header .subtitle {
+            color: #6c757d;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .tutorial-section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #f1f3f4;
+        }
+
+        .tutorial-section:last-child {
+            border-bottom: none;
+        }
+
+        .tutorial-section h2 {
+            color: #212529;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+
+        .tutorial-section h3 {
+            color: #495057;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 30px 0 20px 0;
+        }
+
+        .concept-explanation {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .concept-main h3 {
+            color: #212529;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .concept-main p {
+            color: #6c757d;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .analogy-box {
+            background: #e7f3ff;
+            border: 1px solid #bbdefb;
+            border-radius: 6px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .analogy-box h4 {
+            color: #0d47a1;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .analogy-box p {
+            color: #1565c0;
+            margin-bottom: 10px;
+        }
+
+        .analogy-box ul {
+            color: #1976d2;
+            margin-left: 20px;
+        }
+
+        .tag-category {
+            margin-bottom: 40px;
+        }
+
+        .code-example {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .code-example pre {
+            background: #f8f9fa;
+            color: #212529;
+            padding: 20px;
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .code-example code {
+            font-family: 'Courier New', monospace;
+            font-size: inherit;
+            color: inherit;
+            background: none;
+            padding: 0;
+        }
+
+        .result-box {
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 15px 0;
+            background: #f8f9fa;
+        }
+
+        .result-title {
+            color: #495057;
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+
+        .practice-challenge {
+            background: #fff3cd;
+            border: 1px solid #ffd700;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .practice-challenge h4 {
+            color: #856404;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .practice-challenge p {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+
+        .practice-challenge details {
+            margin-top: 15px;
+        }
+
+        .practice-challenge summary {
+            color: #856404;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 8px 0;
+        }
+
+        .practice-challenge pre {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 10px;
+            overflow-x: auto;
+        }
+
+        .tip-box {
+            background: #f1f8e9;
+            color: #2e7d32;
+            border: 1px solid #c8e6c9;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .tip-box h4 {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .tip-box ul {
+            margin-left: 20px;
+        }
+
+        /* 다음 단계 섹션 */
+        .next-step-section {
+            background: #f8f9fa;
+            padding: 50px 0;
+            margin-top: 40px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .next-step-section h2 {
+            color: #212529;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .next-step-section p {
+            color: #6c757d;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .next-step-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: #007bff;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .cta-button.secondary {
+            background: #6c757d;
+        }
+
+        .cta-button.secondary:hover {
+            background: #545b62;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .tutorial-container-full {
+                padding: 15px;
+            }
+
+            .level-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .tutorial-content {
+                padding: 20px;
+            }
+
+            .tutorial-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .next-step-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 네비게이션 -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html">WebLearn</a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">홈</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="html-tutorial.html" class="nav-link dropdown-toggle">HTML</a>
+                        <div class="dropdown-menu">
+                            <a href="html-tutorial.html" class="dropdown-item">초급편 - HTML 기초</a>
+                            <a href="html-intermediate.html" class="dropdown-item">중급편 - HTML 심화</a>
+                            <a href="html-advanced.html" class="dropdown-item">고급편 - HTML 마스터</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="css-tutorial-basic.html" class="nav-link dropdown-toggle active">CSS</a>
+                        <div class="dropdown-menu">
+                            <a href="css-tutorial-basic.html" class="dropdown-item">완전정복 가이드</a>
+                            <a href="css-intermediate.html" class="dropdown-item">중급편 - 실무 레이아웃</a>
+                            <a href="css-advanced.html" class="dropdown-item active">고급편 - CSS 마스터</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="js-tutorial.html" class="nav-link">JavaScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cursor-ai-tutorial.html" class="nav-link">Cursor AI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="deployment-tutorial.html" class="nav-link">배포하기</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 진행률 표시기 -->
+    <div class="progress-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-text" id="progressText">0%</div>
+    </div>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main">
+        <div class="tutorial-container-full">
+            <!-- 레벨 선택 섹션 -->
+            <div class="level-selector">
+                <div class="level-navigation">
+                    <h2>CSS 학습 단계</h2>
+                    <div class="level-cards">
+                        <div class="level-card">
+                            <span class="level-badge">초급편</span>
+                            <h3>CSS 기초</h3>
+                            <p>CSS의 기본 개념부터 핵심 스타일링까지</p>
+                            <a href="css-tutorial-basic.html" class="level-link">학습하기 →</a>
+                        </div>
+                        <div class="level-card">
+                            <span class="level-badge">중급편</span>
+                            <h3>CSS 심화</h3>
+                            <p>레이아웃, 반응형, 애니메이션</p>
+                            <a href="css-intermediate.html" class="level-link">학습하기 →</a>
+                        </div>
+                        <div class="level-card active">
+                            <span class="level-badge current">고급편</span>
+                            <h3>CSS 마스터</h3>
+                            <p>고급 기법, 최적화, 프로젝트</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 메인 콘텐츠 -->
+            <div class="tutorial-content">
+                <!-- 튜토리얼 헤더 -->
+                <div class="tutorial-header">
+                    <h1>CSS 고급편 - 마스터 레벨</h1>
+                    <p class="subtitle">고급 애니메이션, CSS 아키텍처, 성능 최적화, 실전 포트폴리오 프로젝트까지 전문가 수준의 CSS 마스터하기</p>
+                </div>
+
+                <!-- 1. CSS 변수 (Custom Properties) -->
+                <section id="css-variables" class="tutorial-section">
+                    <h2>CSS 변수 (Custom Properties)</h2>
+                    
+                    <div class="concept-explanation">
+                        <div class="concept-main">
+                            <h3>재사용 가능한 값들을 변수로 관리</h3>
+                            <p>CSS 변수(CSS Custom Properties)는 CSS에서 값을 저장하고 재사용할 수 있게 해주는 강력한 기능입니다. 전통적으로 CSS에서는 같은 값을 여러 곳에서 반복해서 사용해야 했지만, CSS 변수를 사용하면 한 곳에서 정의하고 여러 곳에서 참조할 수 있습니다.</p>
+                        </div>
+                        
+                        <div class="analogy-box">
+                            <h4>CSS 변수를 설정표로 이해하기</h4>
+                            <p><strong>회사의 브랜드 가이드라인을 생각해보세요:</strong></p>
+                            <ul>
+                                <li><strong>:root</strong> = 회사 브랜드 가이드북 (전역 설정)</li>
+                                <li><strong>--primary-color</strong> = 메인 브랜드 컬러 정의</li>
+                                <li><strong>var()</strong> = 가이드북을 참조하는 것</li>
+                                <li><strong>수정 시</strong> = 가이드북만 바꾸면 모든 곳에 적용</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>1. CSS 변수 기본 문법</h3>
+                        
+                        <div class="code-example">
+                            <pre><code>/* 변수 정의: :root 선택자에서 전역 변수 정의 */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    
+    --font-family-primary: 'Helvetica Neue', Arial, sans-serif;
+    --font-size-base: 1rem;
+    --font-size-large: 1.5rem;
+    --font-size-small: 0.875rem;
+    
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    
+    --border-radius: 8px;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+/* 변수 사용: var() 함수로 변수 값 참조 */
+.button {
+    background-color: var(--primary-color);
+    color: white;
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all var(--transition-speed) ease;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}</code></pre>
+                        </div>
+
+                        <div class="result-box">
+                            <div class="result-title">결과</div>
+                            <button style="background-color: #007bff; color: white; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 1rem; padding: 0.5rem 1rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); border: none; cursor: pointer; margin: 10px 0;">
+                                CSS 변수로 만든 버튼
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>2. 로컬 범위 변수</h3>
+                        <p>CSS 변수는 특정 요소나 클래스 내에서만 사용되는 로컬 범위로도 정의할 수 있습니다.</p>
+                        
+                        <div class="code-example">
+                            <pre><code>/* 컴포넌트별 로컬 변수 */
+.card {
+    --card-bg: #ffffff;
+    --card-border: #e9ecef;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.card.dark {
+    --card-bg: #2d3748;
+    --card-border: #4a5568;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.card.success {
+    --card-bg: #f0fff4;
+    --card-border: var(--success-color);
+    border-left: 4px solid var(--success-color);
+}
+
+.card.warning {
+    --card-bg: #fffaf0;
+    --card-border: var(--warning-color);
+    border-left: 4px solid var(--warning-color);
+}</code></pre>
+                        </div>
+
+                        <div class="result-box">
+                            <div class="result-title">다양한 카드 스타일</div>
+                            <div style="margin: 10px 0;">
+                                <div style="background: #ffffff; border: 1px solid #e9ecef; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 1.5rem; margin-bottom: 1rem;">기본 카드</div>
+                                <div style="background: #2d3748; border: 1px solid #4a5568; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 1.5rem; margin-bottom: 1rem; color: white;">다크 카드</div>
+                                <div style="background: #f0fff4; border: 1px solid #28a745; border-left: 4px solid #28a745; border-radius: 8px; padding: 1.5rem; margin-bottom: 1rem;">성공 카드</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>3. 다크 모드 구현</h3>
+                        <p>CSS 변수의 가장 강력한 활용 사례 중 하나는 테마 전환입니다. 다크 모드를 구현해보겠습니다.</p>
+                        
+                        <div class="code-example">
+                            <pre><code>/* 라이트 테마 (기본) */
+:root {
+    --theme-bg-primary: #ffffff;
+    --theme-bg-secondary: #f8f9fa;
+    --theme-text-primary: #212529;
+    --theme-text-secondary: #6c757d;
+    --theme-border: #dee2e6;
+    --theme-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 다크 테마 */
+[data-theme="dark"] {
+    --theme-bg-primary: #1a1a1a;
+    --theme-bg-secondary: #2d2d2d;
+    --theme-text-primary: #ffffff;
+    --theme-text-secondary: #a0a0a0;
+    --theme-border: #404040;
+    --theme-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 테마 변수를 사용하는 스타일 */
+body {
+    background-color: var(--theme-bg-primary);
+    color: var(--theme-text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    background-color: var(--theme-bg-secondary);
+    border: 1px solid var(--theme-border);
+    box-shadow: var(--theme-shadow);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+}
+
+.text-muted {
+    color: var(--theme-text-secondary);
+}
+
+/* 테마 토글 버튼 */
+.theme-toggle {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: var(--font-size-small);
+    transition: background-color var(--transition-speed);
+}
+
+.theme-toggle:hover {
+    background: var(--secondary-color);
+}</code></pre>
+                        </div>
+
+                        <div class="result-box">
+                            <div class="result-title">테마 전환 예제</div>
+                            <div style="background: #f8f9fa; border: 1px solid #dee2e6; padding: 1.5rem; border-radius: 8px; margin: 10px 0;">
+                                <p style="margin: 0 0 10px 0; color: #212529;">라이트 테마 컨테이너</p>
+                                <p style="margin: 0; color: #6c757d; font-size: 0.9rem;">보조 텍스트 색상</p>
+                            </div>
+                            <div style="background: #2d2d2d; border: 1px solid #404040; padding: 1.5rem; border-radius: 8px; margin: 10px 0;">
+                                <p style="margin: 0 0 10px 0; color: #ffffff;">다크 테마 컨테이너</p>
+                                <p style="margin: 0; color: #a0a0a0; font-size: 0.9rem;">보조 텍스트 색상</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>4. CSS 변수의 fallback 값</h3>
+                        <p>CSS 변수가 정의되지 않았을 때 사용할 기본값을 설정할 수 있습니다.</p>
+                        
+                        <div class="code-example">
+                            <pre><code>/* fallback 값 사용법 */
+.element {
+    /* 변수가 없으면 기본값 사용 */
+    color: var(--custom-color, #333333);
+    
+    /* 중첩된 fallback */
+    background: var(--primary-bg, var(--secondary-bg, #ffffff));
+    
+    /* 계산과 함께 사용 */
+    padding: calc(var(--base-spacing, 1rem) * 2);
+    
+    /* 여러 값과 함께 */
+    box-shadow: 0 2px 4px var(--shadow-color, rgba(0, 0, 0, 0.1));
+}
+
+/* 동적 변수 변경 */
+.red-theme {
+    --primary-color: #dc3545;
+    --secondary-color: #f8d7da;
+}
+
+.blue-theme {
+    --primary-color: #007bff;
+    --secondary-color: #d1ecf1;
+}
+
+.green-theme {
+    --primary-color: #28a745;
+    --secondary-color: #d4edda;
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>5. JavaScript와 CSS 변수 연동</h3>
+                        <p>JavaScript로 CSS 변수를 동적으로 변경할 수 있어 매우 강력한 인터랙티브 효과를 만들 수 있습니다.</p>
+                        
+                        <div class="code-example">
+                            <pre><code>/* CSS */
+:root {
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    --primary-hue: 210;
+}
+
+.interactive-element {
+    background: linear-gradient(
+        45deg, 
+        hsl(var(--primary-hue), 70%, 60%), 
+        hsl(calc(var(--primary-hue) + 60), 70%, 60%)
+    );
+    transform: perspective(1000px) 
+               rotateX(calc((var(--mouse-y) - 50%) * 0.1deg))
+               rotateY(calc((var(--mouse-x) - 50%) * 0.1deg));
+    transition: transform 0.1s ease;
+}</code></pre>
+                        </div>
+
+                        <div class="code-example">
+                            <pre><code>// JavaScript
+// CSS 변수 값 읽기
+const rootStyles = getComputedStyle(document.documentElement);
+const primaryColor = rootStyles.getPropertyValue('--primary-color');
+
+// CSS 변수 값 설정
+document.documentElement.style.setProperty('--primary-color', '#ff6b6b');
+
+// 마우스 움직임에 따른 동적 변경
+document.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth) * 100;
+    const y = (e.clientY / window.innerHeight) * 100;
+    
+    document.documentElement.style.setProperty('--mouse-x', x + '%');
+    document.documentElement.style.setProperty('--mouse-y', y + '%');
+});
+
+// 테마 전환 함수
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+}
+
+// 색상 팔레트 생성기
+function generateColorPalette(baseHue) {
+    const root = document.documentElement;
+    root.style.setProperty('--primary-hue', baseHue);
+    root.style.setProperty('--secondary-hue', (baseHue + 30) % 360);
+    root.style.setProperty('--accent-hue', (baseHue + 180) % 360);
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="practice-challenge">
+                        <h4>실전 프로젝트: 동적 테마 시스템</h4>
+                        <p>CSS 변수를 활용해서 사용자가 색상을 커스터마이징할 수 있는 테마 시스템을 만들어보세요:</p>
+                        <details>
+                            <summary>완성 코드 보기</summary>
+                            <div class="code-example">
+                                <pre><code>/* CSS */
+:root {
+    --hue: 210;
+    --saturation: 70%;
+    --lightness: 50%;
+    
+    --primary: hsl(var(--hue), var(--saturation), var(--lightness));
+    --primary-light: hsl(var(--hue), var(--saturation), calc(var(--lightness) + 20%));
+    --primary-dark: hsl(var(--hue), var(--saturation), calc(var(--lightness) - 20%));
+    
+    --radius: 8px;
+    --spacing: 1rem;
+}
+
+.customizable-card {
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    color: white;
+    padding: calc(var(--spacing) * 2);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 20px hsla(var(--hue), var(--saturation), var(--lightness), 0.3);
+    transition: all 0.3s ease;
+}
+
+// JavaScript
+function updateTheme(hue, saturation, lightness, radius, spacing) {
+    const root = document.documentElement;
+    root.style.setProperty('--hue', hue);
+    root.style.setProperty('--saturation', saturation + '%');
+    root.style.setProperty('--lightness', lightness + '%');
+    root.style.setProperty('--radius', radius + 'px');
+    root.style.setProperty('--spacing', spacing + 'rem');
+}</code></pre>
+                            </div>
+                        </details>
+                        
+                        <div class="tip-box">
+                            <h4>CSS 변수 활용 팁</h4>
+                            <ul>
+                                <li><strong>네이밍 컨벤션</strong>: --component-property-modifier 형식 사용</li>
+                                <li><strong>계층 구조</strong>: 전역 → 컴포넌트 → 상태별로 변수 정의</li>
+                                <li><strong>calc() 활용</strong>: 변수와 계산 함수를 조합해서 동적 값 생성</li>
+                                <li><strong>브라우저 지원</strong>: IE 11+ 지원, 점진적 향상 방식으로 사용</li>
+                                <li><strong>디버깅</strong>: 브라우저 개발자 도구에서 실시간 수정 가능</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. 고급 선택자 -->
+                <section id="advanced-selectors" class="tutorial-section">
+                    <h2>고급 선택자</h2>
+                    
+                    <div class="concept-explanation">
+                        <div class="concept-main">
+                            <h3>정밀한 요소 선택으로 효율적인 스타일링</h3>
+                            <p>고급 선택자는 CSS의 진정한 파워를 보여주는 기능입니다. 복잡한 HTML 구조에서도 원하는 요소를 정확히 선택하고, JavaScript 없이도 동적인 효과를 만들 수 있습니다. 가상 클래스, 가상 요소, 속성 선택자 등을 마스터하면 훨씬 효율적이고 우아한 CSS를 작성할 수 있습니다.</p>
+                        </div>
+                        
+                        <div class="analogy-box">
+                            <h4>선택자를 GPS 네비게이션으로 이해하기</h4>
+                            <p><strong>HTML을 도시라고 상상해보세요:</strong></p>
+                            <ul>
+                                <li><strong>기본 선택자</strong> = "강남구에 있는 모든 카페"</li>
+                                <li><strong>고급 선택자</strong> = "강남역 2번 출구에서 50m, 2층에 있는 창가 자리 카페"</li>
+                                <li><strong>가상 클래스</strong> = "현재 영업 중인 카페"</li>
+                                <li><strong>가상 요소</strong> = "카페 입구에 자동으로 생기는 안내판"</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>1. 고급 가상 클래스</h3>
+                        <p>가상 클래스는 요소의 특별한 상태나 위치를 나타냅니다.</p>
+                        
+                        <div class="code-example">
+                            <pre><code>/* 상태 기반 가상 클래스 */
+.btn:hover { 
+    background: #0056b3; 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
+}
+
+.btn:active { 
+    transform: translateY(0); 
+    box-shadow: 0 2px 6px rgba(0, 86, 179, 0.2);
+}
+
+.btn:focus { 
+    outline: 3px solid rgba(0, 123, 255, 0.3); 
+    outline-offset: 2px;
+}
+
+/* 입력 상태 가상 클래스 */
+input:valid { 
+    border-color: #28a745; 
+    background-image: url('checkmark.svg');
+}
+
+input:invalid { 
+    border-color: #dc3545; 
+    background-color: #f8d7da;
+}
+
+input:required { 
+    border-left: 4px solid #ffc107; 
+}
+
+input:disabled { 
+    background-color: #e9ecef; 
+    cursor: not-allowed; 
+    opacity: 0.6;
+}
+
+/* 체크박스와 라디오 버튼 */
+input[type="checkbox"]:checked + label {
+    color: #28a745;
+    font-weight: bold;
+}
+
+input[type="radio"]:checked + label::before {
+    content: "✓ ";
+    color: #007bff;
+}</code></pre>
+                        </div>
+
+                        <div class="result-box">
+                            <div class="result-title">인터랙티브 요소들</div>
+                            <div style="margin: 10px 0; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                                <button style="background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; margin: 5px; transition: all 0.3s ease;">호버해보세요</button>
+                                <input type="text" placeholder="유효한 이메일 입력" style="margin: 5px; padding: 8px; border: 2px solid #dee2e6; border-radius: 4px;" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                <label style="display: block; margin: 10px 0;"><input type="checkbox" style="margin-right: 8px;"> 체크해보세요</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>2. 구조적 가상 클래스</h3>
+                        <p>요소의 위치나 순서에 따라 선택하는 강력한 도구입니다.</p>
+                        
+                        <div class="code-example">
+                            <pre><code>/* nth-child 패턴 */
+.item:nth-child(odd) { 
+    background: #f8f9fa; 
+}
+
+.item:nth-child(even) { 
+    background: #ffffff; 
+}
+
+.item:nth-child(3n) { 
+    border-left: 4px solid #007bff; 
+}
+
+.item:nth-child(3n+1) { 
+    border-left: 4px solid #28a745; 
+}
+
+.item:nth-child(3n+2) { 
+    border-left: 4px solid #ffc107; 
+}
+
+/* 첫 번째와 마지막 요소 */
+.menu-item:first-child {
+    border-radius: 8px 8px 0 0;
+    border-top: 2px solid #007bff;
+}
+
+.menu-item:last-child {
+    border-radius: 0 0 8px 8px;
+    border-bottom: 2px solid #007bff;
+}
+
+.menu-item:only-child {
+    border-radius: 8px;
+    border: 2px solid #007bff;
+}
+
+/* 특정 타입의 요소 */
+p:first-of-type { 
+    font-size: 1.2em; 
+    font-weight: bold; 
+    color: #007bff;
+}
+
+p:last-of-type { 
+    margin-bottom: 0; 
+    font-style: italic;
+}
+
+/* 빈 요소 스타일링 */
+.container:empty::before {
+    content: "아직 콘텐츠가 없습니다.";
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* 대상 요소 (앵커 링크) */
+section:target {
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    animation: highlight 0.5s ease;
+}
+
+@keyframes highlight {
+    from { background: #ffc107; }
+    to { background: #fff3cd; }
+}</code></pre>
+                        </div>
+
+                        <div class="result-box">
+                            <div class="result-title">구조적 선택자 예제</div>
+                            <div style="margin: 10px 0;">
+                                <div style="border: 1px solid #dee2e6; border-radius: 8px; overflow: hidden;">
+                                    <div style="padding: 12px; background: #f8f9fa; border-left: 4px solid #28a745;">첫 번째 아이템 (3n+1)</div>
+                                    <div style="padding: 12px; background: #ffffff; border-left: 4px solid #ffc107;">두 번째 아이템 (3n+2)</div>
+                                    <div style="padding: 12px; background: #f8f9fa; border-left: 4px solid #007bff;">세 번째 아이템 (3n)</div>
+                                    <div style="padding: 12px; background: #ffffff; border-left: 4px solid #28a745;">네 번째 아이템 (3n+1)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>3. 가상 요소 마스터하기</h3>
+                        <p>가상 요소는 HTML에 없는 요소를 CSS로 만들어 디자인 효과를 추가합니다.</p>
+                        
+                        <div class="code-example">
+                            <pre><code>/* 기본 가상 요소 */
+.quote::before { 
+    content: """; 
+    font-size: 3em; 
+    color: #007bff; 
+    position: absolute; 
+    left: -20px; 
+    top: -10px;
+    font-family: Georgia, serif;
+}
+
+.quote::after { 
+    content: """; 
+    font-size: 3em; 
+    color: #007bff; 
+    position: absolute; 
+    right: -20px; 
+    bottom: -20px;
+    font-family: Georgia, serif;
+}
+
+/* 아이콘 추가 */
+.success::before {
+    content: "✓";
+    background: #28a745;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.warning::before {
+    content: "";
+    color: #ffc107;
+    font-size: 1.2em;
+    margin-right: 8px;
+}
+
+.error::before {
+    content: "✗";
+    background: #dc3545;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* 장식 요소 */
+.fancy-heading::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #007bff, #28a745);
+    border-radius: 2px;
+}
+
+/* 툴팁 만들기 */
+.tooltip {
+    position: relative;
+    cursor: help;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.tooltip::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    border: 6px solid transparent;
+    border-top-color: #333;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.tooltip:hover::after,
+.tooltip:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-8px);
+}
+
+/* 첫 글자 드롭캐피탈 */
+.drop-cap::first-letter {
+    font-size: 4em;
+    font-weight: bold;
+    color: #007bff;
+    float: left;
+    line-height: 0.8;
+    margin: 0.1em 0.1em 0 0;
+    font-family: Georgia, serif;
+    text-shadow: 2px 2px 4px rgba(0, 123, 255, 0.3);
+}
+
+/* 첫 줄 스타일링 */
+.intro::first-line {
+    font-weight: bold;
+    color: #007bff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}</code></pre>
+                        </div>
+
+                        <div class="result-box">
+                            <div class="result-title">가상 요소 효과들</div>
+                            <div style="margin: 10px 0; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                                <blockquote style="position: relative; font-style: italic; margin: 20px 0; padding: 0 40px; color: #495057;">
+                                    <span style="position: absolute; left: -20px; top: -10px; font-size: 3em; color: #007bff; font-family: Georgia, serif;">"</span>
+                                    이것은 가상 요소로 만든 인용문입니다.
+                                    <span style="position: absolute; right: -20px; bottom: -20px; font-size: 3em; color: #007bff; font-family: Georgia, serif;">"</span>
+                                </blockquote>
+                                <p style="margin: 10px 0;"><span style="background: #28a745; color: white; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 12px;">✓</span>성공 메시지</p>
+                                <p style="margin: 10px 0;"><span style="color: #ffc107; font-size: 1.2em; margin-right: 8px;"></span>경고 메시지</p>
+                                <p style="margin: 10px 0;"><span style="background: #dc3545; color: white; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 12px;">✗</span>오류 메시지</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>4. 고급 속성 선택자</h3>
+                        <p>HTML 속성을 기반으로 한 정밀한 선택이 가능합니다.</p>
+                        
+                        <div class="code-example">
+                            <pre><code>/* 속성 존재 여부 */
+[data-tooltip] {
+    border-bottom: 1px dotted #007bff;
+    cursor: help;
+}
+
+[required] {
+    border-left: 3px solid #ffc107;
+}
+
+[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* 정확한 값 매칭 */
+[type="email"] {
+    background-image: url('email-icon.svg');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 35px;
+}
+
+[class="active"] {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* 부분 문자열 매칭 */
+[class*="btn"] { /* 클래스에 'btn'이 포함된 모든 요소 */
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+[src$=".jpg"], [src$=".png"] { /* 이미지 파일 */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+[href^="https://"] { /* 외부 링크 */
+    color: #28a745;
+}
+
+[href^="https://"]:not([href*="yoursite.com"])::after {
+    content: " ↗";
+    font-size: 0.8em;
+    color: #6c757d;
+}
+
+[href^="mailto:"]::before { /* 이메일 링크 */
+    content: "✉ ";
+    color: #007bff;
+}
+
+[href^="tel:"]::before { /* 전화번호 링크 */
+    content: "📞 ";
+}
+
+/* 언어별 스타일링 */
+[lang="ko"] {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+[lang="en"] {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* 대소문자 구분 없는 매칭 */
+[type="email" i] { /* case insensitive */
+    /* 모든 경우의 type 값에 매칭 */
+}
+
+/* 공백으로 구분된 값 중 하나 */
+[class~="highlight"] { /* 클래스 목록 중 'highlight'가 있는 요소 */
+    background: yellow;
+}
+
+/* 하이픈으로 구분된 값의 시작 */
+[lang|="en"] { /* en, en-US, en-GB 등에 매칭 */
+    direction: ltr;
+}</code></pre>
+                        </div>
+
+                        <div class="result-box">
+                            <div class="result-title">속성 선택자 예제</div>
+                            <div style="margin: 10px 0; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                                <p style="margin: 5px 0;"><a href="https://example.com" style="color: #28a745; text-decoration: none;">외부 링크 https://example.com ↗</a></p>
+                                <p style="margin: 5px 0;"><a href="mailto:test@example.com" style="color: #007bff; text-decoration: none;">✉ test@example.com</a></p>
+                                <p style="margin: 5px 0;"><a href="tel:010-1234-5678" style="color: #007bff; text-decoration: none;">📞 010-1234-5678</a></p>
+                                <input type="email" placeholder="이메일 입력" style="margin: 5px 0; padding: 8px; border: 1px solid #dee2e6; border-left: 3px solid #ffc107; border-radius: 4px; width: 200px;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-challenge">
+                        <h4>실전 프로젝트: 고급 선택자 조합</h4>
+                        <p>여러 고급 선택자를 조합해서 복잡한 UI 컴포넌트를 만들어보세요:</p>
+                        <details>
+                            <summary>완성 코드 보기</summary>
+                            <div class="code-example">
+                                <pre><code>/* 카드 컴포넌트 */
+.card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 카드 내부 첫 번째 이미지 */
+.card img:first-of-type {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* 카드 제목 (첫 번째 h3) */
+.card h3:first-of-type {
+    margin: 0;
+    padding: 16px 16px 8px;
+    color: #212529;
+}
+
+/* 카드 내용 (제목 다음 p) */
+.card h3:first-of-type + p {
+    padding: 0 16px;
+    color: #6c757d;
+    margin-bottom: 16px;
+}
+
+/* 마지막 요소의 하단 여백 제거 */
+.card > *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 16px;
+}
+
+/* 링크가 있는 카드는 전체가 클릭 가능 */
+.card:has(a) {
+    cursor: pointer;
+}
+
+/* 외부 링크 표시 */
+.card a[href^="http"]:not([href*="localhost"])::after {
+    content: " ↗";
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+/* 빈 카드 처리 */
+.card:empty::before {
+    content: "콘텐츠를 추가해주세요";
+    display: block;
+    padding: 40px;
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* 특정 데이터 속성에 따른 스타일 */
+.card[data-status="new"]::before {
+    content: "NEW";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #dc3545;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.card[data-status="featured"] {
+    border-color: #ffc107;
+    background: linear-gradient(135deg, #fff3cd 0%, #ffffff 100%);
+}</code></pre>
+                            </div>
+                        </details>
+                        
+                        <div class="tip-box">
+                            <h4>고급 선택자 활용 팁</h4>
+                            <ul>
+                                <li><strong>성능 고려</strong>: 너무 복잡한 선택자는 성능에 영향을 줄 수 있습니다</li>
+                                <li><strong>유지보수성</strong>: 가독성과 성능의 균형을 맞춰서 사용하세요</li>
+                                <li><strong>브라우저 지원</strong>: :has()는 최신 브라우저에서만 지원됩니다</li>
+                                <li><strong>의미적 HTML</strong>: 선택자에 의존하기보다는 의미있는 HTML 작성이 우선</li>
+                                <li><strong>테스트</strong>: 다양한 상황에서 선택자가 올바르게 작동하는지 확인</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. CSS 아키텍처 -->
+                <section id="css-architecture" class="tutorial-section">
+                    <h2>CSS 아키텍처와 방법론</h2>
+                    
+                    <div class="concept-explanation">
+                        <div class="concept-main">
+                            <h3>확장 가능하고 유지보수 쉬운 CSS</h3>
+                            <p>대규모 프로젝트에서는 CSS가 복잡해지고 관리하기 어려워집니다. 체계적인 CSS 아키텍처와 명명 규칙을 사용하면 팀 협업, 코드 재사용성, 유지보수성을 크게 향상시킬 수 있습니다. 여러 방법론 중에서 프로젝트에 맞는 접근 방식을 선택하는 것이 중요합니다.</p>
+                        </div>
+                        
+                        <div class="analogy-box">
+                            <h4>CSS 아키텍처를 도서관 시스템으로 이해하기</h4>
+                            <p><strong>대형 도서관의 분류 시스템을 생각해보세요:</strong></p>
+                            <ul>
+                                <li><strong>BEM</strong> = 주제별 > 세부분야별 > 특별판 (Block > Element > Modifier)</li>
+                                <li><strong>SMACSS</strong> = 기본구조 > 레이아웃 > 모듈 > 상태 > 테마</li>
+                                <li><strong>ITCSS</strong> = 일반적인 것부터 구체적인 것까지 역삼각형 구조</li>
+                                <li><strong>Atomic CSS</strong> = 각 책을 개별 속성으로 분해해서 조합</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>1. BEM 방법론 (Block Element Modifier)</h3>
+                        <p>가장 널리 사용되는 CSS 명명 규칙으로, 컴포넌트 기반 개발에 최적화되어 있습니다.</p>
+                        
+                        <div class="code-example">
+                            <pre><code>/* BEM 기본 구조 */
+
+/* Block: 독립적으로 사용 가능한 컴포넌트 */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Element: Block의 구성 요소 (Block__ 형식) */
+.button__icon {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+.button__text {
+    font-weight: inherit;
+}
+
+/* Modifier: Block이나 Element의 변형 (-- 형식) */
+.button--primary {
+    background: #007bff;
+    color: white;
+}
+
+.button--secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.button--large {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+}
+
+.button--small {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.button--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* 복잡한 컴포넌트 예제: 카드 */
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card__content {
+    padding: 24px;
+}
+
+.card__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    color: #212529;
+}
+
+.card__description {
+    color: #6c757d;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+}
+
+.card__actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.card__price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #28a745;
+}
+
+/* 카드 변형들 */
+.card--featured {
+    border: 2px solid #ffc107;
+    position: relative;
+}
+
+.card--featured::before {
+    content: "추천";
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #ffc107;
+    color: #333;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.card--compact .card__content {
+    padding: 16px;
+}
+
+.card--compact .card__title {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.card--horizontal {
+    display: flex;
+    align-items: stretch;
+}
+
+.card--horizontal .card__image {
+    width: 200px;
+    height: auto;
+    min-height: 100%;
+}
+
+.card--horizontal .card__content {
+    flex: 1;
+}</code></pre>
+                        </div>
+
+                        <div class="result-box">
+                            <div class="result-title">BEM 방법론 적용 결과</div>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0;">
+                                <div style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); overflow: hidden;">
+                                    <div style="width: 100%; height: 120px; background: linear-gradient(45deg, #007bff, #0056b3); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Product Image</div>
+                                    <div style="padding: 24px;">
+                                        <h3 style="font-size: 1.5rem; font-weight: 600; margin: 0 0 12px 0; color: #212529;">카드 제목</h3>
+                                        <p style="color: #6c757d; line-height: 1.6; margin: 0 0 20px 0;">BEM 방법론으로 구조화된 카드 컴포넌트입니다.</p>
+                                        <div style="display: flex; gap: 12px; align-items: center;">
+                                            <button style="background: #007bff; color: white; padding: 8px 16px; border: none; border-radius: 6px; font-size: 0.9rem; cursor: pointer;">구매하기</button>
+                                            <span style="font-size: 1.25rem; font-weight: 600; color: #28a745;">₩29,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="background: white; border: 2px solid #ffc107; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); overflow: hidden; position: relative;">
+                                    <div style="position: absolute; top: 16px; right: 16px; background: #ffc107; color: #333; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">추천</div>
+                                    <div style="width: 100%; height: 120px; background: linear-gradient(45deg, #28a745, #20c997); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Featured Image</div>
+                                    <div style="padding: 16px;">
+                                        <h3 style="font-size: 1.2rem; font-weight: 600; margin: 0 0 8px 0; color: #212529;">추천 상품</h3>
+                                        <p style="color: #6c757d; line-height: 1.6; margin: 0 0 16px 0; font-size: 0.9rem;">컴팩트 모디파이어가 적용된 카드입니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>2. SMACSS (Scalable and Modular Architecture for CSS)</h3>
+                        <p>CSS를 5가지 카테고리로 분류하여 체계적으로 관리하는 방법론입니다.</p>
+                        
+                        <div class="code-example">
+                            <pre><code>/* 1. Base - 기본 스타일 */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 2. Layout - 주요 레이아웃 요소 */
+.l-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.l-sidebar {
+    width: 250px;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    background: #f8f9fa;
+}
+
+.l-main {
+    margin-left: 250px;
+    padding: 100px 40px 40px;
+    min-height: 100vh;
+}
+
+/* 3. Module - 재사용 가능한 컴포넌트 */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 8px;
+    padding: 32px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* 4. State - 상태 변화 */
+.is-hidden {
+    display: none !important;
+}
+
+.is-loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.is-loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 2px solid #007bff;
+    animation: spin 1s linear infinite;
+}
+
+.is-active {
+    color: #007bff;
+    font-weight: 600;
+}
+
+.is-error {
+    border-color: #dc3545 !important;
+    background-color: #f8d7da !important;
+}
+
+/* 5. Theme - 테마별 스타일 */
+.theme-dark {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --border-color: #404040;
+    --card-bg: #2d2d2d;
+}
+
+.theme-dark body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.theme-dark .card {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>3. Atomic CSS와 Utility-First 접근법</h3>
+                        <p>작은 유틸리티 클래스들을 조합해서 디자인을 구성하는 방법입니다.</p>
+                        
+                        <div class="code-example">
+                            <pre><code>/* Atomic CSS 유틸리티 클래스들 */
+
+/* Spacing */
+.m-0 { margin: 0; }
+.m-1 { margin: 0.25rem; }
+.m-2 { margin: 0.5rem; }
+.m-3 { margin: 1rem; }
+.m-4 { margin: 1.5rem; }
+
+.mt-1 { margin-top: 0.25rem; }
+.mr-1 { margin-right: 0.25rem; }
+.mb-1 { margin-bottom: 0.25rem; }
+.ml-1 { margin-left: 0.25rem; }
+
+.p-0 { padding: 0; }
+.p-1 { padding: 0.25rem; }
+.p-2 { padding: 0.5rem; }
+.p-3 { padding: 1rem; }
+.p-4 { padding: 1.5rem; }
+
+/* Display */
+.d-none { display: none; }
+.d-block { display: block; }
+.d-inline { display: inline; }
+.d-inline-block { display: inline-block; }
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+
+/* Flexbox */
+.flex-row { flex-direction: row; }
+.flex-column { flex-direction: column; }
+.justify-start { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.justify-between { justify-content: space-between; }
+.items-start { align-items: flex-start; }
+.items-center { align-items: center; }
+.items-end { align-items: flex-end; }
+
+/* Colors */
+.text-primary { color: #007bff; }
+.text-secondary { color: #6c757d; }
+.text-success { color: #28a745; }
+.text-danger { color: #dc3545; }
+.text-white { color: #ffffff; }
+
+.bg-primary { background-color: #007bff; }
+.bg-secondary { background-color: #6c757d; }
+.bg-light { background-color: #f8f9fa; }
+.bg-dark { background-color: #343a40; }
+
+/* Typography */
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-base { font-size: 1rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+
+.font-thin { font-weight: 100; }
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* Borders */
+.border { border: 1px solid #dee2e6; }
+.border-t { border-top: 1px solid #dee2e6; }
+.border-r { border-right: 1px solid #dee2e6; }
+.border-b { border-bottom: 1px solid #dee2e6; }
+.border-l { border-left: 1px solid #dee2e6; }
+
+.rounded { border-radius: 0.375rem; }
+.rounded-sm { border-radius: 0.125rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.rounded-full { border-radius: 9999px; }
+
+/* Position */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; }
+
+.top-0 { top: 0; }
+.right-0 { right: 0; }
+.bottom-0 { bottom: 0; }
+.left-0 { left: 0; }
+
+/* Width & Height */
+.w-full { width: 100%; }
+.w-1\/2 { width: 50%; }
+.w-1\/3 { width: 33.333333%; }
+.w-2\/3 { width: 66.666667%; }
+.w-1\/4 { width: 25%; }
+
+.h-full { height: 100%; }
+.h-screen { height: 100vh; }
+.h-auto { height: auto; }</code></pre>
+                        </div>
+
+                        <div class="result-box">
+                            <div class="result-title">Atomic CSS 조합 예제</div>
+                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 0.5rem; margin: 20px 0;">
+                                <div style="display: flex; align-items: center; justify-content: space-between; background: white; padding: 1rem; border-radius: 0.375rem; border: 1px solid #dee2e6; margin-bottom: 1rem;">
+                                    <span style="font-weight: 600; color: #007bff;">d-flex items-center justify-between</span>
+                                    <span style="font-size: 0.875rem; color: #6c757d;">text-sm text-secondary</span>
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                                    <div style="background: #007bff; color: white; padding: 1rem; border-radius: 0.375rem; text-align: center; font-weight: 500;">bg-primary text-white p-3 rounded text-center font-medium</div>
+                                    <div style="background: #28a745; color: white; padding: 1rem; border-radius: 0.375rem; text-align: center; font-weight: 500;">bg-success</div>
+                                    <div style="background: #dc3545; color: white; padding: 1rem; border-radius: 0.375rem; text-align: center; font-weight: 500;">bg-danger</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="practice-challenge">
+                        <h4>🚀 실전 프로젝트: CSS 아키텍처 선택하기</h4>
+                        <p>프로젝트 상황에 맞는 CSS 아키텍처를 선택하고 적용해보세요:</p>
+                        <details>
+                            <summary>아키텍처 선택 가이드</summary>
+                            <div class="tip-box">
+                                <h4>💡 프로젝트별 CSS 아키텍처 선택 가이드</h4>
+                                <ul>
+                                    <li><strong>소규모 프로젝트</strong>: 간단한 BEM 또는 SMACSS Base + Module</li>
+                                    <li><strong>중간 규모 팀 프로젝트</strong>: 완전한 BEM 방법론</li>
+                                    <li><strong>대규모 기업 프로젝트</strong>: SMACSS 또는 ITCSS</li>
+                                    <li><strong>빠른 프로토타이핑</strong>: Atomic CSS (Tailwind CSS)</li>
+                                    <li><strong>디자인 시스템 구축</strong>: CSS-in-JS + 컴포넌트 기반</li>
+                                    <li><strong>레거시 시스템 개선</strong>: 점진적 SMACSS 도입</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                </section>
+
+                <!-- 4. 성능 최적화 -->
+                <section id="performance" class="tutorial-section">
+                    <h2>CSS 성능 최적화</h2>
+                    
+                    <div class="concept-explanation">
+                        <div class="concept-main">
+                            <h3>빠르고 효율적인 CSS 작성법</h3>
+                            <p>웹사이트의 성능은 사용자 경험에 직접적인 영향을 미칩니다. CSS 최적화를 통해 렌더링 속도를 향상시키고, 대역폭을 절약하며, 더 나은 사용자 경험을 제공할 수 있습니다. 특히 모바일 환경과 느린 네트워크에서 성능 최적화의 중요성은 더욱 커집니다.</p>
+                        </div>
+                        
+                        <div class="analogy-box">
+                            <h4>CSS 성능을 교통 시스템으로 이해하기</h4>
+                            <p><strong>도시의 교통 체계를 생각해보세요:</strong></p>
+                            <ul>
+                                <li><strong>선택자 최적화</strong> = 효율적인 도로 설계 (직선도로 vs 복잡한 교차로)</li>
+                                <li><strong>CSS 압축</strong> = 화물차 적재량 최적화</li>
+                                <li><strong>크리티컬 CSS</strong> = 급행 버스 (중요한 것 먼저)</li>
+                                <li><strong>하드웨어 가속</strong> = 고속도로 이용</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>1. 선택자 성능 최적화</h3>
+                        <p>CSS 선택자는 오른쪽에서 왼쪽으로 처리되므로, 효율적인 선택자 작성이 중요합니다.</p>
+                        
+                        <div class="code-example">
+                            <pre><code>/* ❌ 비효율적인 선택자들 */
+
+/* 1. 전체 선택자 남용 */
+* { box-sizing: border-box; } /* 너무 광범위 */
+div * p { color: red; } /* 모든 요소를 검사 */
+
+/* 2. 과도한 중첩 */
+.header .nav .menu .item .link { } /* 5단계 중첩 */
+body #main-content .sidebar ul li a { } /* ID와 많은 중첩 */
+
+/* 3. 속성 선택자 남용 */
+input[type="text"][class*="form"][data-*] { } /* 복잡한 속성 매칭 */
+
+/* 4. 가상 클래스 남용 */
+div:nth-child(2n+1):not(.special):hover { } /* 복잡한 조건 */
+
+/* ✅ 효율적인 선택자들 */
+
+/* 1. 클래스 기반 선택 */
+.header-nav { } /* 간단하고 직접적 */
+.menu-item { }
+.button-primary { }
+
+/* 2. 적절한 중첩 (2-3단계 이내) */
+.card .title { }
+.form .input-field { }
+
+/* 3. 구체적인 클래스 사용 */
+.search-input { } /* input[type="search"] 대신 */
+.nav-link { } /* .nav a 대신 */
+
+/* 4. 컨텍스트 기반 선택 */
+.dark-theme .button { } /* 테마별 스타일 */
+.mobile-view .header { } /* 뷰포트별 스타일 */
+
+/* 5. 성능을 고려한 애니메이션 */
+.smooth-element {
+    /* transform과 opacity만 애니메이션 */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* layout을 유발하는 속성들 지양 */
+.avoid-reflow {
+    /* ❌ 리플로우 유발 */
+    /* width, height, padding, margin */
+    
+    /* ✅ 컴포지트 레이어만 */
+    transform: translateX(100px); /* width: +100px 대신 */
+    transform: scale(1.1); /* width/height 증가 대신 */
+}</code></pre>
+                        </div>
+
+                        <div class="result-box">
+                            <div class="result-title">선택자 성능 비교</div>
+                            <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                                <thead>
+                                    <tr style="background: #f8f9fa; border-bottom: 2px solid #dee2e6;">
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">선택자 유형</th>
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">성능</th>
+                                        <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">예시</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 10px; border: 1px solid #dee2e6;">ID 선택자</td>
+                                        <td style="padding: 10px; border: 1px solid #dee2e6; color: #28a745; font-weight: 600;">매우 빠름</td>
+                                        <td style="padding: 10px; border: 1px solid #dee2e6; font-family: monospace;">#header</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px; border: 1px solid #dee2e6;">클래스 선택자</td>
+                                        <td style="padding: 10px; border: 1px solid #dee2e6; color: #28a745; font-weight: 600;">빠름</td>
+                                        <td style="padding: 10px; border: 1px solid #dee2e6; font-family: monospace;">.navigation</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px; border: 1px solid #dee2e6;">태그 선택자</td>
+                                        <td style="padding: 10px; border: 1px solid #dee2e6; color: #ffc107; font-weight: 600;">보통</td>
+                                        <td style="padding: 10px; border: 1px solid #dee2e6; font-family: monospace;">div, p, a</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px; border: 1px solid #dee2e6;">속성 선택자</td>
+                                        <td style="padding: 10px; border: 1px solid #dee2e6; color: #ffc107; font-weight: 600;">보통</td>
+                                        <td style="padding: 10px; border: 1px solid #dee2e6; font-family: monospace;">[type="text"]</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px; border: 1px solid #dee2e6;">가상 클래스</td>
+                                        <td style="padding: 10px; border: 1px solid #dee2e6; color: #dc3545; font-weight: 600;">느림</td>
+                                        <td style="padding: 10px; border: 1px solid #dee2e6; font-family: monospace;">:nth-child()</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px; border: 1px solid #dee2e6;">전체 선택자</td>
+                                        <td style="padding: 10px; border: 1px solid #dee2e6; color: #dc3545; font-weight: 600;">매우 느림</td>
+                                        <td style="padding: 10px; border: 1px solid #dee2e6; font-family: monospace;">*</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>2. 렌더링 성능 최적화</h3>
+                        <p>브라우저의 렌더링 파이프라인을 이해하고 최적화하는 방법들입니다.</p>
+                        
+                        <div class="code-example">
+                            <pre><code>/* 하드웨어 가속 활용 */
+.hardware-accelerated {
+    /* GPU 레이어로 승격 */
+    will-change: transform, opacity;
+    
+    /* 3D transform으로 레이어 강제 생성 */
+    transform: translateZ(0);
+    /* 또는 transform: translate3d(0, 0, 0); */
+    
+    /* 안티엘리어싱 개선 */
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* 효율적인 애니메이션 */
+.smooth-animation {
+    /* ✅ 컴포지트만 사용 (리페인트/리플로우 없음) */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    
+    /* ❌ 레이아웃 속성 애니메이션 지양 */
+    /* transition: width 0.3s ease, height 0.3s ease; */
+    /* transition: top 0.3s ease, left 0.3s ease; */
+}
+
+.slide-animation {
+    /* ❌ left 사용 (리플로우 유발) */
+    /* left: 0; */
+    /* transition: left 0.3s ease; */
+    
+    /* ✅ transform 사용 (컴포지트만) */
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+/* 크리티컬 렌더링 패스 최적화 */
+.above-fold {
+    /* 폴드 위 요소들은 인라인 스타일 고려 */
+    /* 또는 크리티컬 CSS에 포함 */
+}
+
+/* 지연 로딩을 위한 스타일 */
+.lazy-load {
+    /* 초기 상태 */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.lazy-load.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 효율적인 리스트 렌더링 */
+.virtual-list {
+    /* 고정 높이로 가상화 가능 */
+    height: 50px;
+    overflow: hidden;
+}
+
+/* contain 속성으로 렌더링 범위 제한 */
+.isolated-component {
+    contain: layout style paint;
+    /* layout: 레이아웃 영향 제한 */
+    /* style: 스타일 영향 제한 */
+    /* paint: 페인트 영향 제한 */
+}
+
+/* content-visibility로 렌더링 최적화 */
+.offscreen-content {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px; /* 예상 크기 */
+}
+
+/* 폰트 로딩 최적화 */
+.optimized-text {
+    /* 폰트 로딩 중 텍스트 표시 */
+    font-display: swap;
+    
+    /* 시스템 폰트 스택 */
+    font-family: -apple-system, BlinkMacSystemFont, 
+                 "Segoe UI", Roboto, Helvetica, Arial, 
+                 sans-serif, "Apple Color Emoji", 
+                 "Segoe UI Emoji", "Segoe UI Symbol";
+}</code></pre>
+                        </div>
+
+                        <div class="result-box">
+                            <div class="result-title">렌더링 파이프라인 최적화</div>
+                            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                                    <div style="background: #28a745; color: white; padding: 15px; border-radius: 6px; text-align: center;">
+                                        <h4 style="margin: 0 0 8px 0; font-size: 1rem;">Composite Only</h4>
+                                        <p style="margin: 0; font-size: 0.9rem;">transform, opacity</p>
+                                        <p style="margin: 8px 0 0 0; font-size: 0.8rem; opacity: 0.9;">가장 빠름</p>
+                                    </div>
+                                    <div style="background: #ffc107; color: #333; padding: 15px; border-radius: 6px; text-align: center;">
+                                        <h4 style="margin: 0 0 8px 0; font-size: 1rem;">Paint + Composite</h4>
+                                        <p style="margin: 0; font-size: 0.9rem;">color, background</p>
+                                        <p style="margin: 8px 0 0 0; font-size: 0.8rem;">보통</p>
+                                    </div>
+                                    <div style="background: #dc3545; color: white; padding: 15px; border-radius: 6px; text-align: center;">
+                                        <h4 style="margin: 0 0 8px 0; font-size: 1rem;">Layout + Paint + Composite</h4>
+                                        <p style="margin: 0; font-size: 0.9rem;">width, height, position</p>
+                                        <p style="margin: 8px 0 0 0; font-size: 0.8rem; opacity: 0.9;">느림</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>3. CSS 파일 최적화</h3>
+                        <p>CSS 파일 크기와 로딩 시간을 최적화하는 방법들입니다.</p>
+                        
+                        <div class="code-example">
+                            <pre><code>/* 1. 크리티컬 CSS 인라인화 */
+&lt;!-- HTML head에 중요한 스타일만 인라인으로 포함 --&gt;
+&lt;style&gt;
+/* 폴드 위 영역의 기본 스타일만 */
+body { margin: 0; font-family: sans-serif; }
+.header { background: #fff; height: 80px; }
+.hero { height: 100vh; background: #007bff; }
+&lt;/style&gt;
+
+/* 2. CSS 모듈화 및 지연 로딩 */
+/* base.css - 즉시 로드 */
+/* components.css - 필요시 로드 */
+/* utilities.css - 조건부 로드 */
+
+/* 3. 미사용 CSS 제거 */
+/* PurgeCSS, UnCSS 등 도구 사용 */
+
+/* 4. CSS 압축 */
+/* 개발 버전 */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+/* 압축 버전 (minified) */
+.button{display:inline-block;padding:12px 24px;background-color:#007bff;color:white;text-decoration:none;border-radius:6px;transition:background-color .3s ease}
+
+/* 5. CSS 스프라이트 (아이콘) */
+.icon {
+    background-image: url('sprites.png');
+    background-repeat: no-repeat;
+}
+
+.icon-home { background-position: 0 0; }
+.icon-user { background-position: -20px 0; }
+.icon-settings { background-position: -40px 0; }
+
+/* 6. 효율적인 미디어 쿼리 */
+/* ❌ 개별 미디어 쿼리 */
+.header { font-size: 2rem; }
+@media (max-width: 768px) { .header { font-size: 1.5rem; } }
+
+.nav { padding: 20px; }
+@media (max-width: 768px) { .nav { padding: 10px; } }
+
+/* ✅ 그룹화된 미디어 쿼리 */
+.header { font-size: 2rem; }
+.nav { padding: 20px; }
+
+@media (max-width: 768px) {
+    .header { font-size: 1.5rem; }
+    .nav { padding: 10px; }
+}
+
+/* 7. CSS 변수로 중복 제거 */
+:root {
+    --primary-color: #007bff;
+    --font-size-base: 1rem;
+    --spacing-unit: 1rem;
+}
+
+/* 중복된 값들을 변수로 통합 */
+.button { background: var(--primary-color); }
+.link { color: var(--primary-color); }
+.badge { border: 2px solid var(--primary-color); }</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <h3>4. 모니터링 및 측정</h3>
+                        <p>CSS 성능을 측정하고 모니터링하는 도구와 방법들입니다.</p>
+                        
+                        <div class="code-example">
+                            <pre><code>/* Performance API 활용 */
+// CSS 로드 시간 측정
+const observer = new PerformanceObserver((list) => {
+    list.getEntries().forEach((entry) => {
+        if (entry.entryType === 'resource' && entry.name.includes('.css')) {
+            console.log(`CSS 로드 시간: ${entry.loadEnd - entry.fetchStart}ms`);
+        }
+    });
+});
+observer.observe({ entryTypes: ['resource'] });
+
+// Critical Rendering Path 측정
+window.addEventListener('load', () => {
+    const navigation = performance.getEntriesByType('navigation')[0];
+    console.log('DOM 생성 시간:', navigation.domContentLoadedEventEnd - navigation.navigationStart);
+    console.log('전체 로드 시간:', navigation.loadEventEnd - navigation.navigationStart);
+});
+
+// 렌더링 성능 측정
+const observer = new PerformanceObserver((list) => {
+    list.getEntries().forEach((entry) => {
+        console.log('Layout shift:', entry.value);
+    });
+});
+observer.observe({ entryTypes: ['layout-shift'] });
+
+/* CSS 파일 크기 최적화 체크리스트 */
+/*
+1. Gzip/Brotli 압축 적용 (서버 설정)
+2. CSS 파일 분할 (critical vs non-critical)
+3. 미사용 CSS 제거 (PurgeCSS)
+4. CSS 압축 (cssnano, clean-css)
+5. HTTP/2 서버 푸시 활용
+6. CDN 사용으로 지연 시간 감소
+7. 캐시 헤더 최적화
+*/
+
+/* 브라우저 개발자 도구 활용 */
+/*
+1. Performance 탭: 렌더링 타임라인 분석
+2. Coverage 탭: 미사용 CSS 식별
+3. Lighthouse: 종합 성능 평가
+4. Paint Flashing: 리페인트 영역 확인
+5. Layer Borders: 컴포지트 레이어 확인
+*/</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="practice-challenge">
+                        <h4>🚀 실전 성능 최적화 프로젝트</h4>
+                        <p>기존 웹사이트의 CSS 성능을 종합적으로 최적화해보세요:</p>
+                        <details>
+                            <summary>최적화 전후 비교 체크리스트</summary>
+                            <div class="tip-box">
+                                <h4>💡 CSS 성능 최적화 체크리스트</h4>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 15px;">
+                                    <div>
+                                        <h5 style="margin-bottom: 10px; color: #007bff;">파일 최적화</h5>
+                                        <ul style="margin: 0; font-size: 0.9rem;">
+                                            <li>CSS 파일 압축 및 최소화</li>
+                                            <li>크리티컬 CSS 인라인화</li>
+                                            <li>미사용 CSS 제거</li>
+                                            <li>CSS 파일 분할</li>
+                                            <li>Gzip/Brotli 압축</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 style="margin-bottom: 10px; color: #28a745;">렌더링 최적화</h5>
+                                        <ul style="margin: 0; font-size: 0.9rem;">
+                                            <li>하드웨어 가속 활용</li>
+                                            <li>리플로우/리페인트 최소화</li>
+                                            <li>효율적인 선택자 사용</li>
+                                            <li>애니메이션 최적화</li>
+                                            <li>폰트 로딩 최적화</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 style="margin-bottom: 10px; color: #ffc107;">측정 및 모니터링</h5>
+                                        <ul style="margin: 0; font-size: 0.9rem;">
+                                            <li>Lighthouse 성능 점수</li>
+                                            <li>First Contentful Paint</li>
+                                            <li>Largest Contentful Paint</li>
+                                            <li>Cumulative Layout Shift</li>
+                                            <li>CSS 파일 크기</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="tip-box">
+                        <h4>🎯 성능 최적화 우선순위</h4>
+                        <ol>
+                            <li><strong>크리티컬 CSS 인라인화</strong> - 첫 화면 렌더링 속도 개선</li>
+                            <li><strong>미사용 CSS 제거</strong> - 파일 크기 감소</li>
+                            <li><strong>효율적인 선택자</strong> - CSS 파싱 시간 단축</li>
+                            <li><strong>하드웨어 가속</strong> - 애니메이션 성능 개선</li>
+                            <li><strong>파일 압축</strong> - 네트워크 전송 시간 단축</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <!-- 5. 실전 프로젝트 -->
+                <section id="project" class="tutorial-section">
+                    <h2>실전 프로젝트: 포트폴리오 사이트</h2>
+                    
+                    <div class="concept-explanation">
+                        <div class="concept-main">
+                            <h3>배운 모든 기술을 종합한 완성작</h3>
+                            <p>지금까지 배운 CSS 기술들을 모두 활용해서 전문적인 포트폴리오 웹사이트를 만들어봅시다.</p>
+                        </div>
+                    </div>
+
+                    <div class="practice-challenge">
+                        <h4>포트폴리오 사이트 기능 요구사항</h4>
+                        <ul>
+                            <li>반응형 디자인 (모바일/태블릿/데스크톱)</li>
+                            <li>다크 모드 지원 (CSS 변수 활용)</li>
+                            <li>부드러운 스크롤 애니메이션</li>
+                            <li>Grid와 Flexbox를 활용한 레이아웃</li>
+                            <li>최적화된 성능과 접근성</li>
+                        </ul>
+                        
+                        <div class="challenge-result">
+                            <div style="border: 2px solid #28a745; border-radius: 12px; padding: 20px; margin: 20px 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+                                <h4 style="color: #28a745; margin: 0 0 10px 0; text-align: center;">프로젝트 완성 예시</h4>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                                    <div style="background: white; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <strong>헤더 영역</strong><br>
+                                        <small>로고 + 네비게이션</small>
+                                    </div>
+                                    <div style="background: white; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <strong>히어로 섹션</strong><br>
+                                        <small>소개 + CTA</small>
+                                    </div>
+                                    <div style="background: white; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <strong>포트폴리오</strong><br>
+                                        <small>프로젝트 갤러리</small>
+                                    </div>
+                                    <div style="background: white; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        <strong>연락처</strong><br>
+                                        <small>컨택 폼</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 다음 단계 안내 -->
+                <div class="next-steps">
+                    <h2>축하합니다! CSS 마스터가 되셨습니다!</h2>
+                    <div class="next-level-cards">
+                        <div class="next-card">
+                            <h3>JavaScript 마스터</h3>
+                            <p>동적이고 인터랙티브한 웹사이트를 만들기 위한 JavaScript를 정복해보세요</p>
+                            <a href="js-tutorial.html" class="btn btn-primary">JavaScript 배우기</a>
+                        </div>
+                        <div class="next-card">
+                            <h3>실전 프로젝트</h3>
+                            <p>배운 기술들을 활용해서 실제 서비스를 만들어보며 포트폴리오를 구축하세요</p>
+                            <a href="practice.html" class="btn btn-outline">프로젝트 시작</a>
+                        </div>
+                        <div class="next-card">
+                            <h3>배포하기</h3>
+                            <p>완성한 웹사이트를 실제 인터넷에 배포해서 전 세계 사람들과 공유하세요</p>
+                            <a href="deployment-tutorial.html" class="btn btn-outline">배포 가이드</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>WebLearn</h3>
+                <p>HTML, CSS, JavaScript를 쉽게 배우는 온라인 튜토리얼</p>
+            </div>
+            <div class="footer-section">
+                <h4>CSS 학습 과정</h4>
+                <ul>
+                    <li><a href="css-tutorial-basic.html">CSS 완전정복 가이드</a></li>
+                    <li><a href="css-intermediate.html">CSS 중급편 - 실무 레이아웃</a></li>
+                    <li><a href="css-advanced.html">CSS 고급편 - CSS 마스터</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>도구 & 배포</h4>
+                <ul>
+                    <li><a href="cursor-ai-tutorial.html">Cursor AI</a></li>
+                    <li><a href="deployment-tutorial.html">배포하기</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 WebLearn. 모든 권리 보유.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

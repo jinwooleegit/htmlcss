@@ -22,8 +22,13 @@
                     <li class="nav-item">
                         <a href="html-tutorial.html" class="nav-link active">HTML</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="css-tutorial.html" class="nav-link">CSS</a>
+                    <li class="nav-item dropdown">
+                        <a href="css-tutorial-basic.html" class="nav-link dropdown-toggle">CSS</a>
+                        <div class="dropdown-menu">
+                            <a href="css-tutorial-basic.html" class="dropdown-item">완전정복 가이드</a>
+                            <a href="css-intermediate.html" class="dropdown-item">중급편 - 실무 레이아웃</a>
+                            <a href="css-advanced.html" class="dropdown-item">고급편 - CSS 마스터</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a href="js-tutorial.html" class="nav-link">JavaScript</a>
@@ -65,7 +70,7 @@
 
             <!-- 1. HTML이란 무엇인가? -->
             <section class="tutorial-section">
-                <h2>🤔 HTML이란 무엇인가요?</h2>
+                <h2>HTML이란 무엇인가요?</h2>
                 
                 <div class="concept-explanation">
                     <div class="concept-main">
@@ -74,20 +79,52 @@
                             <div class="concept-part">
                                 <strong>HyperText</strong>
                                 <p>링크로 연결된 텍스트</p>
+                                <div class="detail-explanation">
+                                    <small>예: 네이버에서 "영화"를 클릭하면 영화 페이지로 이동하는 것처럼, 텍스트를 클릭해서 다른 페이지로 갈 수 있는 기능입니다.</small>
+                                </div>
                             </div>
                             <div class="concept-part">
                                 <strong>Markup</strong>
                                 <p>구조를 표시하는 방법</p>
+                                <div class="detail-explanation">
+                                    <small>예: 워드에서 제목을 크게 만들고, 본문을 작게 만드는 것처럼, 웹페이지의 구조를 표시하는 방법입니다.</small>
+                                </div>
                             </div>
                             <div class="concept-part">
                                 <strong>Language</strong>
                                 <p>컴퓨터가 이해하는 언어</p>
+                                <div class="detail-explanation">
+                                    <small>예: 우리가 한국어로 말하듯이, 브라우저가 이해할 수 있는 특별한 언어입니다.</small>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
+                    <div class="real-example">
+                        <h4>실제 예시로 이해하기</h4>
+                        <p><strong>HTML 없이는 웹페이지가 어떻게 보일까요?</strong></p>
+                        <div class="comparison-box">
+                            <div class="before-html">
+                                <h5>HTML 없는 텍스트:</h5>
+                                <div class="plain-text">
+                                    안녕하세요 이것은 제목입니다 이것은 본문입니다 이것은 링크입니다
+                                </div>
+                            </div>
+                            <div class="after-html">
+                                <h5>HTML로 구조화된 텍스트:</h5>
+                                <div class="structured-text">
+                                    <h3 style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">안녕하세요</h3>
+                                    <p style="margin: 10px 0; font-size: 1.1em;">이것은 제목입니다</p>
+                                    <p style="margin: 10px 0;">이것은 본문입니다</p>
+                                    <a href="#" style="color: blue; text-decoration: underline;">이것은 링크입니다</a>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="insight"><strong>인사이트:</strong> HTML이 있으면 같은 내용이지만 훨씬 읽기 쉽고 구조적으로 보입니다!</p>
+                    </div>
+                    
                     <div class="analogy-box">
-                        <h4>🏠 쉬운 비유로 이해하기</h4>
+                        <h4>쉬운 비유로 이해하기</h4>
                         <p><strong>웹페이지를 집이라고 생각해보세요:</strong></p>
                         <ul>
                             <li><strong>HTML</strong> = 집의 뼈대 (기둥, 벽, 방)</li>
@@ -98,25 +135,25 @@
                 </div>
 
                 <div class="why-learn-html">
-                    <h3>🎯 왜 HTML을 배워야 할까요?</h3>
+                    <h3>왜 HTML을 배워야 할까요?</h3>
                     <div class="reasons-grid">
                         <div class="reason-item">
-                            <div class="reason-icon">🌐</div>
+                            <div class="reason-icon"></div>
                             <h4>모든 웹사이트의 기초</h4>
                             <p>구글, 페이스북, 유튜브 모두 HTML로 만들어졌어요</p>
                         </div>
                         <div class="reason-item">
-                            <div class="reason-icon">⚡</div>
+                            <div class="reason-icon"></div>
                             <h4>배우기 쉬움</h4>
                             <p>프로그래밍 경험이 없어도 하루만에 기초를 익힐 수 있어요</p>
                         </div>
                         <div class="reason-item">
-                            <div class="reason-icon">💼</div>
+                            <div class="reason-icon"></div>
                             <h4>취업에 도움</h4>
                             <p>웹 개발자, 디자이너, 마케터 모두에게 필수 기술이에요</p>
                         </div>
                         <div class="reason-item">
-                            <div class="reason-icon">🚀</div>
+                            <div class="reason-icon"></div>
                             <h4>즉시 결과 확인</h4>
                             <p>코드를 작성하면 바로 웹페이지에서 결과를 볼 수 있어요</p>
                         </div>
@@ -126,7 +163,7 @@
 
             <!-- 2. HTML 문법의 기초 -->
             <section class="tutorial-section">
-                <h2>📝 HTML 문법의 기초</h2>
+                <h2>HTML 문법의 기초</h2>
                 
                 <div class="grammar-explanation">
                     <h3>HTML의 기본 구조: 태그(Tag)</h3>
@@ -154,25 +191,25 @@
                     </div>
 
                     <div class="grammar-rules">
-                        <h4>🔤 HTML 문법 규칙</h4>
+                        <h4>HTML 문법 규칙</h4>
                         <div class="rules-grid">
                             <div class="rule-item">
-                                <div class="rule-icon">✅</div>
+                                <div class="rule-icon"></div>
                                 <strong>대소문자 구분 안함</strong>
                                 <p>&lt;H1&gt;과 &lt;h1&gt;은 같음</p>
                             </div>
                             <div class="rule-item">
-                                <div class="rule-icon">✅</div>
+                                <div class="rule-icon"></div>
                                 <strong>태그는 중첩 가능</strong>
                                 <p>&lt;div&gt;&lt;p&gt;내용&lt;/p&gt;&lt;/div&gt;</p>
                             </div>
                             <div class="rule-item">
-                                <div class="rule-icon">✅</div>
+                                <div class="rule-icon"></div>
                                 <strong>빈 태그도 있음</strong>
                                 <p>&lt;br&gt;, &lt;img&gt; 등</p>
                             </div>
                             <div class="rule-item">
-                                <div class="rule-icon">✅</div>
+                                <div class="rule-icon"></div>
                                 <strong>들여쓰기 권장</strong>
                                 <p>코드를 읽기 쉽게 만듦</p>
                             </div>
@@ -180,8 +217,52 @@
                     </div>
                 </div>
 
+                <div class="common-mistakes">
+                    <h4>초보자가 자주 하는 실수들</h4>
+                    <div class="mistake-examples">
+                        <div class="mistake-item">
+                            <div class="wrong-code">
+                                <h5>틀린 예시:</h5>
+                                <code>&lt;h1&gt;제목&lt;/h2&gt;</code>
+                                <p class="error-reason">여는 태그와 닫는 태그가 다름</p>
+                            </div>
+                            <div class="correct-code">
+                                <h5>올바른 예시:</h5>
+                                <code>&lt;h1&gt;제목&lt;/h1&gt;</code>
+                                <p class="success-reason">여는 태그와 닫는 태그가 같음</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mistake-item">
+                            <div class="wrong-code">
+                                <h5>틀린 예시:</h5>
+                                <code>&lt;p&gt;문단&lt;p&gt;</code>
+                                <p class="error-reason">닫는 태그에 슬래시(/) 없음</p>
+                            </div>
+                            <div class="correct-code">
+                                <h5>올바른 예시:</h5>
+                                <code>&lt;p&gt;문단&lt;/p&gt;</code>
+                                <p class="success-reason">닫는 태그에 슬래시(/) 있음</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mistake-item">
+                            <div class="wrong-code">
+                                <h5>틀린 예시:</h5>
+                                <code>&lt;div&gt;&lt;p&gt;내용&lt;/div&gt;&lt;/p&gt;</code>
+                                <p class="error-reason">태그 순서가 잘못됨</p>
+                            </div>
+                            <div class="correct-code">
+                                <h5>올바른 예시:</h5>
+                                <code>&lt;div&gt;&lt;p&gt;내용&lt;/p&gt;&lt;/div&gt;</code>
+                                <p class="success-reason">나중에 연 태그를 먼저 닫음</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="practice-box">
-                    <h4>✏️ 첫 번째 실습</h4>
+                    <h4>첫 번째 실습</h4>
                     <p>아래 코드를 따라 써보세요:</p>
                     <pre><code>&lt;h1&gt;안녕하세요!&lt;/h1&gt;
 &lt;p&gt;이것은 내 첫 번째 HTML 태그입니다.&lt;/p&gt;</code></pre>
@@ -192,12 +273,56 @@
                             <p style="margin: 10px 0;">이것은 내 첫 번째 HTML 태그입니다.</p>
                         </div>
                     </div>
+                    
+                    <div class="practice-tips">
+                        <h5>실습 팁:</h5>
+                        <ul>
+                            <li><strong>메모장</strong>이나 <strong>텍스트 에디터</strong>에 위 코드를 입력하세요</li>
+                            <li>파일을 <strong>test.html</strong>로 저장하세요</li>
+                            <li>저장한 파일을 <strong>더블클릭</strong>하면 브라우저에서 결과를 볼 수 있어요</li>
+                            <li>코드를 수정하고 새로고침하면 변경사항이 반영됩니다</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="step-by-step">
+                    <h4>단계별 따라하기</h4>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h5>메모장 열기</h5>
+                                <p>윈도우: 시작 → 메모장 검색<br>맥: 응용프로그램 → 텍스트편집기</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h5>코드 입력</h5>
+                                <p>위의 HTML 코드를 정확히 입력하세요. 대소문자와 괄호를 정확히!</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h5>파일 저장</h5>
+                                <p>Ctrl+S (윈도우) 또는 Cmd+S (맥)를 누르고 'my-first-page.html'로 저장</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h5>브라우저에서 열기</h5>
+                                <p>저장한 파일을 더블클릭하거나 브라우저로 드래그해서 결과 확인!</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <!-- 3. HTML 문서의 기본 구조 -->
             <section class="tutorial-section">
-                <h2>🏗️ HTML 문서의 기본 구조</h2>
+                <h2>HTML 문서의 기본 구조</h2>
                 
                 <div class="document-structure">
                     <h3>모든 HTML 문서는 이런 구조를 가져요</h3>
@@ -247,14 +372,80 @@
                         <div class="head-item">
                             <code>&lt;meta charset="UTF-8"&gt;</code>
                             <p>한글이 깨지지 않게 하는 인코딩 설정</p>
+                            <div class="detailed-explanation">
+                                <small><strong>왜 필요한가요?</strong> 컴퓨터는 문자를 숫자로 저장하는데, UTF-8은 전 세계 모든 언어를 표현할 수 있는 방식입니다. 이게 없으면 한글이 ????????나 □□□□로 보일 수 있어요.</small>
+                            </div>
                         </div>
                         <div class="head-item">
                             <code>&lt;title&gt;페이지 제목&lt;/title&gt;</code>
                             <p>브라우저 탭에 표시되는 제목</p>
+                            <div class="detailed-explanation">
+                                <small><strong>어디에 보이나요?</strong> 브라우저 탭, 북마크 이름, 검색결과에서 보이는 제목입니다. 구글에서 검색했을 때 파란색으로 보이는 그 제목이에요!</small>
+                            </div>
                         </div>
                         <div class="head-item">
                             <code>&lt;meta name="viewport" content="width=device-width"&gt;</code>
                             <p>모바일에서 제대로 보이게 하는 설정</p>
+                            <div class="detailed-explanation">
+                                <small><strong>왜 필요한가요?</strong> 이게 없으면 모바일에서 웹페이지가 너무 작게 보여서 확대해야 합니다. 이 설정으로 모바일 화면에 맞게 자동으로 크기가 조절돼요.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="complete-example">
+                    <h3>완전한 HTML 페이지 만들어보기</h3>
+                    <p>이제 모든 내용을 합쳐서 완전한 웹페이지를 만들어볼까요?</p>
+                    
+                    <div class="complete-code">
+                        <h4>완전한 HTML 문서:</h4>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;내 첫 번째 웹페이지&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;안녕하세요! 저는 홍길동입니다.&lt;/h1&gt;
+    &lt;p&gt;이것은 제가 만든 첫 번째 웹페이지입니다.&lt;/p&gt;
+    &lt;p&gt;HTML을 배우는 것이 정말 재미있어요!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                    
+                    <div class="what-happens">
+                        <h4>이 코드를 실행하면:</h4>
+                        <div class="result-explanation">
+                            <div class="browser-parts">
+                                <div class="browser-part">
+                                    <strong>브라우저 탭:</strong> "내 첫 번째 웹페이지"라고 표시됩니다
+                                </div>
+                                <div class="browser-part">
+                                    <strong>페이지 내용:</strong> 
+                                    <div class="preview-result">
+                                        <h1 style="font-size: 1.5em; margin: 10px 0; font-weight: bold;">안녕하세요! 저는 홍길동입니다.</h1>
+                                        <p style="margin: 10px 0;">이것은 제가 만든 첫 번째 웹페이지입니다.</p>
+                                        <p style="margin: 10px 0;">HTML을 배우는 것이 정말 재미있어요!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="homework">
+                        <h4>숙제: 나만의 소개 페이지 만들기</h4>
+                        <div class="homework-instructions">
+                            <p><strong>다음 내용을 포함해서 여러분만의 소개 페이지를 만들어보세요:</strong></p>
+                            <ul>
+                                <li>여러분의 이름을 h1 태그로 만들기</li>
+                                <li>자기소개를 p 태그로 3개 이상 작성하기</li>
+                                <li>페이지 제목을 여러분 이름으로 바꾸기</li>
+                                <li>파일명을 "내이름.html"로 저장하기</li>
+                            </ul>
+                            <div class="homework-example">
+                                <small><strong>예시:</strong> "김철수.html" 파일에 김철수에 대한 소개 내용 작성</small>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -262,20 +453,20 @@
 
             <!-- 다음 단계 안내 -->
             <div class="next-steps">
-                <h2>🎊 HTML 기초 개념을 배웠습니다!</h2>
+                <h2>HTML 기초 개념을 배웠습니다!</h2>
                 <p>이제 실제 태그들을 배워볼 차례입니다.</p>
                 
                 <div class="next-level-cards">
                     <div class="next-card">
-                        <h3>🌿 HTML 중급편</h3>
+                        <h3>HTML 중급편</h3>
                         <p>실제 태그들과 활용법을 배워보세요</p>
                         <a href="html-intermediate.html" class="next-btn">중급편 시작하기</a>
                     </div>
                     
                     <div class="next-card">
-                        <h3>🎨 CSS 배우기</h3>
+                        <h3>CSS 배우기</h3>
                         <p>웹페이지를 예쁘게 꾸며보세요</p>
-                        <a href="css-tutorial.html" class="next-btn">CSS 시작하기</a>
+                        <a href="css-tutorial-basic.html" class="next-btn">CSS 시작하기</a>
                     </div>
                 </div>
             </div>

@@ -3184,21 +3184,33 @@ pre code {
 
 /* CSS 튜토리얼 전용 스타일 */
 .css-comparison {
+    margin: 2rem 0;
+}
+
+.comparison-item {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    margin: 2rem 0;
+    align-items: flex-start;
 }
 
 .comparison-item h3 {
     text-align: center;
     margin-bottom: 1rem;
+    grid-column: 1 / -1;
 }
 
 .before-example, .after-example {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.before-example h4, .after-example h4 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #333;
 }
 
 .capabilities-grid {
@@ -3348,11 +3360,12 @@ pre code {
 }
 
 .result-preview {
-    background: #f8f9fa;
-    padding: 1.5rem;
+    background: #ffffff;
+    padding: 0 1.5rem 1rem 1.5rem;
     border-radius: 8px;
     border: 1px solid #e9ecef;
-    margin-top: 1rem;
+    margin: 0;
+    border-top: none;
 }
 
 .rules-grid {
@@ -3425,6 +3438,35 @@ pre code {
     color: #28a745;
 }
 
+/* 블록 형식 method-item 스타일 */
+.method-item-block {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-top: 4px solid var(--primary-color);
+    margin: 2rem 0;
+}
+
+.method-item-block.recommended {
+    border-top-color: #28a745;
+    background: white;
+}
+
+.method-item-block h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.method-item-block:first-child h3 {
+    margin-top: 0;
+}
+
+.method-item-block.recommended h3 {
+    color: #28a745;
+}
+
 .method-pros-cons {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -3435,16 +3477,15 @@ pre code {
 .pros, .cons {
     padding: 1rem;
     border-radius: 8px;
+    border-left: 4px solid;
 }
 
 .pros {
-    background: #e8f5e8;
-    border-left: 4px solid #28a745;
+    border-left-color: #28a745;
 }
 
 .cons {
-    background: #ffeaea;
-    border-left: 4px solid #dc3545;
+    border-left-color: #dc3545;
 }
 
 .pros h4 {
@@ -3455,6 +3496,19 @@ pre code {
 .cons h4 {
     color: #dc3545;
     margin-bottom: 0.5rem;
+}
+
+/* 장점/단점 리스트 마커 개선 - bullet point 제거 */
+.pros ul, .cons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pros li, .cons li {
+    padding-left: 0;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
 }
 
 .best-practice-tip {
@@ -3491,7 +3545,7 @@ pre code {
 
 /* 반응형 추가 */
 @media (max-width: 768px) {
-    .css-comparison {
+    .comparison-item {
         grid-template-columns: 1fr;
     }
     
@@ -3943,17 +3997,16 @@ pre code {
     display: flex;
     margin: 2rem 0;
     background: #ffffff;
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
     border: 1px solid #e2e8f0;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     min-height: 200px;
 }
 
 .tag-code {
     background: #0f172a;
     padding: 1.5rem;
-    border-right: 1px solid #334155;
     flex: 1;
     display: flex;
     align-items: flex-start;
@@ -3972,17 +4025,64 @@ pre code {
 }
 
 .tag-result {
-    padding: 1.5rem;
-    background: #fafbfc;
-    border-left: 2px solid #64748b;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff;
     flex: 1;
-    display: flex;
-    align-items: stretch;
+    display: block;
     overflow-y: auto;
+    border: none !important;
+    border-top: none !important;
+    border-left: none !important;
+}
+
+.tag-result > * {
+    margin: 0 !important;
+    padding: 0.5rem 1.5rem !important;
+    border: none !important;
+    outline: none !important;
 }
 
 .tag-result > *:first-child {
+    margin: 0 !important;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem !important;
+    border: none !important;
+    border-top: none !important;
+}
+
+.tag-result > *:last-child {
+    margin: 0 !important;
+    padding: 0.5rem 1.5rem 1rem 1.5rem !important;
+}
+
+/* 결과값 내 모든 요소의 기본 여백 완전 제거 */
+.tag-result * {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-sizing: border-box !important;
+}
+
+.tag-result h1, .tag-result h2, .tag-result h3, .tag-result h4, .tag-result h5, .tag-result h6 {
+    margin: 0.5rem 0 0.5rem 0 !important;
+    padding: 0 !important;
+}
+
+.tag-result p {
+    margin: 0.5rem 0 0.5rem 0 !important;
+    padding: 0 !important;
+}
+
+.tag-result div {
+    margin: 0.3rem 0 0.3rem 0 !important;
+    padding: 0 !important;
+}
+
+.tag-result > *:first-child,
+.tag-result *:first-child {
     margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: none !important;
 }
 
 /* 시맨틱 HTML 예제 결과가 tag-result 내에서 전체 공간 활용 */
@@ -6545,4 +6645,383 @@ pre code {
     .completion-message h2 {
         font-size: 1.5rem;
     }
+}
+
+/* 예제 결과값 영역 - 반응형 여백 설정 */
+.tag-result {
+    display: block !important;
+    margin: 0 !important;
+    border: none !important;
+    background: #f8f9fa !important;
+    border-radius: 0 0 8px 8px !important;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1) !important;
+}
+
+/* PC 버전 - 상단 여백 추가 */
+@media (min-width: 768px) {
+    .tag-result {
+        padding: 1rem 1.5rem 1rem 1.5rem !important;
+    }
+    
+    .result-preview {
+        padding: 1rem 1.5rem 1rem 1.5rem !important;
+    }
+}
+
+/* 모바일 버전 - 여백 있음 */
+@media (max-width: 767px) {
+    .tag-result {
+        padding: 1rem 1.5rem !important;
+    }
+    
+    .result-preview {
+        padding: 1rem 1.5rem !important;
+    }
+}
+
+.tag-result * {
+    padding: 0 !important;
+    border: none !important;
+    text-indent: 0 !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+/* tag-result 내부 제목과 문단의 마진 통일 */
+.tag-result h1, 
+.tag-result h2, 
+.tag-result h3, 
+.tag-result h4, 
+.tag-result h5, 
+.tag-result h6,
+.tag-result p,
+.tag-result div {
+    margin: 10px 0 !important;
+}
+
+.tag-result *:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* 첫 번째와 마지막 요소 특별 처리 */
+.tag-result > *:first-child {
+    margin-top: 0 !important;
+}
+
+.tag-result > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* result-preview 클래스 기본 설정 */
+.result-preview {
+    background: #ffffff !important;
+    border: 1px solid #dee2e6 !important;
+    border-top: none !important;
+    border-radius: 0 0 8px 8px !important;
+    margin: 0 !important;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1) !important;
+}
+
+.result-preview * {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+/* 튜토리얼 섹션 여백 표준화 */
+.tutorial-section {
+    margin-bottom: 4rem;
+    padding: 0;
+}
+
+.tutorial-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 0;
+    padding-top: 2rem;
+    border-top: 2px solid #e9ecef;
+    color: var(--primary-color);
+}
+
+.tutorial-section:first-child h2 {
+    border-top: none;
+    padding-top: 0;
+}
+
+/* 하위 섹션 여백 통일 */
+.tag-category {
+    margin-bottom: 3rem;
+}
+
+.tag-category h3 {
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+/* 개념 설명 박스 여백 통일 */
+.concept-explanation {
+    margin-bottom: 2.5rem;
+}
+
+.analogy-box {
+    margin: 2rem 0;
+}
+
+/* tip-box와 practice-challenge 여백 통일 */
+.tip-box, .practice-challenge {
+    margin: 2rem 0;
+}
+
+/* 그리드 요소들 여백 통일 */
+.reasons-grid, .achievement-grid, .next-steps-grid {
+    margin: 2rem 0;
+}
+
+/* 카드 스타일 통일 */
+.analogy-box, .tip-box, .practice-challenge, 
+.concept-main, .achievement-item, .next-step-item {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.analogy-box:hover, .tip-box:hover, .practice-challenge:hover,
+.concept-main:hover, .achievement-item:hover, .next-step-item:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+/* 카드 내부 제목 스타일 통일 */
+.analogy-box h4, .tip-box h4, .practice-challenge h4,
+.concept-main h3, .achievement-item h3, .next-step-item h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* 특별 강조 카드 */
+.tip-box {
+    border-left: 4px solid var(--accent-color);
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.practice-challenge {
+    border-left: 4px solid var(--primary-color);
+    background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+}
+
+/* 타이포그래피 개선 */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+p {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+/* 글자 크기 계층 구조 */
+h1 { font-size: 2.5rem; font-weight: 700; }
+h2 { font-size: 2rem; font-weight: 600; }
+h3 { font-size: 1.5rem; font-weight: 600; }
+h4 { font-size: 1.25rem; font-weight: 600; }
+h5 { font-size: 1.125rem; font-weight: 600; }
+
+/* 텍스트 강조 */
+strong, b {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* 링크 스타일 */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* 반응형 최적화 */
+@media (max-width: 768px) {
+    /* 모바일 타이포그래피 */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.375rem; }
+    h4 { font-size: 1.125rem; }
+    
+    /* 카드 패딩 조정 */
+    .analogy-box, .tip-box, .practice-challenge, 
+    .concept-main, .achievement-item, .next-step-item {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+    
+    /* 섹션 여백 조정 */
+    .tutorial-section {
+        margin-bottom: 3rem;
+    }
+    
+    .tutorial-section h2 {
+        padding-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* 그리드 간격 조정 */
+    .achievement-grid, .next-steps-grid {
+        gap: 1rem;
+    }
+}
+
+/* 목차 네비게이션 스타일 */
+.table-of-contents {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.table-of-contents h3 {
+    color: white;
+    margin: 0 0 1.5rem 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0.75rem;
+}
+
+.toc-list li {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.toc-list li:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.toc-list a {
+    display: block;
+    padding: 1rem 1.25rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.toc-list a:hover {
+    color: #f8f9fa;
+    text-decoration: none;
+}
+
+/* 모바일 목차 스타일 */
+@media (max-width: 768px) {
+    .table-of-contents {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+    
+    .toc-list {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .toc-list a {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* 진행률 표시기 스타일 */
+.progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 100%;
+    background: rgba(233, 236, 239, 0.3);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    z-index: 1001;
+    backdrop-filter: blur(10px);
+}
+
+/* 메인 컨텐츠에 상단 여백 추가 */
+body {
+    padding-top: 0;
+}
+
+/* 코드 복사 버튼 스타일 */
+.copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.375rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.copy-button:hover {
+    background: var(--accent-color);
+    transform: translateY(-1px);
+}
+
+/* 목차 현재 섹션 하이라이트 */
+.toc-list a.active {
+    background: rgba(255, 255, 255, 0.3);
+    font-weight: 600;
 }

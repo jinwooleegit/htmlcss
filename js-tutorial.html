@@ -22,8 +22,13 @@
                     <li class="nav-item">
                         <a href="html-tutorial.html" class="nav-link">HTML</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="css-tutorial.html" class="nav-link">CSS</a>
+                    <li class="nav-item dropdown">
+                        <a href="css-tutorial-basic.html" class="nav-link dropdown-toggle">CSS</a>
+                        <div class="dropdown-menu">
+                            <a href="css-tutorial-basic.html" class="dropdown-item">완전정복 가이드</a>
+                            <a href="css-intermediate.html" class="dropdown-item">중급편 - 실무 레이아웃</a>
+                            <a href="css-advanced.html" class="dropdown-item">고급편 - CSS 마스터</a>
+                        </div>
                     </li>
                                                         <li class="nav-item">
                         <a href="js-tutorial.html" class="nav-link active">JavaScript</a>
@@ -75,7 +80,7 @@
                 <!-- JavaScript 소개 -->
                 <section id="intro" class="tutorial-section">
                     <h1>JavaScript 튜토리얼</h1>
-                    <h2>⚡ JavaScript란 무엇인가요?</h2>
+                    <h2>JavaScript란 무엇인가요?</h2>
                     <p>
                         JavaScript는 웹 페이지에 <strong>생명을 불어넣는</strong> 프로그래밍 언어입니다. 
                         HTML이 구조를, CSS가 디자인을 담당한다면, JavaScript는 <strong>동적인 기능과 상호작용</strong>을 만들어냅니다.
@@ -106,31 +111,31 @@
                     </div>
                     
                     <div class="info-box">
-                        <h3>🚀 JavaScript로 할 수 있는 놀라운 것들</h3>
+                        <h3>JavaScript로 할 수 있는 놀라운 것들</h3>
                         <div class="capabilities-showcase">
                             <div class="capability-item">
-                                <h4>🎯 사용자 상호작용</h4>
+                                <h4>사용자 상호작용</h4>
                                 <p>버튼 클릭, 마우스 움직임, 키보드 입력에 반응</p>
                                 <div class="mini-demo">
                                     <button onclick="alert('안녕하세요! JavaScript가 실행되었습니다!')" style="background: #007bff; color: white; padding: 5px 10px; border: none; border-radius: 3px; cursor: pointer; font-size: 12px;">클릭해보세요!</button>
                                 </div>
                             </div>
                             <div class="capability-item">
-                                <h4>🎨 동적 콘텐츠 변경</h4>
+                                <h4>동적 콘텐츠 변경</h4>
                                 <p>실시간으로 텍스트, 이미지, 스타일 변경</p>
                                 <div class="mini-demo">
                                     <span id="time-display" style="font-weight: bold; color: #28a745;">현재 시간 로딩 중...</span>
                                 </div>
                             </div>
                             <div class="capability-item">
-                                <h4>✨ 애니메이션 효과</h4>
+                                <h4>애니메이션 효과</h4>
                                 <p>부드러운 움직임과 시각적 효과 구현</p>
                                 <div class="mini-demo">
                                     <div id="bouncing-ball" style="width: 20px; height: 20px; background: #ff6b6b; border-radius: 50%; animation: bounce 1s infinite; display: inline-block;"></div>
                                 </div>
                             </div>
                             <div class="capability-item">
-                                <h4>🔄 데이터 처리</h4>
+                                <h4>데이터 처리</h4>
                                 <p>계산, 검증, 데이터 변환 등의 로직 처리</p>
                                 <div class="mini-demo">
                                     <input type="number" id="calc-input" placeholder="숫자 입력" style="width: 60px; padding: 2px;">
@@ -139,18 +144,18 @@
                                 </div>
                             </div>
                             <div class="capability-item">
-                                <h4>📡 서버 통신</h4>
+                                <h4>서버 통신</h4>
                                 <p>웹 서버와 데이터를 주고받아 실시간 정보 업데이트</p>
                             </div>
                             <div class="capability-item">
-                                <h4>📱 반응형 기능</h4>
+                                <h4>반응형 기능</h4>
                                 <p>화면 크기에 따른 동적 레이아웃 조정</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="js-evolution">
-                        <h3>🌟 JavaScript의 진화</h3>
+                        <h3>JavaScript의 진화</h3>
                         <div class="evolution-timeline">
                             <div class="timeline-item">
                                 <div class="year">1995</div>
@@ -191,29 +196,29 @@
                     </div>
 
                     <div class="learning-approach">
-                        <h3>📚 이 튜토리얼의 학습 방법</h3>
+                        <h3>이 튜토리얼의 학습 방법</h3>
                         <div class="approach-grid">
                             <div class="approach-item">
-                                <h4>🧠 개념 이해</h4>
+                                <h4>개념 이해</h4>
                                 <p>각 개념을 쉬운 예제와 함께 설명</p>
                             </div>
                             <div class="approach-item">
-                                <h4>💻 실습 중심</h4>
+                                <h4>실습 중심</h4>
                                 <p>직접 코드를 작성하고 결과 확인</p>
                             </div>
                             <div class="approach-item">
-                                <h4>🎯 실무 적용</h4>
+                                <h4>실무 적용</h4>
                                 <p>실제 웹사이트에서 사용하는 기능들</p>
                             </div>
                             <div class="approach-item">
-                                <h4>🚀 단계적 학습</h4>
+                                <h4>단계적 학습</h4>
                                 <p>기초부터 고급까지 체계적 진행</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="interactive-demo">
-                        <h3>🎮 JavaScript 체험해보기</h3>
+                        <h3>JavaScript 체험해보기</h3>
                         <p>아래 버튼들을 클릭해서 JavaScript의 힘을 직접 느껴보세요!</p>
                         <div class="demo-area">
                             <div class="demo-controls">
@@ -232,7 +237,7 @@
                             <h4>위 데모의 JavaScript 코드:</h4>
                             <pre><code>function changeText() {
     document.getElementById('demo-paragraph').textContent = 
-        'JavaScript가 텍스트를 바꿨습니다! 🎉';
+                            'JavaScript가 텍스트를 바꿨습니다!';
 }
 
 function changeColor() {
@@ -338,7 +343,7 @@ element.style.fontSize = '20px';</code></pre>
 
                 <!-- 실습 버튼 -->
                 <div class="practice-section">
-                    <h3>⚡ JavaScript 코딩을 시작해보세요!</h3>
+                                            <h3>JavaScript 코딩을 시작해보세요!</h3>
                     <p>변수, 함수, DOM 조작을 직접 실습해보고 결과를 확인해보세요.</p>
                     <a href="practice.html?topic=js-basic" class="btn btn-primary">JavaScript 기초 실습하기</a>
                 </div>
@@ -358,7 +363,7 @@ element.style.fontSize = '20px';</code></pre>
                     <h4>학습 과정</h4>
                     <ul>
                         <li><a href="html-tutorial.html">HTML 튜토리얼</a></li>
-                        <li><a href="css-tutorial.html">CSS 튜토리얼</a></li>
+                        <li><a href="css-tutorial-basic.html">CSS 튜토리얼</a></li>
                         <li><a href="js-tutorial.html">JavaScript 튜토리얼</a></li>
                     </ul>
                 </div>

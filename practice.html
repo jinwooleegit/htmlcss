@@ -22,8 +22,13 @@
                     <li class="nav-item">
                         <a href="html-tutorial.html" class="nav-link">HTML</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="css-tutorial.html" class="nav-link">CSS</a>
+                    <li class="nav-item dropdown">
+                        <a href="css-tutorial-basic.html" class="nav-link dropdown-toggle">CSS</a>
+                        <div class="dropdown-menu">
+                            <a href="css-tutorial-basic.html" class="dropdown-item">완전정복 가이드</a>
+                            <a href="css-intermediate.html" class="dropdown-item">중급편 - 실무 레이아웃</a>
+                            <a href="css-advanced.html" class="dropdown-item">고급편 - CSS 마스터</a>
+                        </div>
                     </li>
                                     <li class="nav-item">
                     <a href="js-tutorial.html" class="nav-link">JavaScript</a>
@@ -52,7 +57,7 @@
         <div class="practice-container">
             <!-- 제어 패널 -->
             <div class="control-panel">
-                <h1>🚀 라이브 코드 에디터</h1>
+                <h1>라이브 코드 에디터</h1>
                 <div class="controls">
                     <div class="control-group">
                         <label>예제 선택:</label>
@@ -77,9 +82,9 @@
                 <!-- HTML 에디터 -->
                 <div class="editor-section">
                     <div class="editor-header">
-                        <h3>📄 HTML</h3>
+                                                    <h3>HTML</h3>
                         <div class="editor-tools">
-                            <button class="tool-btn" title="들여쓰기 정리">🔧</button>
+                                                          <button class="tool-btn" title="들여쓰기 정리"></button>
                         </div>
                     </div>
                     <textarea id="html-editor" class="code-editor" placeholder="HTML 코드를 여기에 작성하세요..."><!DOCTYPE html>
@@ -99,9 +104,9 @@
                 <!-- CSS 에디터 -->
                 <div class="editor-section">
                     <div class="editor-header">
-                        <h3>🎨 CSS</h3>
-                        <div class="editor-tools">
-                            <button class="tool-btn" title="색상 팔레트">🎨</button>
+                                                    <h3>CSS</h3>
+                            <div class="editor-tools">
+                                <button class="tool-btn" title="색상 팔레트"></button>
                         </div>
                     </div>
                     <textarea id="css-editor" class="code-editor" placeholder="CSS 코드를 여기에 작성하세요...">body {
@@ -141,9 +146,9 @@ button:hover {
                 <!-- JavaScript 에디터 -->
                 <div class="editor-section">
                     <div class="editor-header">
-                        <h3>⚡ JavaScript</h3>
-                        <div class="editor-tools">
-                            <button class="tool-btn" title="콘솔 보기">📊</button>
+                                                    <h3>JavaScript</h3>
+                            <div class="editor-tools">
+                                <button class="tool-btn" title="콘솔 보기"></button>
                         </div>
                     </div>
                     <textarea id="js-editor" class="code-editor" placeholder="JavaScript 코드를 여기에 작성하세요...">// JavaScript 코드를 여기에 작성하세요
@@ -164,10 +169,10 @@ document.addEventListener('DOMContentLoaded', function() {
             <!-- 결과 미리보기 -->
             <div class="preview-container">
                 <div class="preview-header">
-                    <h3>🖥 미리보기</h3>
+                                          <h3>미리보기</h3>
                     <div class="preview-tools">
-                        <button id="toggle-responsive" class="tool-btn" title="반응형 테스트">📱</button>
-                        <button id="open-fullscreen" class="tool-btn" title="전체화면">🔍</button>
+                        <button id="toggle-responsive" class="tool-btn" title="반응형 테스트"></button>
+                        <button id="open-fullscreen" class="tool-btn" title="전체화면"></button>
                     </div>
                 </div>
                 <iframe id="preview-frame" class="preview-frame"></iframe>
@@ -176,8 +181,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <!-- 콘솔 -->
             <div class="console-container">
                 <div class="console-header">
-                    <h3>📊 콘솔</h3>
-                    <button id="clear-console" class="tool-btn">🗑</button>
+                    <h3>콘솔</h3>
+                                          <button id="clear-console" class="tool-btn"></button>
                 </div>
                 <div id="console-output" class="console-output">
                     <div class="console-message info">
@@ -191,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- 도움말 섹션 -->
         <div class="help-section">
             <div class="container">
-                <h2>💡 에디터 사용법</h2>
+                <h2>에디터 사용법</h2>
                 <div class="help-grid">
                     <div class="help-item">
                         <h4>1. 코드 작성</h4>
@@ -216,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- 예제 갤러리 -->
         <div class="examples-section">
             <div class="container">
-                <h2>📚 예제 갤러리</h2>
+                <h2>예제 갤러리</h2>
                 <div class="examples-grid">
                     <div class="example-card" data-example="basic">
                         <h4>기본 HTML 구조</h4>
@@ -255,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h4>학습 과정</h4>
                     <ul>
                         <li><a href="html-tutorial.html">HTML 튜토리얼</a></li>
-                        <li><a href="css-tutorial.html">CSS 튜토리얼</a></li>
+                        <li><a href="css-tutorial-basic.html">CSS 튜토리얼</a></li>
                         <li><a href="js-tutorial.html">JavaScript 튜토리얼</a></li>
                     </ul>
                 </div>

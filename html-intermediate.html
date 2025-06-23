@@ -22,8 +22,13 @@
                     <li class="nav-item">
                         <a href="html-tutorial.html" class="nav-link active">HTML</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="css-tutorial.html" class="nav-link">CSS</a>
+                    <li class="nav-item dropdown">
+                        <a href="css-tutorial-basic.html" class="nav-link dropdown-toggle">CSS</a>
+                        <div class="dropdown-menu">
+                            <a href="css-tutorial-basic.html" class="dropdown-item">완전정복 가이드</a>
+                            <a href="css-intermediate.html" class="dropdown-item">중급편 - 실무 레이아웃</a>
+                            <a href="css-advanced.html" class="dropdown-item">고급편 - CSS 마스터</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a href="js-tutorial.html" class="nav-link">JavaScript</a>
@@ -114,6 +119,38 @@
                             <li><strong>h3-h6</strong>: 하위 구조 표현</li>
                             <li>제목 레벨을 건너뛰지 마세요 (h1 → h3 금지)</li>
                         </ul>
+                        
+                        <div class="practical-example">
+                                                         <h5>실제 블로그 포스트 구조 예시:</h5>
+                            <div class="structure-example">
+                                <pre><code>&lt;article&gt;
+    &lt;h1&gt;웹 개발 완전정복 가이드&lt;/h1&gt;        &lt;!-- 메인 제목 --&gt;
+    
+    &lt;h2&gt;1. 프론트엔드 개발&lt;/h2&gt;            &lt;!-- 주요 섹션 --&gt;
+    &lt;h3&gt;HTML 기초&lt;/h3&gt;                    &lt;!-- 하위 섹션 --&gt;
+    &lt;h4&gt;태그의 종류&lt;/h4&gt;                  &lt;!-- 세부 항목 --&gt;
+    &lt;h4&gt;속성 활용법&lt;/h4&gt;
+    
+    &lt;h3&gt;CSS 스타일링&lt;/h3&gt;
+    &lt;h4&gt;선택자 사용법&lt;/h4&gt;
+    &lt;h4&gt;레이아웃 기법&lt;/h4&gt;
+    
+    &lt;h2&gt;2. 백엔드 개발&lt;/h2&gt;              &lt;!-- 다음 주요 섹션 --&gt;
+    &lt;h3&gt;서버 기초&lt;/h3&gt;
+    &lt;h3&gt;데이터베이스&lt;/h3&gt;
+&lt;/article&gt;</code></pre>
+                            </div>
+                            
+                            <div class="seo-tip">
+                                                                 <h6>SEO 최적화 팁:</h6>
+                                <ul>
+                                    <li><strong>h1은 페이지당 하나만</strong> 사용하세요</li>
+                                    <li><strong>키워드를 자연스럽게</strong> 제목에 포함시키세요</li>
+                                    <li><strong>제목만 읽어도 내용을 알 수 있게</strong> 작성하세요</li>
+                                    <li><strong>50자 이내</strong>로 간결하게 작성하세요</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -168,7 +205,7 @@
 &lt;/a&gt;
 
 &lt;!-- 내부 링크 --&gt;
-&lt;a href="css-tutorial.html"&gt;CSS 튜토리얼&lt;/a&gt;
+&lt;a href="css-tutorial-basic.html"&gt;CSS 튜토리얼&lt;/a&gt;
 
 &lt;!-- 페이지 내 이동 --&gt;
 &lt;a href="#section1"&gt;섹션 1로 이동&lt;/a&gt;
@@ -187,7 +224,7 @@
                         <div class="tag-result">
                             <p style="line-height: 2;">
                                 <a href="https://www.google.com" target="_blank" rel="noopener" style="color: #007bff;">구글 (새 창에서 열기)</a><br>
-                                <a href="css-tutorial.html" style="color: #007bff;">CSS 튜토리얼</a><br>
+                                <a href="css-tutorial-basic.html" style="color: #007bff;">CSS 튜토리얼</a><br>
                                 <a href="#section1" style="color: #007bff;">섹션 1로 이동</a><br>
                                 <a href="mailto:contact@example.com?subject=문의&body=안녕하세요" style="color: #007bff;">이메일 보내기</a><br>
                                 <a href="tel:+82-10-1234-5678" style="color: #007bff;">전화걸기</a><br>
@@ -233,6 +270,89 @@
                             <li><strong>파일 형식</strong>: JPEG(사진), PNG(투명배경), WebP(최신)</li>
                             <li><strong>로딩 최적화</strong>: loading="lazy" 속성 활용</li>
                         </ul>
+                        
+                        <div class="real-world-examples">
+                                                         <h5>실무에서 자주 사용하는 이미지 패턴:</h5>
+                            
+                            <div class="pattern-example">
+                                <h6>1. 프로필 이미지 (SNS, 쇼핑몰)</h6>
+                                <pre><code>&lt;div class="profile-section"&gt;
+    &lt;img src="profile.jpg" 
+         alt="김철수 프로필 사진" 
+         width="100" 
+         height="100"
+         loading="lazy"&gt;
+    &lt;div class="profile-info"&gt;
+        &lt;h3&gt;김철수&lt;/h3&gt;
+        &lt;p&gt;웹 개발자&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
+                            
+                            <div class="pattern-example">
+                                <h6>2. 상품 갤러리 (이커머스)</h6>
+                                <pre><code>&lt;div class="product-gallery"&gt;
+    &lt;figure&gt;
+        &lt;img src="product-main.jpg" 
+             alt="아이폰 15 Pro 메인 이미지"
+             id="main-image"&gt;
+        &lt;figcaption&gt;아이폰 15 Pro - 티타늄 블루&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    
+    &lt;div class="thumbnail-list"&gt;
+        &lt;img src="thumb1.jpg" alt="정면 모습" onclick="changeMain(this)"&gt;
+        &lt;img src="thumb2.jpg" alt="측면 모습" onclick="changeMain(this)"&gt;
+        &lt;img src="thumb3.jpg" alt="후면 모습" onclick="changeMain(this)"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
+                            
+                            <div class="pattern-example">
+                                <h6>3. 배너/히어로 이미지 (랜딩 페이지)</h6>
+                                <pre><code>&lt;header class="hero-section"&gt;
+    &lt;picture&gt;
+        &lt;source media="(max-width: 768px)" srcset="hero-mobile.webp"&gt;
+        &lt;source media="(max-width: 1024px)" srcset="hero-tablet.webp"&gt;
+        &lt;img src="hero-desktop.webp" 
+             alt="웹 개발 교육 과정 - 3개월 완성"
+             class="hero-image"&gt;
+    &lt;/picture&gt;
+    
+    &lt;div class="hero-content"&gt;
+        &lt;h1&gt;3개월 만에 웹 개발자 되기&lt;/h1&gt;
+        &lt;p&gt;HTML, CSS, JavaScript 완전 정복&lt;/p&gt;
+        &lt;button&gt;지금 시작하기&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="accessibility-focus">
+                                                         <h5>접근성 고려사항:</h5>
+                             <div class="accessibility-examples">
+                                 <div class="good-practice">
+                                     <h6>좋은 예시:</h6>
+                                     <code>&lt;img src="chart.png" alt="2024년 매출 증가율 - 1분기 15%, 2분기 23%, 3분기 18% 상승"&gt;</code>
+                                     <p><small>시각장애인도 차트의 핵심 정보를 이해할 수 있습니다.</small></p>
+                                 </div>
+                                 <div class="bad-practice">
+                                     <h6>나쁜 예시:</h6>
+                                    <code>&lt;img src="chart.png" alt="차트"&gt;</code>
+                                    <p><small>너무 간단해서 실제 정보를 전달하지 못합니다.</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="performance-tips">
+                                                         <h5>성능 최적화 고급 기법:</h5>
+                            <ul>
+                                <li><strong>Lazy Loading:</strong> <code>loading="lazy"</code>로 스크롤 시 로딩</li>
+                                <li><strong>WebP 포맷:</strong> JPEG보다 25-35% 작은 파일 크기</li>
+                                <li><strong>Picture 요소:</strong> 디바이스별 최적화된 이미지 제공</li>
+                                <li><strong>이미지 압축:</strong> TinyPNG, ImageOptim 등 도구 활용</li>
+                                <li><strong>CDN 활용:</strong> 전 세계 빠른 이미지 로딩</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -636,7 +756,7 @@
                         <div class="next-card">
                             <h3>CSS 배우기</h3>
                             <p>웹페이지를 아름답게 꾸며보세요</p>
-                            <a href="css-tutorial.html" class="btn btn-outline">CSS 시작하기</a>
+                            <a href="css-tutorial-basic.html" class="btn btn-outline">CSS 시작하기</a>
                         </div>
                         
                                                  <div class="next-card">
