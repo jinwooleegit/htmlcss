@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript 초급편 1부 - 기초 개념과 실습">
+    <title>JavaScript 초급편 1부 | WebLearn</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 헤더 및 네비게이션 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">WebLearn</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">홈</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="html-beginner.html" class="nav-link dropdown-toggle">HTML</a>
+                        <div class="dropdown-menu">
+                            <a href="html-beginner.html" class="dropdown-item">초급편</a>
+                            <a href="html-intermediate.html" class="dropdown-item">중급편</a>
+                            <a href="html-advanced.html" class="dropdown-item">고급편</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="css-tutorial-basic.html" class="nav-link dropdown-toggle">CSS</a>
+                        <div class="dropdown-menu">
+                            <a href="css-tutorial-basic.html" class="dropdown-item">초급편</a>
+                            <a href="css-intermediate.html" class="dropdown-item">중급편</a>
+                            <a href="css-advanced.html" class="dropdown-item">고급편</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="js-beginner-1.html" class="nav-link dropdown-toggle active">JavaScript</a>
+                        <div class="dropdown-menu">
+                            <a href="js-beginner-1.html" class="dropdown-item active">초급편 1부</a>
+                            <a href="js-beginner-2.html" class="dropdown-item">초급편 2부</a>
+                            <a href="js-beginner-3.html" class="dropdown-item">초급편 3부</a>
+                            <a href="js-intermediate-1.html" class="dropdown-item">중급편 1부</a>
+                            <a href="js-intermediate-2.html" class="dropdown-item">중급편 2부</a>
+                            <a href="js-intermediate-3.html" class="dropdown-item">중급편 3부</a>
+                            <a href="js-advanced-1.html" class="dropdown-item">고급편 1부</a>
+                            <a href="js-advanced-2.html" class="dropdown-item">고급편 2부</a>
+                            <a href="js-advanced-3.html" class="dropdown-item">고급편 3부</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="cursor-ai-tutorial.html" class="nav-link">Cursor AI</a></li>
+                    <li class="nav-item"><a href="deployment-tutorial.html" class="nav-link">배포하기</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- 메인 콘텐츠 -->
+    <main class="main">
+        <div class="tutorial-container full-width">
+            <!-- 튜토리얼 헤더 -->
+            <div class="tutorial-header">
+                <h1>JavaScript 초급편 1부</h1>
+                <p class="subtitle">JavaScript의 개념과 기초 문법을 차근차근 배워보세요</p>
+                <div class="learning-path">
+                    <span class="path-item active">초급편 1부</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-item">초급편 2부</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-item">초급편 3부</span>
+                </div>
+            </div>
+
+            <!-- 1. JavaScript란 무엇인가? -->
+            <section class="tutorial-section">
+                <h2>JavaScript란 무엇인가요?</h2>
+                <div class="concept-explanation">
+                    <div class="concept-main">
+                        <h3>JavaScript = 웹의 동적 프로그래밍 언어</h3>
+                        <div class="concept-breakdown">
+                            <div class="concept-part">
+                                <strong>동적(Dynamic)</strong>
+                                <p>웹페이지를 실시간으로 바꾸고, 사용자와 상호작용할 수 있게 함</p>
+                                <div class="detail-explanation">
+                                    <small>예: 버튼을 클릭하면 내용이 바뀌거나, 입력창에 따라 결과가 실시간으로 변하는 기능</small>
+                                </div>
+                            </div>
+                            <div class="concept-part">
+                                <strong>프로그래밍 언어</strong>
+                                <p>명령어(코드)로 컴퓨터에게 동작을 지시</p>
+                                <div class="detail-explanation">
+                                    <small>예: 계산, 조건판단, 반복, 데이터 저장 등 다양한 논리를 구현</small>
+                                </div>
+                            </div>
+                            <div class="concept-part">
+                                <strong>웹 표준</strong>
+                                <p>모든 브라우저에서 동작하는 공식 언어</p>
+                                <div class="detail-explanation">
+                                    <small>HTML, CSS와 함께 웹의 3대 핵심 기술</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="real-example">
+                        <h4>실제 예시로 이해하기</h4>
+                        <p><strong>JavaScript 없는 웹페이지:</strong></p>
+                        <div class="comparison-box">
+                            <div class="before-js">
+                                <h5>정적인 페이지</h5>
+                                <div class="plain-text">
+                                    <button disabled>장바구니 담기</button>
+                                    <p>수량: 1 (변경 불가)</p>
+                                    <div>총 가격: 10,000원 (고정)</div>
+                                </div>
+                            </div>
+                            <div class="after-js">
+                                <h5>JavaScript 적용 후</h5>
+                                <div class="structured-text">
+                                    <button onclick="alert('장바구니에 담겼습니다!')">장바구니 담기</button>
+                                    <p>수량: <span id="qty">1</span> <button onclick="document.getElementById('qty').textContent++">+</button></p>
+                                    <div>총 가격: <span id="price">10,000</span>원</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="insight"><strong>인사이트:</strong> JavaScript가 있으면 웹페이지가 살아 움직이고, 사용자의 입력에 따라 즉시 반응합니다!</p>
+                    </div>
+                    <div class="analogy-box">
+                        <h4>쉬운 비유로 이해하기</h4>
+                        <p><strong>웹페이지를 사람이라고 생각해보세요:</strong></p>
+                        <ul>
+                            <li><strong>HTML</strong> = 뼈대(골격)</li>
+                            <li><strong>CSS</strong> = 외모(피부, 옷, 스타일)</li>
+                            <li><strong>JavaScript</strong> = 뇌와 근육(생각하고 움직임)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="why-learn-js">
+                    <h3>왜 JavaScript를 배워야 할까요?</h3>
+                    <div class="reasons-grid">
+                        <div class="reason-item">
+                            <div class="reason-icon"></div>
+                            <h4>모든 웹사이트의 핵심</h4>
+                            <p>구글, 네이버, 유튜브 등 모든 사이트가 JavaScript로 동작</p>
+                        </div>
+                        <div class="reason-item">
+                            <div class="reason-icon"></div>
+                            <h4>즉시 결과 확인</h4>
+                            <p>코드를 작성하면 바로 브라우저에서 결과를 볼 수 있음</p>
+                        </div>
+                        <div class="reason-item">
+                            <div class="reason-icon"></div>
+                            <h4>취업과 실무 필수</h4>
+                            <p>웹 개발자, 프론트엔드, 백엔드, 앱 개발까지 필수 기술</p>
+                        </div>
+                        <div class="reason-item">
+                            <div class="reason-icon"></div>
+                            <h4>배우기 쉬움</h4>
+                            <p>프로그래밍 입문자도 쉽게 시작 가능</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 이하 추가 섹션, 실습, 실수방지, 요약 등 html-beginner.html 구조와 동일하게 확장 예정 -->
+        </div>
+    </main>
+</body>
+</html> 
