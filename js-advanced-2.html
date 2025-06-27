@@ -3,29 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaScript 고급편 2부 - 고급 활용과 실습">
+    <meta name="description" content="JavaScript 고급편 2부 - 모듈과 클래스">
     <title>JavaScript 고급편 2부 | WebLearn</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- 헤더 및 네비게이션 동일하게 구성 -->
-    <!-- 이하 내용은 html-advanced.html의 구조와 동일하게 JavaScript에 맞게 작성 예정 -->
-    <!-- 메인 콘텐츠 -->
     <main class="main">
         <div class="tutorial-container full-width">
             <div class="tutorial-header">
-                <h1>JavaScript 고급편 2부</h1>
-                <p class="subtitle">API 통신, fetch, 비동기 흐름 제어, 고급 함수형 프로그래밍을 실습과 함께 익히세요</p>
-                <div class="learning-path">
-                    <span class="path-item">고급편 1부</span>
-                    <span class="path-arrow">→</span>
-                    <span class="path-item active">고급편 2부</span>
-                    <span class="path-arrow">→</span>
-                    <span class="path-item">고급편 3부</span>
-                </div>
+                <h1>🏗️ JavaScript 고급편 2부</h1>
+                <p class="subtitle">ES6+ 클래스와 모듈 시스템 활용하기</p>
             </div>
-            <!-- 이하 섹션, 실습, 실수방지, 요약 등 js-beginner-1.html과 동일한 구조로 확장 예정 -->
+
+            <section class="tutorial-section">
+                <h2>클래스 (Class)</h2>
+                <div class="code-block">
+                    <pre><code>// 클래스 정의
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    introduce() {
+        return `안녕하세요, 저는 ${this.name}이고 ${this.age}살입니다.`;
+    }
+    
+    static getSpecies() {
+        return "호모 사피엔스";
+    }
+}
+
+// 클래스 사용
+const person1 = new Person("김철수", 25);
+console.log(person1.introduce());
+console.log(Person.getSpecies());</code></pre>
+                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                </div>
+            </section>
+
+            <section class="tutorial-section">
+                <h2>모듈 시스템</h2>
+                <div class="code-block">
+                    <pre><code>// utils.js - 모듈 내보내기
+export function formatDate(date) {
+    return date.toLocaleDateString('ko-KR');
+}
+
+export const PI = 3.14159;
+
+export default class Calculator {
+    add(a, b) { return a + b; }
+    subtract(a, b) { return a - b; }
+}
+
+// main.js - 모듈 가져오기
+import Calculator, { formatDate, PI } from './utils.js';
+
+const calc = new Calculator();
+console.log(calc.add(5, 3)); // 8
+console.log(formatDate(new Date())); // 2024. 1. 1.
+console.log(PI); // 3.14159</code></pre>
+                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                </div>
+            </section>
         </div>
     </main>
+
+    <script>
+        function copyToClipboard(button) {
+            const codeBlock = button.previousElementSibling;
+            const code = codeBlock.textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                button.textContent = '복사됨!';
+                setTimeout(() => button.textContent = '복사', 2000);
+            });
+        }
+    </script>
 </body>
 </html> 

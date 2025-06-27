@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaScript 초급편 1부 - 기초 개념과 실습">
+    <meta name="description" content="JavaScript 초급편 1부 - JavaScript 기초 개념과 실습">
     <title>JavaScript 초급편 1부 | WebLearn</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -58,12 +58,13 @@
             </div>
         </nav>
     </header>
+
     <!-- 메인 콘텐츠 -->
     <main class="main">
         <div class="tutorial-container full-width">
             <!-- 튜토리얼 헤더 -->
             <div class="tutorial-header">
-                <h1>JavaScript 초급편 1부</h1>
+                <h1>🚀 JavaScript 초급편 1부</h1>
                 <p class="subtitle">JavaScript의 개념과 기초 문법을 차근차근 배워보세요</p>
                 <div class="learning-path">
                     <span class="path-item active">초급편 1부</span>
@@ -77,94 +78,584 @@
             <!-- 1. JavaScript란 무엇인가? -->
             <section class="tutorial-section">
                 <h2>JavaScript란 무엇인가요?</h2>
+                
                 <div class="concept-explanation">
                     <div class="concept-main">
-                        <h3>JavaScript = 웹의 동적 프로그래밍 언어</h3>
+                        <h3>JavaScript = 웹을 살아있게 만드는 프로그래밍 언어</h3>
                         <div class="concept-breakdown">
                             <div class="concept-part">
-                                <strong>동적(Dynamic)</strong>
+                                <strong>동적 프로그래밍 언어</strong>
                                 <p>웹페이지를 실시간으로 바꾸고, 사용자와 상호작용할 수 있게 함</p>
                                 <div class="detail-explanation">
-                                    <small>예: 버튼을 클릭하면 내용이 바뀌거나, 입력창에 따라 결과가 실시간으로 변하는 기능</small>
+                                    <small>예: 버튼을 클릭하면 내용이 바뀌거나, 입력창을 채우면 결과가 실시간으로 변하는 기능</small>
                                 </div>
                             </div>
                             <div class="concept-part">
-                                <strong>프로그래밍 언어</strong>
-                                <p>명령어(코드)로 컴퓨터에게 동작을 지시</p>
+                                <strong>클라이언트 사이드 언어</strong>
+                                <p>웹 브라우저에서 직접 실행되는 언어</p>
                                 <div class="detail-explanation">
-                                    <small>예: 계산, 조건판단, 반복, 데이터 저장 등 다양한 논리를 구현</small>
+                                    <small>예: 별도의 프로그램 설치 없이 웹 브라우저만 있으면 바로 실행 가능</small>
                                 </div>
                             </div>
                             <div class="concept-part">
-                                <strong>웹 표준</strong>
-                                <p>모든 브라우저에서 동작하는 공식 언어</p>
+                                <strong>웹 표준 언어</strong>
+                                <p>모든 브라우저에서 지원하는 공식 언어</p>
                                 <div class="detail-explanation">
                                     <small>HTML, CSS와 함께 웹의 3대 핵심 기술</small>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="real-example">
                         <h4>실제 예시로 이해하기</h4>
-                        <p><strong>JavaScript 없는 웹페이지:</strong></p>
+                        <p><strong>JavaScript 없는 웹페이지 vs JavaScript 있는 웹페이지</strong></p>
                         <div class="comparison-box">
-                            <div class="before-js">
-                                <h5>정적인 페이지</h5>
+                            <div class="before-html">
+                                <h5>JavaScript 없는 페이지</h5>
                                 <div class="plain-text">
-                                    <button disabled>장바구니 담기</button>
+                                    <button style="background: #ccc; cursor: not-allowed;" disabled>버튼</button>
                                     <p>수량: 1 (변경 불가)</p>
                                     <div>총 가격: 10,000원 (고정)</div>
+                                    <div>시간: 정적 표시</div>
                                 </div>
                             </div>
-                            <div class="after-js">
-                                <h5>JavaScript 적용 후</h5>
+                            <div class="after-html">
+                                <h5>JavaScript 있는 페이지</h5>
                                 <div class="structured-text">
-                                    <button onclick="alert('장바구니에 담겼습니다!')">장바구니 담기</button>
-                                    <p>수량: <span id="qty">1</span> <button onclick="document.getElementById('qty').textContent++">+</button></p>
+                                    <button onclick="alert('클릭되었습니다!')" style="background: #007bff; color: white; cursor: pointer;">버튼</button>
+                                    <p>수량: <span id="qty">1</span> 
+                                        <button onclick="changeQty(1)">+</button>
+                                        <button onclick="changeQty(-1)">-</button>
+                                    </p>
                                     <div>총 가격: <span id="price">10,000</span>원</div>
+                                    <div>현재 시간: <span id="time"></span></div>
                                 </div>
                             </div>
                         </div>
-                        <p class="insight"><strong>인사이트:</strong> JavaScript가 있으면 웹페이지가 살아 움직이고, 사용자의 입력에 따라 즉시 반응합니다!</p>
+                        <p class="insight"><strong>인사이트:</strong> JavaScript가 있으면 웹페이지가 살아 움직이고, 사용자의 행동에 즉시 반응합니다!</p>
                     </div>
+                    
                     <div class="analogy-box">
                         <h4>쉬운 비유로 이해하기</h4>
                         <p><strong>웹페이지를 사람이라고 생각해보세요:</strong></p>
                         <ul>
-                            <li><strong>HTML</strong> = 뼈대(골격)</li>
-                            <li><strong>CSS</strong> = 외모(피부, 옷, 스타일)</li>
-                            <li><strong>JavaScript</strong> = 뇌와 근육(생각하고 움직임)</li>
+                            <li><strong>HTML</strong> = 뼈대와 장기 (구조)</li>
+                            <li><strong>CSS</strong> = 외모와 스타일 (피부, 옷)</li>
+                            <li><strong>JavaScript</strong> = 뇌와 근육 (생각하고 움직임)</li>
                         </ul>
+                        <p class="highlight">JavaScript 없으면 아무리 예쁜 웹페이지도 '마네킹'에 불과해요!</p>
                     </div>
                 </div>
+
                 <div class="why-learn-js">
                     <h3>왜 JavaScript를 배워야 할까요?</h3>
                     <div class="reasons-grid">
                         <div class="reason-item">
-                            <div class="reason-icon"></div>
+                            <div class="reason-icon">🌐</div>
                             <h4>모든 웹사이트의 핵심</h4>
-                            <p>구글, 네이버, 유튜브 등 모든 사이트가 JavaScript로 동작</p>
+                            <p>구글, 네이버, 유튜브, 페이스북 등 모든 사이트가 JavaScript로 동작</p>
                         </div>
                         <div class="reason-item">
-                            <div class="reason-icon"></div>
+                            <div class="reason-icon">⚡</div>
                             <h4>즉시 결과 확인</h4>
                             <p>코드를 작성하면 바로 브라우저에서 결과를 볼 수 있음</p>
                         </div>
                         <div class="reason-item">
-                            <div class="reason-icon"></div>
+                            <div class="reason-icon">💼</div>
                             <h4>취업과 실무 필수</h4>
                             <p>웹 개발자, 프론트엔드, 백엔드, 앱 개발까지 필수 기술</p>
                         </div>
                         <div class="reason-item">
-                            <div class="reason-icon"></div>
-                            <h4>배우기 쉬움</h4>
-                            <p>프로그래밍 입문자도 쉽게 시작 가능</p>
+                            <div class="reason-icon">🎯</div>
+                            <h4>배우기 상대적으로 쉬움</h4>
+                            <p>프로그래밍 입문자도 쉽게 시작할 수 있는 언어</p>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- 이하 추가 섹션, 실습, 실수방지, 요약 등 html-beginner.html 구조와 동일하게 확장 예정 -->
+
+            <!-- 2. JavaScript 기본 문법 -->
+            <section class="tutorial-section">
+                <h2>JavaScript 기본 문법</h2>
+                
+                <div class="grammar-explanation">
+                    <h3>JavaScript 코드는 어떻게 생겼을까요?</h3>
+                    
+                    <div class="syntax-visual">
+                        <div class="code-example">
+                            <pre><code>// 이것은 주석입니다
+console.log("안녕하세요!");
+let message = "JavaScript 배우기";
+alert(message);</code></pre>
+                        </div>
+                        <div class="syntax-parts">
+                            <div class="part-explanation">
+                                <strong>주석</strong>: // 뒤의 내용은 실행되지 않음
+                            </div>
+                            <div class="part-explanation">
+                                <strong>명령문</strong>: console.log(), alert() 등
+                            </div>
+                            <div class="part-explanation">
+                                <strong>변수</strong>: let message = "값"
+                            </div>
+                            <div class="part-explanation">
+                                <strong>세미콜론</strong>: 문장의 끝을 표시 (선택사항)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grammar-rules">
+                        <h4>JavaScript 문법 규칙</h4>
+                        <div class="rules-grid">
+                            <div class="rule-item">
+                                <div class="rule-icon">🔤</div>
+                                <strong>대소문자 구분</strong>
+                                <p>myVariable과 myvariable은 다름</p>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-icon">📝</div>
+                                <strong>세미콜론</strong>
+                                <p>문장 끝에 ; 사용 (생략 가능하지만 권장)</p>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-icon">💬</div>
+                                <strong>문자열</strong>
+                                <p>"큰따옴표" 또는 '작은따옴표' 사용</p>
+                            </div>
+                            <div class="rule-item">
+                                <div class="rule-icon">🏷️</div>
+                                <strong>변수명</strong>
+                                <p>영문자, 숫자, _, $만 사용 가능</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. 첫 번째 JavaScript 코드 작성하기 -->
+            <section class="tutorial-section">
+                <h2>첫 번째 JavaScript 코드 작성하기</h2>
+                
+                <div class="practice-container">
+                    <h3>실습 1: 브라우저 콘솔에서 JavaScript 실행하기</h3>
+                    
+                    <div class="step-by-step">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>브라우저 개발자 도구 열기</h4>
+                                <p>Chrome, Firefox, Edge 등에서 <strong>F12</strong>를 누르거나 <strong>우클릭 → 검사</strong></p>
+                                <div class="tip-box">
+                                    <p><strong>팁:</strong> 개발자 도구는 웹 개발자의 필수 도구입니다!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Console 탭 클릭</h4>
+                                <p>개발자 도구에서 <strong>Console</strong> 탭을 찾아 클릭</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>첫 번째 코드 입력</h4>
+                                <div class="code-block">
+                                    <pre><code>console.log("안녕하세요, JavaScript!");</code></pre>
+                                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                </div>
+                                <p>위 코드를 입력하고 <strong>Enter</strong>를 누르세요!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-result">
+                        <h4>결과</h4>
+                        <div class="result-box">
+                            <p>콘솔에 "안녕하세요, JavaScript!"가 출력됩니다!</p>
+                            <p class="success">🎉 축하합니다! 첫 번째 JavaScript 코드를 실행했습니다!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-container">
+                    <h3>실습 2: 팝업 창으로 메시지 표시하기</h3>
+                    
+                    <div class="step-by-step">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>alert() 함수 사용하기</h4>
+                                <div class="code-block">
+                                    <pre><code>alert("JavaScript 배우기 시작!");</code></pre>
+                                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                </div>
+                                <p>콘솔에 위 코드를 입력하고 Enter를 누르세요!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-result">
+                        <h4>결과</h4>
+                        <div class="result-box">
+                            <p>브라우저에 팝업 창이 나타납니다!</p>
+                            <p class="success">🎉 alert() 함수 사용 완료!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. JavaScript를 HTML에 추가하는 방법 -->
+            <section class="tutorial-section">
+                <h2>JavaScript를 HTML에 추가하는 방법</h2>
+                
+                <div class="methods-explanation">
+                    <h3>3가지 방법으로 JavaScript를 추가할 수 있습니다</h3>
+                    
+                    <div class="method-item">
+                        <div class="method-header">
+                            <div class="method-number">1</div>
+                            <h4>인라인 JavaScript</h4>
+                            <span class="method-tag">HTML 태그 내부</span>
+                        </div>
+                        <div class="method-content">
+                            <div class="code-block">
+                                <pre><code>&lt;button onclick="alert('버튼 클릭!')">클릭하세요&lt;/button></code></pre>
+                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                            </div>
+                            <div class="method-pros-cons">
+                                <div class="pros">
+                                    <strong>장점:</strong> 간단하고 빠름
+                                </div>
+                                <div class="cons">
+                                    <strong>단점:</strong> 코드가 길어지면 관리가 어려움
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="method-item">
+                        <div class="method-header">
+                            <div class="method-number">2</div>
+                            <h4>내부 JavaScript</h4>
+                            <span class="method-tag">HTML 파일 내부</span>
+                        </div>
+                        <div class="method-content">
+                            <div class="code-block">
+                                <pre><code>&lt;script>
+    console.log("내부 JavaScript 실행!");
+    alert("Hello World!");
+&lt;/script></code></pre>
+                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                            </div>
+                            <div class="method-pros-cons">
+                                <div class="pros">
+                                    <strong>장점:</strong> HTML과 함께 관리 가능
+                                </div>
+                                <div class="cons">
+                                    <strong>단점:</strong> 재사용이 어려움
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="method-item">
+                        <div class="method-header">
+                            <div class="method-number">3</div>
+                            <h4>외부 JavaScript</h4>
+                            <span class="method-tag recommended">추천</span>
+                        </div>
+                        <div class="method-content">
+                            <div class="code-block">
+                                <pre><code>&lt;script src="script.js">&lt;/script></code></pre>
+                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                            </div>
+                            <div class="method-pros-cons">
+                                <div class="pros">
+                                    <strong>장점:</strong> 재사용 가능, 관리 쉬움, 성능 좋음
+                                </div>
+                                <div class="cons">
+                                    <strong>단점:</strong> 파일이 하나 더 필요
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="practice-container">
+                    <h3>실습 3: HTML에 JavaScript 추가하기</h3>
+                    
+                    <div class="step-by-step">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>HTML 파일 만들기</h4>
+                                <div class="code-block">
+                                    <pre><code>&lt;!DOCTYPE html>
+&lt;html lang="ko">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;title>JavaScript 실습&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>JavaScript 실습 페이지&lt;/h1>
+    &lt;button onclick="sayHello()">인사하기&lt;/button>
+    
+    &lt;script>
+        function sayHello() {
+            alert("안녕하세요!");
+        }
+    &lt;/script>
+&lt;/body>
+&lt;/html></code></pre>
+                                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                </div>
+                                <p>위 코드를 메모장에 복사하고 <strong>test.html</strong>로 저장하세요!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>브라우저에서 열기</h4>
+                                <p>저장한 HTML 파일을 더블클릭하여 브라우저에서 열어보세요!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>버튼 클릭해보기</h4>
+                                <p>"인사하기" 버튼을 클릭하면 팝업이 나타납니다!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. 자주하는 실수와 해결법 -->
+            <section class="tutorial-section">
+                <h2>자주하는 실수와 해결법</h2>
+                
+                <div class="mistakes-container">
+                    <div class="mistake-item">
+                        <div class="mistake-header">
+                            <div class="mistake-number">❌ 실수 1</div>
+                            <h4>대소문자 구분 안하기</h4>
+                        </div>
+                        <div class="mistake-content">
+                            <div class="wrong-code">
+                                <h5>❌ 잘못된 코드</h5>
+                                <pre><code>console.Log("Hello"); // Log는 대문자 L</code></pre>
+                            </div>
+                            <div class="correct-code">
+                                <h5>✅ 올바른 코드</h5>
+                                <pre><code>console.log("Hello"); // log는 소문자 l</code></pre>
+                            </div>
+                            <div class="mistake-tip">
+                                <p><strong>해결법:</strong> JavaScript는 대소문자를 구분하므로 정확히 입력해야 합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mistake-item">
+                        <div class="mistake-header">
+                            <div class="mistake-number">❌ 실수 2</div>
+                            <h4>따옴표 닫지 않기</h4>
+                        </div>
+                        <div class="mistake-content">
+                            <div class="wrong-code">
+                                <h5>❌ 잘못된 코드</h5>
+                                <pre><code>alert("안녕하세요); // 따옴표 짝이 안 맞음</code></pre>
+                            </div>
+                            <div class="correct-code">
+                                <h5>✅ 올바른 코드</h5>
+                                <pre><code>alert("안녕하세요"); // 따옴표 짝이 맞음</code></pre>
+                            </div>
+                            <div class="mistake-tip">
+                                <p><strong>해결법:</strong> 따옴표를 열었으면 반드시 같은 따옴표로 닫아야 합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mistake-item">
+                        <div class="mistake-header">
+                            <div class="mistake-number">❌ 실수 3</div>
+                            <h4>함수 이름 오타내기</h4>
+                        </div>
+                        <div class="mistake-content">
+                            <div class="wrong-code">
+                                <h5>❌ 잘못된 코드</h5>
+                                <pre><code>alret("Hello"); // alert 오타</code></pre>
+                            </div>
+                            <div class="correct-code">
+                                <h5>✅ 올바른 코드</h5>
+                                <pre><code>alert("Hello"); // alert 정확</code></pre>
+                            </div>
+                            <div class="mistake-tip">
+                                <p><strong>해결법:</strong> 함수 이름을 정확히 외우고, 자동완성 기능을 활용하세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. 정리 및 다음 단계 -->
+            <section class="tutorial-section">
+                <h2>정리 및 다음 단계</h2>
+                
+                <div class="summary-container">
+                    <h3>🎯 오늘 배운 내용 정리</h3>
+                    <div class="summary-grid">
+                        <div class="summary-item">
+                            <div class="summary-icon">📖</div>
+                            <h4>JavaScript란?</h4>
+                            <p>웹을 동적으로 만드는 프로그래밍 언어</p>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">💻</div>
+                            <h4>기본 문법</h4>
+                            <p>console.log(), alert(), 주석, 변수 등</p>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">🔧</div>
+                            <h4>HTML 연결</h4>
+                            <p>인라인, 내부, 외부 3가지 방법</p>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">🚫</div>
+                            <h4>실수 방지</h4>
+                            <p>대소문자, 따옴표, 오타 주의</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="next-steps">
+                    <h3>🚀 다음에 배울 내용</h3>
+                    <div class="next-topics">
+                        <div class="topic-item">
+                            <div class="topic-number">2부</div>
+                            <div class="topic-content">
+                                <h4>변수와 데이터 타입</h4>
+                                <p>let, const, var 차이점과 문자열, 숫자, 불린 타입</p>
+                            </div>
+                        </div>
+                        <div class="topic-item">
+                            <div class="topic-number">3부</div>
+                            <div class="topic-content">
+                                <h4>연산자와 조건문</h4>
+                                <p>계산하기, 비교하기, if문으로 조건 처리하기</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="practice-homework">
+                    <h3>🏠 숙제 (선택사항)</h3>
+                    <div class="homework-item">
+                        <h4>간단한 웹페이지 만들기</h4>
+                        <p>HTML 파일에 JavaScript를 추가해서 버튼을 클릭하면 다른 메시지가 나오는 페이지를 만들어보세요!</p>
+                        <div class="homework-hint">
+                            <p><strong>힌트:</strong> alert() 함수를 사용하고, 다양한 메시지를 시도해보세요!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 네비게이션 -->
+            <div class="tutorial-navigation">
+                <div class="nav-item prev disabled">
+                    <span>이전 단계</span>
+                </div>
+                <div class="nav-item next">
+                    <a href="js-beginner-2.html">
+                        <span>다음 단계</span>
+                        <strong>초급편 2부: 변수와 데이터 타입</strong>
+                    </a>
+                </div>
+            </div>
         </div>
     </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>WebLearn</h3>
+                    <p>모든 사람을 위한 웹 개발 튜토리얼</p>
+                </div>
+                <div class="footer-section">
+                    <h4>튜토리얼</h4>
+                    <ul>
+                        <li><a href="html-beginner.html">HTML</a></li>
+                        <li><a href="css-tutorial-basic.html">CSS</a></li>
+                        <li><a href="js-beginner-1.html">JavaScript</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>도구</h4>
+                    <ul>
+                        <li><a href="cursor-ai-tutorial.html">Cursor AI</a></li>
+                        <li><a href="deployment-tutorial.html">배포하기</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WebLearn. 모든 권리 보유.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 간단한 JavaScript 기능들
+        function copyToClipboard(button) {
+            const codeBlock = button.previousElementSibling;
+            const code = codeBlock.textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                button.textContent = '복사됨!';
+                setTimeout(() => {
+                    button.textContent = '복사';
+                }, 2000);
+            });
+        }
+
+        function changeQty(change) {
+            const qtyElement = document.getElementById('qty');
+            const priceElement = document.getElementById('price');
+            let currentQty = parseInt(qtyElement.textContent);
+            let newQty = currentQty + change;
+            
+            if (newQty < 1) newQty = 1;
+            
+            qtyElement.textContent = newQty;
+            priceElement.textContent = (newQty * 10000).toLocaleString();
+        }
+
+        function updateTime() {
+            const timeElement = document.getElementById('time');
+            if (timeElement) {
+                const now = new Date();
+                timeElement.textContent = now.toLocaleTimeString();
+            }
+        }
+
+        // 시간 실시간 업데이트
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // 햄버거 메뉴
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html> 

@@ -3,19 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaScript 중급편 1부 - 심화 개념과 실습">
+    <meta name="description" content="JavaScript 중급편 1부 - 반복문과 배열">
     <title>JavaScript 중급편 1부 | WebLearn</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- 헤더 및 네비게이션 동일하게 구성 -->
-    <!-- 이하 내용은 html-intermediate.html의 구조와 동일하게 JavaScript에 맞게 작성 예정 -->
-    <!-- 메인 콘텐츠 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">WebLearn</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">홈</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="html-beginner.html" class="nav-link dropdown-toggle">HTML</a>
+                        <div class="dropdown-menu">
+                            <a href="html-beginner.html" class="dropdown-item">초급편</a>
+                            <a href="html-intermediate.html" class="dropdown-item">중급편</a>
+                            <a href="html-advanced.html" class="dropdown-item">고급편</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="css-tutorial-basic.html" class="nav-link dropdown-toggle">CSS</a>
+                        <div class="dropdown-menu">
+                            <a href="css-tutorial-basic.html" class="dropdown-item">초급편</a>
+                            <a href="css-intermediate.html" class="dropdown-item">중급편</a>
+                            <a href="css-advanced.html" class="dropdown-item">고급편</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="js-beginner-1.html" class="nav-link dropdown-toggle active">JavaScript</a>
+                        <div class="dropdown-menu">
+                            <a href="js-beginner-1.html" class="dropdown-item">초급편 1부</a>
+                            <a href="js-beginner-2.html" class="dropdown-item">초급편 2부</a>
+                            <a href="js-beginner-3.html" class="dropdown-item">초급편 3부</a>
+                            <a href="js-intermediate-1.html" class="dropdown-item active">중급편 1부</a>
+                            <a href="js-intermediate-2.html" class="dropdown-item">중급편 2부</a>
+                            <a href="js-intermediate-3.html" class="dropdown-item">중급편 3부</a>
+                            <a href="js-advanced-1.html" class="dropdown-item">고급편 1부</a>
+                            <a href="js-advanced-2.html" class="dropdown-item">고급편 2부</a>
+                            <a href="js-advanced-3.html" class="dropdown-item">고급편 3부</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="cursor-ai-tutorial.html" class="nav-link">Cursor AI</a></li>
+                    <li class="nav-item"><a href="deployment-tutorial.html" class="nav-link">배포하기</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     <main class="main">
         <div class="tutorial-container full-width">
             <div class="tutorial-header">
-                <h1>JavaScript 중급편 1부</h1>
-                <p class="subtitle">JavaScript 객체, 배열, 고급 함수 개념을 실습과 함께 익히세요</p>
+                <h1>🔄 JavaScript 중급편 1부</h1>
+                <p class="subtitle">반복문과 배열로 효율적인 프로그래밍을 배워보세요</p>
                 <div class="learning-path">
                     <span class="path-item active">중급편 1부</span>
                     <span class="path-arrow">→</span>
@@ -24,8 +71,148 @@
                     <span class="path-item">중급편 3부</span>
                 </div>
             </div>
-            <!-- 이하 섹션, 실습, 실수방지, 요약 등 js-beginner-1.html과 동일한 구조로 확장 예정 -->
+
+            <section class="tutorial-section">
+                <h2>반복문 (Loop)</h2>
+                <div class="concept-explanation">
+                    <h3>반복문 = 같은 작업을 여러 번 자동으로 수행</h3>
+                    <div class="analogy-box">
+                        <h4>일상생활 예시</h4>
+                        <p><strong>100번 "안녕하세요"를 출력하려면?</strong></p>
+                        <ul>
+                            <li>❌ console.log("안녕하세요")를 100번 복사하기</li>
+                            <li>✅ 반복문으로 1번만 작성하고 100번 실행시키기</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="loop-types">
+                    <div class="loop-type-item">
+                        <div class="type-header">
+                            <div class="type-number">1</div>
+                            <h4>for문 - 횟수가 정해진 반복</h4>
+                        </div>
+                        <div class="code-block">
+                            <pre><code>// 1부터 5까지 출력
+for (let i = 1; i <= 5; i++) {
+    console.log("현재 숫자:", i);
+}
+// 결과: 1, 2, 3, 4, 5</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                        </div>
+                    </div>
+
+                    <div class="loop-type-item">
+                        <div class="type-header">
+                            <div class="type-number">2</div>
+                            <h4>while문 - 조건이 참인 동안 반복</h4>
+                        </div>
+                        <div class="code-block">
+                            <pre><code>let count = 0;
+while (count < 3) {
+    console.log("카운트:", count);
+    count++;  // 중요: 조건을 변경해야 무한루프 방지
+}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tutorial-section">
+                <h2>배열 (Array)</h2>
+                <div class="concept-explanation">
+                    <h3>배열 = 여러 개의 데이터를 하나의 변수에 저장</h3>
+                    <div class="code-block">
+                        <pre><code>// 배열 만들기
+let fruits = ["사과", "바나나", "오렌지"];
+let numbers = [1, 2, 3, 4, 5];
+let mixed = ["텍스트", 123, true];
+
+// 배열 사용하기
+console.log(fruits[0]);  // "사과" (첫 번째 요소)
+console.log(fruits.length);  // 3 (배열의 길이)
+
+// 배열에 요소 추가
+fruits.push("포도");
+console.log(fruits);  // ["사과", "바나나", "오렌지", "포도"]</code></pre>
+                        <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tutorial-section">
+                <h2>실습: 반복문과 배열 활용</h2>
+                <div class="practice-container">
+                    <h3>실습 1: 구구단 만들기</h3>
+                    <div class="code-block">
+                        <pre><code>// 5단 구구단
+for (let i = 1; i <= 9; i++) {
+    let result = 5 * i;
+    console.log(`5 × ${i} = ${result}`);
+}</code></pre>
+                        <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                    </div>
+                </div>
+
+                <div class="practice-container">
+                    <h3>실습 2: 학생 명단 관리</h3>
+                    <div class="code-block">
+                        <pre><code>let students = ["김철수", "이영희", "박민수", "최지영"];
+
+console.log("우리 반 학생 명단:");
+for (let i = 0; i < students.length; i++) {
+    console.log(`${i + 1}번: ${students[i]}`);
+}</code></pre>
+                        <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="tutorial-navigation">
+                <div class="nav-item prev">
+                    <a href="js-beginner-3.html">
+                        <span>이전 단계</span>
+                        <strong>초급편 3부</strong>
+                    </a>
+                </div>
+                <div class="nav-item next">
+                    <a href="js-intermediate-2.html">
+                        <span>다음 단계</span>
+                        <strong>중급편 2부</strong>
+                    </a>
+                </div>
+            </div>
         </div>
     </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>WebLearn</h3>
+                    <p>모든 사람을 위한 웹 개발 튜토리얼</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function copyToClipboard(button) {
+            const codeBlock = button.previousElementSibling;
+            const code = codeBlock.textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                button.textContent = '복사됨!';
+                setTimeout(() => button.textContent = '복사', 2000);
+            });
+        }
+
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html> 

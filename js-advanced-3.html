@@ -3,29 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaScript 고급편 3부 - 고급 종합 실습">
+    <meta name="description" content="JavaScript 고급편 3부 - 최신 JavaScript 기능">
     <title>JavaScript 고급편 3부 | WebLearn</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- 헤더 및 네비게이션 동일하게 구성 -->
-    <!-- 이하 내용은 html-advanced.html의 구조와 동일하게 JavaScript에 맞게 작성 예정 -->
-    <!-- 메인 콘텐츠 -->
     <main class="main">
         <div class="tutorial-container full-width">
             <div class="tutorial-header">
-                <h1>JavaScript 고급편 3부</h1>
-                <p class="subtitle">실전 프로젝트, 프레임워크 연동, 고급 패턴으로 마스터 완성</p>
-                <div class="learning-path">
-                    <span class="path-item">고급편 1부</span>
-                    <span class="path-arrow">→</span>
-                    <span class="path-item">고급편 2부</span>
-                    <span class="path-arrow">→</span>
-                    <span class="path-item active">고급편 3부</span>
+                <h1>🚀 JavaScript 고급편 3부</h1>
+                <p class="subtitle">최신 JavaScript 기능과 실전 패턴 마스터하기</p>
+            </div>
+
+            <section class="tutorial-section">
+                <h2>최신 JavaScript 기능</h2>
+                <div class="code-block">
+                    <pre><code>// 구조 분해 할당
+const user = { name: "김철수", age: 25, job: "개발자" };
+const { name, age } = user;
+
+const numbers = [1, 2, 3, 4, 5];
+const [first, second, ...rest] = numbers;
+
+// 스프레드 연산자
+const newArray = [...numbers, 6, 7, 8];
+const newObject = { ...user, city: "서울" };
+
+// 화살표 함수
+const multiply = (a, b) => a * b;
+const greet = name => `안녕하세요, ${name}님!`;
+
+// 옵셔널 체이닝
+const city = user?.address?.city ?? "주소 없음";
+
+// 배열 메서드 체이닝
+const processedData = numbers
+    .filter(num => num > 2)
+    .map(num => num * 2)
+    .reduce((sum, num) => sum + num, 0);</code></pre>
+                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                </div>
+            </section>
+
+            <section class="tutorial-section">
+                <h2>실전 패턴</h2>
+                <div class="code-block">
+                    <pre><code>// 디바운싱
+function debounce(func, delay) {
+    let timeoutId;
+    return function(...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func.apply(this, args), delay);
+    };
+}
+
+// 사용 예시
+const searchInput = document.getElementById('search');
+const debouncedSearch = debounce(function(query) {
+    console.log('검색:', query);
+}, 300);
+
+searchInput.addEventListener('input', (e) => {
+    debouncedSearch(e.target.value);
+});</code></pre>
+                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                </div>
+            </section>
+
+            <div class="tutorial-navigation">
+                <div class="nav-item prev">
+                    <a href="js-advanced-2.html">
+                        <span>이전 단계</span>
+                        <strong>고급편 2부</strong>
+                    </a>
+                </div>
+                <div class="nav-item next disabled">
+                    <span>수료 완료!</span>
                 </div>
             </div>
-            <!-- 이하 섹션, 실습, 실수방지, 요약 등 js-beginner-1.html과 동일한 구조로 확장 예정 -->
         </div>
     </main>
+
+    <script>
+        function copyToClipboard(button) {
+            const codeBlock = button.previousElementSibling;
+            const code = codeBlock.textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                button.textContent = '복사됨!';
+                setTimeout(() => button.textContent = '복사', 2000);
+            });
+        }
+    </script>
 </body>
 </html> 

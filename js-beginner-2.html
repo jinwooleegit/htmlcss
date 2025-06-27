@@ -3,19 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaScript 초급편 2부 - 기초 활용과 실습">
+    <meta name="description" content="JavaScript 초급편 2부 - 변수와 데이터 타입">
     <title>JavaScript 초급편 2부 | WebLearn</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- 헤더 및 네비게이션 동일하게 구성 -->
-    <!-- 이하 내용은 html-beginner.html의 구조와 동일하게 JavaScript에 맞게 작성 예정 -->
+    <!-- 헤더 및 네비게이션 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">WebLearn</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">홈</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="html-beginner.html" class="nav-link dropdown-toggle">HTML</a>
+                        <div class="dropdown-menu">
+                            <a href="html-beginner.html" class="dropdown-item">초급편</a>
+                            <a href="html-intermediate.html" class="dropdown-item">중급편</a>
+                            <a href="html-advanced.html" class="dropdown-item">고급편</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="css-tutorial-basic.html" class="nav-link dropdown-toggle">CSS</a>
+                        <div class="dropdown-menu">
+                            <a href="css-tutorial-basic.html" class="dropdown-item">초급편</a>
+                            <a href="css-intermediate.html" class="dropdown-item">중급편</a>
+                            <a href="css-advanced.html" class="dropdown-item">고급편</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="js-beginner-1.html" class="nav-link dropdown-toggle active">JavaScript</a>
+                        <div class="dropdown-menu">
+                            <a href="js-beginner-1.html" class="dropdown-item">초급편 1부</a>
+                            <a href="js-beginner-2.html" class="dropdown-item active">초급편 2부</a>
+                            <a href="js-beginner-3.html" class="dropdown-item">초급편 3부</a>
+                            <a href="js-intermediate-1.html" class="dropdown-item">중급편 1부</a>
+                            <a href="js-intermediate-2.html" class="dropdown-item">중급편 2부</a>
+                            <a href="js-intermediate-3.html" class="dropdown-item">중급편 3부</a>
+                            <a href="js-advanced-1.html" class="dropdown-item">고급편 1부</a>
+                            <a href="js-advanced-2.html" class="dropdown-item">고급편 2부</a>
+                            <a href="js-advanced-3.html" class="dropdown-item">고급편 3부</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="cursor-ai-tutorial.html" class="nav-link">Cursor AI</a></li>
+                    <li class="nav-item"><a href="deployment-tutorial.html" class="nav-link">배포하기</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     <!-- 메인 콘텐츠 -->
     <main class="main">
         <div class="tutorial-container full-width">
+            <!-- 튜토리얼 헤더 -->
             <div class="tutorial-header">
-                <h1>JavaScript 초급편 2부</h1>
-                <p class="subtitle">JavaScript 변수, 데이터 타입, 연산자, 조건문을 실습과 함께 익히세요</p>
+                <h1>📦 JavaScript 초급편 2부</h1>
+                <p class="subtitle">변수와 데이터 타입을 이해하고 실습해보세요</p>
                 <div class="learning-path">
                     <span class="path-item">초급편 1부</span>
                     <span class="path-arrow">→</span>
@@ -24,8 +74,728 @@
                     <span class="path-item">초급편 3부</span>
                 </div>
             </div>
-            <!-- 이하 섹션, 실습, 실수방지, 요약 등 js-beginner-1.html과 동일한 구조로 확장 예정 -->
+
+            <!-- 1. 변수란 무엇인가? -->
+            <section class="tutorial-section">
+                <h2>변수란 무엇인가요?</h2>
+                
+                <div class="concept-explanation">
+                    <div class="concept-main">
+                        <h3>변수 = 데이터를 저장하는 상자</h3>
+                        <div class="concept-breakdown">
+                            <div class="concept-part">
+                                <strong>변수 (Variable)</strong>
+                                <p>변하는 수, 값을 저장하고 나중에 사용할 수 있는 저장소</p>
+                                <div class="detail-explanation">
+                                    <small>예: 게임에서 점수, 사용자 이름, 장바구니 개수 등을 저장</small>
+                                </div>
+                            </div>
+                            <div class="concept-part">
+                                <strong>변수명 (Variable Name)</strong>
+                                <p>상자에 붙이는 이름표</p>
+                                <div class="detail-explanation">
+                                    <small>예: score, userName, itemCount 등 의미 있는 이름 사용</small>
+                                </div>
+                            </div>
+                            <div class="concept-part">
+                                <strong>값 (Value)</strong>
+                                <p>상자 안에 들어있는 실제 데이터</p>
+                                <div class="detail-explanation">
+                                    <small>예: 숫자, 문자, 참/거짓 등 다양한 형태의 데이터</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="real-example">
+                        <h4>실제 예시로 이해하기</h4>
+                        <p><strong>변수를 사용하는 상황</strong></p>
+                        <div class="comparison-box">
+                            <div class="before-html">
+                                <h5>변수 없이 코딩</h5>
+                                <div class="plain-text">
+                                    <pre><code>alert("안녕하세요, 김철수님!");
+console.log("김철수님의 점수: 85점");
+alert("김철수님, 환영합니다!");</code></pre>
+                                    <p class="problem">❌ 이름을 바꾸려면 모든 곳을 수정해야 함</p>
+                                </div>
+                            </div>
+                            <div class="after-html">
+                                <h5>변수 사용</h5>
+                                <div class="structured-text">
+                                    <pre><code>let userName = "김철수";
+let score = 85;
+
+alert("안녕하세요, " + userName + "님!");
+console.log(userName + "님의 점수: " + score + "점");
+alert(userName + "님, 환영합니다!");</code></pre>
+                                    <p class="success">✅ 변수만 바꾸면 모든 곳이 자동으로 변경됨</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="insight"><strong>인사이트:</strong> 변수를 사용하면 코드를 효율적으로 관리하고 재사용할 수 있습니다!</p>
+                    </div>
+                    
+                    <div class="analogy-box">
+                        <h4>쉬운 비유로 이해하기</h4>
+                        <p><strong>변수 = 사물함</strong></p>
+                        <ul>
+                            <li><strong>사물함 번호</strong> = 변수명 (예: locker1, myBox)</li>
+                            <li><strong>사물함 안의 물건</strong> = 값 (예: 책, 운동화, 도시락)</li>
+                            <li><strong>물건 바꾸기</strong> = 값 변경 (새로운 물건으로 교체)</li>
+                        </ul>
+                        <p class="highlight">사물함 번호를 알면 언제든지 물건을 넣고 빼고 바꿀 수 있어요!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. 변수 선언 방법 -->
+            <section class="tutorial-section">
+                <h2>변수 선언 방법</h2>
+                
+                <div class="variable-declaration">
+                    <h3>JavaScript에서 변수를 만드는 3가지 방법</h3>
+                    
+                    <div class="method-item">
+                        <div class="method-header">
+                            <div class="method-number">1</div>
+                            <h4>let - 변경 가능한 변수</h4>
+                            <span class="method-tag recommended">추천</span>
+                        </div>
+                        <div class="method-content">
+                            <div class="code-block">
+                                <pre><code>let age = 25;
+let name = "홍길동";
+let isStudent = true;
+
+// 나중에 값 변경 가능
+age = 26;
+name = "김철수";</code></pre>
+                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                            </div>
+                            <div class="method-features">
+                                <div class="feature-item">
+                                    <strong>✅ 장점:</strong> 값 변경 가능, 블록 스코프
+                                </div>
+                                <div class="feature-item">
+                                    <strong>🎯 사용 시기:</strong> 값이 바뀔 수 있는 데이터
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="method-item">
+                        <div class="method-header">
+                            <div class="method-number">2</div>
+                            <h4>const - 변경 불가능한 상수</h4>
+                            <span class="method-tag">상수</span>
+                        </div>
+                        <div class="method-content">
+                            <div class="code-block">
+                                <pre><code>const PI = 3.14159;
+const SITE_NAME = "WebLearn";
+const API_URL = "https://api.example.com";
+
+// 오류 발생: 값 변경 불가
+// PI = 3.14; // TypeError 발생</code></pre>
+                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                            </div>
+                            <div class="method-features">
+                                <div class="feature-item">
+                                    <strong>✅ 장점:</strong> 값 변경 방지, 안정성 높음
+                                </div>
+                                <div class="feature-item">
+                                    <strong>🎯 사용 시기:</strong> 고정된 값, 설정값
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="method-item">
+                        <div class="method-header">
+                            <div class="method-number">3</div>
+                            <h4>var - 구형 변수 선언</h4>
+                            <span class="method-tag deprecated">권장 안함</span>
+                        </div>
+                        <div class="method-content">
+                            <div class="code-block">
+                                <pre><code>var oldVariable = "구형 방식";
+var count = 10;
+
+// 같은 이름 재선언 가능 (문제 발생 가능)
+var count = 20;</code></pre>
+                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                            </div>
+                            <div class="method-features">
+                                <div class="feature-item">
+                                    <strong>❌ 단점:</strong> 재선언 가능, 스코프 문제
+                                </div>
+                                <div class="feature-item">
+                                    <strong>🎯 사용 시기:</strong> 특별한 경우가 아니면 사용 안함
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comparison-table">
+                    <h3>변수 선언 방법 비교</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>let</th>
+                                <th>const</th>
+                                <th>var</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>값 변경</td>
+                                <td class="success">✅ 가능</td>
+                                <td class="error">❌ 불가능</td>
+                                <td class="success">✅ 가능</td>
+                            </tr>
+                            <tr>
+                                <td>재선언</td>
+                                <td class="error">❌ 불가능</td>
+                                <td class="error">❌ 불가능</td>
+                                <td class="success">✅ 가능</td>
+                            </tr>
+                            <tr>
+                                <td>스코프</td>
+                                <td class="success">블록 스코프</td>
+                                <td class="success">블록 스코프</td>
+                                <td class="warning">함수 스코프</td>
+                            </tr>
+                            <tr>
+                                <td>권장도</td>
+                                <td class="success">✅ 권장</td>
+                                <td class="success">✅ 권장</td>
+                                <td class="error">❌ 비권장</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 3. 데이터 타입 -->
+            <section class="tutorial-section">
+                <h2>데이터 타입</h2>
+                
+                <div class="data-types-explanation">
+                    <h3>JavaScript의 주요 데이터 타입</h3>
+                    
+                    <div class="data-type-item">
+                        <div class="type-header">
+                            <div class="type-icon">🔤</div>
+                            <h4>문자열 (String)</h4>
+                            <span class="type-tag">텍스트</span>
+                        </div>
+                        <div class="type-content">
+                            <div class="code-block">
+                                <pre><code>let name = "홍길동";
+let message = '안녕하세요!';
+let template = `안녕하세요, ${name}님!`;
+
+console.log(name);        // 홍길동
+console.log(message);     // 안녕하세요!
+console.log(template);    // 안녕하세요, 홍길동님!</code></pre>
+                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                            </div>
+                            <div class="type-features">
+                                <div class="feature-list">
+                                    <strong>특징:</strong>
+                                    <ul>
+                                        <li>"큰따옴표", '작은따옴표', `백틱` 사용</li>
+                                        <li>백틱은 템플릿 리터럴 (변수 삽입 가능)</li>
+                                        <li>문자열 연결: + 연산자 사용</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="data-type-item">
+                        <div class="type-header">
+                            <div class="type-icon">🔢</div>
+                            <h4>숫자 (Number)</h4>
+                            <span class="type-tag">수치</span>
+                        </div>
+                        <div class="type-content">
+                            <div class="code-block">
+                                <pre><code>let age = 25;           // 정수
+let height = 175.5;     // 소수
+let negative = -10;     // 음수
+let large = 1000000;    // 큰 수
+
+console.log(age + 5);   // 30
+console.log(height * 2); // 351
+console.log(10 / 3);    // 3.3333333333333335</code></pre>
+                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                            </div>
+                            <div class="type-features">
+                                <div class="feature-list">
+                                    <strong>특징:</strong>
+                                    <ul>
+                                        <li>정수와 소수를 구분하지 않음</li>
+                                        <li>사칙연산 가능: +, -, *, /</li>
+                                        <li>특수값: Infinity, -Infinity, NaN</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="data-type-item">
+                        <div class="type-header">
+                            <div class="type-icon">✅</div>
+                            <h4>불린 (Boolean)</h4>
+                            <span class="type-tag">참/거짓</span>
+                        </div>
+                        <div class="type-content">
+                            <div class="code-block">
+                                <pre><code>let isStudent = true;
+let isTeacher = false;
+let hasPermission = true;
+
+console.log(isStudent);     // true
+console.log(age > 18);      // true (나이가 18보다 큼)
+console.log(5 < 3);         // false</code></pre>
+                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                            </div>
+                            <div class="type-features">
+                                <div class="feature-list">
+                                    <strong>특징:</strong>
+                                    <ul>
+                                        <li>오직 true 또는 false 값만 가짐</li>
+                                        <li>조건문에서 자주 사용</li>
+                                        <li>비교 연산 결과로 생성</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="data-type-item">
+                        <div class="type-header">
+                            <div class="type-icon">❓</div>
+                            <h4>undefined와 null</h4>
+                            <span class="type-tag">빈 값</span>
+                        </div>
+                        <div class="type-content">
+                            <div class="code-block">
+                                <pre><code>let notDefined;           // undefined
+let empty = null;         // null
+
+console.log(notDefined);  // undefined
+console.log(empty);       // null
+
+// 차이점
+console.log(typeof notDefined); // "undefined"
+console.log(typeof empty);      // "object"</code></pre>
+                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                            </div>
+                            <div class="type-features">
+                                <div class="feature-list">
+                                    <strong>차이점:</strong>
+                                    <ul>
+                                        <li>undefined: 값이 할당되지 않음</li>
+                                        <li>null: 의도적으로 비어있음을 표시</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="typeof-explanation">
+                    <h3>typeof 연산자로 데이터 타입 확인하기</h3>
+                    <div class="code-block">
+                        <pre><code>console.log(typeof "안녕하세요");  // "string"
+console.log(typeof 42);          // "number"
+console.log(typeof true);        // "boolean"
+console.log(typeof undefined);   // "undefined"
+console.log(typeof null);        // "object" (특별한 경우)</code></pre>
+                        <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. 실습: 변수와 데이터 타입 사용하기 -->
+            <section class="tutorial-section">
+                <h2>실습: 변수와 데이터 타입 사용하기</h2>
+                
+                <div class="practice-container">
+                    <h3>실습 1: 개인 정보 저장하기</h3>
+                    
+                    <div class="step-by-step">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>변수 만들기</h4>
+                                <div class="code-block">
+                                    <pre><code>// 개인 정보 변수 만들기
+let name = "김철수";
+let age = 25;
+let isStudent = true;
+let height = 175.5;
+
+console.log("이름:", name);
+console.log("나이:", age);
+console.log("학생 여부:", isStudent);
+console.log("키:", height);</code></pre>
+                                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                </div>
+                                <p>브라우저 콘솔에서 위 코드를 실행해보세요!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>값 변경해보기</h4>
+                                <div class="code-block">
+                                    <pre><code>// 값 변경
+age = 26;
+isStudent = false;
+
+console.log("변경된 나이:", age);
+console.log("변경된 학생 여부:", isStudent);</code></pre>
+                                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-result">
+                        <h4>결과</h4>
+                        <div class="result-box">
+                            <p>콘솔에 개인 정보가 출력되고, 값이 변경되는 것을 확인할 수 있습니다!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-container">
+                    <h3>실습 2: 계산기 만들기</h3>
+                    
+                    <div class="step-by-step">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>계산 변수 만들기</h4>
+                                <div class="code-block">
+                                    <pre><code>// 숫자 변수
+let num1 = 10;
+let num2 = 5;
+
+// 계산 결과 저장
+let addition = num1 + num2;
+let subtraction = num1 - num2;
+let multiplication = num1 * num2;
+let division = num1 / num2;
+
+console.log(num1 + " + " + num2 + " = " + addition);
+console.log(num1 + " - " + num2 + " = " + subtraction);
+console.log(num1 + " × " + num2 + " = " + multiplication);
+console.log(num1 + " ÷ " + num2 + " = " + division);</code></pre>
+                                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-result">
+                        <h4>결과</h4>
+                        <div class="result-box">
+                            <p>계산 결과가 콘솔에 출력됩니다:</p>
+                            <ul>
+                                <li>10 + 5 = 15</li>
+                                <li>10 - 5 = 5</li>
+                                <li>10 × 5 = 50</li>
+                                <li>10 ÷ 5 = 2</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-container">
+                    <h3>실습 3: 템플릿 리터럴 사용하기</h3>
+                    
+                    <div class="step-by-step">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>템플릿 리터럴로 문자열 만들기</h4>
+                                <div class="code-block">
+                                    <pre><code>// 변수 준비
+let userName = "홍길동";
+let userAge = 30;
+let userCity = "서울";
+
+// 기존 방식 (+ 연산자)
+let oldWay = "안녕하세요! " + userName + "님, 나이는 " + userAge + "세이고 " + userCity + "에 살고 계시는군요!";
+
+// 템플릿 리터럴 방식 (백틱 사용)
+let newWay = `안녕하세요! ${userName}님, 나이는 ${userAge}세이고 ${userCity}에 살고 계시는군요!`;
+
+console.log("기존 방식:", oldWay);
+console.log("새로운 방식:", newWay);
+
+// 계산도 가능
+let message = `${userName}님은 ${2024 - userAge}년에 태어나셨습니다.`;
+console.log(message);</code></pre>
+                                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-result">
+                        <h4>결과</h4>
+                        <div class="result-box">
+                            <p>템플릿 리터럴을 사용하면 문자열 안에 변수를 쉽게 삽입할 수 있습니다!</p>
+                            <p class="success">💡 ${변수명} 형태로 사용하면 됩니다!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. 자주하는 실수와 해결법 -->
+            <section class="tutorial-section">
+                <h2>자주하는 실수와 해결법</h2>
+                
+                <div class="mistakes-container">
+                    <div class="mistake-item">
+                        <div class="mistake-header">
+                            <div class="mistake-number">❌ 실수 1</div>
+                            <h4>변수 선언 없이 사용하기</h4>
+                        </div>
+                        <div class="mistake-content">
+                            <div class="wrong-code">
+                                <h5>❌ 잘못된 코드</h5>
+                                <pre><code>name = "홍길동";  // let이나 const 없이 사용
+console.log(name);</code></pre>
+                            </div>
+                            <div class="correct-code">
+                                <h5>✅ 올바른 코드</h5>
+                                <pre><code>let name = "홍길동";  // let으로 선언
+console.log(name);</code></pre>
+                            </div>
+                            <div class="mistake-tip">
+                                <p><strong>해결법:</strong> 변수를 사용하기 전에 반드시 let이나 const로 선언하세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mistake-item">
+                        <div class="mistake-header">
+                            <div class="mistake-number">❌ 실수 2</div>
+                            <h4>const 변수 값 변경하기</h4>
+                        </div>
+                        <div class="mistake-content">
+                            <div class="wrong-code">
+                                <h5>❌ 잘못된 코드</h5>
+                                <pre><code>const PI = 3.14;
+PI = 3.14159;  // 오류 발생!</code></pre>
+                            </div>
+                            <div class="correct-code">
+                                <h5>✅ 올바른 코드</h5>
+                                <pre><code>let pi = 3.14;      // 변경 가능한 변수
+pi = 3.14159;       // 정상 작동
+
+// 또는
+const PI = 3.14159; // 처음부터 정확한 값</code></pre>
+                            </div>
+                            <div class="mistake-tip">
+                                <p><strong>해결법:</strong> 값이 바뀔 수 있으면 let, 고정값이면 const를 사용하세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mistake-item">
+                        <div class="mistake-header">
+                            <div class="mistake-number">❌ 실수 3</div>
+                            <h4>문자열과 숫자 혼동하기</h4>
+                        </div>
+                        <div class="mistake-content">
+                            <div class="wrong-code">
+                                <h5>❌ 잘못된 코드</h5>
+                                <pre><code>let num1 = "10";    // 문자열
+let num2 = "5";     // 문자열
+let result = num1 + num2;
+console.log(result); // "105" (문자열 연결)</code></pre>
+                            </div>
+                            <div class="correct-code">
+                                <h5>✅ 올바른 코드</h5>
+                                <pre><code>let num1 = 10;      // 숫자
+let num2 = 5;       // 숫자
+let result = num1 + num2;
+console.log(result); // 15 (숫자 계산)</code></pre>
+                            </div>
+                            <div class="mistake-tip">
+                                <p><strong>해결법:</strong> 숫자는 따옴표 없이, 문자는 따옴표로 감싸세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mistake-item">
+                        <div class="mistake-header">
+                            <div class="mistake-number">❌ 실수 4</div>
+                            <h4>변수명 규칙 위반하기</h4>
+                        </div>
+                        <div class="mistake-content">
+                            <div class="wrong-code">
+                                <h5>❌ 잘못된 코드</h5>
+                                <pre><code>let 2name = "홍길동";     // 숫자로 시작
+let user-name = "김철수";  // 하이픈 사용
+let let = "변수";         // 예약어 사용</code></pre>
+                            </div>
+                            <div class="correct-code">
+                                <h5>✅ 올바른 코드</h5>
+                                <pre><code>let name2 = "홍길동";     // 숫자는 뒤에
+let userName = "김철수";   // 카멜케이스 사용
+let userVariable = "변수"; // 의미있는 이름</code></pre>
+                            </div>
+                            <div class="mistake-tip">
+                                <p><strong>해결법:</strong> 영문자나 _로 시작하고, 의미있는 이름을 사용하세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. 정리 및 다음 단계 -->
+            <section class="tutorial-section">
+                <h2>정리 및 다음 단계</h2>
+                
+                <div class="summary-container">
+                    <h3>🎯 오늘 배운 내용 정리</h3>
+                    <div class="summary-grid">
+                        <div class="summary-item">
+                            <div class="summary-icon">📦</div>
+                            <h4>변수 선언</h4>
+                            <p>let (변경 가능), const (상수), var (비권장)</p>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">🔤</div>
+                            <h4>문자열</h4>
+                            <p>"따옴표", '작은따옴표', `템플릿 리터럴`</p>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">🔢</div>
+                            <h4>숫자</h4>
+                            <p>정수, 소수, 사칙연산</p>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">✅</div>
+                            <h4>불린</h4>
+                            <p>true, false 값</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="next-steps">
+                    <h3>🚀 다음에 배울 내용</h3>
+                    <div class="next-topics">
+                        <div class="topic-item">
+                            <div class="topic-number">3부</div>
+                            <div class="topic-content">
+                                <h4>연산자와 조건문</h4>
+                                <p>비교연산자, 논리연산자, if문으로 조건 처리하기</p>
+                            </div>
+                        </div>
+                        <div class="topic-item">
+                            <div class="topic-number">중급</div>
+                            <div class="topic-content">
+                                <h4>함수와 객체</h4>
+                                <p>함수 만들기, 객체 다루기, 배열 활용하기</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="practice-homework">
+                    <h3>🏠 숙제 (선택사항)</h3>
+                    <div class="homework-item">
+                        <h4>나만의 프로필 만들기</h4>
+                        <p>let과 const를 사용해서 자신의 정보를 저장하고, 템플릿 리터럴로 자기소개 문장을 만들어보세요!</p>
+                        <div class="homework-hint">
+                            <p><strong>힌트:</strong> 이름, 나이, 취미, 좋아하는 음식 등을 변수로 만들어보세요!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 네비게이션 -->
+            <div class="tutorial-navigation">
+                <div class="nav-item prev">
+                    <a href="js-beginner-1.html">
+                        <span>이전 단계</span>
+                        <strong>초급편 1부: JavaScript 기초</strong>
+                    </a>
+                </div>
+                <div class="nav-item next">
+                    <a href="js-beginner-3.html">
+                        <span>다음 단계</span>
+                        <strong>초급편 3부: 연산자와 조건문</strong>
+                    </a>
+                </div>
+            </div>
         </div>
     </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>WebLearn</h3>
+                    <p>모든 사람을 위한 웹 개발 튜토리얼</p>
+                </div>
+                <div class="footer-section">
+                    <h4>튜토리얼</h4>
+                    <ul>
+                        <li><a href="html-beginner.html">HTML</a></li>
+                        <li><a href="css-tutorial-basic.html">CSS</a></li>
+                        <li><a href="js-beginner-1.html">JavaScript</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>도구</h4>
+                    <ul>
+                        <li><a href="cursor-ai-tutorial.html">Cursor AI</a></li>
+                        <li><a href="deployment-tutorial.html">배포하기</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WebLearn. 모든 권리 보유.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 복사 기능
+        function copyToClipboard(button) {
+            const codeBlock = button.previousElementSibling;
+            const code = codeBlock.textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                button.textContent = '복사됨!';
+                setTimeout(() => {
+                    button.textContent = '복사';
+                }, 2000);
+            });
+        }
+
+        // 햄버거 메뉴
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html> 

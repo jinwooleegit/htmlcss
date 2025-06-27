@@ -3,29 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaScript 중급편 3부 - 심화 종합 실습">
+    <meta name="description" content="JavaScript 중급편 3부 - DOM 조작과 이벤트">
     <title>JavaScript 중급편 3부 | WebLearn</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- 헤더 및 네비게이션 동일하게 구성 -->
-    <!-- 이하 내용은 html-intermediate.html의 구조와 동일하게 JavaScript에 맞게 작성 예정 -->
-    <!-- 메인 콘텐츠 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">WebLearn</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="js-beginner-1.html" class="nav-link dropdown-toggle active">JavaScript</a>
+                        <div class="dropdown-menu">
+                            <a href="js-intermediate-3.html" class="dropdown-item active">중급편 3부</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
     <main class="main">
         <div class="tutorial-container full-width">
             <div class="tutorial-header">
-                <h1>JavaScript 중급편 3부</h1>
-                <p class="subtitle">JavaScript DOM, 이벤트, 실전 미니 프로젝트로 중급을 완성하세요</p>
-                <div class="learning-path">
-                    <span class="path-item">중급편 1부</span>
-                    <span class="path-arrow">→</span>
-                    <span class="path-item">중급편 2부</span>
-                    <span class="path-arrow">→</span>
-                    <span class="path-item active">중급편 3부</span>
+                <h1>🎯 JavaScript 중급편 3부</h1>
+                <p class="subtitle">DOM 조작과 이벤트로 동적 웹페이지 만들기</p>
+            </div>
+
+            <section class="tutorial-section">
+                <h2>DOM 조작</h2>
+                <div class="concept-explanation">
+                    <h3>DOM = 웹페이지의 HTML 요소를 JavaScript로 제어</h3>
+                    <div class="code-block">
+                        <pre><code>// HTML 요소 선택
+let element = document.getElementById("myElement");
+let buttons = document.getElementsByTagName("button");
+let items = document.querySelectorAll(".item");
+
+// 내용 변경
+element.textContent = "새로운 텍스트";
+element.innerHTML = "<strong>강조된 텍스트</strong>";
+
+// 스타일 변경
+element.style.color = "red";
+element.style.fontSize = "20px";</code></pre>
+                        <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tutorial-section">
+                <h2>이벤트 처리</h2>
+                <div class="code-block">
+                    <pre><code>// 버튼 클릭 이벤트
+document.getElementById("myButton").addEventListener("click", function() {
+    alert("버튼이 클릭되었습니다!");
+});
+
+// 입력 필드 이벤트
+document.getElementById("nameInput").addEventListener("input", function(event) {
+    console.log("입력된 값:", event.target.value);
+});</code></pre>
+                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                </div>
+            </section>
+
+            <div class="tutorial-navigation">
+                <div class="nav-item prev">
+                    <a href="js-intermediate-2.html">
+                        <span>이전 단계</span>
+                        <strong>중급편 2부</strong>
+                    </a>
+                </div>
+                <div class="nav-item next">
+                    <a href="js-advanced-1.html">
+                        <span>다음 단계</span>
+                        <strong>고급편 1부</strong>
+                    </a>
                 </div>
             </div>
-            <!-- 이하 섹션, 실습, 실수방지, 요약 등 js-beginner-1.html과 동일한 구조로 확장 예정 -->
         </div>
     </main>
+
+    <script>
+        function copyToClipboard(button) {
+            const codeBlock = button.previousElementSibling;
+            const code = codeBlock.textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                button.textContent = '복사됨!';
+                setTimeout(() => button.textContent = '복사', 2000);
+            });
+        }
+    </script>
 </body>
 </html> 

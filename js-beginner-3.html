@@ -3,19 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaScript 초급편 3부 - 기초 종합 실습">
+    <meta name="description" content="JavaScript 초급편 3부 - 연산자와 조건문">
     <title>JavaScript 초급편 3부 | WebLearn</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- 헤더 및 네비게이션 동일하게 구성 -->
-    <!-- 이하 내용은 html-beginner.html의 구조와 동일하게 JavaScript에 맞게 작성 예정 -->
+    <!-- 헤더 및 네비게이션 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">WebLearn</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">홈</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="html-beginner.html" class="nav-link dropdown-toggle">HTML</a>
+                        <div class="dropdown-menu">
+                            <a href="html-beginner.html" class="dropdown-item">초급편</a>
+                            <a href="html-intermediate.html" class="dropdown-item">중급편</a>
+                            <a href="html-advanced.html" class="dropdown-item">고급편</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="css-tutorial-basic.html" class="nav-link dropdown-toggle">CSS</a>
+                        <div class="dropdown-menu">
+                            <a href="css-tutorial-basic.html" class="dropdown-item">초급편</a>
+                            <a href="css-intermediate.html" class="dropdown-item">중급편</a>
+                            <a href="css-advanced.html" class="dropdown-item">고급편</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="js-beginner-1.html" class="nav-link dropdown-toggle active">JavaScript</a>
+                        <div class="dropdown-menu">
+                            <a href="js-beginner-1.html" class="dropdown-item">초급편 1부</a>
+                            <a href="js-beginner-2.html" class="dropdown-item">초급편 2부</a>
+                            <a href="js-beginner-3.html" class="dropdown-item active">초급편 3부</a>
+                            <a href="js-intermediate-1.html" class="dropdown-item">중급편 1부</a>
+                            <a href="js-intermediate-2.html" class="dropdown-item">중급편 2부</a>
+                            <a href="js-intermediate-3.html" class="dropdown-item">중급편 3부</a>
+                            <a href="js-advanced-1.html" class="dropdown-item">고급편 1부</a>
+                            <a href="js-advanced-2.html" class="dropdown-item">고급편 2부</a>
+                            <a href="js-advanced-3.html" class="dropdown-item">고급편 3부</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="cursor-ai-tutorial.html" class="nav-link">Cursor AI</a></li>
+                    <li class="nav-item"><a href="deployment-tutorial.html" class="nav-link">배포하기</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     <!-- 메인 콘텐츠 -->
     <main class="main">
         <div class="tutorial-container full-width">
+            <!-- 튜토리얼 헤더 -->
             <div class="tutorial-header">
-                <h1>JavaScript 초급편 3부</h1>
-                <p class="subtitle">JavaScript 반복문, 함수, 실전 미니 프로젝트로 기초를 완성하세요</p>
+                <h1>🧮 JavaScript 초급편 3부</h1>
+                <p class="subtitle">연산자와 조건문으로 논리적 사고를 코드로 구현해보세요</p>
                 <div class="learning-path">
                     <span class="path-item">초급편 1부</span>
                     <span class="path-arrow">→</span>
@@ -24,8 +74,751 @@
                     <span class="path-item active">초급편 3부</span>
                 </div>
             </div>
-            <!-- 이하 섹션, 실습, 실수방지, 요약 등 js-beginner-1.html과 동일한 구조로 확장 예정 -->
+
+            <!-- 1. 연산자 -->
+            <section class="tutorial-section">
+                <h2>연산자 (Operators)</h2>
+                
+                <div class="concept-explanation">
+                    <div class="concept-main">
+                        <h3>연산자 = 계산과 비교를 위한 기호</h3>
+                        <div class="analogy-box">
+                            <h4>쉬운 비유로 이해하기</h4>
+                            <p><strong>연산자는 수학 시간에 사용하는 기호와 같아요!</strong></p>
+                            <ul>
+                                <li><strong>+, -, ×, ÷</strong> = 산술 연산자</li>
+                                <li><strong>=, ≠, >, <</strong> = 비교 연산자</li>
+                                <li><strong>그리고(AND), 또는(OR)</strong> = 논리 연산자</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="operators-explanation">
+                    <h3>JavaScript의 주요 연산자들</h3>
+                    
+                    <div class="operator-category">
+                        <div class="category-header">
+                            <div class="category-icon">➕</div>
+                            <h4>산술 연산자</h4>
+                            <span class="category-tag">계산</span>
+                        </div>
+                        <div class="operator-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>연산자</th>
+                                        <th>의미</th>
+                                        <th>예시</th>
+                                        <th>결과</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>+</code></td>
+                                        <td>더하기</td>
+                                        <td><code>5 + 3</code></td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>-</code></td>
+                                        <td>빼기</td>
+                                        <td><code>5 - 3</code></td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>*</code></td>
+                                        <td>곱하기</td>
+                                        <td><code>5 * 3</code></td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>/</code></td>
+                                        <td>나누기</td>
+                                        <td><code>15 / 3</code></td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>%</code></td>
+                                        <td>나머지</td>
+                                        <td><code>17 % 5</code></td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>++</code></td>
+                                        <td>1 증가</td>
+                                        <td><code>let x=5; x++</code></td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>--</code></td>
+                                        <td>1 감소</td>
+                                        <td><code>let x=5; x--</code></td>
+                                        <td>4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="code-block">
+                            <pre><code>// 산술 연산자 예시
+let a = 10;
+let b = 3;
+
+console.log(a + b);  // 13 (더하기)
+console.log(a - b);  // 7  (빼기)
+console.log(a * b);  // 30 (곱하기)
+console.log(a / b);  // 3.333... (나누기)
+console.log(a % b);  // 1  (나머지)
+
+let count = 5;
+count++;  // count = count + 1
+console.log(count);  // 6</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                        </div>
+                    </div>
+                    
+                    <div class="operator-category">
+                        <div class="category-header">
+                            <div class="category-icon">⚖️</div>
+                            <h4>비교 연산자</h4>
+                            <span class="category-tag">비교</span>
+                        </div>
+                        <div class="operator-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>연산자</th>
+                                        <th>의미</th>
+                                        <th>예시</th>
+                                        <th>결과</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>==</code></td>
+                                        <td>같다</td>
+                                        <td><code>5 == "5"</code></td>
+                                        <td>true</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>===</code></td>
+                                        <td>정확히 같다</td>
+                                        <td><code>5 === "5"</code></td>
+                                        <td>false</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>!=</code></td>
+                                        <td>다르다</td>
+                                        <td><code>5 != 3</code></td>
+                                        <td>true</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>!==</code></td>
+                                        <td>정확히 다르다</td>
+                                        <td><code>5 !== "5"</code></td>
+                                        <td>true</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>></code></td>
+                                        <td>크다</td>
+                                        <td><code>5 > 3</code></td>
+                                        <td>true</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code><</code></td>
+                                        <td>작다</td>
+                                        <td><code>5 < 3</code></td>
+                                        <td>false</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>>=</code></td>
+                                        <td>크거나 같다</td>
+                                        <td><code>5 >= 5</code></td>
+                                        <td>true</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code><=</code></td>
+                                        <td>작거나 같다</td>
+                                        <td><code>3 <= 5</code></td>
+                                        <td>true</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="code-block">
+                            <pre><code>// 비교 연산자 예시
+let age = 20;
+let name = "홍길동";
+
+console.log(age > 18);      // true (20은 18보다 큰가?)
+console.log(age == 20);     // true (나이가 20인가?)
+console.log(age === "20");  // false (숫자 20과 문자 "20"은 다름)
+console.log(name == "홍길동"); // true (이름이 홍길동인가?)
+console.log(age >= 20);     // true (나이가 20 이상인가?)</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                        </div>
+                        <div class="important-note">
+                            <h5>⚠️ 중요한 차이점</h5>
+                            <ul>
+                                <li><code>==</code>: 값만 비교 (타입 변환 허용)</li>
+                                <li><code>===</code>: 값과 타입을 모두 비교 (권장)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="operator-category">
+                        <div class="category-header">
+                            <div class="category-icon">🧠</div>
+                            <h4>논리 연산자</h4>
+                            <span class="category-tag">논리</span>
+                        </div>
+                        <div class="operator-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>연산자</th>
+                                        <th>의미</th>
+                                        <th>설명</th>
+                                        <th>예시</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>&&</code></td>
+                                        <td>그리고 (AND)</td>
+                                        <td>모두 true일 때 true</td>
+                                        <td><code>true && true</code> → true</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>||</code></td>
+                                        <td>또는 (OR)</td>
+                                        <td>하나라도 true면 true</td>
+                                        <td><code>true || false</code> → true</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>!</code></td>
+                                        <td>아니다 (NOT)</td>
+                                        <td>true를 false로, false를 true로</td>
+                                        <td><code>!true</code> → false</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="code-block">
+                            <pre><code>// 논리 연산자 예시
+let age = 20;
+let hasLicense = true;
+let hasExperience = false;
+
+// && (그리고): 모든 조건이 true여야 함
+console.log(age >= 18 && hasLicense);  // true (성인이고 면허 있음)
+console.log(hasLicense && hasExperience);  // false (면허는 있지만 경험 없음)
+
+// || (또는): 하나라도 true면 됨
+console.log(hasLicense || hasExperience);  // true (면허라도 있음)
+console.log(age < 18 || !hasLicense);      // false (미성년자가 아니고 면허 있음)
+
+// ! (아니다): 반대로 바꿈
+console.log(!hasExperience);  // true (경험이 없다)
+console.log(!(age >= 18));    // false (성인이 아니다가 아님)</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. 조건문 (if문) -->
+            <section class="tutorial-section">
+                <h2>조건문 (if문)</h2>
+                
+                <div class="concept-explanation">
+                    <div class="concept-main">
+                        <h3>조건문 = 상황에 따라 다른 행동하기</h3>
+                        <div class="analogy-box">
+                            <h4>일상생활 예시</h4>
+                            <p><strong>만약(if) 비가 온다면 → 우산을 가져간다</strong></p>
+                            <p><strong>그렇지 않다면(else) → 우산을 가져가지 않는다</strong></p>
+                            <p class="highlight">프로그래밍도 이와 같은 논리로 작동해요!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="if-statement-explanation">
+                    <h3>if문의 기본 구조</h3>
+                    
+                    <div class="syntax-visual">
+                        <div class="code-example">
+                            <pre><code>if (조건) {
+    // 조건이 true일 때 실행되는 코드
+}</code></pre>
+                        </div>
+                        <div class="syntax-parts">
+                            <div class="part-explanation">
+                                <strong>if</strong>: "만약에"라는 의미
+                            </div>
+                            <div class="part-explanation">
+                                <strong>(조건)</strong>: true 또는 false가 나오는 식
+                            </div>
+                            <div class="part-explanation">
+                                <strong>{ }</strong>: 실행할 코드를 감싸는 중괄호
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="if-types">
+                        <div class="if-type-item">
+                            <div class="type-header">
+                                <div class="type-number">1</div>
+                                <h4>기본 if문</h4>
+                            </div>
+                            <div class="code-block">
+                                <pre><code>let age = 20;
+
+if (age >= 18) {
+    console.log("성인입니다!");
+    alert("투표할 수 있습니다.");
+}</code></pre>
+                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                            </div>
+                            <div class="result-note">
+                                <p><strong>결과:</strong> age가 18 이상이므로 메시지가 출력됩니다.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="if-type-item">
+                            <div class="type-header">
+                                <div class="type-number">2</div>
+                                <h4>if-else문</h4>
+                            </div>
+                            <div class="code-block">
+                                <pre><code>let weather = "비";
+
+if (weather === "비") {
+    console.log("우산을 가져가세요!");
+} else {
+    console.log("좋은 날씨네요!");
+}</code></pre>
+                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                            </div>
+                            <div class="result-note">
+                                <p><strong>결과:</strong> 비가 오므로 "우산을 가져가세요!" 출력</p>
+                            </div>
+                        </div>
+                        
+                        <div class="if-type-item">
+                            <div class="type-header">
+                                <div class="type-number">3</div>
+                                <h4>if-else if-else문</h4>
+                            </div>
+                            <div class="code-block">
+                                <pre><code>let score = 85;
+
+if (score >= 90) {
+    console.log("A학점입니다!");
+} else if (score >= 80) {
+    console.log("B학점입니다!");
+} else if (score >= 70) {
+    console.log("C학점입니다!");
+} else {
+    console.log("더 열심히 공부하세요!");
+}</code></pre>
+                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                            </div>
+                            <div class="result-note">
+                                <p><strong>결과:</strong> 85점이므로 "B학점입니다!" 출력</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. 실습: 조건문 활용하기 -->
+            <section class="tutorial-section">
+                <h2>실습: 조건문 활용하기</h2>
+                
+                <div class="practice-container">
+                    <h3>실습 1: 나이 확인 프로그램</h3>
+                    
+                    <div class="step-by-step">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>나이별 메시지 출력하기</h4>
+                                <div class="code-block">
+                                    <pre><code>// 나이 입력
+let userAge = 17;  // 여기서 나이를 바꿔가며 테스트해보세요!
+
+// 조건문으로 나이 확인
+if (userAge >= 65) {
+    console.log("경로우대 대상입니다!");
+    console.log("할인 혜택을 받으실 수 있습니다.");
+} else if (userAge >= 18) {
+    console.log("성인입니다!");
+    console.log("모든 서비스를 이용하실 수 있습니다.");
+} else if (userAge >= 13) {
+    console.log("청소년입니다!");
+    console.log("일부 서비스에 제한이 있을 수 있습니다.");
+} else {
+    console.log("어린이입니다!");
+    console.log("보호자 동의가 필요합니다.");
+}</code></pre>
+                                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                </div>
+                                <p>userAge 값을 바꿔가며 다른 결과를 확인해보세요!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-result">
+                        <h4>결과</h4>
+                        <div class="result-box">
+                            <p>17살이므로 "청소년입니다!" 메시지가 출력됩니다.</p>
+                            <p class="success">🎯 나이에 따라 다른 메시지가 나타나는 것을 확인하세요!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-container">
+                    <h3>실습 2: 계산기 프로그램</h3>
+                    
+                    <div class="step-by-step">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>연산자에 따른 계산</h4>
+                                <div class="code-block">
+                                    <pre><code>// 계산할 숫자와 연산자
+let num1 = 10;
+let num2 = 5;
+let operator = "+";  // +, -, *, / 중 하나
+
+let result;
+
+// 연산자에 따라 다른 계산
+if (operator === "+") {
+    result = num1 + num2;
+    console.log(`${num1} + ${num2} = ${result}`);
+} else if (operator === "-") {
+    result = num1 - num2;
+    console.log(`${num1} - ${num2} = ${result}`);
+} else if (operator === "*") {
+    result = num1 * num2;
+    console.log(`${num1} × ${num2} = ${result}`);
+} else if (operator === "/") {
+    if (num2 !== 0) {
+        result = num1 / num2;
+        console.log(`${num1} ÷ ${num2} = ${result}`);
+    } else {
+        console.log("0으로 나눌 수 없습니다!");
+    }
+} else {
+    console.log("올바른 연산자를 입력해주세요! (+, -, *, /)");
+}</code></pre>
+                                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                </div>
+                                <p>operator 값을 "+", "-", "*", "/" 로 바꿔가며 테스트해보세요!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-result">
+                        <h4>결과</h4>
+                        <div class="result-box">
+                            <p>"+" 연산자이므로 "10 + 5 = 15" 가 출력됩니다.</p>
+                            <p class="success">🧮 간단한 계산기를 만들었습니다!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-container">
+                    <h3>실습 3: 로그인 확인 시스템</h3>
+                    
+                    <div class="step-by-step">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>아이디와 비밀번호 확인</h4>
+                                <div class="code-block">
+                                    <pre><code>// 저장된 계정 정보
+const correctId = "admin";
+const correctPassword = "1234";
+
+// 사용자 입력 (실제로는 입력창에서 받아옴)
+let userId = "admin";
+let userPassword = "1234";
+
+// 로그인 확인
+if (userId === correctId && userPassword === correctPassword) {
+    console.log("✅ 로그인 성공!");
+    console.log("환영합니다, " + userId + "님!");
+} else if (userId !== correctId) {
+    console.log("❌ 아이디가 올바르지 않습니다.");
+} else if (userPassword !== correctPassword) {
+    console.log("❌ 비밀번호가 올바르지 않습니다.");
+} else {
+    console.log("❌ 로그인 정보를 확인해주세요.");
+}
+
+// 추가 보안 확인
+if (userId === correctId && userPassword === correctPassword) {
+    let isVip = true;
+    let loginCount = 50;
+    
+    if (isVip && loginCount > 30) {
+        console.log("🌟 VIP 사용자님, 특별 혜택이 준비되어 있습니다!");
+    } else if (isVip) {
+        console.log("🎯 VIP 사용자로 인증되었습니다.");
+    } else if (loginCount > 10) {
+        console.log("👍 단골 사용자이시네요!");
+    }
+}</code></pre>
+                                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                </div>
+                                <p>userId와 userPassword를 바꿔가며 다른 경우를 테스트해보세요!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-result">
+                        <h4>결과</h4>
+                        <div class="result-box">
+                            <p>아이디와 비밀번호가 모두 일치하므로 로그인 성공 메시지가 출력됩니다.</p>
+                            <p class="success">🔐 보안 로그인 시스템을 만들었습니다!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. 자주하는 실수와 해결법 -->
+            <section class="tutorial-section">
+                <h2>자주하는 실수와 해결법</h2>
+                
+                <div class="mistakes-container">
+                    <div class="mistake-item">
+                        <div class="mistake-header">
+                            <div class="mistake-number">❌ 실수 1</div>
+                            <h4>= 와 == 혼동하기</h4>
+                        </div>
+                        <div class="mistake-content">
+                            <div class="wrong-code">
+                                <h5>❌ 잘못된 코드</h5>
+                                <pre><code>let age = 20;
+if (age = 18) {  // 할당 연산자 사용 (잘못됨)
+    console.log("18살입니다");
+}</code></pre>
+                            </div>
+                            <div class="correct-code">
+                                <h5>✅ 올바른 코드</h5>
+                                <pre><code>let age = 20;
+if (age == 18) {  // 비교 연산자 사용 (올바름)
+    console.log("18살입니다");
+}</code></pre>
+                            </div>
+                            <div class="mistake-tip">
+                                <p><strong>해결법:</strong> 
+                                    <code>=</code>는 값 할당, 
+                                    <code>==</code>는 값 비교, 
+                                    <code>===</code>는 값과 타입 비교
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mistake-item">
+                        <div class="mistake-header">
+                            <div class="mistake-number">❌ 실수 2</div>
+                            <h4>중괄호 빼먹기</h4>
+                        </div>
+                        <div class="mistake-content">
+                            <div class="wrong-code">
+                                <h5>❌ 잘못된 코드</h5>
+                                <pre><code>if (age >= 18)
+    console.log("성인입니다");
+    console.log("투표할 수 있습니다");  // 항상 실행됨!</code></pre>
+                            </div>
+                            <div class="correct-code">
+                                <h5>✅ 올바른 코드</h5>
+                                <pre><code>if (age >= 18) {
+    console.log("성인입니다");
+    console.log("투표할 수 있습니다");  // 조건에 따라 실행
+}</code></pre>
+                            </div>
+                            <div class="mistake-tip">
+                                <p><strong>해결법:</strong> 여러 줄의 코드는 반드시 중괄호 { }로 묶어주세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mistake-item">
+                        <div class="mistake-header">
+                            <div class="mistake-number">❌ 실수 3</div>
+                            <h4>논리 연산자 잘못 사용하기</h4>
+                        </div>
+                        <div class="mistake-content">
+                            <div class="wrong-code">
+                                <h5>❌ 잘못된 코드</h5>
+                                <pre><code>let age = 25;
+let hasLicense = false;
+
+// "성인이거나 면허가 있으면"이라고 생각했지만...
+if (age >= 18 || hasLicense) {
+    console.log("운전할 수 있습니다");  // 잘못된 논리!
+}</code></pre>
+                            </div>
+                            <div class="correct-code">
+                                <h5>✅ 올바른 코드</h5>
+                                <pre><code>let age = 25;
+let hasLicense = false;
+
+// "성인이고 면허도 있어야" 운전 가능
+if (age >= 18 && hasLicense) {
+    console.log("운전할 수 있습니다");
+} else {
+    console.log("운전할 수 없습니다");
+}</code></pre>
+                            </div>
+                            <div class="mistake-tip">
+                                <p><strong>해결법:</strong> 
+                                    <code>&&</code>는 "그리고"(모든 조건), 
+                                    <code>||</code>는 "또는"(하나만 만족)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. 정리 및 다음 단계 -->
+            <section class="tutorial-section">
+                <h2>정리 및 다음 단계</h2>
+                
+                <div class="summary-container">
+                    <h3>🎯 오늘 배운 내용 정리</h3>
+                    <div class="summary-grid">
+                        <div class="summary-item">
+                            <div class="summary-icon">➕</div>
+                            <h4>산술 연산자</h4>
+                            <p>+, -, *, /, %, ++, -- 으로 계산</p>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">⚖️</div>
+                            <h4>비교 연산자</h4>
+                            <p>==, ===, !=, !==, >, <, >=, <= 로 비교</p>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">🧠</div>
+                            <h4>논리 연산자</h4>
+                            <p>&&(그리고), ||(또는), !(아니다)</p>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-icon">🌟</div>
+                            <h4>조건문</h4>
+                            <p>if, else if, else로 상황별 처리</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="next-steps">
+                    <h3>🚀 다음에 배울 내용</h3>
+                    <div class="next-topics">
+                        <div class="topic-item">
+                            <div class="topic-number">중급 1부</div>
+                            <div class="topic-content">
+                                <h4>반복문과 배열</h4>
+                                <p>for문, while문으로 반복 처리하고 배열로 여러 데이터 관리하기</p>
+                            </div>
+                        </div>
+                        <div class="topic-item">
+                            <div class="topic-number">중급 2부</div>
+                            <div class="topic-content">
+                                <h4>함수와 객체</h4>
+                                <p>재사용 가능한 함수 만들기, 객체로 관련 데이터 묶기</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="practice-homework">
+                    <h3>🏠 숙제 (선택사항)</h3>
+                    <div class="homework-item">
+                        <h4>성적 관리 프로그램 만들기</h4>
+                        <p>점수를 입력받아서 A, B, C, D, F 학점을 출력하고, 합격/불합격도 표시하는 프로그램을 만들어보세요!</p>
+                        <div class="homework-hint">
+                            <p><strong>힌트:</strong> 90점 이상 A, 80점 이상 B, 70점 이상 C, 60점 이상 D, 그 외 F학점. 60점 이상이면 합격!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 네비게이션 -->
+            <div class="tutorial-navigation">
+                <div class="nav-item prev">
+                    <a href="js-beginner-2.html">
+                        <span>이전 단계</span>
+                        <strong>초급편 2부: 변수와 데이터 타입</strong>
+                    </a>
+                </div>
+                <div class="nav-item next">
+                    <a href="js-intermediate-1.html">
+                        <span>다음 단계</span>
+                        <strong>중급편 1부: 반복문과 배열</strong>
+                    </a>
+                </div>
+            </div>
         </div>
     </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>WebLearn</h3>
+                    <p>모든 사람을 위한 웹 개발 튜토리얼</p>
+                </div>
+                <div class="footer-section">
+                    <h4>튜토리얼</h4>
+                    <ul>
+                        <li><a href="html-beginner.html">HTML</a></li>
+                        <li><a href="css-tutorial-basic.html">CSS</a></li>
+                        <li><a href="js-beginner-1.html">JavaScript</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>도구</h4>
+                    <ul>
+                        <li><a href="cursor-ai-tutorial.html">Cursor AI</a></li>
+                        <li><a href="deployment-tutorial.html">배포하기</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WebLearn. 모든 권리 보유.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 복사 기능
+        function copyToClipboard(button) {
+            const codeBlock = button.previousElementSibling;
+            const code = codeBlock.textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                button.textContent = '복사됨!';
+                setTimeout(() => {
+                    button.textContent = '복사';
+                }, 2000);
+            });
+        }
+
+        // 햄버거 메뉴
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html> 
