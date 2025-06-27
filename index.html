@@ -58,6 +58,28 @@
                         <a href="deployment-tutorial.html" class="nav-link">배포하기</a>
                     </li>
                 </ul>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="튜토리얼 검색..." id="searchInput">
+                    <button class="search-btn" onclick="performSearch()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" title="다크모드 전환">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
                 <div class="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -193,6 +215,34 @@
                 <div class="container">
                     <h2>체계적인 학습 로드맵</h2>
                     <p class="section-subtitle">웹 개발부터 AI 도구 활용까지, 현대 개발자가 되는 완벽한 학습 과정</p>
+                    
+                    <!-- 학습 진도 표시 -->
+                    <div class="progress-overview">
+                        <h3>나의 학습 진도</h3>
+                        <div class="progress-stats">
+                            <div class="progress-item">
+                                <span class="progress-label">HTML</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="htmlProgress"></div>
+                                </div>
+                                <span class="progress-text" id="htmlText">0/3</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="progress-label">CSS</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="cssProgress"></div>
+                                </div>
+                                <span class="progress-text" id="cssText">0/3</span>
+                            </div>
+                            <div class="progress-item">
+                                <span class="progress-label">JavaScript</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="jsProgress"></div>
+                                </div>
+                                <span class="progress-text" id="jsText">0/9</span>
+                            </div>
+                        </div>
+                    </div>
                     
                     <div class="learning-steps">
                         <div class="learning-step">
@@ -410,5 +460,112 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // 검색 기능
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            if (!searchTerm) return;
+            
+            const tutorials = [
+                { name: 'HTML 초급편', url: 'html-beginner.html', keywords: 'html 기초 초급 태그 구조' },
+                { name: 'HTML 중급편', url: 'html-intermediate.html', keywords: 'html 중급 폼 테이블 멀티미디어' },
+                { name: 'HTML 고급편', url: 'html-advanced.html', keywords: 'html 고급 시맨틱 접근성 SEO' },
+                { name: 'CSS 초급편', url: 'css-tutorial-basic.html', keywords: 'css 기초 초급 스타일 색상' },
+                { name: 'CSS 중급편', url: 'css-intermediate.html', keywords: 'css 중급 레이아웃 플렉스 그리드' },
+                { name: 'CSS 고급편', url: 'css-advanced.html', keywords: 'css 고급 애니메이션 최적화' },
+                { name: 'JavaScript 초급편 1부', url: 'js-beginner-1.html', keywords: 'javascript js 기초 변수 함수' },
+                { name: 'JavaScript 초급편 2부', url: 'js-beginner-2.html', keywords: 'javascript js 데이터타입 문자열' },
+                { name: 'JavaScript 초급편 3부', url: 'js-beginner-3.html', keywords: 'javascript js 조건문 연산자' },
+                { name: 'JavaScript 중급편 1부', url: 'js-intermediate-1.html', keywords: 'javascript js 반복문 배열' },
+                { name: 'JavaScript 중급편 2부', url: 'js-intermediate-2.html', keywords: 'javascript js 함수 객체' },
+                { name: 'JavaScript 중급편 3부', url: 'js-intermediate-3.html', keywords: 'javascript js DOM 이벤트' },
+                { name: 'JavaScript 고급편 1부', url: 'js-advanced-1.html', keywords: 'javascript js 비동기 promise async' },
+                { name: 'JavaScript 고급편 2부', url: 'js-advanced-2.html', keywords: 'javascript js 클래스 모듈' },
+                { name: 'JavaScript 고급편 3부', url: 'js-advanced-3.html', keywords: 'javascript js ES6 최신문법' }
+            ];
+            
+            const results = tutorials.filter(tutorial => 
+                tutorial.name.toLowerCase().includes(searchTerm) || 
+                tutorial.keywords.includes(searchTerm)
+            );
+            
+            if (results.length > 0) {
+                window.location.href = results[0].url;
+            } else {
+                alert('검색 결과가 없습니다. 다른 키워드를 시도해보세요.');
+            }
+        }
+        
+        // 엔터키로 검색
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        // 다크모드 기능
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            const isDark = document.body.classList.contains('dark-theme');
+            localStorage.setItem('darkMode', isDark);
+            
+            // 아이콘 변경
+            const themeBtn = document.querySelector('.theme-toggle svg');
+            if (isDark) {
+                themeBtn.innerHTML = `
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                `;
+            } else {
+                themeBtn.innerHTML = `
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                `;
+            }
+        }
+        
+        // 학습 진도 추적 기능
+        function updateProgress() {
+            const visited = JSON.parse(localStorage.getItem('visitedPages') || '[]');
+            
+            const htmlPages = ['html-beginner.html', 'html-intermediate.html', 'html-advanced.html'];
+            const cssPages = ['css-tutorial-basic.html', 'css-intermediate.html', 'css-advanced.html'];
+            const jsPages = [
+                'js-beginner-1.html', 'js-beginner-2.html', 'js-beginner-3.html',
+                'js-intermediate-1.html', 'js-intermediate-2.html', 'js-intermediate-3.html',
+                'js-advanced-1.html', 'js-advanced-2.html', 'js-advanced-3.html'
+            ];
+            
+            const htmlCompleted = htmlPages.filter(page => visited.includes(page)).length;
+            const cssCompleted = cssPages.filter(page => visited.includes(page)).length;
+            const jsCompleted = jsPages.filter(page => visited.includes(page)).length;
+            
+            // 진도 바 업데이트
+            document.getElementById('htmlProgress').style.width = `${(htmlCompleted / 3) * 100}%`;
+            document.getElementById('cssProgress').style.width = `${(cssCompleted / 3) * 100}%`;
+            document.getElementById('jsProgress').style.width = `${(jsCompleted / 9) * 100}%`;
+            
+            // 텍스트 업데이트
+            document.getElementById('htmlText').textContent = `${htmlCompleted}/3`;
+            document.getElementById('cssText').textContent = `${cssCompleted}/3`;
+            document.getElementById('jsText').textContent = `${jsCompleted}/9`;
+        }
+        
+        // 페이지 로드시 다크모드 설정 복원 및 진도 업데이트
+        document.addEventListener('DOMContentLoaded', function() {
+            const isDark = localStorage.getItem('darkMode') === 'true';
+            if (isDark) {
+                document.body.classList.add('dark-theme');
+                toggleTheme(); // 아이콘 업데이트
+            }
+            updateProgress(); // 학습 진도 업데이트
+        });
+    </script>
 </body>
 </html> 

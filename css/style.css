@@ -7025,3 +7025,223 @@ body {
     background: rgba(255, 255, 255, 0.3);
     font-weight: 600;
 }
+
+/* 검색 기능 스타일 */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+.search-input {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--light-gray);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    width: 200px;
+    transition: all var(--transition-fast);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.search-btn {
+    padding: 0.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.search-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.theme-toggle {
+    padding: 0.5rem;
+    background: transparent;
+    border: 2px solid var(--light-gray);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+    color: var(--text-primary);
+}
+
+.theme-toggle:hover {
+    border-color: var(--primary-color);
+    background: var(--light-gray);
+}
+
+/* 다크모드 스타일 */
+.dark-theme {
+    --white: #1a1a1a;
+    --light-gray: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-theme .header {
+    background: #2d2d2d;
+    border-bottom-color: #404040;
+}
+
+.dark-theme .nav-link {
+    color: #ffffff;
+}
+
+.dark-theme .nav-link:hover {
+    background-color: #404040;
+}
+
+.dark-theme .dropdown-menu {
+    background: #2d2d2d;
+    border-color: #404040;
+}
+
+.dark-theme .dropdown-item:hover {
+    background: #404040;
+}
+
+.dark-theme .search-input {
+    background: #2d2d2d;
+    border-color: #404040;
+    color: #ffffff;
+}
+
+.dark-theme .search-input::placeholder {
+    color: #888888;
+}
+
+.dark-theme .theme-toggle {
+    border-color: #404040;
+    color: #ffffff;
+}
+
+.dark-theme .theme-toggle:hover {
+    background: #404040;
+}
+
+.dark-theme .hero-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.dark-theme .code-window {
+    background: #2d2d2d;
+    border-color: #404040;
+}
+
+.dark-theme .footer {
+    background: #2d2d2d;
+    border-top-color: #404040;
+}
+
+/* 학습 진도 표시 스타일 */
+.progress-overview {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.progress-overview h3 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-primary);
+}
+
+.progress-stats {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.progress-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.progress-label {
+    min-width: 80px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--light-gray);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    border-radius: 4px;
+    transition: width 0.5s ease;
+    width: 0%;
+}
+
+.progress-text {
+    min-width: 40px;
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* 다크모드 진도 표시 */
+.dark-theme .progress-overview {
+    background: #2d2d2d;
+    border: 1px solid #404040;
+}
+
+.dark-theme .progress-bar {
+    background: #404040;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    .search-container {
+        display: none;
+    }
+    
+    .theme-toggle {
+        margin-right: 1rem;
+    }
+    
+    .progress-overview {
+        padding: var(--spacing-lg);
+    }
+    
+    .progress-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing-sm);
+    }
+    
+    .progress-label {
+        min-width: auto;
+        text-align: center;
+    }
+    
+    .progress-text {
+        text-align: center;
+    }
+}
