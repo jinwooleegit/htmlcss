@@ -7245,3 +7245,406 @@ body {
         text-align: center;
     }
 }
+
+/* 코드 실행 환경 스타일 */
+.code-playground {
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin: 2rem 0;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.playground-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playground-title {
+    font-weight: 600;
+    margin: 0;
+}
+
+.playground-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.run-btn, .reset-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.run-btn:hover, .reset-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.playground-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 400px;
+}
+
+.code-editor {
+    border-right: 1px solid var(--border-color);
+}
+
+.editor-header {
+    background: var(--bg-secondary);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.code-textarea {
+    width: 100%;
+    height: 350px;
+    border: none;
+    padding: 1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    background: var(--bg-color);
+    color: var(--text-color);
+    resize: none;
+    outline: none;
+}
+
+.preview-panel {
+    background: white;
+}
+
+.preview-header {
+    background: var(--bg-secondary);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.preview-iframe {
+    width: 100%;
+    height: 350px;
+    border: none;
+    background: white;
+}
+
+@media (max-width: 768px) {
+    .playground-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .code-editor {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .code-textarea, .preview-iframe {
+        height: 250px;
+    }
+}
+
+/* 노트/북마크 시스템 스타일 */
+.notes-system {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 300px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-color);
+    z-index: 1000;
+    transform: translateX(320px);
+    transition: transform 0.3s ease;
+}
+
+.notes-system.active {
+    transform: translateX(0);
+}
+
+.notes-header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: between;
+    align-items: center;
+}
+
+.notes-title {
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.close-notes {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.notes-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.notes-tab {
+    flex: 1;
+    padding: 0.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.notes-tab.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.notes-content {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.note-item, .bookmark-item {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.note-item:hover, .bookmark-item:hover {
+    background: var(--bg-secondary);
+}
+
+.note-text {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.note-meta {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.notes-toggle {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* AI 학습 도우미 스타일 */
+.ai-assistant {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-color);
+    z-index: 1000;
+    transform: translateY(400px);
+    transition: transform 0.3s ease;
+}
+
+.ai-assistant.active {
+    transform: translateY(0);
+}
+
+.ai-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1rem;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ai-title {
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ai-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.ai-chat {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.ai-message {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    line-height: 1.5;
+}
+
+.ai-message.user {
+    background: var(--primary-color);
+    color: white;
+    margin-left: 2rem;
+}
+
+.ai-message.ai {
+    background: var(--bg-secondary);
+    color: var(--text-color);
+    margin-right: 2rem;
+}
+
+.ai-input-area {
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.ai-input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.ai-send {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.ai-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+/* PWA 관련 스타일 */
+.install-prompt {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-color);
+    z-index: 1000;
+    max-width: 300px;
+    transform: translateY(200px);
+    transition: transform 0.3s ease;
+}
+
+.install-prompt.show {
+    transform: translateY(0);
+}
+
+.install-text {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.install-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.install-btn, .dismiss-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.install-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.dismiss-btn {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+}
+
+/* 다크 테마 추가 스타일 */
+.dark-theme .code-textarea {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-theme .preview-panel {
+    background: #2a2a2a;
+}
+
+.dark-theme .notes-system,
+.dark-theme .ai-assistant,
+.dark-theme .install-prompt {
+    background: #2a2a2a;
+    border-color: #404040;
+}
+
+.dark-theme .ai-message.ai {
+    background: #404040;
+    color: #e0e0e0;
+}
