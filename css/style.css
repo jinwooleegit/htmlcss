@@ -123,8 +123,8 @@
 }
 
 .problem::before {
-    content: "× ";
-    color: #dc3545;
+    content: "⚠ ";
+    color: #e67e22;
     font-weight: bold;
 }
 
@@ -1539,20 +1539,65 @@ a:hover {
     color: #e2e8f0;
 }
 
-/* Code Blocks */
+/* Code Blocks - 까만 바탕에 흰 글씨 */
 code {
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-    background-color: #f1f3f4;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
     padding: 2px 6px;
     border-radius: var(--radius-sm);
     font-size: 0.9em;
-    color: #d63384;
+}
+
+pre {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1rem 0;
+    border: 1px solid #333;
 }
 
 pre code {
     background: none;
     padding: 0;
     color: inherit;
+}
+
+.code-block {
+    position: relative;
+    margin: 1.5rem 0;
+}
+
+.code-block pre {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid #333;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.code-block .copy-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: #333;
+    color: #e0e0e0;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease;
+}
+
+.code-block .copy-btn:hover {
+    background: #555;
 }
 
 /* Practice Page */
@@ -1658,7 +1703,8 @@ pre code {
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
     font-size: 0.875rem;
     line-height: 1.5;
-    background: #fafafa;
+    background: #1a1a1a;
+    color: #e0e0e0;
     resize: vertical;
     outline: none;
 }
@@ -5826,8 +5872,8 @@ pre code {
 }
 
 .bad-example {
-    background: #fff5f5;
-    border-left: 4px solid #e53e3e;
+    background: #fef9e7;
+    border-left: 4px solid #e67e22;
 }
 
 .good-example {
@@ -5845,8 +5891,8 @@ pre code {
 }
 
 .label.bad {
-    background: #fed7d7;
-    color: #c53030;
+    background: #fef9e7;
+    color: #e67e22;
 }
 
 .label.good {
@@ -7817,6 +7863,52 @@ body {
     color: #e0e0e0;
 }
 
+/* Cursor AI 페이지 모바일 반응형 */
+@media (max-width: 768px) {
+    .method-item {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .method-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .method-tag {
+        margin-left: 0;
+        align-self: flex-start;
+    }
+    
+    .prompt-result-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .method-pros-cons {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .before-after-demo {
+        margin: 1rem 0;
+    }
+    
+    .before-section, .after-section {
+        padding: 1rem;
+    }
+}
+
+/* 다크 테마에서도 코드 블록이 까만 배경 유지 */
+.dark-theme pre,
+.dark-theme code,
+.dark-theme .code-block pre {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+    border-color: #333 !important;
+}
+
 /* JavaScript 및 Cursor AI 페이지 모바일 최적화 */
 @media (max-width: 768px) {
     .tutorial-container {
@@ -7908,4 +8000,151 @@ body {
     .reason-item {
         padding: 1.5rem;
     }
+}
+
+/* Cursor AI 페이지 스타일 정리 */
+
+/* 메서드 아이템 - 블록 레이아웃 */
+.method-item {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid #e2e8f0;
+}
+
+.method-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.method-number {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.method-header h4 {
+    margin: 0;
+    color: #1a1a1a;
+    font-size: 1.5rem;
+}
+
+.method-tag {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-left: auto;
+}
+
+/* 프롬프트-결과 그리드 (Chat, Composer용) */
+.prompt-result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+    align-items: start;
+}
+
+.prompt-section {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid #007bff;
+}
+
+.prompt-section h4 {
+    color: #007bff;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.result-section {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.result-section h4 {
+    color: #28a745;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Before-After 데모 (Quick Edit용) */
+.before-after-demo {
+    margin: 2rem 0;
+}
+
+.before-section, .after-section {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.before-section h4 {
+    color: #dc3545;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.after-section h4 {
+    color: #28a745;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.arrow-down {
+    text-align: center;
+    font-size: 2rem;
+    color: #007bff;
+    margin: 1rem 0;
+    font-weight: bold;
+}
+
+/* 장단점 섹션 */
+.method-pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.feature-showcase-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 3rem 0;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .feature-showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.dark-theme .ai-message.ai {
+    background: #404040;
+    color: #e0e0e0;
 }

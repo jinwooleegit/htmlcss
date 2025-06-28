@@ -253,6 +253,7 @@
                 <div class="methods-explanation">
                     <h3>Cursor AI의 3가지 핵심 기능</h3>
                     
+                    <!-- 1. Chat 기능 -->
                     <div class="method-item">
                         <div class="method-header">
                             <div class="method-number">1</div>
@@ -261,18 +262,26 @@
                         </div>
                         <div class="method-content">
                             <p><strong>사용법:</strong> Ctrl+L을 누르고 자연어로 요청</p>
-                            <div class="code-block">
-                                <pre><code>사용자: "빨간색 버튼을 만들어줘. 클릭하면 알림창이 뜨게 해줘"
-
-Cursor AI: 
-&lt;button onclick="alert('버튼이 클릭되었습니다!')" 
+                            
+                            <div class="prompt-result-grid">
+                                <div class="prompt-section">
+                                    <h4>프롬프트</h4>
+                                    <p>"빨간색 버튼을 만들어줘. 클릭하면 알림창이 뜨게 해줘"</p>
+                                </div>
+                                <div class="result-section">
+                                    <h4>결과</h4>
+                                    <div class="code-block">
+                                        <pre><code>&lt;button onclick="alert('버튼이 클릭되었습니다!')" 
         style="background: #e74c3c; color: white; 
                padding: 12px 24px; border: none; 
                border-radius: 5px; cursor: pointer;"&gt;
     클릭하세요
 &lt;/button&gt;</code></pre>
-                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                        <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                    </div>
+                                </div>
                             </div>
+                            
                             <div class="method-pros-cons">
                                 <div class="pros">
                                     <strong>장점:</strong> 새로운 코드 생성에 최적
@@ -284,6 +293,7 @@ Cursor AI:
                         </div>
                     </div>
                     
+                    <!-- 2. Quick Edit 기능 -->
                     <div class="method-item">
                         <div class="method-header">
                             <div class="method-number">2</div>
@@ -292,20 +302,31 @@ Cursor AI:
                         </div>
                         <div class="method-content">
                             <p><strong>사용법:</strong> 코드 선택 → Ctrl+K → 수정 요청</p>
-                            <div class="code-block">
-                                <pre><code>// 기존 코드 선택
-&lt;h1&gt;안녕하세요&lt;/h1&gt;
-
-// Ctrl+K 누르고 요청: "제목을 더 예쁘게 만들어줘"
-
-// 결과
-&lt;h1 style="color: #2c3e50; font-size: 2.5em; 
+                            
+                            <div class="before-after-demo">
+                                <div class="before-section">
+                                    <h4>기존 코드</h4>
+                                    <div class="code-block">
+                                        <pre><code>&lt;h1&gt;안녕하세요&lt;/h1&gt;</code></pre>
+                                    </div>
+                                    <p><strong>요청:</strong> "제목을 더 예쁘게 만들어줘"</p>
+                                </div>
+                                
+                                <div class="arrow-down">↓</div>
+                                
+                                <div class="after-section">
+                                    <h4>개선된 코드</h4>
+                                    <div class="code-block">
+                                        <pre><code>&lt;h1 style="color: #2c3e50; font-size: 2.5em; 
            text-align: center; margin: 20px 0; 
            font-weight: 300;"&gt;
     안녕하세요
 &lt;/h1&gt;</code></pre>
-                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                        <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                    </div>
+                                </div>
                             </div>
+                            
                             <div class="method-pros-cons">
                                 <div class="pros">
                                     <strong>장점:</strong> 기존 코드 개선에 최적
@@ -317,6 +338,7 @@ Cursor AI:
                         </div>
                     </div>
                     
+                    <!-- 3. Composer 기능 -->
                     <div class="method-item">
                         <div class="method-header">
                             <div class="method-number">3</div>
@@ -325,19 +347,26 @@ Cursor AI:
                         </div>
                         <div class="method-content">
                             <p><strong>사용법:</strong> Ctrl+I를 누르고 프로젝트 전체 작업 요청</p>
-                            <div class="code-block">
-                                <pre><code>요청: "전체 웹사이트를 다크모드로 바꿔줘. 
-         배경은 어둡게, 텍스트는 밝게 해줘"
-
-결과: 
-- index.html 수정됨
-- style.css 수정됨  
-- about.html 수정됨
-- contact.html 수정됨
+                            
+                            <div class="prompt-result-grid">
+                                <div class="prompt-section">
+                                    <h4>프롬프트</h4>
+                                    <p>"전체 웹사이트를 다크모드로 바꿔줘. 배경은 어둡게, 텍스트는 밝게 해줘"</p>
+                                </div>
+                                <div class="result-section">
+                                    <h4>결과</h4>
+                                    <div class="code-block">
+                                        <pre><code>✅ index.html 수정됨
+✅ style.css 수정됨  
+✅ about.html 수정됨
+✅ contact.html 수정됨
 
 모든 파일이 일관된 다크모드로 변경!</code></pre>
-                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                        <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                    </div>
+                                </div>
                             </div>
+                            
                             <div class="method-pros-cons">
                                 <div class="pros">
                                     <strong>장점:</strong> 여러 파일 동시 수정
@@ -348,6 +377,7 @@ Cursor AI:
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
                 
                 <div class="comparison-table">
