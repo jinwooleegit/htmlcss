@@ -61,7 +61,7 @@
 
     <!-- 메인 콘텐츠 -->
     <main class="main">
-        <div class="tutorial-container full-width">
+        <div class="tutorial-container">
             <!-- 튜토리얼 헤더 -->
             <div class="tutorial-header">
                 <h1>JavaScript 초급편 2부</h1>
@@ -123,7 +123,7 @@
   background: var(--main-color);
   font-size: var(--font-size);
 }</code></pre>
-                                    <p class="success">✅ 한 번 정의하면 여러 곳에서 재사용</p>
+                                    <p class="success">한 번 정의하면 여러 곳에서 재사용</p>
                                 </div>
                             </div>
                             <div class="after-html">
@@ -135,7 +135,7 @@ let fontSize = "16px";
 // 요소 스타일 변경
 element.style.backgroundColor = mainColor;
 element.style.fontSize = fontSize;</code></pre>
-                                    <p class="success">✅ CSS처럼 값을 저장하고 재사용 가능</p>
+                                    <p class="success">CSS처럼 값을 저장하고 재사용 가능</p>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +151,7 @@ element.style.fontSize = fontSize;</code></pre>
                             <li><strong>레이어 수정</strong> = 값 변경 (내용을 바꾸면 전체 디자인 변경)</li>
                         </ul>
                         <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #007bff;">
-                            <strong>💡 디자이너 팁:</strong> 레이어 이름을 의미있게 지으면 나중에 찾기 쉽듯이, 변수명도 의미있게 지어야 해요!
+                            <strong>디자이너 팁:</strong> 레이어 이름을 의미있게 지으면 나중에 찾기 쉽듯이, 변수명도 의미있게 지어야 해요!
                         </div>
                     </div>
                 </div>
@@ -210,10 +210,10 @@ const API_URL = "https://api.example.com";
                             </div>
                             <div class="method-features">
                                 <div class="feature-item">
-                                    <strong>✅ 장점:</strong> 값 변경 방지, 안정성 높음
+                                    <strong>장점:</strong> 값 변경 방지, 안정성 높음
                                 </div>
                                 <div class="feature-item">
-                                    <strong>🎯 사용 시기:</strong> 고정된 값, 설정값
+                                    <strong>사용 시기:</strong> 고정된 값, 설정값
                                 </div>
                             </div>
                         </div>
@@ -236,10 +236,10 @@ var count = 20;</code></pre>
                             </div>
                             <div class="method-features">
                                 <div class="feature-item">
-                                    <strong>❌ 단점:</strong> 재선언 가능, 스코프 문제
+                                    <strong>단점:</strong> 재선언 가능, 스코프 문제
                                 </div>
                                 <div class="feature-item">
-                                    <strong>🎯 사용 시기:</strong> 특별한 경우가 아니면 사용 안함
+                                    <strong>사용 시기:</strong> 특별한 경우가 아니면 사용 안함
                                 </div>
                             </div>
                         </div>
@@ -260,15 +260,15 @@ var count = 20;</code></pre>
                         <tbody>
                             <tr>
                                 <td>값 변경</td>
-                                <td class="success">✅ 가능</td>
-                                <td class="error">❌ 불가능</td>
-                                <td class="success">✅ 가능</td>
+                                <td class="success">가능</td>
+                                <td class="error">불가능</td>
+                                <td class="success">가능</td>
                             </tr>
                             <tr>
                                 <td>재선언</td>
-                                <td class="error">❌ 불가능</td>
-                                <td class="error">❌ 불가능</td>
-                                <td class="success">✅ 가능</td>
+                                <td class="error">불가능</td>
+                                <td class="error">불가능</td>
+                                <td class="success">가능</td>
                             </tr>
                             <tr>
                                 <td>스코프</td>
@@ -278,9 +278,9 @@ var count = 20;</code></pre>
                             </tr>
                             <tr>
                                 <td>권장도</td>
-                                <td class="success">✅ 권장</td>
-                                <td class="success">✅ 권장</td>
-                                <td class="error">❌ 비권장</td>
+                                <td class="success">권장</td>
+                                <td class="success">권장</td>
+                                <td class="error">비권장</td>
                             </tr>
                         </tbody>
                     </table>
@@ -357,7 +357,7 @@ console.log(10 / 3);    // 3.3333333333333335</code></pre>
                     
                     <div class="data-type-item">
                         <div class="type-header">
-                            <div class="type-icon">✅</div>
+                            <div class="type-icon"></div>
                             <h4>불린 (Boolean)</h4>
                             <span class="type-tag">참/거짓</span>
                         </div>
@@ -563,7 +563,7 @@ console.log(message);</code></pre>
                         <h4>결과</h4>
                         <div class="result-box">
                             <p>템플릿 리터럴을 사용하면 문자열 안에 변수를 쉽게 삽입할 수 있습니다!</p>
-                            <p class="success">💡 ${변수명} 형태로 사용하면 됩니다!</p>
+                            <p class="success">${변수명} 형태로 사용하면 됩니다!</p>
                         </div>
                     </div>
                 </div>
@@ -576,17 +576,17 @@ console.log(message);</code></pre>
                 <div class="mistakes-container">
                     <div class="mistake-item">
                         <div class="mistake-header">
-                            <div class="mistake-number">❌ 실수 1</div>
+                            <div class="mistake-number">실수 1</div>
                             <h4>변수 선언 없이 사용하기</h4>
                         </div>
                         <div class="mistake-content">
                             <div class="wrong-code">
-                                <h5>❌ 잘못된 코드</h5>
+                                <h5>잘못된 코드</h5>
                                 <pre><code>name = "홍길동";  // let이나 const 없이 사용
 console.log(name);</code></pre>
                             </div>
                             <div class="correct-code">
-                                <h5>✅ 올바른 코드</h5>
+                                <h5>올바른 코드</h5>
                                 <pre><code>let name = "홍길동";  // let으로 선언
 console.log(name);</code></pre>
                             </div>
@@ -598,17 +598,17 @@ console.log(name);</code></pre>
                     
                     <div class="mistake-item">
                         <div class="mistake-header">
-                            <div class="mistake-number">❌ 실수 2</div>
+                            <div class="mistake-number">실수 2</div>
                             <h4>const 변수 값 변경하기</h4>
                         </div>
                         <div class="mistake-content">
                             <div class="wrong-code">
-                                <h5>❌ 잘못된 코드</h5>
+                                <h5>잘못된 코드</h5>
                                 <pre><code>const PI = 3.14;
 PI = 3.14159;  // 오류 발생!</code></pre>
                             </div>
                             <div class="correct-code">
-                                <h5>✅ 올바른 코드</h5>
+                                <h5>올바른 코드</h5>
                                 <pre><code>let pi = 3.14;      // 변경 가능한 변수
 pi = 3.14159;       // 정상 작동
 
@@ -623,19 +623,19 @@ const PI = 3.14159; // 처음부터 정확한 값</code></pre>
                     
                     <div class="mistake-item">
                         <div class="mistake-header">
-                            <div class="mistake-number">❌ 실수 3</div>
+                            <div class="mistake-number">실수 3</div>
                             <h4>문자열과 숫자 혼동하기</h4>
                         </div>
                         <div class="mistake-content">
                             <div class="wrong-code">
-                                <h5>❌ 잘못된 코드</h5>
+                                <h5>잘못된 코드</h5>
                                 <pre><code>let num1 = "10";    // 문자열
 let num2 = "5";     // 문자열
 let result = num1 + num2;
 console.log(result); // "105" (문자열 연결)</code></pre>
                             </div>
                             <div class="correct-code">
-                                <h5>✅ 올바른 코드</h5>
+                                <h5>올바른 코드</h5>
                                 <pre><code>let num1 = 10;      // 숫자
 let num2 = 5;       // 숫자
 let result = num1 + num2;
@@ -649,18 +649,18 @@ console.log(result); // 15 (숫자 계산)</code></pre>
                     
                     <div class="mistake-item">
                         <div class="mistake-header">
-                            <div class="mistake-number">❌ 실수 4</div>
+                            <div class="mistake-number">실수 4</div>
                             <h4>변수명 규칙 위반하기</h4>
                         </div>
                         <div class="mistake-content">
                             <div class="wrong-code">
-                                <h5>❌ 잘못된 코드</h5>
+                                <h5>잘못된 코드</h5>
                                 <pre><code>let 2name = "홍길동";     // 숫자로 시작
 let user-name = "김철수";  // 하이픈 사용
 let let = "변수";         // 예약어 사용</code></pre>
                             </div>
                             <div class="correct-code">
-                                <h5>✅ 올바른 코드</h5>
+                                <h5>올바른 코드</h5>
                                 <pre><code>let name2 = "홍길동";     // 숫자는 뒤에
 let userName = "김철수";   // 카멜케이스 사용
 let userVariable = "변수"; // 의미있는 이름</code></pre>
@@ -696,7 +696,7 @@ let userVariable = "변수"; // 의미있는 이름</code></pre>
                             <p>정수, 소수, 사칙연산</p>
                         </div>
                         <div class="summary-item">
-                            <div class="summary-icon">✅</div>
+                            <div class="summary-icon"></div>
                             <h4>불린</h4>
                             <p>true, false 값</p>
                         </div>
@@ -724,7 +724,7 @@ let userVariable = "변수"; // 의미있는 이름</code></pre>
                 </div>
                 
                 <div class="practice-homework">
-                    <h3>🏠 숙제 (선택사항)</h3>
+                    <h3>숙제 (선택사항)</h3>
                     <div class="homework-item">
                         <h4>나만의 프로필 만들기</h4>
                         <p>let과 const를 사용해서 자신의 정보를 저장하고, 템플릿 리터럴로 자기소개 문장을 만들어보세요!</p>

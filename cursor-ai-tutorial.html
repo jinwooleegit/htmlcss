@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursor AI로 홈페이지 만들기 - WebLearn</title>
+    <meta name="description" content="Cursor AI로 웹사이트 만들기 - AI와 함께하는 효율적인 웹 개발">
+    <title>Cursor AI로 웹사이트 만들기 - WebLearn</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- 헤더 및 네비게이션 -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
@@ -15,24 +16,38 @@
                     <h1><a href="index.html">WebLearn</a></h1>
                 </div>
                 <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">홈</a>
+                    </li>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle">HTML</a>
+                        <a href="html-beginner.html" class="nav-link dropdown-toggle">HTML</a>
                         <div class="dropdown-menu">
-                            <a href="html-tutorial.html" class="dropdown-item">HTML 초급편</a>
-                            <a href="html-intermediate.html" class="dropdown-item">HTML 중급편</a>
-                            <a href="html-advanced.html" class="dropdown-item">HTML 고급편</a>
+                            <a href="html-beginner.html" class="dropdown-item">초급편</a>
+                            <a href="html-intermediate.html" class="dropdown-item">중급편</a>
+                            <a href="html-advanced.html" class="dropdown-item">고급편</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="css-tutorial-basic.html" class="nav-link dropdown-toggle">CSS</a>
                         <div class="dropdown-menu">
-                            <a href="css-tutorial-basic.html" class="dropdown-item">완전정복 가이드</a>
-                            <a href="css-intermediate.html" class="dropdown-item">중급편 - 실무 레이아웃</a>
-                            <a href="css-advanced.html" class="dropdown-item">고급편 - CSS 마스터</a>
+                            <a href="css-tutorial-basic.html" class="dropdown-item">초급편</a>
+                            <a href="css-intermediate.html" class="dropdown-item">중급편</a>
+                            <a href="css-advanced.html" class="dropdown-item">고급편</a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a href="js-tutorial.html" class="nav-link">JavaScript</a>
+                    <li class="nav-item dropdown">
+                        <a href="js-beginner-1.html" class="nav-link dropdown-toggle">JavaScript</a>
+                        <div class="dropdown-menu">
+                            <a href="js-beginner-1.html" class="dropdown-item">초급편 1부</a>
+                            <a href="js-beginner-2.html" class="dropdown-item">초급편 2부</a>
+                            <a href="js-beginner-3.html" class="dropdown-item">초급편 3부</a>
+                            <a href="js-intermediate-1.html" class="dropdown-item">중급편 1부</a>
+                            <a href="js-intermediate-2.html" class="dropdown-item">중급편 2부</a>
+                            <a href="js-intermediate-3.html" class="dropdown-item">중급편 3부</a>
+                            <a href="js-advanced-1.html" class="dropdown-item">고급편 1부</a>
+                            <a href="js-advanced-2.html" class="dropdown-item">고급편 2부</a>
+                            <a href="js-advanced-3.html" class="dropdown-item">고급편 3부</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a href="cursor-ai-tutorial.html" class="nav-link active">Cursor AI</a>
@@ -50,897 +65,621 @@
         </nav>
     </header>
 
+    <!-- 메인 콘텐츠 -->
     <main class="main">
-        <div class="tutorial-container-full">
-            <!-- 히어로 섹션 -->
-            <section class="hero-section">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1 class="hero-title">
-                            <span class="title-highlight">Cursor AI로</span><br>
-                            홈페이지 만들기
-                        </h1>
-                        <p class="hero-description">
-                            AI의 도움을 받아 코딩 지식이 부족해도<br>
-                            전문적인 웹사이트를 빠르게 제작할 수 있습니다
-                        </p>
-                        <div class="hero-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">3</span>
-                                <span class="stat-label">핵심 기능</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">10분</span>
-                                <span class="stat-label">빠른 학습</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">100%</span>
-                                <span class="stat-label">실무 활용</span>
-                            </div>
-                        </div>
-                        <div class="hero-buttons">
-                            <a href="#cursor-features" class="btn btn-primary btn-large">
-                                <span>기능 살펴보기</span>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                                </svg>
-                            </a>
-                            <a href="#cursor-installation" class="btn btn-outline btn-large">
-                                <span>설치하기</span>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                    <polyline points="7,10 12,15 17,10"/>
-                                    <line x1="12" y1="15" x2="12" y2="3"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="hero-visual">
-                        <div class="code-window">
-                            <div class="code-header">
-                                <div class="code-dots">
-                                    <span class="dot red"></span>
-                                    <span class="dot yellow"></span>
-                                    <span class="dot green"></span>
-                                </div>
-                                <span class="code-title">Cursor AI Chat</span>
-                            </div>
-                            <div class="code-content">
-                                <div class="code-line">
-                                    <span class="line-number">💬</span>
-                                    <span class="code-text">
-                                        <span class="string">"빨간색 버튼 만들어줘"</span>
-                                    </span>
-                                </div>
-                                <div class="code-line">
-                                    <span class="line-number">🤖</span>
-                                    <span class="code-text">
-                                        <span class="tag">.button</span> <span class="attr">{</span>
-                                    </span>
-                                </div>
-                                <div class="code-line">
-                                    <span class="line-number">3</span>
-                                    <span class="code-text">
-                                        &nbsp;&nbsp;<span class="attr">background:</span> <span class="string">#e74c3c;</span>
-                                    </span>
-                                </div>
-                                <div class="code-line">
-                                    <span class="line-number">4</span>
-                                    <span class="code-text">
-                                        &nbsp;&nbsp;<span class="attr">color:</span> <span class="string">white;</span>
-                                    </span>
-                                </div>
-                                <div class="code-line">
-                                    <span class="line-number">5</span>
-                                    <span class="code-text">
-                                        &nbsp;&nbsp;<span class="attr">padding:</span> <span class="string">12px 24px;</span>
-                                    </span>
-                                </div>
-                                <div class="code-line">
-                                    <span class="line-number">6</span>
-                                    <span class="code-text">
-                                        <span class="attr">}</span>
-                                    </span>
-                                </div>
-                                <div class="code-line">
-                                    <span class="line-number"></span>
-                                    <span class="code-text">
-                                        <span class="string">완성! 즉시 사용 가능</span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="floating-elements">
-                            <div class="floating-element html">AI</div>
-                            <div class="floating-element css">Chat</div>
-                            <div class="floating-element js">Code</div>
-                        </div>
-                    </div>
+        <div class="tutorial-container">
+            <!-- 튜토리얼 헤더 -->
+            <div class="tutorial-header">
+                <h1>Cursor AI로 웹사이트 만들기</h1>
+                <p class="subtitle">AI와 함께하는 효율적인 웹 개발 - 코딩 지식 없이도 전문적인 웹사이트 제작</p>
+                <div class="learning-path">
+                    <span class="path-item active">Cursor AI 설치</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-item">핵심 기능 학습</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-item">실제 웹사이트 제작</span>
                 </div>
-            </section>
-
-            <!-- 학습 경로 섹션 -->
-            <section class="learning-path-section">
-                <div class="container">
-                    <h2>AI 도구 마스터 로드맵</h2>
-                    <p class="section-subtitle">단계별 학습으로 AI와 함께하는 효율적인 웹 개발</p>
-                    
-                    <div class="learning-steps">
-                        <div class="learning-step">
-                            <div class="step-number">1</div>
-                            <h3>Cursor AI 설치</h3>
-                            <p>AI 코드 에디터 설치 및 기본 설정</p>
-                            <div class="step-links">
-                                <a href="#cursor-installation" class="step-link">설치 가이드</a>
-                            </div>
-                        </div>
-
-                        <div class="learning-step">
-                            <div class="step-number">2</div>
-                            <h3>핵심 기능 학습</h3>
-                            <p>Chat, Quick Edit, Composer 기능 마스터</p>
-                            <div class="step-links">
-                                <a href="#cursor-features" class="step-link">기능 학습</a>
-                            </div>
-                        </div>
-
-                        <div class="learning-step">
-                            <div class="step-number">3</div>
-                            <h3>실제 프로젝트</h3>
-                            <p>AI와 함께 완전한 웹사이트 제작</p>
-                            <div class="step-links">
-                                <a href="#website-creation" class="step-link">프로젝트</a>
-                            </div>
-                        </div>
-
-                        <div class="learning-step">
-                            <div class="step-number">4</div>
-                            <h3>고급 활용법</h3>
-                            <p>프롬프트 최적화 및 실무 팁</p>
-                            <div class="step-links">
-                                <a href="#tips-and-cautions" class="step-link">고급 팁</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 특징 섹션 -->
-            <section class="features-section">
-                <div class="container">
-                    <h2>왜 Cursor AI를 사용해야 할까요?</h2>
-                    <div class="features-grid">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                                    <polyline points="7.5,4.21 12,6.81 16.5,4.21"/>
-                                    <polyline points="7.5,19.79 7.5,14.6 3,12"/>
-                                    <polyline points="21,12 16.5,14.6 16.5,19.79"/>
-                                </svg>
-                            </div>
-                            <h3>자연어로 코딩</h3>
-                            <p>복잡한 문법을 외울 필요 없이 평소 말하듯이 요청하면 AI가 완벽한 코드를 생성합니다</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="3"/>
-                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-                                </svg>
-                            </div>
-                            <h3>즉시 수정 가능</h3>
-                            <p>코드를 선택하고 Ctrl+K로 즉시 수정 요청. 실시간으로 개선되는 코드를 확인할 수 있습니다</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
-                                </svg>
-                            </div>
-                            <h3>5배 빠른 개발</h3>
-                            <p>기존 5시간 걸리던 작업을 1시간만에 완성. 반복 작업은 AI에게 맡기고 창의적인 부분에 집중하세요</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 12l2 2 4-4"/>
-                                    <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
-                                    <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
-                                    <path d="M13 12h3a2 2 0 0 1 2 2v1"/>
-                                    <path d="M11 12H8a2 2 0 0 0-2 2v1"/>
-                                </svg>
-                            </div>
-                            <h3>전체 프로젝트 이해</h3>
-                            <p>Composer 기능으로 여러 파일을 동시에 수정하고 프로젝트 전체 구조를 파악하여 일관된 코드 생성</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                                    <path d="M2 17l10 5 10-5"/>
-                                    <path d="M2 12l10 5 10-5"/>
-                                </svg>
-                            </div>
-                            <h3>학습하며 성장</h3>
-                            <p>AI가 생성한 코드를 보며 자연스럽게 학습. 점점 더 나은 프롬프트를 작성할 수 있게 됩니다</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
-                                    <line x1="9" y1="9" x2="9.01" y2="9"/>
-                                    <line x1="15" y1="9" x2="15.01" y2="9"/>
-                                </svg>
-                            </div>
-                            <h3>무료로 시작</h3>
-                            <p>기본 기능은 무료로 사용 가능. 고급 기능이 필요할 때만 유료 플랜으로 업그레이드하면 됩니다</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 메인 콘텐츠 -->
-            <div class="tutorial-content">
-
-                <!-- 1. Cursor AI 소개 -->
-                <section id="cursor-intro" class="tutorial-section">
-                    <h2>Cursor AI란?</h2>
-                    
-                    <div class="concept-explanation">
-                        <div class="concept-main">
-                            <h3>AI 기반 코드 에디터</h3>
-                            <p>Cursor는 GPT-4를 기반으로 한 AI 코딩 도구로, 자연어로 요청하면 자동으로 코드를 생성하고 수정해주는 혁신적인 에디터입니다.</p>
-                        </div>
-                        
-                        <div class="analogy-box">
-                            <h4>이 과정에서 배울 내용</h4>
-                            <ul>
-                                <li>Cursor AI 설치 및 기본 설정</li>
-                                <li>AI를 활용한 HTML/CSS 코드 생성</li>
-                                <li>프롬프트 작성 기법과 팁</li>
-                                <li>반응형 웹사이트 제작 과정</li>
-                                <li>AI와 함께하는 디버깅 및 최적화</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 2. Cursor AI 핵심 기능 -->
-                <section id="cursor-features" class="tutorial-section">
-                    <h2>Cursor AI 핵심 기능 마스터하기</h2>
-
-                    <div class="tag-demo">
-                        <div class="tag-code">
-                            <h4>Chat 기능 (Ctrl+L)</h4>
-                            <p>자연어로 대화하며 즉시 코드 생성</p>
-                            <div class="chat-simulation">
-                                <div class="chat-message user">
-                                    <strong>사용자:</strong> "빨간색 버튼을 만들어줘. 호버하면 어두워지게 하고 싶어"
-                                </div>
-                                <div class="chat-message ai">
-                                    <strong>Cursor AI:</strong> 네! 빨간색 버튼을 만들어드릴게요.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tag-result">
-                            <h4>생성된 코드</h4>
-                            <pre><code>.red-button {
-  background-color: #e74c3c;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.red-button:hover {
-  background-color: #c0392b;
-}</code></pre>
-                            <div class="live-demo">
-                                <button class="demo-button red-button">데모 버튼</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tag-demo">
-                        <div class="tag-code">
-                            <h4>Quick Edit (Ctrl+K)</h4>
-                            <p>선택한 코드를 즉시 수정</p>
-                            <div class="edit-steps">
-                                <div class="step-item">
-                                    <span class="step-num">1</span>
-                                    <span>코드 선택</span>
-                                </div>
-                                <div class="step-item">
-                                    <span class="step-num">2</span>
-                                    <span>Ctrl+K 누르기</span>
-                                </div>
-                                <div class="step-item">
-                                    <span class="step-num">3</span>
-                                    <span>수정 요청 입력</span>
-                                </div>
-                                <div class="step-item">
-                                    <span class="step-num">4</span>
-                                    <span>즉시 적용</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tag-result">
-                            <h4>수정 예시</h4>
-                            <div class="before-after">
-                                <div class="before">
-                                    <strong>수정 전:</strong>
-                                    <pre><code>&lt;h1&gt;안녕하세요&lt;/h1&gt;</code></pre>
-                                </div>
-                                <div class="arrow">→</div>
-                                <div class="after">
-                                    <strong>수정 후:</strong>
-                                    <pre><code>&lt;h1 class="gradient-title"&gt;안녕하세요&lt;/h1&gt;</code></pre>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tag-demo">
-                        <div class="tag-code">
-                            <h4>Composer (Ctrl+I)</h4>
-                            <p>전체 프로젝트를 이해하고 복합적인 작업 수행</p>
-                            <pre><code>"웹사이트 전체를 다크 모드로 변경해줘.
-모든 페이지의 배경을 어둡게 하고,
-텍스트는 밝게 해줘."</code></pre>
-                        </div>
-                        <div class="tag-result">
-                            <h4>동시 수정되는 파일들</h4>
-                            <div class="file-changes">
-                                <div class="file-change">
-                                    <span class="file-name">index.html</span>
-                                    <span class="change-badge">수정됨</span>
-                                </div>
-                                <div class="file-change">
-                                    <span class="file-name">style.css</span>
-                                    <span class="change-badge">수정됨</span>
-                                </div>
-                                <div class="file-change">
-                                    <span class="file-name">script.js</span>
-                                    <span class="change-badge">수정됨</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="comparison-section">
-                        <h3>Cursor AI를 사용해야 하는 이유</h3>
-                        <div class="tag-demo">
-                            <div class="tag-code">
-                                <h4>기존 방식</h4>
-                                <ul>
-                                    <li>문법을 외워야 함</li>
-                                    <li>구글링으로 시간 소모</li>
-                                    <li>디버깅에 많은 시간</li>
-                                    <li>복잡한 기능 구현 어려움</li>
-                                </ul>
-                            </div>
-                            <div class="tag-result">
-                                <h4>Cursor AI 방식</h4>
-                                <ul>
-                                    <li>자연어로 요청만 하면 됨</li>
-                                    <li>즉시 코드 생성</li>
-                                    <li>자동 오류 수정</li>
-                                    <li>복잡한 기능도 쉽게 구현</li>
-                                </ul>
-                                <div class="speed-comparison">
-                                    <div class="speed-item">
-                                        <span class="method">기존 방식</span>
-                                        <div class="time-bar traditional">5시간</div>
-                                    </div>
-                                    <div class="speed-item">
-                                        <span class="method">Cursor AI</span>
-                                        <div class="time-bar cursor">1시간</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 추천 학습 동영상 -->
-                    <div class="video-resources">
-                        <h3>추천 학습 동영상</h3>
-                        <p>Cursor AI 사용법을 더 자세히 배우고 싶다면 아래 인기 동영상들을 참고하세요!</p>
-                        
-                        <div class="video-grid">
-                            <div class="video-card">
-                                <div class="video-thumbnail">
-                                    <div class="play-button">▶</div>
-                                </div>
-                                <div class="video-info">
-                                    <h4>Cursor AI로 웹 팝업 1분 만에 만들기</h4>
-                                    <p class="video-channel">코딩애플</p>
-                                    <p class="video-description">초보자도 따라할 수 있는 Cursor AI 완전 정복 가이드</p>
-                                    <a href="https://www.youtube.com/watch?v=fVnhsQLOhm8" target="_blank" class="video-link">동영상 보기 →</a>
-                                </div>
-                            </div>
-
-                            <div class="video-card">
-                                <div class="video-thumbnail">
-                                    <div class="play-button">▶</div>
-                                </div>
-                                <div class="video-info">
-                                    <h4>Cursor AI로 바이브 코딩? 그냥 안돼요! 설치부터 세팅까지</h4>
-                                    <p class="video-channel">개발자의품격</p>
-                                    <p class="video-description">실제 프로젝트에서 Cursor AI를 활용하는 고급 기법들</p>
-                                    <a href="https://www.youtube.com/watch?v=UzXw83NG5Rw" target="_blank" class="video-link">동영상 보기 →</a>
-                                </div>
-                            </div>
-
-                            <div class="video-card">
-                                <div class="video-thumbnail">
-                                    <div class="play-button">▶</div>
-                                </div>
-                                <div class="video-info">
-                                    <h4>일상 언어로 코딩을 몰라도 개발을 할 수 있다? Cursor AI 튜토리얼</h4>
-                                    <p class="video-channel">테크보이 워니</p>
-                                    <p class="video-description">각 AI 도구의 장단점과 상황별 최적 활용법</p>
-                                    <a href="https://www.youtube.com/watch?v=bCEnJjzKvB8" target="_blank" class="video-link">동영상 보기 →</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 3. Cursor 설치 및 설정 -->
-                <section id="cursor-installation" class="tutorial-section">
-                    <h2>Cursor 설치부터 첫 코딩까지</h2>
-
-                    <div class="tag-demo">
-                        <div class="tag-code">
-                            <h4>3분만에 설치 완료!</h4>
-                            <div class="installation-steps">
-                                <div class="step-item">
-                                    <span class="step-num">1</span>
-                                    <span>cursor.sh 접속</span>
-                                </div>
-                                <div class="step-item">
-                                    <span class="step-num">2</span>
-                                    <span>다운로드 클릭</span>
-                                </div>
-                                <div class="step-item">
-                                    <span class="step-num">3</span>
-                                    <span>설치 및 실행</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tag-result">
-                            <h4>설치 화면 미리보기</h4>
-                            <div class="browser-window">
-                                <div class="browser-header">
-                                    <div class="browser-dots">
-                                        <div class="dot red"></div>
-                                        <div class="dot yellow"></div>
-                                        <div class="dot green"></div>
-                                    </div>
-                                    <div class="url-bar">cursor.sh</div>
-                                </div>
-                                <div class="browser-content">
-                                    <div class="download-section">
-                                        <h4>The AI-first Code Editor</h4>
-                                        <p>Built to make you extraordinarily productive</p>
-                                        <div class="download-options">
-                                            <div class="os-option">
-                                                <span>Windows</span>
-                                                <button class="download-btn">다운로드</button>
-                                            </div>
-                                            <div class="os-option">
-                                                <span>macOS</span>
-                                                <button class="download-btn">다운로드</button>
-                                            </div>
-                                            <div class="os-option">
-                                                <span>Linux</span>
-                                                <button class="download-btn">다운로드</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tag-demo">
-                        <div class="tag-code">
-                            <h4>초기 설정 가이드</h4>
-                            <ol>
-                                <li>Cursor 실행 후 계정 생성</li>
-                                <li>AI 모델 선택 (GPT-4 권장)</li>
-                                <li>프로젝트 폴더 설정</li>
-                                <li>테마 및 확장 프로그램 설치</li>
-                            </ol>
-                        </div>
-                        <div class="tag-result">
-                            <h4>설정 완료 화면</h4>
-                            <div class="cursor-interface">
-                                <div class="interface-header">
-                                    <span>Cursor - AI Code Editor</span>
-                                </div>
-                                <div class="interface-content">
-                                    <div class="sidebar">
-                                        <div class="folder-item">📁 my-website</div>
-                                                                <div class="file-item">index.html</div>
-                        <div class="file-item">style.css</div>
-                                    </div>
-                                    <div class="editor-area">
-                                        <div class="code-line">1 &lt;!DOCTYPE html&gt;</div>
-                                        <div class="code-line">2 &lt;html lang="ko"&gt;</div>
-                                        <div class="code-line">3   &lt;head&gt;</div>
-                                        <div class="ai-suggestion">AI가 제안하는 코드...</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 4. 실제 웹사이트 제작 과정 -->
-                <section id="website-creation" class="tutorial-section">
-                    <h2>실제 웹사이트 제작 과정</h2>
-
-                    <div class="tag-demo">
-                        <div class="tag-code">
-                            <h4>1단계: 기본 구조 생성</h4>
-                            <div class="prompt-example">
-                                <strong>프롬프트:</strong>
-                                <p>"카페 홈페이지를 만들어줘. 헤더, 메인 콘텐츠, 푸터가 있는 기본 HTML 구조로 만들어줘."</p>
-                            </div>
-                        </div>
-                        <div class="tag-result">
-                            <h4>생성된 HTML 구조</h4>
-                            <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="ko"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;카페 홈페이지&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;header&gt;
-        &lt;nav&gt;카페 로고 및 메뉴&lt;/nav&gt;
-    &lt;/header&gt;
-    &lt;main&gt;
-        &lt;section&gt;메인 콘텐츠&lt;/section&gt;
-    &lt;/main&gt;
-    &lt;footer&gt;
-        &lt;p&gt;카페 정보&lt;/p&gt;
-    &lt;/footer&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-                        </div>
-                    </div>
-
-                    <div class="tag-demo">
-                        <div class="tag-code">
-                            <h4>2단계: 스타일링 추가</h4>
-                            <div class="prompt-example">
-                                <strong>프롬프트:</strong>
-                                <p>"카페 느낌의 따뜻한 색상으로 CSS를 만들어줘. 브라운 계열 색상을 사용하고 모던한 디자인으로 해줘."</p>
-                            </div>
-                        </div>
-                        <div class="tag-result">
-                            <h4>생성된 CSS 스타일</h4>
-                            <pre><code>body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    background-color: #f5f3f0;
-    color: #3c2415;
-}
-
-header {
-    background-color: #8b4513;
-    color: white;
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-main {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}</code></pre>
-                        </div>
-                    </div>
-
-                    <div class="tag-demo">
-                        <div class="tag-code">
-                            <h4>3단계: 반응형 디자인</h4>
-                            <div class="prompt-example">
-                                <strong>프롬프트:</strong>
-                                <p>"모바일에서도 잘 보이도록 반응형 CSS를 추가해줘. 768px 이하에서는 메뉴가 햄버거 버튼으로 바뀌게 해줘."</p>
-                            </div>
-                        </div>
-                        <div class="tag-result">
-                            <h4>반응형 CSS 추가</h4>
-                            <pre><code>@media (max-width: 768px) {
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #8b4513;
-    }
-    
-    .hamburger {
-        display: block;
-        cursor: pointer;
-    }
-    
-    .nav-menu.active {
-        display: flex;
-    }
-}</code></pre>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 5. 고급 기능과 최적화 -->
-                <section id="advanced-features" class="tutorial-section">
-                    <h2>고급 기능과 최적화</h2>
-
-                    <div class="tag-demo">
-                        <div class="tag-code">
-                            <h4>JavaScript 인터랙션 추가</h4>
-                            <div class="prompt-example">
-                                <strong>프롬프트:</strong>
-                                <p>"이미지 슬라이더를 만들어줘. 자동으로 3초마다 이미지가 바뀌고, 좌우 버튼으로도 조작할 수 있게 해줘."</p>
-                            </div>
-                        </div>
-                        <div class="tag-result">
-                            <h4>생성된 JavaScript</h4>
-                            <pre><code>class ImageSlider {
-    constructor(container) {
-        this.container = container;
-        this.images = container.querySelectorAll('img');
-        this.currentIndex = 0;
-        this.init();
-    }
-    
-    init() {
-        this.createControls();
-        this.autoPlay();
-    }
-    
-    nextImage() {
-        this.currentIndex = (this.currentIndex + 1) % this.images.length;
-        this.updateSlider();
-    }
-    
-    autoPlay() {
-        setInterval(() => this.nextImage(), 3000);
-    }
-}</code></pre>
-                        </div>
-                    </div>
-
-                    <div class="tag-demo">
-                        <div class="tag-code">
-                            <h4>SEO 최적화</h4>
-                            <div class="prompt-example">
-                                <strong>프롬프트:</strong>
-                                <p>"SEO에 좋도록 메타 태그들을 추가해줘. 카페 홈페이지에 맞는 키워드와 설명을 포함해줘."</p>
-                            </div>
-                        </div>
-                        <div class="tag-result">
-                            <h4>SEO 메타 태그</h4>
-                            <pre><code>&lt;meta name="description" content="따뜻한 분위기의 카페, 신선한 원두와 수제 디저트를 제공합니다."&gt;
-&lt;meta name="keywords" content="카페, 커피, 디저트, 원두, 핸드드립"&gt;
-&lt;meta property="og:title" content="따뜻한 카페 - 신선한 원두와 수제 디저트"&gt;
-&lt;meta property="og:description" content="편안한 분위기에서 즐기는 프리미엄 커피"&gt;
-&lt;meta property="og:image" content="cafe-main-image.jpg"&gt;</code></pre>
-                        </div>
-                    </div>
-
-                    <div class="tag-demo">
-                        <div class="tag-code">
-                            <h4>성능 최적화</h4>
-                            <div class="prompt-example">
-                                <strong>프롬프트:</strong>
-                                <p>"웹사이트 로딩 속도를 빠르게 하려면 어떻게 해야 해? 이미지 최적화와 CSS 압축도 해줘."</p>
-                            </div>
-                        </div>
-                        <div class="tag-result">
-                            <h4>최적화 체크리스트</h4>
-                            <div class="optimization-checklist">
-                                <div class="checklist">
-                                    <label>
-                                        <input type="checkbox"> 이미지 WebP 포맷 변환
-                                    </label>
-                                    <label>
-                                        <input type="checkbox"> CSS/JS 파일 압축
-                                    </label>
-                                    <label>
-                                        <input type="checkbox"> 불필요한 코드 제거
-                                    </label>
-                                    <label>
-                                        <input type="checkbox"> 폰트 최적화
-                                    </label>
-                                    <label>
-                                        <input type="checkbox"> 캐싱 설정
-                                    </label>
-                                    <label>
-                                        <input type="checkbox"> 지연 로딩 적용
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 6. AI 활용 팁과 주의사항 -->
-                <section id="tips-and-cautions" class="tutorial-section">
-                    <h2>Cursor AI 활용 팁과 주의사항</h2>
-
-                    <div class="tag-demo">
-                        <div class="tag-code">
-                            <h4>효과적인 활용법</h4>
-                            <ul>
-                                <li>큰 구조부터 세부사항 순으로 진행</li>
-                                <li>생성된 코드를 이해하고 학습</li>
-                                <li>여러 번 반복해서 개선 요청</li>
-                                <li>실제 데이터로 테스트</li>
-                            </ul>
-                        </div>
-                        <div class="tag-result">
-                            <h4>주의사항</h4>
-                            <ul>
-                                <li>AI가 생성한 코드 검토 필수</li>
-                                <li>보안이 중요한 부분은 전문가 검토</li>
-                                <li>저작권 문제 없는 이미지 사용</li>
-                                <li>과도한 의존보다는 학습 도구로 활용</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="tag-demo">
-                        <div class="tag-code">
-                            <h4>학습 효과 극대화</h4>
-                            <ul>
-                                <li>생성된 코드의 원리 이해하기</li>
-                                <li>다양한 방법으로 같은 결과 구현해보기</li>
-                                <li>에러 메시지 읽고 해결 과정 학습</li>
-                                <li>AI 없이도 기본 코딩 연습하기</li>
-                            </ul>
-                        </div>
-                        <div class="tag-result">
-                            <h4>프롬프트 작성 팁</h4>
-                            <div class="prompt-tips">
-                                <div class="tip-item">
-                                    <strong>구체적으로 요청하기</strong>
-                                    <p>"버튼 만들어줘" → "빨간색 둥근 모서리 버튼을 만들어줘. 호버시 어두워지게 해줘"</p>
-                                </div>
-                                <div class="tip-item">
-                                    <strong>맥락 제공하기</strong>
-                                    <p>"카페 홈페이지용 네비게이션 메뉴를 만들어줘. 로고, 메뉴, 연락처 링크가 필요해"</p>
-                                </div>
-                                <div class="tip-item">
-                                    <strong>단계별 진행하기</strong>
-                                    <p>한 번에 모든 것을 요청하지 말고, 기본 구조 → 스타일링 → 기능 추가 순으로</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 7. 최종 프로젝트 -->
-                <section id="final-project" class="tutorial-section">
-                    <h2>최종 프로젝트: AI와 함께 완성하는 비즈니스 웹사이트</h2>
-                    
-                    <div class="tag-demo">
-                        <div class="tag-code">
-                            <h4>프로젝트 요구사항</h4>
-                            <ul>
-                                <li>홈, 서비스, 회사소개, 연락처 페이지</li>
-                                <li>반응형 디자인 (모바일, 태블릿, 데스크톱)</li>
-                                <li>연락처 폼과 이메일 발송 기능</li>
-                                <li>Google Maps 연동</li>
-                                <li>SEO 최적화 완료</li>
-                                <li>로딩 속도 최적화</li>
-                                <li>접근성 가이드라인 준수</li>
-                            </ul>
-                        </div>
-                        <div class="tag-result">
-                            <h4>성공적인 프로젝트를 위한 팁</h4>
-                            <ul>
-                                <li>프로젝트 시작 전 전체 구조와 디자인 컨셉 정하기</li>
-                                <li>각 단계마다 실제 브라우저에서 테스트하기</li>
-                                <li>다양한 기기와 브라우저에서 확인하기</li>
-                                <li>실제 사용자 관점에서 사용성 테스트하기</li>
-                                <li>완성 후 지인들에게 피드백 받기</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 완료 메시지 -->
-                <section class="tutorial-section">
-                    <div class="completion-message">
-                        <h2>축하합니다! Cursor AI 마스터가 되셨습니다!</h2>
-                        <p>이제 여러분은 AI의 도움을 받아 빠르고 효율적으로 전문적인 웹사이트를 제작할 수 있습니다. 
-                        계속해서 다양한 프로젝트에 도전하며 AI와 함께 성장해보세요!</p>
-                    </div>
-                </section>
             </div>
 
-            <!-- 다음 단계 안내 -->
-            <section class="next-steps">
-                <h2>다음 단계</h2>
-                <p>AI 도구를 마스터했다면, 이제 더 고급 기술들을 배워보세요!</p>
+            <!-- 1. Cursor AI란? -->
+            <section class="tutorial-section">
+                <h2>Cursor AI란 무엇인가요?</h2>
                 
-                <div class="next-level-cards">
-                    <div class="next-card">
-                        <h3>웹사이트 배포하기</h3>
-                        <p>완성된 웹사이트를 실제 서버에 올려 전 세계에 공개</p>
-                        <a href="deployment-tutorial.html" class="next-link">배우러 가기 →</a>
+                <div class="concept-explanation">
+                    <div class="concept-main">
+                        <h3>Cursor AI = AI가 내장된 코드 에디터</h3>
+                        <div class="concept-breakdown">
+                            <div class="concept-part">
+                                <strong>자연어 코딩</strong>
+                                <p>평소 말하듯이 요청하면 AI가 코드를 자동으로 생성</p>
+                                <div class="detail-explanation">
+                                    <small>예: "빨간색 버튼 만들어줘" → 완벽한 CSS 코드 생성</small>
+                                </div>
+                            </div>
+                            <div class="concept-part">
+                                <strong>실시간 수정</strong>
+                                <p>코드를 선택하고 수정 요청하면 즉시 개선</p>
+                                <div class="detail-explanation">
+                                    <small>예: 기존 코드를 선택하고 "더 예쁘게 만들어줘" 요청</small>
+                                </div>
+                            </div>
+                            <div class="concept-part">
+                                <strong>전체 프로젝트 이해</strong>
+                                <p>여러 파일을 동시에 수정하고 일관된 스타일 적용</p>
+                                <div class="detail-explanation">
+                                    <small>예: "전체 사이트를 다크모드로 변경해줘" → 모든 파일 자동 수정</small>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="next-card">
-                        <h3>CSS 마스터하기</h3>
-                        <p>전문적인 디자인과 애니메이션 기술</p>
-                                                    <a href="css-tutorial-basic.html" class="next-link">배우러 가기 →</a>
+                    
+                    <div class="real-example">
+                        <h4>실제 작업 비교</h4>
+                        <p><strong>기존 방식 vs Cursor AI 방식</strong></p>
+                        <div class="comparison-box">
+                            <div class="before-html">
+                                <h5>기존 방식 (5시간)</h5>
+                                <div class="plain-text">
+                                    <ol style="text-align: left; padding-left: 20px;">
+                                        <li>HTML 문법 공부</li>
+                                        <li>CSS 속성 찾아보기</li>
+                                        <li>코드 작성</li>
+                                        <li>오류 수정</li>
+                                        <li>디자인 조정</li>
+                                        <li>반응형 적용</li>
+                                    </ol>
+                                    <p class="problem">시간이 오래 걸리고 복잡함</p>
+                                </div>
+                            </div>
+                            <div class="after-html">
+                                <h5>Cursor AI 방식 (30분)</h5>
+                                <div class="structured-text">
+                                    <ol style="text-align: left; padding-left: 20px;">
+                                        <li>"회사 소개 페이지 만들어줘"</li>
+                                        <li>"헤더에 로고 추가해줘"</li>
+                                        <li>"색상을 파란색으로 바꿔줘"</li>
+                                        <li>"모바일에서도 잘 보이게 해줘"</li>
+                                    </ol>
+                                    <p class="success">자연어로 간단하게 완성</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="insight"><strong>핵심 인사이트:</strong> 복잡한 코딩 지식 없이도 AI와 대화하듯 웹사이트를 만들 수 있습니다!</p>
                     </div>
-                    <div class="next-card">
-                        <h3>JavaScript 프로그래밍</h3>
-                        <p>인터랙티브한 웹사이트 제작 기술</p>
-                        <a href="js-tutorial.html" class="next-link">배우러 가기 →</a>
+                    
+                    <div class="analogy-box">
+                        <h4>쉬운 비유로 이해하기</h4>
+                        <p><strong>Cursor AI = 전문 비서</strong></p>
+                        <ul>
+                            <li><strong>일반 에디터</strong> = 혼자서 모든 걸 직접 해야 하는 상황</li>
+                            <li><strong>Cursor AI</strong> = 전문 비서가 옆에서 즉시 도와주는 상황</li>
+                        </ul>
+                        <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #007bff;">
+                            <strong>핵심 팁:</strong> 명확하고 구체적으로 요청할수록 더 정확한 결과를 얻을 수 있어요!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="why-learn-html">
+                    <h3>왜 Cursor AI를 사용해야 할까요?</h3>
+                    <div class="reasons-grid">
+                        <div class="reason-item">
+                            <div class="reason-icon"></div>
+                            <h4>학습 시간 단축</h4>
+                            <p>문법을 외우는 대신 바로 실무에 집중할 수 있음</p>
+                        </div>
+                        <div class="reason-item">
+                            <div class="reason-icon"></div>
+                            <h4>실수 방지</h4>
+                            <p>AI가 문법 오류와 최적화를 자동으로 처리</p>
+                        </div>
+                        <div class="reason-item">
+                            <div class="reason-icon"></div>
+                            <h4>창의성 향상</h4>
+                            <p>기술적 제약에서 벗어나 아이디어 구현에 집중</p>
+                        </div>
+                        <div class="reason-item">
+                            <div class="reason-icon"></div>
+                            <h4>지속적 학습</h4>
+                            <p>AI가 생성한 코드를 보며 자연스럽게 실력 향상</p>
+                        </div>
                     </div>
                 </div>
             </section>
+
+            <!-- 2. Cursor AI 설치하기 -->
+            <section class="tutorial-section">
+                <h2>Cursor AI 설치하기</h2>
+                
+                <div class="practice-container">
+                    <h3>단계별 설치 가이드</h3>
+                    
+                    <div class="step-by-step">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>공식 웹사이트 방문</h4>
+                                <p><strong>cursor.sh</strong>에 접속하여 다운로드 버튼 클릭</p>
+                                <div class="tip-box">
+                                    <p><strong>팁:</strong> Windows, Mac, Linux 모두 지원합니다!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>설치 파일 실행</h4>
+                                <p>다운로드된 파일을 실행하고 안내에 따라 설치</p>
+                                <div class="tip-box">
+                                    <p><strong>주의:</strong> 관리자 권한이 필요할 수 있습니다</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>계정 생성 및 로그인</h4>
+                                <p>이메일로 계정을 만들고 Cursor AI에 로그인</p>
+                                <div class="tip-box">
+                                    <p><strong>혜택:</strong> 무료 플랜으로도 충분히 사용 가능합니다</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>첫 번째 프로젝트 생성</h4>
+                                <p>새 폴더를 만들고 Cursor로 열어보기</p>
+                                <div class="code-block">
+                                    <pre><code>1. 바탕화면에 "my-website" 폴더 생성
+2. Cursor AI 실행
+3. File → Open Folder → my-website 선택
+4. 준비 완료!</code></pre>
+                                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. 핵심 기능 3가지 -->
+            <section class="tutorial-section">
+                <h2>핵심 기능 3가지 마스터하기</h2>
+                
+                <div class="methods-explanation">
+                    <h3>Cursor AI의 3가지 핵심 기능</h3>
+                    
+                    <div class="method-item">
+                        <div class="method-header">
+                            <div class="method-number">1</div>
+                            <h4>Chat 기능 (Ctrl+L)</h4>
+                            <span class="method-tag">대화형</span>
+                        </div>
+                        <div class="method-content">
+                            <p><strong>사용법:</strong> Ctrl+L을 누르고 자연어로 요청</p>
+                            <div class="code-block">
+                                <pre><code>사용자: "빨간색 버튼을 만들어줘. 클릭하면 알림창이 뜨게 해줘"
+
+Cursor AI: 
+&lt;button onclick="alert('버튼이 클릭되었습니다!')" 
+        style="background: #e74c3c; color: white; 
+               padding: 12px 24px; border: none; 
+               border-radius: 5px; cursor: pointer;"&gt;
+    클릭하세요
+&lt;/button&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                            </div>
+                            <div class="method-pros-cons">
+                                <div class="pros">
+                                    <strong>장점:</strong> 새로운 코드 생성에 최적
+                                </div>
+                                <div class="cons">
+                                    <strong>사용 시기:</strong> 처음부터 만들 때
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="method-item">
+                        <div class="method-header">
+                            <div class="method-number">2</div>
+                            <h4>Quick Edit (Ctrl+K)</h4>
+                            <span class="method-tag">즉시 수정</span>
+                        </div>
+                        <div class="method-content">
+                            <p><strong>사용법:</strong> 코드 선택 → Ctrl+K → 수정 요청</p>
+                            <div class="code-block">
+                                <pre><code>// 기존 코드 선택
+&lt;h1&gt;안녕하세요&lt;/h1&gt;
+
+// Ctrl+K 누르고 요청: "제목을 더 예쁘게 만들어줘"
+
+// 결과
+&lt;h1 style="color: #2c3e50; font-size: 2.5em; 
+           text-align: center; margin: 20px 0; 
+           font-weight: 300;"&gt;
+    안녕하세요
+&lt;/h1&gt;</code></pre>
+                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                            </div>
+                            <div class="method-pros-cons">
+                                <div class="pros">
+                                    <strong>장점:</strong> 기존 코드 개선에 최적
+                                </div>
+                                <div class="cons">
+                                    <strong>사용 시기:</strong> 이미 있는 코드를 수정할 때
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="method-item">
+                        <div class="method-header">
+                            <div class="method-number">3</div>
+                            <h4>Composer (Ctrl+I)</h4>
+                            <span class="method-tag">프로젝트 전체</span>
+                        </div>
+                        <div class="method-content">
+                            <p><strong>사용법:</strong> Ctrl+I를 누르고 프로젝트 전체 작업 요청</p>
+                            <div class="code-block">
+                                <pre><code>요청: "전체 웹사이트를 다크모드로 바꿔줘. 
+         배경은 어둡게, 텍스트는 밝게 해줘"
+
+결과: 
+- index.html 수정됨
+- style.css 수정됨  
+- about.html 수정됨
+- contact.html 수정됨
+
+모든 파일이 일관된 다크모드로 변경!</code></pre>
+                                <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                            </div>
+                            <div class="method-pros-cons">
+                                <div class="pros">
+                                    <strong>장점:</strong> 여러 파일 동시 수정
+                                </div>
+                                <div class="cons">
+                                    <strong>사용 시기:</strong> 프로젝트 전체 변경할 때
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comparison-table">
+                    <h3>기능별 사용 가이드</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>기능</th>
+                                <th>단축키</th>
+                                <th>사용 시기</th>
+                                <th>장점</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Chat</td>
+                                <td class="success">Ctrl+L</td>
+                                <td>새로운 코드 생성</td>
+                                <td>자연어 대화</td>
+                            </tr>
+                            <tr>
+                                <td>Quick Edit</td>
+                                <td class="success">Ctrl+K</td>
+                                <td>기존 코드 수정</td>
+                                <td>즉시 개선</td>
+                            </tr>
+                            <tr>
+                                <td>Composer</td>
+                                <td class="success">Ctrl+I</td>
+                                <td>프로젝트 전체 작업</td>
+                                <td>일관된 변경</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 4. 실제 웹사이트 만들기 -->
+            <section class="tutorial-section">
+                <h2>실제 웹사이트 만들기 실습</h2>
+                
+                <div class="practice-container">
+                    <h3>프로젝트: 개인 포트폴리오 사이트 제작</h3>
+                    <p>Cursor AI와 함께 단계별로 완전한 웹사이트를 만들어보겠습니다.</p>
+                    
+                    <div class="step-by-step">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>기본 HTML 구조 생성</h4>
+                                <p><strong>Chat (Ctrl+L)에서 요청:</strong></p>
+                                <div class="code-block">
+                                    <pre><code>"개인 포트폴리오 웹사이트의 기본 HTML 구조를 만들어줘. 
+헤더, 소개, 프로젝트, 연락처 섹션이 필요해"</code></pre>
+                                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>스타일링 추가</h4>
+                                <p><strong>추가 요청:</strong></p>
+                                <div class="code-block">
+                                    <pre><code>"CSS 파일을 만들어서 깔끔하고 현대적인 디자인을 적용해줘. 
+색상은 파란색 계열로, 폰트는 깔끔하게 해줘"</code></pre>
+                                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>반응형 디자인 적용</h4>
+                                <p><strong>Composer (Ctrl+I)에서 요청:</strong></p>
+                                <div class="code-block">
+                                    <pre><code>"모바일에서도 잘 보이도록 반응형 디자인을 적용해줘. 
+태블릿과 스마트폰에서 레이아웃이 자동으로 조정되게 해줘"</code></pre>
+                                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>인터랙션 추가</h4>
+                                <p><strong>추가 기능 요청:</strong></p>
+                                <div class="code-block">
+                                    <pre><code>"버튼에 호버 효과를 추가하고, 
+스크롤할 때 부드럽게 섹션이 나타나는 애니메이션을 만들어줘"</code></pre>
+                                    <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-result">
+                        <h4>완성된 결과물</h4>
+                        <div class="result-box">
+                            <p>완전한 반응형 포트폴리오 웹사이트</p>
+                            <p>현대적이고 깔끔한 디자인</p>
+                            <p>모바일 최적화</p>
+                            <p>부드러운 애니메이션 효과</p>
+                            <p class="success">축하합니다! AI와 함께 전문적인 웹사이트를 완성했습니다!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. 효과적인 프롬프트 작성법 -->
+            <section class="tutorial-section">
+                <h2>효과적인 프롬프트 작성법</h2>
+                
+                <div class="tips-explanation">
+                    <h3>AI와 소통하는 법</h3>
+                    
+                    <div class="tip-item">
+                        <div class="tip-header">
+                            <div class="tip-number"></div>
+                            <h4>구체적으로 요청하기</h4>
+                        </div>
+                        <div class="tip-content">
+                            <div class="comparison-box">
+                                <div class="before-html">
+                                    <h5>나쁜 예시</h5>
+                                    <p>"버튼 만들어줘"</p>
+                                </div>
+                                <div class="after-html">
+                                    <h5>좋은 예시</h5>
+                                    <p>"파란색 배경에 흰색 텍스트인 버튼을 만들어줘. 크기는 중간 정도로, 모서리는 둥글게 해줘"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <div class="tip-header">
+                            <div class="tip-number"></div>
+                            <h4>목적과 맥락 설명하기</h4>
+                        </div>
+                        <div class="tip-content">
+                            <div class="comparison-box">
+                                <div class="before-html">
+                                    <h5>나쁜 예시</h5>
+                                    <p>"헤더 만들어줘"</p>
+                                </div>
+                                <div class="after-html">
+                                    <h5>좋은 예시</h5>
+                                    <p>"카페 웹사이트의 헤더를 만들어줘. 로고, 메뉴(메뉴, 위치, 연락처), 주문하기 버튼이 필요해"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <div class="tip-header">
+                            <div class="tip-number"></div>
+                            <h4>단계별로 요청하기</h4>
+                        </div>
+                        <div class="tip-content">
+                            <div class="good-example">
+                                <h5>효과적인 순서</h5>
+                                <ol style="text-align: left; padding-left: 20px;">
+                                    <li>"기본 HTML 구조 만들어줘"</li>
+                                    <li>"CSS로 스타일링 해줘"</li>
+                                    <li>"반응형으로 만들어줘"</li>
+                                    <li>"애니메이션 추가해줘"</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. 주의사항 및 팁 -->
+            <section class="tutorial-section">
+                <h2>주의사항 및 실무 팁</h2>
+                
+                <div class="warning-section">
+                    <h3>주의사항</h3>
+                    <div class="warning-list">
+                        <div class="warning-item">
+                            <strong>코드 검토하기:</strong>
+                            <p>AI가 생성한 코드도 항상 검토하고 이해하려고 노력하세요</p>
+                        </div>
+                        <div class="warning-item">
+                            <strong>백업 유지하기:</strong>
+                            <p>중요한 변경 전에는 항상 파일을 백업해두세요</p>
+                        </div>
+                        <div class="warning-item">
+                            <strong>단계별 진행:</strong>
+                            <p>한 번에 너무 많은 것을 요청하지 말고 단계별로 진행하세요</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tips-section">
+                    <h3>실무 팁</h3>
+                    <div class="tips-list">
+                        <div class="tip-card">
+                            <h4>생산성 향상</h4>
+                            <ul>
+                                <li>자주 사용하는 요청은 템플릿으로 저장</li>
+                                <li>단축키를 외워서 빠르게 접근</li>
+                                <li>프로젝트 구조를 미리 계획</li>
+                            </ul>
+                        </div>
+                        <div class="tip-card">
+                            <h4>디자인 개선</h4>
+                            <ul>
+                                <li>색상 코드를 구체적으로 지정</li>
+                                <li>레퍼런스 사이트를 언급</li>
+                                <li>사용자 경험을 고려한 요청</li>
+                            </ul>
+                        </div>
+                        <div class="tip-card">
+                            <h4>문제 해결</h4>
+                            <ul>
+                                <li>오류 메시지를 AI에게 보여주기</li>
+                                <li>원하는 결과와 현재 상황 설명</li>
+                                <li>다양한 방법으로 재요청</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. 다음 단계 -->
+            <section class="tutorial-section">
+                <h2>다음 단계로 발전하기</h2>
+                
+                <div class="next-steps">
+                    <h3>추천 학습 경로</h3>
+                    <div class="steps-grid">
+                        <div class="next-step-item">
+                            <div class="step-icon">1</div>
+                            <h4>기본기 다지기</h4>
+                            <p>HTML/CSS 기초 지식을 병행 학습하여 AI 결과물을 더 잘 이해하기</p>
+                            <a href="html-beginner.html" class="step-link">HTML 학습하기</a>
+                        </div>
+                        <div class="next-step-item">
+                            <div class="step-icon">2</div>
+                            <h4>고급 기능 활용</h4>
+                            <p>JavaScript와 함께 더 복잡한 인터랙션 구현하기</p>
+                            <a href="js-beginner-1.html" class="step-link">JavaScript 학습하기</a>
+                        </div>
+                        <div class="next-step-item">
+                            <div class="step-icon">3</div>
+                            <h4>웹사이트 배포</h4>
+                            <p>완성된 웹사이트를 실제 인터넷에 올려서 공유하기</p>
+                            <a href="deployment-tutorial.html" class="step-link">배포 방법 학습하기</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 네비게이션 -->
+            <div class="tutorial-navigation">
+                <div class="nav-item prev">
+                    <a href="js-advanced-3.html">
+                        <span>이전 단계</span>
+                        <strong>JavaScript 고급편</strong>
+                    </a>
+                </div>
+                <div class="nav-item next">
+                    <a href="deployment-tutorial.html">
+                        <span>다음 단계</span>
+                        <strong>웹사이트 배포하기</strong>
+                    </a>
+                </div>
+            </div>
         </div>
     </main>
 
+    <!-- 푸터 -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>WebLearn</h4>
-                <p>웹 개발을 배우는 가장 쉽고 효과적인 방법</p>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>WebLearn</h3>
+                    <p>모든 사람을 위한 웹 개발 튜토리얼</p>
+                </div>
+                <div class="footer-section">
+                    <h4>학습 과정</h4>
+                    <ul>
+                        <li><a href="html-beginner.html">HTML 기초</a></li>
+                        <li><a href="css-tutorial-basic.html">CSS 기초</a></li>
+                        <li><a href="js-beginner-1.html">JavaScript 기초</a></li>
+                        <li><a href="cursor-ai-tutorial.html">Cursor AI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>고급 과정</h4>
+                    <ul>
+                        <li><a href="html-advanced.html">HTML 고급</a></li>
+                        <li><a href="css-advanced.html">CSS 고급</a></li>
+                        <li><a href="js-advanced-3.html">JavaScript 고급</a></li>
+                        <li><a href="deployment-tutorial.html">배포하기</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-section">
-                <h4>학습 과정</h4>
-                <ul>
-                    <li><a href="html-tutorial.html">HTML 튜토리얼</a></li>
-                                            <li><a href="css-tutorial-basic.html">CSS 튜토리얼</a></li>
-                    <li><a href="js-tutorial.html">JavaScript 튜토리얼</a></li>
-                    <li><a href="cursor-ai-tutorial.html">Cursor AI 가이드</a></li>
-                    <li><a href="deployment-tutorial.html">배포 가이드</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WebLearn. 모든 권리 보유.</p>
             </div>
-            <div class="footer-section">
-                <h4>참고 자료</h4>
-                <ul>
-                    <li><a href="https://cursor.sh/">Cursor AI</a></li>
-                    <li><a href="https://developer.mozilla.org/">MDN Web Docs</a></li>
-                    <li><a href="https://www.w3schools.com/">W3Schools</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 WebLearn. 모든 권리 보유.</p>
         </div>
     </footer>
 
+    <!-- JavaScript -->
     <script>
-        // 체크리스트 기능
-        document.querySelectorAll('.checklist input[type="checkbox"]').forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                if (checkbox.checked) {
-                    checkbox.parentElement.style.opacity = '0.7';
-                    checkbox.parentElement.style.textDecoration = 'line-through';
-                } else {
-                    checkbox.parentElement.style.opacity = '1';
-                    checkbox.parentElement.style.textDecoration = 'none';
-                }
+        // 코드 복사 기능
+        function copyToClipboard(button) {
+            const codeBlock = button.previousElementSibling;
+            const code = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(code).then(() => {
+                const originalText = button.textContent;
+                button.textContent = '복사됨!';
+                button.style.background = '#28a745';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                }, 2000);
+            }).catch(() => {
+                alert('복사에 실패했습니다. 수동으로 복사해주세요.');
             });
-        });
+        }
 
-        // 햄버거 메뉴 기능
+        // 햄버거 메뉴
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
 
@@ -949,11 +688,26 @@ main {
             navMenu.classList.toggle('active');
         });
 
-        // 네비게이션 링크 클릭시 메뉴 닫기
+        // 네비게이션 메뉴 닫기
         document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
         }));
+
+        // 부드러운 스크롤
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     </script>
 </body>
-</html> 
+</html>
+</rewritten_file>

@@ -61,7 +61,7 @@
 
     <!-- 메인 콘텐츠 -->
     <main class="main">
-        <div class="tutorial-container full-width">
+        <div class="tutorial-container">
             <!-- 튜토리얼 헤더 -->
             <div class="tutorial-header">
                 <h1>JavaScript 초급편 3부</h1>
@@ -258,7 +258,7 @@ console.log(age >= 20);     // true (나이가 20 이상인가?)</code></pre>
                             <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
                         </div>
                         <div class="important-note">
-                            <h5>⚠️ 중요한 차이점</h5>
+                            <h5>중요한 차이점</h5>
                             <ul>
                                 <li><code>==</code>: 값만 비교 (타입 변환 허용)</li>
                                 <li><code>===</code>: 값과 타입을 모두 비교 (권장)</li>
@@ -473,7 +473,7 @@ if (userAge >= 65) {
                         <h4>결과</h4>
                         <div class="result-box">
                             <p>17살이므로 "청소년입니다!" 메시지가 출력됩니다.</p>
-                            <p class="success">🎯 나이에 따라 다른 메시지가 나타나는 것을 확인하세요!</p>
+                            <p class="success">나이에 따라 다른 메시지가 나타나는 것을 확인하세요!</p>
                         </div>
                     </div>
                 </div>
@@ -549,14 +549,14 @@ let userPassword = "1234";
 
 // 로그인 확인
 if (userId === correctId && userPassword === correctPassword) {
-    console.log("✅ 로그인 성공!");
+    console.log("로그인 성공!");
     console.log("환영합니다, " + userId + "님!");
 } else if (userId !== correctId) {
-    console.log("❌ 아이디가 올바르지 않습니다.");
+    console.log("아이디가 올바르지 않습니다.");
 } else if (userPassword !== correctPassword) {
-    console.log("❌ 비밀번호가 올바르지 않습니다.");
+    console.log("비밀번호가 올바르지 않습니다.");
 } else {
-    console.log("❌ 로그인 정보를 확인해주세요.");
+    console.log("로그인 정보를 확인해주세요.");
 }
 
 // 추가 보안 확인
@@ -565,11 +565,11 @@ if (userId === correctId && userPassword === correctPassword) {
     let loginCount = 50;
     
     if (isVip && loginCount > 30) {
-        console.log("🌟 VIP 사용자님, 특별 혜택이 준비되어 있습니다!");
+        console.log(" VIP 사용자님, 특별 혜택이 준비되어 있습니다!");
     } else if (isVip) {
-        console.log("🎯 VIP 사용자로 인증되었습니다.");
+        console.log("VIP 사용자로 인증되었습니다.");
     } else if (loginCount > 10) {
-        console.log("👍 단골 사용자이시네요!");
+        console.log(" 단골 사용자이시네요!");
     }
 }</code></pre>
                                     <button class="copy-btn" onclick="copyToClipboard(this)">복사</button>
@@ -596,19 +596,19 @@ if (userId === correctId && userPassword === correctPassword) {
                 <div class="mistakes-container">
                     <div class="mistake-item">
                         <div class="mistake-header">
-                            <div class="mistake-number">❌ 실수 1</div>
+                            <div class="mistake-number">실수 1</div>
                             <h4>= 와 == 혼동하기</h4>
                         </div>
                         <div class="mistake-content">
                             <div class="wrong-code">
-                                <h5>❌ 잘못된 코드</h5>
+                                <h5>잘못된 코드</h5>
                                 <pre><code>let age = 20;
 if (age = 18) {  // 할당 연산자 사용 (잘못됨)
     console.log("18살입니다");
 }</code></pre>
                             </div>
                             <div class="correct-code">
-                                <h5>✅ 올바른 코드</h5>
+                                <h5>올바른 코드</h5>
                                 <pre><code>let age = 20;
 if (age == 18) {  // 비교 연산자 사용 (올바름)
     console.log("18살입니다");
@@ -626,18 +626,18 @@ if (age == 18) {  // 비교 연산자 사용 (올바름)
                     
                     <div class="mistake-item">
                         <div class="mistake-header">
-                            <div class="mistake-number">❌ 실수 2</div>
+                            <div class="mistake-number">실수 2</div>
                             <h4>중괄호 빼먹기</h4>
                         </div>
                         <div class="mistake-content">
                             <div class="wrong-code">
-                                <h5>❌ 잘못된 코드</h5>
+                                <h5>잘못된 코드</h5>
                                 <pre><code>if (age >= 18)
     console.log("성인입니다");
     console.log("투표할 수 있습니다");  // 항상 실행됨!</code></pre>
                             </div>
                             <div class="correct-code">
-                                <h5>✅ 올바른 코드</h5>
+                                <h5>올바른 코드</h5>
                                 <pre><code>if (age >= 18) {
     console.log("성인입니다");
     console.log("투표할 수 있습니다");  // 조건에 따라 실행
@@ -651,12 +651,12 @@ if (age == 18) {  // 비교 연산자 사용 (올바름)
                     
                     <div class="mistake-item">
                         <div class="mistake-header">
-                            <div class="mistake-number">❌ 실수 3</div>
+                            <div class="mistake-number">실수 3</div>
                             <h4>논리 연산자 잘못 사용하기</h4>
                         </div>
                         <div class="mistake-content">
                             <div class="wrong-code">
-                                <h5>❌ 잘못된 코드</h5>
+                                <h5>잘못된 코드</h5>
                                 <pre><code>let age = 25;
 let hasLicense = false;
 
@@ -666,7 +666,7 @@ if (age >= 18 || hasLicense) {
 }</code></pre>
                             </div>
                             <div class="correct-code">
-                                <h5>✅ 올바른 코드</h5>
+                                <h5>올바른 코드</h5>
                                 <pre><code>let age = 25;
 let hasLicense = false;
 
@@ -711,7 +711,7 @@ if (age >= 18 && hasLicense) {
                             <p>&&(그리고), ||(또는), !(아니다)</p>
                         </div>
                         <div class="summary-item">
-                            <div class="summary-icon">🌟</div>
+                            <div class="summary-icon"></div>
                             <h4>조건문</h4>
                             <p>if, else if, else로 상황별 처리</p>
                         </div>
@@ -739,7 +739,7 @@ if (age >= 18 && hasLicense) {
                 </div>
                 
                 <div class="practice-homework">
-                    <h3>🏠 숙제 (선택사항)</h3>
+                    <h3>숙제 (선택사항)</h3>
                     <div class="homework-item">
                         <h4>성적 관리 프로그램 만들기</h4>
                         <p>점수를 입력받아서 A, B, C, D, F 학점을 출력하고, 합격/불합격도 표시하는 프로그램을 만들어보세요!</p>
