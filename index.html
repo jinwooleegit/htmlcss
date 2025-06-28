@@ -463,36 +463,129 @@
     <script>
         // 검색 기능
         function performSearch() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            if (!searchTerm) return;
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (!searchTerm) {
+                alert('검색어를 입력해주세요.');
+                return;
+            }
             
             const tutorials = [
-                { name: 'HTML 초급편', url: 'html-beginner.html', keywords: 'html 기초 초급 태그 구조' },
-                { name: 'HTML 중급편', url: 'html-intermediate.html', keywords: 'html 중급 폼 테이블 멀티미디어' },
-                { name: 'HTML 고급편', url: 'html-advanced.html', keywords: 'html 고급 시맨틱 접근성 SEO' },
-                { name: 'CSS 초급편', url: 'css-tutorial-basic.html', keywords: 'css 기초 초급 스타일 색상' },
-                { name: 'CSS 중급편', url: 'css-intermediate.html', keywords: 'css 중급 레이아웃 플렉스 그리드' },
-                { name: 'CSS 고급편', url: 'css-advanced.html', keywords: 'css 고급 애니메이션 최적화' },
-                { name: 'JavaScript 초급편 1부', url: 'js-beginner-1.html', keywords: 'javascript js 기초 변수 함수' },
-                { name: 'JavaScript 초급편 2부', url: 'js-beginner-2.html', keywords: 'javascript js 데이터타입 문자열' },
-                { name: 'JavaScript 초급편 3부', url: 'js-beginner-3.html', keywords: 'javascript js 조건문 연산자' },
-                { name: 'JavaScript 중급편 1부', url: 'js-intermediate-1.html', keywords: 'javascript js 반복문 배열' },
-                { name: 'JavaScript 중급편 2부', url: 'js-intermediate-2.html', keywords: 'javascript js 함수 객체' },
-                { name: 'JavaScript 중급편 3부', url: 'js-intermediate-3.html', keywords: 'javascript js DOM 이벤트' },
-                { name: 'JavaScript 고급편 1부', url: 'js-advanced-1.html', keywords: 'javascript js 비동기 promise async' },
-                { name: 'JavaScript 고급편 2부', url: 'js-advanced-2.html', keywords: 'javascript js 클래스 모듈' },
-                { name: 'JavaScript 고급편 3부', url: 'js-advanced-3.html', keywords: 'javascript js ES6 최신문법' }
+                { 
+                    name: 'HTML 초급편', 
+                    url: 'html-beginner.html', 
+                    keywords: 'html 기초 초급 태그 구조 마크업 웹페이지 head body title meta link script div span p h1 h2 h3 h4 h5 h6 img a href src alt 속성 요소 element attribute 시작태그 종료태그 브라우저 웹표준 semantic 문서구조 DOCTYPE'
+                },
+                { 
+                    name: 'HTML 중급편', 
+                    url: 'html-intermediate.html', 
+                    keywords: 'html 중급 폼 테이블 멀티미디어 form table input button textarea select option checkbox radio submit reset fieldset legend caption thead tbody tfoot tr td th video audio source track iframe embed object param canvas svg 유효성검사 validation required pattern'
+                },
+                { 
+                    name: 'HTML 고급편', 
+                    url: 'html-advanced.html', 
+                    keywords: 'html 고급 시맨틱 접근성 SEO semantic accessibility header nav main aside footer section article figure figcaption details summary mark time progress meter datalist output microdata schema.org aria role tabindex screen reader 검색엔진최적화 메타태그 오픈그래프 트위터카드'
+                },
+                { 
+                    name: 'CSS 초급편', 
+                    url: 'css-tutorial-basic.html', 
+                    keywords: 'css 기초 초급 스타일 색상 선택자 selector style 타입선택자 클래스선택자 아이디선택자 후손선택자 자식선택자 인접선택자 속성선택자 가상클래스 가상요소 color background font margin padding border width height display block inline inline-block box-model 박스모델 상속 우선순위 specificity'
+                },
+                { 
+                    name: 'CSS 중급편', 
+                    url: 'css-intermediate.html', 
+                    keywords: 'css 중급 레이아웃 플렉스 그리드 flexbox grid layout position relative absolute fixed sticky float clear z-index overflow visibility opacity transform transition animation keyframes media query 반응형 responsive mobile tablet desktop breakpoint 미디어쿼리'
+                },
+                { 
+                    name: 'CSS 고급편', 
+                    url: 'css-advanced.html', 
+                    keywords: 'css 고급 애니메이션 최적화 animation performance transform3d will-change contain layout paint composite layer 하드웨어가속 gpu 최적화 critical css 코드분할 minify compress gzip 성능측정 lighthouse webvitals LCP FID CLS 변수 custom-properties calc clamp min max'
+                },
+                { 
+                    name: 'JavaScript 초급편 1부', 
+                    url: 'js-beginner-1.html', 
+                    keywords: 'javascript js 기초 변수 함수 console alert 자바스크립트 스크립트 script 태그 내부스크립트 외부스크립트 주석 comment 세미콜론 semicolon 대소문자 camelCase 예약어 keyword 리터럴 literal 표현식 expression 문장 statement'
+                },
+                { 
+                    name: 'JavaScript 초급편 2부', 
+                    url: 'js-beginner-2.html', 
+                    keywords: 'javascript js 데이터타입 문자열 숫자 불린 string number boolean 자바스크립트 var let const 변수선언 호이스팅 hoisting 스코프 scope 전역변수 지역변수 블록스코프 함수스코프 undefined null NaN Infinity 타입변환 형변환 typeof 연산자'
+                },
+                { 
+                    name: 'JavaScript 초급편 3부', 
+                    url: 'js-beginner-3.html', 
+                    keywords: 'javascript js 조건문 연산자 if else 비교 논리 자바스크립트 산술연산자 대입연산자 비교연산자 논리연산자 증감연산자 삼항연산자 switch case default break continue 조건부실행 분기 branch 참 거짓 truthy falsy'
+                },
+                { 
+                    name: 'JavaScript 중급편 1부', 
+                    url: 'js-intermediate-1.html', 
+                    keywords: 'javascript js 반복문 배열 for while array 자바스크립트 for문 while문 do-while 반복 iteration loop 배열 array 인덱스 index length push pop shift unshift slice splice join sort reverse forEach map filter reduce find indexOf includes 배열메서드'
+                },
+                { 
+                    name: 'JavaScript 중급편 2부', 
+                    url: 'js-intermediate-2.html', 
+                    keywords: 'javascript js 함수 객체 function object this 자바스크립트 함수선언 함수표현식 화살표함수 arrow function 매개변수 parameter 인수 argument return 반환값 객체 object 프로퍼티 property 메서드 method 점표기법 대괄호표기법 생성자함수 constructor prototype'
+                },
+                { 
+                    name: 'JavaScript 중급편 3부', 
+                    url: 'js-intermediate-3.html', 
+                    keywords: 'javascript js DOM 이벤트 element event listener 자바스크립트 문서객체모델 document getElementById getElementsByClassName getElementsByTagName querySelector querySelectorAll createElement appendChild removeChild innerHTML textContent addEventListener removeEventListener click mouseover mouseout keydown keyup load resize scroll 이벤트버블링 캡처링'
+                },
+                { 
+                    name: 'JavaScript 고급편 1부', 
+                    url: 'js-advanced-1.html', 
+                    keywords: 'javascript js 비동기 promise async await 자바스크립트 asynchronous 동기 synchronous 콜백 callback 콜백지옥 Promise then catch finally async function await try catch error 에러처리 fetch API XMLHttpRequest AJAX JSON parse stringify 비동기처리'
+                },
+                { 
+                    name: 'JavaScript 고급편 2부', 
+                    url: 'js-advanced-2.html', 
+                    keywords: 'javascript js 클래스 모듈 class module import export 자바스크립트 ES6 class constructor extends super static private public protected 상속 inheritance 캡슐화 encapsulation 다형성 polymorphism 모듈 module CommonJS AMD UMD ES modules default export named export'
+                },
+                { 
+                    name: 'JavaScript 고급편 3부', 
+                    url: 'js-advanced-3.html', 
+                    keywords: 'javascript js ES6 최신문법 arrow function destructuring 자바스크립트 화살표함수 구조분해할당 destructuring assignment 스프레드연산자 spread operator 나머지매개변수 rest parameter 템플릿리터럴 template literal 백틱 backtick 기본매개변수 default parameter Symbol Set Map WeakSet WeakMap Iterator Generator'
+                },
+                { 
+                    name: 'Cursor AI', 
+                    url: 'cursor-ai-tutorial.html', 
+                    keywords: 'cursor ai 인공지능 코딩 자동완성 도구 IDE 에디터 editor 개발환경 development copilot 코파일럿 자동코드생성 code generation 리팩토링 refactoring 디버깅 debugging 코드리뷰 code review 생산성 productivity'
+                },
+                { 
+                    name: '배포하기', 
+                    url: 'deployment-tutorial.html', 
+                    keywords: '배포 deployment github pages 웹호스팅 hosting 도메인 domain DNS FTP SFTP 클라우드 cloud AWS Azure GCP Netlify Vercel 정적사이트 static site 동적사이트 dynamic site 서버 server 클라이언트 client CDN SSL HTTPS'
+                }
             ];
             
-            const results = tutorials.filter(tutorial => 
-                tutorial.name.toLowerCase().includes(searchTerm) || 
+            // 정확한 매칭 우선, 부분 매칭 후순위
+            const exactMatches = tutorials.filter(tutorial => 
+                tutorial.name.toLowerCase().includes(searchTerm)
+            );
+            
+            const keywordMatches = tutorials.filter(tutorial => 
+                !tutorial.name.toLowerCase().includes(searchTerm) && 
                 tutorial.keywords.includes(searchTerm)
             );
             
+            const results = [...exactMatches, ...keywordMatches];
+            
             if (results.length > 0) {
-                window.location.href = results[0].url;
+                if (results.length === 1) {
+                    window.location.href = results[0].url;
+                } else {
+                    // 여러 결과가 있을 때 선택지 제공
+                    let message = `검색 결과 ${results.length}개:\n\n`;
+                    results.slice(0, 5).forEach((result, index) => {
+                        message += `${index + 1}. ${result.name}\n`;
+                    });
+                    message += '\n첫 번째 결과로 이동합니다.';
+                    
+                    if (confirm(message)) {
+                        window.location.href = results[0].url;
+                    }
+                }
             } else {
-                alert('검색 결과가 없습니다. 다른 키워드를 시도해보세요.');
+                alert(`"${searchTerm}"에 대한 검색 결과가 없습니다.\n\n추천 검색어:\n• HTML, CSS, JavaScript\n• 초급, 중급, 고급\n• 기초, 함수, 배열, DOM\n• cursor, 배포`);
             }
         }
         
