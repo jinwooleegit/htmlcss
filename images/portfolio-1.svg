@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="800" height="600" fill="url(#bgGradient)" />
+    
+    <!-- UI Elements -->
+    <rect x="100" y="80" width="600" height="60" rx="8" fill="#fff" />
+    <rect x="120" y="100" width="120" height="20" rx="4" fill="#007bff" opacity="0.2" />
+    
+    <rect x="100" y="180" width="280" height="340" rx="8" fill="#fff" />
+    <rect x="420" y="180" width="280" height="340" rx="8" fill="#fff" />
+    
+    <!-- Design Elements -->
+    <circle cx="140" y="240" r="30" fill="#007bff" opacity="0.1" />
+    <rect x="190" y="220" width="160" height="12" rx="2" fill="#212529" opacity="0.8" />
+    <rect x="190" y="244" width="120" height="8" rx="2" fill="#6c757d" opacity="0.5" />
+    
+    <circle cx="460" y="240" r="30" fill="#28a745" opacity="0.1" />
+    <rect x="510" y="220" width="160" height="12" rx="2" fill="#212529" opacity="0.8" />
+    <rect x="510" y="244" width="120" height="8" rx="2" fill="#6c757d" opacity="0.5" />
+</svg> 
