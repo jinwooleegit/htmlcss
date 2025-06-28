@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaScript 초급편 2부 - 변수와 데이터 타입">
-    <title>JavaScript 초급편 2부 | WebLearn</title>
+    <meta name="description" content="JavaScript 초급편 2부 - 웹디자이너를 위한 변수와 데이터 타입 이해">
+    <title>JavaScript 초급편 2부 - 디자이너를 위한 변수와 데이터 | WebLearn</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -64,24 +64,24 @@
         <div class="tutorial-container full-width">
             <!-- 튜토리얼 헤더 -->
             <div class="tutorial-header">
-                <h1>📦 JavaScript 초급편 2부</h1>
-                <p class="subtitle">변수와 데이터 타입을 이해하고 실습해보세요</p>
+                <h1>JavaScript 초급편 2부</h1>
+                <p class="subtitle">디자이너를 위한 변수와 데이터 타입 이해</p>
                 <div class="learning-path">
-                    <span class="path-item">초급편 1부</span>
+                    <span class="path-item">웹디자이너를 위한 JS</span>
                     <span class="path-arrow">→</span>
-                    <span class="path-item active">초급편 2부</span>
+                    <span class="path-item active">디자이너-개발자 소통</span>
                     <span class="path-arrow">→</span>
-                    <span class="path-item">초급편 3부</span>
+                    <span class="path-item">실무 JavaScript 효과</span>
                 </div>
             </div>
 
-            <!-- 1. 변수란 무엇인가? -->
+            <!-- 1. 디자이너가 알아야 할 변수 개념 -->
             <section class="tutorial-section">
-                <h2>변수란 무엇인가요?</h2>
+                <h2>디자이너가 알아야 할 변수 개념</h2>
                 
                 <div class="concept-explanation">
                     <div class="concept-main">
-                        <h3>변수 = 데이터를 저장하는 상자</h3>
+                        <h3>변수 = CSS 변수처럼 값을 저장하는 공간</h3>
                         <div class="concept-breakdown">
                             <div class="concept-part">
                                 <strong>변수 (Variable)</strong>
@@ -108,53 +108,61 @@
                     </div>
                     
                     <div class="real-example">
-                        <h4>실제 예시로 이해하기</h4>
-                        <p><strong>변수를 사용하는 상황</strong></p>
+                        <h4>디자이너 관점에서 이해하기</h4>
+                        <p><strong>CSS 변수 vs JavaScript 변수</strong></p>
                         <div class="comparison-box">
                             <div class="before-html">
-                                <h5>변수 없이 코딩</h5>
+                                <h5>CSS 변수 (이미 알고 있는 것)</h5>
                                 <div class="plain-text">
-                                    <pre><code>alert("안녕하세요, 김철수님!");
-console.log("김철수님의 점수: 85점");
-alert("김철수님, 환영합니다!");</code></pre>
-                                    <p class="problem">❌ 이름을 바꾸려면 모든 곳을 수정해야 함</p>
+                                    <pre><code>:root {
+  --main-color: #007bff;
+  --font-size: 16px;
+}
+
+.button {
+  background: var(--main-color);
+  font-size: var(--font-size);
+}</code></pre>
+                                    <p class="success">✅ 한 번 정의하면 여러 곳에서 재사용</p>
                                 </div>
                             </div>
                             <div class="after-html">
-                                <h5>변수 사용</h5>
+                                <h5>JavaScript 변수 (새로 배우는 것)</h5>
                                 <div class="structured-text">
-                                    <pre><code>let userName = "김철수";
-let score = 85;
+                                    <pre><code>let mainColor = "#007bff";
+let fontSize = "16px";
 
-alert("안녕하세요, " + userName + "님!");
-console.log(userName + "님의 점수: " + score + "점");
-alert(userName + "님, 환영합니다!");</code></pre>
-                                    <p class="success">변수만 바꾸면 모든 곳이 자동으로 변경됨</p>
+// 요소 스타일 변경
+element.style.backgroundColor = mainColor;
+element.style.fontSize = fontSize;</code></pre>
+                                    <p class="success">✅ CSS처럼 값을 저장하고 재사용 가능</p>
                                 </div>
                             </div>
                         </div>
-                        <p class="insight"><strong>인사이트:</strong> 변수를 사용하면 코드를 효율적으로 관리하고 재사용할 수 있습니다!</p>
+                        <p class="insight"><strong>디자이너 인사이트:</strong> JavaScript 변수는 CSS 변수와 비슷하지만 더 동적으로 값을 바꿀 수 있어요!</p>
                     </div>
                     
                     <div class="analogy-box">
-                        <h4>쉬운 비유로 이해하기</h4>
-                        <p><strong>변수 = 사물함</strong></p>
+                        <h4>디자이너를 위한 쉬운 비유</h4>
+                        <p><strong>변수 = 포토샵 레이어</strong></p>
                         <ul>
-                            <li><strong>사물함 번호</strong> = 변수명 (예: locker1, myBox)</li>
-                            <li><strong>사물함 안의 물건</strong> = 값 (예: 책, 운동화, 도시락)</li>
-                            <li><strong>물건 바꾸기</strong> = 값 변경 (새로운 물건으로 교체)</li>
+                            <li><strong>레이어 이름</strong> = 변수명 (예: background, logo, button)</li>
+                            <li><strong>레이어 내용</strong> = 값 (예: 이미지, 텍스트, 색상)</li>
+                            <li><strong>레이어 수정</strong> = 값 변경 (내용을 바꾸면 전체 디자인 변경)</li>
                         </ul>
-                        <p class="highlight">사물함 번호를 알면 언제든지 물건을 넣고 빼고 바꿀 수 있어요!</p>
+                        <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #007bff;">
+                            <strong>💡 디자이너 팁:</strong> 레이어 이름을 의미있게 지으면 나중에 찾기 쉽듯이, 변수명도 의미있게 지어야 해요!
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 2. 변수 선언 방법 -->
+            <!-- 2. 디자이너가 알아야 할 변수 선언 방법 -->
             <section class="tutorial-section">
-                <h2>변수 선언 방법</h2>
+                <h2>디자이너가 알아야 할 변수 선언 방법</h2>
                 
                 <div class="variable-declaration">
-                    <h3>JavaScript에서 변수를 만드는 3가지 방법</h3>
+                    <h3>CSS 변수처럼 JavaScript도 3가지 방법으로 변수를 만들 수 있습니다</h3>
                     
                     <div class="method-item">
                         <div class="method-header">
