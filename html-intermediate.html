@@ -6,6 +6,7 @@
     <meta name="description" content="HTML 중급편 - 실제 태그 활용법부터 폼, 테이블, 멀티미디어까지">
     <title>HTML 중급편 - WebLearn</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tutorial.css">
 </head>
 <body>
     <!-- 헤더 및 네비게이션 -->
@@ -36,17 +37,9 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="js-beginner-1.html" class="nav-link dropdown-toggle">JavaScript</a>
+                        <a href="js-for-designers.html" class="nav-link dropdown-toggle">JavaScript</a>
                         <div class="dropdown-menu">
-                            <a href="js-beginner-1.html" class="dropdown-item">초급편 1부</a>
-                            <a href="js-beginner-2.html" class="dropdown-item">초급편 2부</a>
-                            <a href="js-beginner-3.html" class="dropdown-item">초급편 3부</a>
-                            <a href="js-intermediate-1.html" class="dropdown-item">중급편 1부</a>
-                            <a href="js-intermediate-2.html" class="dropdown-item">중급편 2부</a>
-                            <a href="js-intermediate-3.html" class="dropdown-item">중급편 3부</a>
-                            <a href="js-advanced-1.html" class="dropdown-item">고급편 1부</a>
-                            <a href="js-advanced-2.html" class="dropdown-item">고급편 2부</a>
-                            <a href="js-advanced-3.html" class="dropdown-item">고급편 3부</a>
+                            <a href="js-for-designers.html" class="dropdown-item">웹디자이너를 위한 JS</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -68,32 +61,6 @@
     <!-- 메인 콘텐츠 -->
     <main class="main">
         <div class="tutorial-container-full">
-            <!-- 레벨 선택 섹션 -->
-            <div class="level-selector">
-                <div class="level-navigation">
-                    <h2>HTML 학습 단계</h2>
-                    <div class="level-cards">
-                        <div class="level-card">
-                            <span class="level-badge">초급편</span>
-                            <h3>HTML 기초</h3>
-                            <p>HTML의 기본 개념부터 핵심 태그까지</p>
-                            <a href="html-tutorial.html" class="level-link">학습하기 →</a>
-                        </div>
-                        <div class="level-card active">
-                            <span class="level-badge current">중급편</span>
-                            <h3>HTML 심화</h3>
-                            <p>실제 태그 활용법부터 폼, 테이블, 멀티미디어까지</p>
-                        </div>
-                        <div class="level-card">
-                            <span class="level-badge">고급편</span>
-                            <h3>HTML 마스터</h3>
-                            <p>시맨틱 HTML, SEO 최적화, 웹 접근성까지</p>
-                            <a href="html-advanced.html" class="level-link">학습하기 →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <!-- 메인 콘텐츠 -->
             <div class="tutorial-content">
                 <!-- 튜토리얼 헤더 -->
@@ -288,10 +255,10 @@
                         </ul>
                         
                         <div class="real-world-examples">
-                                                         <h5>실무에서 자주 사용하는 이미지 패턴:</h5>
+                                                         <h5 style="font-size: 1.3rem; margin: 25px 0 15px 0;">실무에서 자주 사용하는 이미지 패턴:</h5>
                             
                             <div class="pattern-example">
-                                <h6>1. 프로필 이미지 (SNS, 쇼핑몰)</h6>
+                                <h6 style="font-size: 1.2rem; margin-bottom: 10px;">1. 프로필 이미지 (SNS, 쇼핑몰)</h6>
                                 <pre><code>&lt;div class="profile-section"&gt;
     &lt;img src="profile.jpg" 
          alt="김철수 프로필 사진" 
@@ -306,7 +273,7 @@
                             </div>
                             
                             <div class="pattern-example">
-                                <h6>2. 상품 갤러리 (이커머스)</h6>
+                                <h6 style="font-size: 1.2rem; margin-bottom: 10px;">2. 상품 갤러리 (이커머스)</h6>
                                 <pre><code>&lt;div class="product-gallery"&gt;
     &lt;figure&gt;
         &lt;img src="product-main.jpg" 
@@ -324,7 +291,7 @@
                             </div>
                             
                             <div class="pattern-example">
-                                <h6>3. 배너/히어로 이미지 (랜딩 페이지)</h6>
+                                <h6 style="font-size: 1.2rem; margin-bottom: 10px;">3. 배너/히어로 이미지 (랜딩 페이지)</h6>
                                 <pre><code>&lt;header class="hero-section"&gt;
     &lt;picture&gt;
         &lt;source media="(max-width: 768px)" srcset="hero-mobile.webp"&gt;
@@ -347,14 +314,14 @@
                                                          <h5>접근성 고려사항:</h5>
                              <div class="accessibility-examples">
                                  <div class="good-practice">
-                                     <h6>좋은 예시:</h6>
+                                     <h6 style="font-size: 1.15rem; margin-bottom: 10px;">좋은 예시:</h6>
                                      <code>&lt;img src="chart.png" alt="2024년 매출 증가율 - 1분기 15%, 2분기 23%, 3분기 18% 상승"&gt;</code>
-                                     <p><small>시각장애인도 차트의 핵심 정보를 이해할 수 있습니다.</small></p>
+                                     <p><small style="font-size: 1rem;">시각장애인도 차트의 핵심 정보를 이해할 수 있습니다.</small></p>
                                  </div>
                                  <div class="bad-practice">
-                                     <h6>나쁜 예시:</h6>
+                                     <h6 style="font-size: 1.15rem; margin-bottom: 10px;">나쁜 예시:</h6>
                                     <code>&lt;img src="chart.png" alt="차트"&gt;</code>
-                                    <p><small>너무 간단해서 실제 정보를 전달하지 못합니다.</small></p>
+                                    <p><small style="font-size: 1rem;">너무 간단해서 실제 정보를 전달하지 못합니다.</small></p>
                                 </div>
                             </div>
                         </div>
@@ -788,28 +755,8 @@
 
     <!-- 푸터 -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>WebLearn</h3>
-                <p>HTML, CSS, JavaScript를 쉽게 배우는 온라인 튜토리얼</p>
-            </div>
-            <div class="footer-section">
-                <h4>학습 과정</h4>
-                <ul>
-                    <li><a href="html-beginner.html">HTML 초급편</a></li>
-                    <li><a href="html-intermediate.html">HTML 중급편</a></li>
-                    <li><a href="html-advanced.html">HTML 고급편</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>실습</h4>
-                <ul>
-                    
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 WebLearn. 모든 권리 보유.</p>
+        <div class="footer-container">
+            <p class="copyright">&copy; 2024 WebLearn. 모든 권리 보유.</p>
         </div>
     </footer>
 

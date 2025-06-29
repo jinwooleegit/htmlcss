@@ -6,7 +6,7 @@
     <meta name="description" content="Cursor AI로 웹사이트 만들기 - AI와 함께하는 효율적인 웹 개발">
     <title>Cursor AI로 웹사이트 만들기 - WebLearn</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/tips-section.css">
+    <link rel="stylesheet" href="css/tutorial.css">
 </head>
 <body>
     <!-- 헤더 및 네비게이션 -->
@@ -36,25 +36,11 @@
                             <a href="css-advanced.html" class="dropdown-item">고급편</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="js-beginner-1.html" class="nav-link dropdown-toggle">JavaScript</a>
-                        <div class="dropdown-menu">
-                            <a href="js-beginner-1.html" class="dropdown-item">초급편 1부</a>
-                            <a href="js-beginner-2.html" class="dropdown-item">초급편 2부</a>
-                            <a href="js-beginner-3.html" class="dropdown-item">초급편 3부</a>
-                            <a href="js-intermediate-1.html" class="dropdown-item">중급편 1부</a>
-                            <a href="js-intermediate-2.html" class="dropdown-item">중급편 2부</a>
-                            <a href="js-intermediate-3.html" class="dropdown-item">중급편 3부</a>
-                            <a href="js-advanced-1.html" class="dropdown-item">고급편 1부</a>
-                            <a href="js-advanced-2.html" class="dropdown-item">고급편 2부</a>
-                            <a href="js-advanced-3.html" class="dropdown-item">고급편 3부</a>
-                        </div>
+                    <li class="nav-item">
+                        <a href="js-for-designers.html" class="nav-link">웹 디자이너 JavaScript</a>
                     </li>
                     <li class="nav-item">
-                        <a href="cursor-ai-tutorial.html" class="nav-link active">Cursor AI</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="deployment-tutorial.html" class="nav-link">배포하기</a>
+                        <a href="cursor-ai-tutorial.html" class="nav-link">Cursor AI</a>
                     </li>
                 </ul>
                 <div class="hamburger">
@@ -189,18 +175,73 @@
                     <div class="video-tutorials">
                         <h3>Cursor AI 한국어 동영상 가이드</h3>
                         
+                        <style>
+                            .video-tutorials {
+                                margin: 2rem 0;
+                            }
+                            .video-grid {
+                                display: grid;
+                                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                                gap: 2rem;
+                                margin: 1.5rem 0;
+                            }
+                            .video-item {
+                                background: #fff;
+                                border-radius: 12px;
+                                overflow: hidden;
+                                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                            }
+                            .video-wrapper {
+                                position: relative;
+                                padding-bottom: 56.25%; /* 16:9 비율 */
+                                height: 0;
+                                overflow: hidden;
+                            }
+                            .video-wrapper iframe {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                border: none;
+                            }
+                            .video-item h4 {
+                                padding: 1rem;
+                                margin: 0;
+                                font-size: 1.1rem;
+                                color: #333;
+                            }
+                            .video-item p {
+                                padding: 0 1rem 1rem;
+                                margin: 0;
+                                color: #666;
+                                font-size: 0.9rem;
+                            }
+                            .section-title {
+                                margin: 2rem 0 1rem;
+                                padding-bottom: 0.5rem;
+                                border-bottom: 2px solid #e0e0e0;
+                                color: #333;
+                                font-size: 1.5rem;
+                            }
+                        </style>
+                        
                         <!-- 개발자를 위한 섹션 -->
                         <h4 class="section-title">💻 개발자를 위한 가이드</h4>
                         <div class="video-grid">
                             <!-- 1. 설치 및 기본 -->
                             <div class="video-item">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/vOn9S4zh1Qs" title="커서AI 설치부터 기본사용법까지" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="video-wrapper">
+                                    <iframe src="https://www.youtube.com/embed/vOn9S4zh1Qs" title="커서AI 설치부터 기본사용법까지" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
                                 <h4>1️⃣ 커서AI 설치부터 기본사용법까지</h4>
                                 <p>처음 시작하는 분들을 위한 기초 설치 가이드</p>
                             </div>
                             <!-- 2. 핵심 기능 이해 -->
                             <div class="video-item">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/XOgGLvI05i4" title="이것만알아도 커서의 80%는 이해합니다" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="video-wrapper">
+                                    <iframe src="https://www.youtube.com/embed/XOgGLvI05i4" title="이것만알아도 커서의 80%는 이해합니다" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
                                 <h4>2️⃣ 이것만알아도 커서의 80%는 이해합니다</h4>
                                 <p>필수 기능 빠른 이해하기</p>
                             </div>
@@ -211,13 +252,17 @@
                         <div class="video-grid">
                             <!-- 1. UI/UX 디자이너를 위한 기초 -->
                             <div class="video-item">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/_oEhh8666pA" title="UI/UX 디자이너를 위한 Cursor AI 완벽 가이드" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="video-wrapper">
+                                    <iframe src="https://www.youtube.com/embed/_oEhh8666pA" title="UI/UX 디자이너를 위한 Cursor AI 완벽 가이드" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
                                 <h4>1️⃣ UI/UX 디자이너를 위한 Cursor AI 완벽 가이드</h4>
                                 <p>디자이너 관점에서 배우는 Cursor AI 활용법</p>
                             </div>
                             <!-- 2. Figma 연동 및 프로토타이핑 -->
                             <div class="video-item">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/vOn9S4zh1Qs" title="Figma 디자인을 코드로 변환하기" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="video-wrapper">
+                                    <iframe src="https://www.youtube.com/embed/vOn9S4zh1Qs" title="Figma 디자인을 코드로 변환하기" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
                                 <h4>2️⃣ Figma 디자인을 코드로 변환하기</h4>
                                 <p>디자인 시안을 실제 웹사이트로 구현하는 방법</p>
                             </div>
@@ -335,13 +380,17 @@
                                             </section>
                                             <section class="work-grid">
                                                 <div class="work-item">
-                                                    <img src="images/portfolio-1.svg" alt="Project 1">
+                                                    <div class="example-design" style="background: linear-gradient(45deg, #6366f1, #8b5cf6); height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                                                        UI/UX Design
+                                                    </div>
                                                     <div class="work-overlay">
                                                         <span>UI/UX Design</span>
                                                     </div>
                                                 </div>
                                                 <div class="work-item">
-                                                    <img src="images/portfolio-2.svg" alt="Project 2">
+                                                    <div class="example-design" style="background: linear-gradient(45deg, #ec4899, #f43f5e); height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                                                        Brand Identity
+                                                    </div>
                                                     <div class="work-overlay">
                                                         <span>Brand Identity</span>
                                                     </div>
@@ -367,7 +416,7 @@
                     <div class="method-item">
                         <div class="method-header">
                             <div class="method-number">2</div>
-                            <h4>Quick Edit (Ctrl+K)</h4>
+                            <h4>Quick Edit 기능 (Ctrl+K)</h4>
                             <span class="method-tag">즉시 수정</span>
                         </div>
                         <div class="method-content">
@@ -472,21 +521,27 @@
                                             </div>
                                             <div class="preview-grid">
                                                 <div class="grid-item">
-                                                    <img src="images/portfolio-1.svg" alt="Brand Identity Project">
+                                                    <div class="example-design" style="background: linear-gradient(45deg, #6366f1, #8b5cf6); height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                                                        Eco Brand Identity
+                                                    </div>
                                                     <div class="item-overlay">
                                                         <h3>Eco Brand Identity</h3>
                                                         <p>Sustainable Fashion Brand</p>
                                                     </div>
                                                 </div>
                                                 <div class="grid-item">
-                                                    <img src="images/portfolio-2.svg" alt="UI/UX Design Project">
+                                                    <div class="example-design" style="background: linear-gradient(45deg, #ec4899, #f43f5e); height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                                                        Mobile App Design
+                                                    </div>
                                                     <div class="item-overlay">
                                                         <h3>Mobile App Design</h3>
                                                         <p>Health & Wellness Platform</p>
                                                     </div>
                                                 </div>
                                                 <div class="grid-item">
-                                                    <img src="images/portfolio-2.svg" alt="Web Design Project">
+                                                    <div class="example-design" style="background: linear-gradient(45deg, #14b8a6, #0d9488); height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                                                        E-commerce Website
+                                                    </div>
                                                     <div class="item-overlay">
                                                         <h3>E-commerce Website</h3>
                                                         <p>Modern Shopping Experience</p>
@@ -916,7 +971,7 @@
                             <div class="step-icon">2</div>
                             <h4>고급 기능 활용</h4>
                             <p>JavaScript와 함께 더 복잡한 인터랙션 구현하기</p>
-                            <a href="js-beginner-1.html" class="step-link">JavaScript 학습하기</a>
+                            <a href="js-for-designers.html" class="step-link">JavaScript 학습하기</a>
                         </div>
                         <div class="next-step-item">
                             <div class="step-icon">3</div>
@@ -932,9 +987,9 @@
             <div class="practice-container">
                 <div class="tutorial-navigation">
                     <div class="nav-item prev">
-                        <a href="js-advanced-3.html">
+                        <a href="js-for-designers.html">
                             <span>이전 단계</span>
-                            <strong>JavaScript 고급편</strong>
+                            <strong>웹 디자이너 JavaScript</strong>
                         </a>
                     </div>
                     <div class="nav-item next">
@@ -945,62 +1000,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Cursor 튜토리얼 섹션 시작 -->
-            <div class="tutorial-section">
-                <h3 class="section-title">Cursor Official Documentation</h3>
-                
-                <div class="tutorial-grid">
-                    <!-- 기초 학습 -->
-                    <div class="tutorial-category">
-                        <h4>Getting Started</h4>
-                        <ul>
-                            <li><a href="https://docs.cursor.com/installation">Installing Cursor</a></li>
-                            <li><a href="https://docs.cursor.com/settings">Basic Configuration</a></li>
-                            <li><a href="https://docs.cursor.com/project-setup">Project Setup</a></li>
-                            <li><a href="https://docs.cursor.com/faq">Frequently Asked Questions</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- 핵심 기능 -->
-                    <div class="tutorial-category">
-                        <h4>Core Features</h4>
-                        <ul>
-                            <li><a href="https://docs.cursor.com/tab">Tab Autocompletion</a></li>
-                            <li><a href="https://docs.cursor.com/agent">Using Agent Mode</a></li>
-                            <li><a href="https://docs.cursor.com/chat">Chat Features</a></li>
-                            <li><a href="https://docs.cursor.com/cmd-k">Quick Edit (⌘K)</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- 웹디자이너를 위한 기능 -->
-                    <div class="tutorial-category">
-                        <h4>Designer Tools</h4>
-                        <ul>
-                            <li><a href="https://docs.cursor.com/figma">Figma to Code Conversion</a></li>
-                            <li><a href="https://docs.cursor.com/ui-components">UI Component Generation</a></li>
-                            <li><a href="https://docs.cursor.com/responsive">Responsive Design Implementation</a></li>
-                            <li><a href="https://docs.cursor.com/css-optimization">CSS Style Optimization</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- 고급 기능 -->
-                    <div class="tutorial-category">
-                        <h4>Advanced Features</h4>
-                        <ul>
-                            <li><a href="https://docs.cursor.com/rules">Rules Configuration</a></li>
-                            <li><a href="https://docs.cursor.com/docs-reference">Documentation Reference</a></li>
-                            <li><a href="https://docs.cursor.com/web-search">Web Search Integration</a></li>
-                            <li><a href="https://docs.cursor.com/images">Working with Images</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="tutorial-footer">
-                    <p>For more detailed information, visit <a href="https://docs.cursor.com" target="_blank">Cursor Official Documentation</a> (English)</p>
-                </div>
-            </div>
-            <!-- Cursor 튜토리얼 섹션 끝 -->
         </div>
     </main>
 

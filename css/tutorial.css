@@ -1,0 +1,1340 @@
+/* 색상 변수 정의 */
+:root {
+    /* Light Mode Colors */
+    --primary-color: #2563eb;
+    --primary-light: #60a5fa;
+    --primary-dark: #1e40af;
+    --accent-color: #f59e0b;
+    
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #f1f5f9;
+    --bg-code: #1e293b;
+    
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-code: #e2e8f0;
+    
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+/* 기본 스타일 */
+.tutorial-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.tutorial-container.full-width {
+    max-width: none;
+    width: 100%;
+}
+
+.tutorial-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.tutorial-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.tutorial-header .subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 학습 경로 */
+.learning-path {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.path-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    min-width: 140px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.path-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.path-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    line-height: 1;
+}
+
+.path-text {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    text-align: center;
+    font-weight: 500;
+}
+
+.path-arrow {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    transform: translateY(-5px);
+}
+
+/* 섹션 스타일 */
+.tutorial-section {
+    margin-bottom: 5rem;
+    padding: 2.5rem;
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.3s ease;
+}
+
+.tutorial-section:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.section-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* 컨셉 박스 */
+.concept-box {
+    background: var(--bg-tertiary);
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin-bottom: 2.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.concept-box h3 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.role-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.role-item {
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.role-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.role-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--primary-light);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.role-item h4 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.role-item p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* 코드 예제 */
+.code-example {
+    background: var(--bg-code);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    overflow: hidden;
+}
+
+.code-example pre {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.code-example code {
+    color: var(--text-code);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* 핵심 포인트 */
+.key-point {
+    background: linear-gradient(to right, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.key-point::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+}
+
+.key-point p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .tutorial-container {
+        padding: 1rem;
+    }
+
+    .tutorial-header h1 {
+        font-size: 2rem;
+    }
+
+    .tutorial-header .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .learning-path {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .path-item {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .path-arrow {
+        transform: rotate(90deg);
+    }
+
+    .section-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .section-number {
+        font-size: 2rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .tutorial-section {
+        padding: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .concept-box {
+        padding: 1.5rem;
+    }
+
+    .role-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* 다크 모드 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #60a5fa;
+        --primary-light: #93c5fd;
+        --primary-dark: #2563eb;
+        --accent-color: #fbbf24;
+        
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --bg-tertiary: #334155;
+        --bg-code: #0f172a;
+        
+        --text-primary: #f8fafc;
+        --text-secondary: #cbd5e1;
+        --text-code: #e2e8f0;
+        
+        --border-color: #334155;
+    }
+
+    .tutorial-header h1 {
+        background: linear-gradient(to right, var(--primary-light), var(--accent-color));
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    .role-icon {
+        background: var(--primary-dark);
+    }
+
+    .key-point {
+        background: linear-gradient(to right, var(--primary-dark), var(--primary-color));
+    }
+}
+
+.tutorial-section {
+    margin-bottom: 3rem;
+}
+
+.section-content {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.method-header {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.method-number {
+    width: 2rem;
+    height: 2rem;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.method-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #212529;
+}
+
+.method-tag {
+    margin-left: auto;
+    padding: 0.25rem 0.75rem;
+    background-color: #e9ecef;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    color: #495057;
+}
+
+.feature-content {
+    padding: 1.5rem;
+}
+
+.tips-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.step-by-step {
+    width: 100%;
+}
+
+.step-by-step .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.step-by-step .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.step-by-step .step-title {
+    flex: 0 0 200px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.step-by-step .step-number {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.step-by-step .step-description {
+    flex: 1;
+    color: #666;
+    line-height: 1.6;
+}
+
+.step-by-step h5 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.step-by-step .step-content {
+    padding-left: 0.5rem;
+}
+
+.step-by-step .step-content p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+.step-by-step ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+    color: #495057;
+}
+
+.step-by-step li {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+/* Remove top border from method header in step-by-step section */
+.step-by-step .method-header {
+    border-bottom: none;
+    background-color: #f8f9fa;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tips-grid {
+        /* grid-template-columns: 1fr; - Remove this line as it's no longer needed */
+    }
+    
+    .section-content {
+        padding: 1rem;
+    }
+
+    .step-by-step {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .step-by-step .step {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .step-by-step .step-title {
+        flex: none;
+    }
+}
+
+/* Add specific styling for the tips feature boxes */
+.tips-grid .feature-box {
+    max-width: 100%;  /* Ensure full width */
+    margin-bottom: 2rem;
+}
+
+.tips-grid .feature-content {
+    padding: 1.5rem;
+}
+
+/* Enhance the comparison boxes within tips */
+.tips-grid .comparison-box {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+.comparison-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.bad-example, .good-example {
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.bad-example {
+    background-color: #fef1f1;
+    border: 1px solid #ffc9c9;
+    border-left: 4px solid #ff8787;
+}
+
+.good-example {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-left: 4px solid #51cf66;
+}
+
+.bad-example h5, .good-example h5 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #495057;
+}
+
+.bad-example p, .good-example p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+.tutorial-section .section-content {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Installation section specific styles */
+.tutorial-section:has(> h2:contains("Cursor AI 설치하기")) .method-header {
+    border-bottom: none;
+    background-color: #f8f9fa;
+    border-radius: 8px 8px 0 0;
+}
+
+.tutorial-section:has(> h2:contains("Cursor AI 설치하기")) .feature-box {
+    margin-bottom: 2rem;
+}
+
+.tutorial-section:has(> h2:contains("Cursor AI 설치하기")) .feature-box:last-child {
+    margin-bottom: 0;
+}
+
+.tutorial-section:has(> h2:contains("Cursor AI 설치하기")) .feature-content {
+    padding: 1.5rem;
+    background-color: #ffffff;
+}
+
+.step-by-step .feature-content {
+    padding: 1.5rem;
+    background-color: #ffffff;
+}
+
+/* JavaScript 튜토리얼 페이지 스타일 */
+.learning-path {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.learning-path .path-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.learning-path .path-number {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.learning-path .path-arrow {
+    color: #adb5bd;
+    font-weight: 300;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-number {
+    font-size: 2rem;
+    color: #007bff;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.role-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.role-item {
+    padding: 1.5rem;
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.role-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.role-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #e7f5ff;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.role-icon::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #339af0;
+    border-radius: 4px;
+}
+
+.role-item h4 {
+    margin: 0 0 0.8rem 0;
+    color: #333;
+}
+
+.role-item p {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+.code-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.code-example {
+    background: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.example-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: #e9ecef;
+}
+
+.example-header h4 {
+    margin: 0;
+    color: #333;
+}
+
+.tag {
+    padding: 0.3rem 0.8rem;
+    background: #007bff;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.code-block {
+    padding: 1rem;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    color: #495057;
+}
+
+.code-block pre {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.example-description {
+    padding: 1rem;
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.pattern-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.pattern-item {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.pattern-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.pattern-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background-color: #e7f5ff;
+    position: relative;
+}
+
+.pattern-icon::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #339af0;
+    border-radius: 3px;
+}
+
+.pattern-content {
+    padding: 1rem;
+}
+
+.pattern-features {
+    margin: 1rem 0 0 0;
+    padding-left: 1.5rem;
+    color: #495057;
+    list-style-type: none;
+}
+
+.pattern-features li {
+    margin: 0.5rem 0;
+    position: relative;
+}
+
+.pattern-features li::before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 0.5rem;
+    width: 6px;
+    height: 6px;
+    background-color: #339af0;
+    border-radius: 3px;
+}
+
+/* 협업 섹션 스타일 */
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.process-step {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.process-step .step-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.process-step .step-content {
+    padding-left: 2.5rem;
+}
+
+.step-description {
+    color: #666;
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.tools-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tools-section .tool-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.2rem;
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.2s;
+}
+
+.tools-section .tool-item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.tools-section .tool-icon {
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.tools-section .tool-content {
+    flex: 1;
+}
+
+.tools-section h4 {
+    margin: 0 0 0.3rem 0;
+    color: #333;
+}
+
+.tools-section p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .learning-path {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .learning-path .path-arrow {
+        transform: rotate(90deg);
+    }
+
+    .role-grid,
+    .code-examples,
+    .pattern-grid,
+    .process-steps,
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-step .step-content {
+        padding-left: 0;
+    }
+
+    .tools-section .tool-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .tools-section .tool-icon {
+        margin: 0 auto;
+    }
+}
+
+/* 실전 프로젝트 섹션 스타일 */
+.project-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.project-step {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.project-step .step-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.project-step .step-number {
+    width: 28px;
+    height: 28px;
+    background-color: #e7f5ff;
+    color: #339af0;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.project-step .step-content {
+    padding-left: 2.5rem;
+}
+
+.project-step h4 {
+    margin: 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.project-step .step-description {
+    color: #666;
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.project-step .step-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    list-style-type: none;
+}
+
+.project-step .step-list li {
+    position: relative;
+    margin: 0.4rem 0;
+    color: #495057;
+}
+
+.project-step .step-list li::before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 0.5rem;
+    width: 6px;
+    height: 6px;
+    background-color: #339af0;
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .project-step .step-content {
+        padding-left: 0;
+    }
+}
+
+/* 위로 가기 버튼 */
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.scroll-to-top.show {
+    display: flex;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* 푸터 스타일 */
+.footer {
+    background-color: #f8f9fa;
+    padding: 4rem 0 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    color: #339af0;
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+}
+
+.footer-section h4 {
+    color: #495057;
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+}
+
+.footer-section p {
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #495057;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-section ul li a:hover {
+    color: #339af0;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding: 2rem 2rem 0;
+    border-top: 1px solid #e9ecef;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #868e96;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 3rem 0 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 설치 가이드 */
+.installation-guide {
+    margin-bottom: 2rem;
+}
+
+.install-steps {
+    list-style: none;
+    padding: 0;
+}
+
+.install-steps li {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: var(--bg-tertiary);
+    border-radius: 8px;
+}
+
+.install-steps h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* 시스템 요구사항 */
+.system-requirements {
+    background: var(--bg-tertiary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.requirements-list {
+    list-style: none;
+    padding: 0;
+}
+
+.requirements-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.requirements-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* 핵심 기능 */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.feature-item {
+    background: var(--bg-tertiary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-details {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.feature-details li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.feature-details li::before {
+    content: "→";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* 작업 순서 */
+.workflow-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.workflow-step {
+    background: var(--bg-tertiary);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.workflow-step h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.code-example {
+    background: var(--bg-code);
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+
+.code-example pre {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.code-example code {
+    color: var(--text-code);
+    font-family: 'Fira Code', monospace;
+}
+
+/* 실전 팁 */
+.tips-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tips-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.tips-list li::before {
+    content: "✓";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* 핵심 포인트 */
+.key-point {
+    background: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.key-point p {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .tutorial-header h1 {
+        font-size: 2rem;
+    }
+
+    .learning-path {
+        flex-direction: column;
+    }
+
+    .path-item {
+        width: 100%;
+    }
+
+    .section-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section-number {
+        font-size: 1.5rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .workflow-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 다크 모드 지원 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #1a1a1a;
+        --bg-secondary: #2d2d2d;
+        --bg-tertiary: #333333;
+        --bg-code: #2b2b2b;
+        --text-primary: #ffffff;
+        --text-secondary: #b3b3b3;
+        --text-code: #e6e6e6;
+    }
+} 

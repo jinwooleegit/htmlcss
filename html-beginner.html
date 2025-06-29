@@ -6,6 +6,7 @@
     <meta name="description" content="HTML 초급편 - HTML이 무엇인지부터 기본 문법까지 체계적으로 배우는 튜토리얼">
     <title>HTML 초급편 - WebLearn</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tutorial.css">
 </head>
 <body>
     <!-- 헤더 및 네비게이션 -->
@@ -36,24 +37,13 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="js-beginner-1.html" class="nav-link dropdown-toggle">JavaScript</a>
+                        <a href="js-for-designers.html" class="nav-link dropdown-toggle">JavaScript</a>
                         <div class="dropdown-menu">
-                            <a href="js-beginner-1.html" class="dropdown-item">초급편 1부</a>
-                            <a href="js-beginner-2.html" class="dropdown-item">초급편 2부</a>
-                            <a href="js-beginner-3.html" class="dropdown-item">초급편 3부</a>
-                            <a href="js-intermediate-1.html" class="dropdown-item">중급편 1부</a>
-                            <a href="js-intermediate-2.html" class="dropdown-item">중급편 2부</a>
-                            <a href="js-intermediate-3.html" class="dropdown-item">중급편 3부</a>
-                            <a href="js-advanced-1.html" class="dropdown-item">고급편 1부</a>
-                            <a href="js-advanced-2.html" class="dropdown-item">고급편 2부</a>
-                            <a href="js-advanced-3.html" class="dropdown-item">고급편 3부</a>
+                            <a href="js-for-designers.html" class="dropdown-item">웹디자이너를 위한 JS</a>
                         </div>
                     </li>
                     <li class="nav-item">
                         <a href="cursor-ai-tutorial.html" class="nav-link">Cursor AI</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="deployment-tutorial.html" class="nav-link">배포하기</a>
                     </li>
                 </ul>
                 <div class="hamburger">
@@ -72,13 +62,7 @@
             <div class="tutorial-header">
                 <h1>HTML 초급편</h1>
                 <p class="subtitle">HTML이 무엇인지부터 기본 문법까지 차근차근 배워보세요</p>
-                <div class="learning-path">
-                    <span class="path-item active">초급편</span>
-                    <span class="path-arrow">→</span>
-                    <span class="path-item">중급편</span>
-                    <span class="path-arrow">→</span>
-                    <span class="path-item">고급편</span>
-                </div>
+
             </div>
 
             <!-- 1. HTML이란 무엇인가? -->
@@ -274,20 +258,16 @@
                     </div>
                 </div>
 
-                <div class="practice-box">
+                <div class="practice-box" style="background: none;">
                     <h4>첫 번째 실습</h4>
                     <p>아래 코드를 따라 써보세요:</p>
                     <pre><code>&lt;h1&gt;안녕하세요!&lt;/h1&gt;
 &lt;p&gt;이것은 내 첫 번째 HTML 태그입니다.&lt;/p&gt;</code></pre>
-                    <div class="result-preview">
-                        <strong>결과:</strong>
-                        <div class="preview-content">
-                            <h1 style="font-size: 1.5em; margin: 10px 0;">안녕하세요!</h1>
-                            <p style="margin: 10px 0;">이것은 내 첫 번째 HTML 태그입니다.</p>
-                        </div>
-                    </div>
+                    <pre style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; font-family: var(--main-font);">
+<h1 style="font-size: 1.5em; margin: 10px 0; text-align: left; color: #000;">안녕하세요!</h1>
+<p style="margin: 10px 0; text-align: left; color: #000;">이것은 내 첫 번째 HTML 태그입니다.</p></pre>
                     
-                    <div class="practice-tips">
+                    <div class="practice-tips" style="background: none;">
                         <h5>실습 팁:</h5>
                         <ul>
                             <li><strong>메모장</strong>이나 <strong>텍스트 에디터</strong>에 위 코드를 입력하세요</li>
@@ -302,31 +282,39 @@
                     <h4>단계별 따라하기</h4>
                     <div class="steps">
                         <div class="step">
-                            <div class="step-number">1</div>
-                            <div class="step-content">
-                                <h5>메모장 열기</h5>
-                                <p>윈도우: 시작 → 메모장 검색<br>맥: 응용프로그램 → 텍스트편집기</p>
+                            <div class="step-title">
+                                <span class="step-number">1.</span>
+                                메모장 열기
+                            </div>
+                            <div class="step-description">
+                                윈도우: 시작 → 메모장 검색<br>맥: 응용프로그램 → 텍스트편집기
                             </div>
                         </div>
                         <div class="step">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <h5>코드 입력</h5>
-                                <p>위의 HTML 코드를 정확히 입력하세요. 대소문자와 괄호를 정확히!</p>
+                            <div class="step-title">
+                                <span class="step-number">2.</span>
+                                코드 입력
+                            </div>
+                            <div class="step-description">
+                                위의 HTML 코드를 정확히 입력하세요. 대소문자와 괄호를 정확히!
                             </div>
                         </div>
                         <div class="step">
-                            <div class="step-number">3</div>
-                            <div class="step-content">
-                                <h5>파일 저장</h5>
-                                <p>Ctrl+S (윈도우) 또는 Cmd+S (맥)를 누르고 'my-first-page.html'로 저장</p>
+                            <div class="step-title">
+                                <span class="step-number">3.</span>
+                                파일 저장
+                            </div>
+                            <div class="step-description">
+                                Ctrl+S (윈도우) 또는 Cmd+S (맥)를 누르고 'my-first-page.html'로 저장
                             </div>
                         </div>
                         <div class="step">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <h5>브라우저에서 열기</h5>
-                                <p>저장한 파일을 더블클릭하거나 브라우저로 드래그해서 결과 확인!</p>
+                            <div class="step-title">
+                                <span class="step-number">4.</span>
+                                브라우저에서 열기
+                            </div>
+                            <div class="step-description">
+                                저장한 파일을 더블클릭하거나 브라우저로 드래그해서 결과 확인!
                             </div>
                         </div>
                     </div>
@@ -386,21 +374,21 @@
                             <code>&lt;meta charset="UTF-8"&gt;</code>
                             <p>한글이 깨지지 않게 하는 인코딩 설정</p>
                             <div class="detailed-explanation">
-                                <small><strong>왜 필요한가요?</strong> 컴퓨터는 문자를 숫자로 저장하는데, UTF-8은 전 세계 모든 언어를 표현할 수 있는 방식입니다. 이게 없으면 한글이 ????????나 □□□□로 보일 수 있어요.</small>
+                                <small style="font-size: 1.1em; display: block; margin: 15px 0;"><strong>왜 필요한가요?</strong> 컴퓨터는 문자를 숫자로 저장하는데, UTF-8은 전 세계 모든 언어를 표현할 수 있는 방식입니다. 이게 없으면 한글이 ????????나 □□□□로 보일 수 있어요.</small>
                             </div>
                         </div>
-                        <div class="head-item">
+                        <div class="head-item" style="margin-top: 25px;">
                             <code>&lt;title&gt;페이지 제목&lt;/title&gt;</code>
                             <p>브라우저 탭에 표시되는 제목</p>
                             <div class="detailed-explanation">
-                                <small><strong>어디에 보이나요?</strong> 브라우저 탭, 북마크 이름, 검색결과에서 보이는 제목입니다. 구글에서 검색했을 때 파란색으로 보이는 그 제목이에요!</small>
+                                <small style="font-size: 1.1em; display: block; margin: 15px 0;"><strong>어디에 보이나요?</strong> 브라우저 탭, 북마크 이름, 검색결과에서 보이는 제목입니다. 구글에서 검색했을 때 파란색으로 보이는 그 제목이에요!</small>
                             </div>
                         </div>
-                        <div class="head-item">
+                        <div class="head-item" style="margin-top: 25px;">
                             <code>&lt;meta name="viewport" content="width=device-width"&gt;</code>
                             <p>모바일에서 제대로 보이게 하는 설정</p>
                             <div class="detailed-explanation">
-                                <small><strong>왜 필요한가요?</strong> 이게 없으면 모바일에서 웹페이지가 너무 작게 보여서 확대해야 합니다. 이 설정으로 모바일 화면에 맞게 자동으로 크기가 조절돼요.</small>
+                                <small style="font-size: 1.1em; display: block; margin: 15px 0;"><strong>왜 필요한가요?</strong> 이게 없으면 모바일에서 웹페이지가 너무 작게 보여서 확대해야 합니다. 이 설정으로 모바일 화면에 맞게 자동으로 크기가 조절돼요.</small>
                             </div>
                         </div>
                     </div>
@@ -429,19 +417,16 @@
                     
                     <div class="what-happens">
                         <h4>이 코드를 실행하면:</h4>
-                        <div class="result-explanation">
-                            <div class="browser-parts">
-                                <div class="browser-part">
-                                    <strong>브라우저 탭:</strong> "내 첫 번째 웹페이지"라고 표시됩니다
-                                </div>
-                                <div class="browser-part">
-                                    <strong>페이지 내용:</strong> 
-                                    <div class="preview-result">
-                                        <h1 style="font-size: 1.5em; margin: 10px 0; font-weight: bold;">안녕하세요! 저는 홍길동입니다.</h1>
-                                        <p style="margin: 10px 0;">이것은 제가 만든 첫 번째 웹페이지입니다.</p>
-                                        <p style="margin: 10px 0;">HTML을 배우는 것이 정말 재미있어요!</p>
-                                    </div>
-                                </div>
+                        <div class="browser-parts">
+                            <div class="browser-part">
+                                <strong>브라우저 탭:</strong> "내 첫 번째 웹페이지"라고 표시됩니다
+                            </div>
+                            <div class="browser-part">
+                                <strong>페이지 내용:</strong> 
+                                <pre style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; font-family: var(--main-font);">
+<h1 style="font-size: 1.5em; margin: 10px 0; text-align: left; color: #000;">안녕하세요! 저는 홍길동입니다.</h1>
+<p style="margin: 10px 0; text-align: left; color: #000;">이것은 제가 만든 첫 번째 웹페이지입니다.</p>
+<p style="margin: 10px 0; text-align: left; color: #000;">HTML을 배우는 것이 정말 재미있어요!</p></pre>
                             </div>
                         </div>
                     </div>
@@ -488,28 +473,8 @@
 
     <!-- 푸터 -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>WebLearn</h3>
-                <p>HTML, CSS, JavaScript를 쉽게 배우는 온라인 튜토리얼</p>
-            </div>
-            <div class="footer-section">
-                <h4>학습 과정</h4>
-                <ul>
-                    <li><a href="html-beginner.html">HTML 초급편</a></li>
-                    <li><a href="html-intermediate.html">HTML 중급편</a></li>
-                    <li><a href="html-advanced.html">HTML 고급편</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>실습</h4>
-                <ul>
-                    
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 WebLearn. 모든 권리 보유.</p>
+        <div class="footer-container">
+            <p class="copyright">&copy; 2024 WebLearn. 모든 권리 보유.</p>
         </div>
     </footer>
 

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 디자이너를 위한 JavaScript & 협업 가이드 - WebLearn</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tutorial.css">
+</head>
+<body>
+    <!-- 헤더 및 네비게이션 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="index.html">WebLearn</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">홈</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="html-beginner.html" class="nav-link dropdown-toggle">HTML</a>
+                        <div class="dropdown-menu">
+                            <a href="html-beginner.html" class="dropdown-item">초급편</a>
+                            <a href="html-intermediate.html" class="dropdown-item">중급편</a>
+                            <a href="html-advanced.html" class="dropdown-item">고급편</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="css-tutorial-basic.html" class="nav-link dropdown-toggle">CSS</a>
+                        <div class="dropdown-menu">
+                            <a href="css-tutorial-basic.html" class="dropdown-item">초급편</a>
+                            <a href="css-intermediate.html" class="dropdown-item">중급편</a>
+                            <a href="css-advanced.html" class="dropdown-item">고급편</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="js-for-designers.html" class="nav-link">웹 디자이너 JavaScript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cursor-ai-tutorial.html" class="nav-link">Cursor AI</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main">
+        <div class="tutorial-container">
+            <!-- 튜토리얼 헤더 -->
+            <div class="tutorial-header">
+                <h1>웹 디자이너를 위한 JavaScript & 협업 가이드</h1>
+                <p class="subtitle">디자이너가 알아야 할 필수 JavaScript 개념과 개발자와의 효율적인 협업 방법</p>
+                <div class="learning-path">
+                    <div class="path-item">
+                        <span class="path-number">01</span>
+                        <span class="path-text">기초 개념</span>
+                    </div>
+                    <span class="path-arrow">→</span>
+                    <div class="path-item">
+                        <span class="path-number">02</span>
+                        <span class="path-text">인터랙션</span>
+                    </div>
+                    <span class="path-arrow">→</span>
+                    <div class="path-item">
+                        <span class="path-number">03</span>
+                        <span class="path-text">협업 방법</span>
+                    </div>
+                    <span class="path-arrow">→</span>
+                    <div class="path-item">
+                        <span class="path-number">04</span>
+                        <span class="path-text">AI 활용</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1. JavaScript 기초 개념 -->
+            <section class="tutorial-section">
+                <div class="section-header">
+                    <span class="section-number">01</span>
+                    <h2>디자이너가 알아야 할 JavaScript 기초</h2>
+                </div>
+                
+                <div class="concept-box">
+                    <h3>JavaScript의 역할</h3>
+                    <div class="role-grid">
+                        <div class="role-item">
+                            <div class="role-icon"></div>
+                            <h4>동적 요소 제어</h4>
+                            <p>사용자 동작에 반응하여 웹페이지의 내용과 스타일을 동적으로 변경</p>
+                        </div>
+                        <div class="role-item">
+                            <div class="role-icon"></div>
+                            <h4>인터랙션 처리</h4>
+                            <p>클릭, 스크롤, 드래그 등 다양한 사용자 상호작용 구현</p>
+                        </div>
+                        <div class="role-item">
+                            <div class="role-icon"></div>
+                            <h4>애니메이션 구현</h4>
+                            <p>부드럽고 자연스러운 움직임과 전환 효과 생성</p>
+                        </div>
+                        <div class="role-item">
+                            <div class="role-icon"></div>
+                            <h4>데이터 처리</h4>
+                            <p>서버로부터 데이터를 받아와 동적으로 화면에 표시</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h3>주요 개념과 용어</h3>
+                    <div class="code-examples">
+                        <div class="code-example">
+                            <div class="example-header">
+                                <h4>1. 이벤트 (Events)</h4>
+                                <span class="tag">사용자 동작</span>
+                            </div>
+                            <div class="code-block">
+                                <pre><code>// 클릭, 스크롤, 마우스오버 등 사용자 동작
+element.addEventListener('click', function() {
+    // 동작 실행
+});</code></pre>
+                            </div>
+                            <p class="example-description">사용자의 동작을 감지하고 반응하는 방법</p>
+                        </div>
+
+                        <div class="code-example">
+                            <div class="example-header">
+                                <h4>2. DOM 조작</h4>
+                                <span class="tag">요소 제어</span>
+                            </div>
+                            <div class="code-block">
+                                <pre><code>// 요소 선택과 수정
+document.querySelector('.my-element')
+element.classList.add('active');</code></pre>
+                            </div>
+                            <p class="example-description">웹페이지의 요소를 선택하고 변경하는 방법</p>
+                        </div>
+
+                        <div class="code-example">
+                            <div class="example-header">
+                                <h4>3. 애니메이션</h4>
+                                <span class="tag">움직임</span>
+                            </div>
+                            <div class="code-block">
+                                <pre><code>// CSS 트랜지션과 JavaScript 연동
+element.style.transform = 'translateX(100px)';</code></pre>
+                            </div>
+                            <p class="example-description">요소에 움직임과 변화를 주는 방법</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. 인터랙션 디자인 -->
+            <section class="tutorial-section">
+                <div class="section-header">
+                    <span class="section-number">02</span>
+                    <h2>인터랙션 디자인 구현하기</h2>
+                </div>
+                
+                <div class="interaction-examples">
+                    <h3>자주 사용되는 인터랙션 패턴</h3>
+                    
+                    <div class="pattern-grid">
+                        <div class="pattern-item">
+                            <div class="pattern-header">
+                                <div class="pattern-icon"></div>
+                                <h4>스크롤 기반 애니메이션</h4>
+                            </div>
+                            <div class="pattern-content">
+                                <div class="code-block">
+                                    <pre><code>window.addEventListener('scroll', () => {
+    // 스크롤 위치에 따른 요소 애니메이션
+});</code></pre>
+                                </div>
+                                <ul class="pattern-features">
+                                    <li>스크롤 위치 감지</li>
+                                    <li>요소 등장/사라짐 효과</li>
+                                    <li>패럴랙스 효과</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item">
+                            <div class="pattern-header">
+                                <div class="pattern-icon"></div>
+                                <h4>모달 / 팝업</h4>
+                            </div>
+                            <div class="pattern-content">
+                                <div class="code-block">
+                                    <pre><code>// 모달 열기/닫기 로직
+const modal = document.querySelector('.modal');
+modal.classList.toggle('active');</code></pre>
+                                </div>
+                                <ul class="pattern-features">
+                                    <li>부드러운 등장/사라짐</li>
+                                    <li>배경 딤처리</li>
+                                    <li>키보드 접근성</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pattern-item">
+                            <div class="pattern-header">
+                                <div class="pattern-icon"></div>
+                                <h4>폼 인터랙션</h4>
+                            </div>
+                            <div class="pattern-content">
+                                <div class="code-block">
+                                    <pre><code>// 폼 유효성 검사 및 피드백
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // 폼 처리 로직
+});</code></pre>
+                                </div>
+                                <ul class="pattern-features">
+                                    <li>실시간 유효성 검사</li>
+                                    <li>시각적 피드백</li>
+                                    <li>에러 메시지 표시</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. 개발자와의 협업 -->
+            <section class="tutorial-section">
+                <div class="section-header">
+                    <span class="section-number">03</span>
+                    <h2>개발자와의 효율적인 협업</h2>
+                </div>
+
+                <div class="collaboration-guide">
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-header">
+                                <div class="step-number">01</div>
+                                <h4>디자인 시스템 구축</h4>
+                            </div>
+                            <div class="step-content">
+                                <p class="step-description">디자인 일관성과 개발 효율성을 위한 기초 작업</p>
+                                <ul class="step-list">
+                                    <li>컴포넌트 기반 설계</li>
+                                    <li>재사용 가능한 패턴 정의</li>
+                                    <li>상태 변화 명세</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-header">
+                                <div class="step-number">02</div>
+                                <h4>개발 가이드라인 작성</h4>
+                            </div>
+                            <div class="step-content">
+                                <p class="step-description">개발자와의 명확한 커뮤니케이션을 위한 문서화</p>
+                                <ul class="step-list">
+                                    <li>인터랙션 명세서</li>
+                                    <li>애니메이션 타이밍</li>
+                                    <li>반응형 브레이크포인트</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-header">
+                                <div class="step-number">03</div>
+                                <h4>피드백 프로세스</h4>
+                            </div>
+                            <div class="step-content">
+                                <p class="step-description">지속적인 품질 향상을 위한 협업 과정</p>
+                                <ul class="step-list">
+                                    <li>코드 리뷰 참여</li>
+                                    <li>UI/UX 테스트</li>
+                                    <li>이슈 트래킹</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tools-section">
+                        <h3>협업 도구</h3>
+                        <div class="tools-list">
+                            <div class="tool-item">
+                                <div class="tool-icon"></div>
+                                <div class="tool-content">
+                                    <h4>Figma</h4>
+                                    <p>디자인 시스템 관리 및 공유</p>
+                                </div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon"></div>
+                                <div class="tool-content">
+                                    <h4>GitHub</h4>
+                                    <p>버전 관리 및 이슈 트래킹</p>
+                                </div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon"></div>
+                                <div class="tool-content">
+                                    <h4>Slack</h4>
+                                    <p>실시간 커뮤니케이션</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. AI 도구 활용 -->
+            <section class="tutorial-section">
+                <h2>4. AI 도구를 활용한 작업 효율화</h2>
+
+                <div class="ai-tools">
+                    <h3>Cursor AI 활용하기</h3>
+                    
+                    <div class="cursor-features">
+                        <div class="feature">
+                            <h4>1. 인터랙션 코드 생성</h4>
+                            <pre><code>// Cursor AI에게 요청하기
+"버튼 호버시 부드럽게 확대되는 효과를 만들어줘"</code></pre>
+                            <p>AI가 생성한 코드를 바로 적용하고 수정할 수 있습니다.</p>
+                        </div>
+
+                        <div class="feature">
+                            <h4>2. 애니메이션 최적화</h4>
+                            <pre><code>// 성능 개선 요청하기
+"이 애니메이션 코드를 더 효율적으로 개선해줘"</code></pre>
+                            <p>AI가 성능과 호환성을 고려한 최적화된 코드를 제안합니다.</p>
+                        </div>
+
+                        <div class="feature">
+                            <h4>3. 문제 해결</h4>
+                            <pre><code>// 디버깅 지원
+"이 인터랙션이 Safari에서 작동하지 않아"</code></pre>
+                            <p>브라우저 호환성 문제나 버그를 AI가 분석하고 해결책을 제시합니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="ai-workflow">
+                        <h3>AI 기반 워크플로우</h3>
+                        <ol>
+                            <li>디자인 의도 설명 → AI가 초기 코드 생성</li>
+                            <li>코드 리뷰 및 수정 요청 → AI가 최적화</li>
+                            <li>문제점 발견 → AI가 디버깅 지원</li>
+                            <li>최종 코드 완성 및 개발자 리뷰</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 실전 프로젝트 -->
+            <section class="tutorial-section">
+                <div class="section-header">
+                    <span class="section-number">05</span>
+                    <h2>실전 프로젝트: 포트폴리오 사이트 제작</h2>
+                </div>
+
+                <div class="project-steps">
+                    <div class="project-step">
+                        <div class="step-header">
+                            <div class="step-number">01</div>
+                            <h4>디자인 시스템 설정</h4>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-description">웹사이트의 일관된 디자인 언어를 정의하고 구축합니다.</p>
+                            <ul class="step-list">
+                                <li>컴포넌트 정의</li>
+                                <li>인터랙션 패턴 설계</li>
+                                <li>반응형 레이아웃 계획</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-step">
+                        <div class="step-header">
+                            <div class="step-number">02</div>
+                            <h4>Cursor AI로 구현</h4>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-description">AI의 도움을 받아 효율적으로 코드를 작성합니다.</p>
+                            <ul class="step-list">
+                                <li>기본 레이아웃 코드 생성</li>
+                                <li>인터랙션 효과 추가</li>
+                                <li>성능 최적화</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-step">
+                        <div class="step-header">
+                            <div class="step-number">03</div>
+                            <h4>개발자 협업</h4>
+                        </div>
+                        <div class="step-content">
+                            <p class="step-description">개발자와 함께 프로젝트를 완성하고 배포합니다.</p>
+                            <ul class="step-list">
+                                <li>코드 리뷰 및 피드백</li>
+                                <li>성능 테스트</li>
+                                <li>배포 준비</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 위로 가기 버튼 -->
+    <button class="scroll-to-top" id="scrollToTop">
+        ▲
+    </button>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="copyright">&copy; 2024 WebLearn. 모든 권리 보유.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 햄버거 메뉴
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // 네비게이션 메뉴 닫기
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // 코드 예제 실행
+        document.querySelectorAll('.live-example').forEach(example => {
+            // 실제 예제 코드 실행 로직
+        });
+
+        // 위로 가기 버튼 기능
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            // 스크롤 위치에 따라 버튼 표시/숨김
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            });
+            
+            // 버튼 클릭 시 위로 스크롤
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
