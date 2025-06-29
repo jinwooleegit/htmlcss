@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initAdvancedPracticeEditor();
     initAdvancedQuizSystem();
     initScrollAnimations();
-    initThemeToggle();
     initBookmarkSystem();
     initSecurityChecklist();
     initCostCalculator();
@@ -68,7 +67,6 @@ function initializeWebsite() {
     initAdvancedPracticeEditor();
     initAdvancedQuizSystem();
     initScrollAnimations();
-    initThemeToggle();
     initBookmarkSystem();
 }
 
@@ -525,49 +523,6 @@ function initScrollAnimations() {
 }
 
 // ===== THEME TOGGLE =====
-function initThemeToggle() {
-    // Check for saved theme preference or default to 'light'
-    const currentTheme = localStorage.getItem('weblearn-theme') || 'light';
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    
-    // Create theme toggle button (if not exists)
-    createThemeToggle();
-}
-
-function createThemeToggle() {
-    const existingToggle = document.querySelector('.theme-toggle');
-    if (existingToggle) return;
-    
-    const themeToggle = document.createElement('button');
-    themeToggle.className = 'theme-toggle';
-    themeToggle.innerHTML = '🌙';
-    themeToggle.setAttribute('aria-label', 'Toggle dark mode');
-    
-    themeToggle.addEventListener('click', toggleTheme);
-    
-    // Add to navigation
-    const navMenu = document.querySelector('.nav-menu');
-    if (navMenu) {
-        const li = document.createElement('li');
-        li.className = 'nav-item';
-        li.appendChild(themeToggle);
-        navMenu.appendChild(li);
-    }
-}
-
-function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('weblearn-theme', newTheme);
-    
-    // Update toggle button
-    const toggleButton = document.querySelector('.theme-toggle');
-    if (toggleButton) {
-        toggleButton.innerHTML = newTheme === 'dark' ? '☀️' : '🌙';
-    }
-}
 
 // ===== UTILITY FUNCTIONS =====
 function smoothScrollTo(targetId) {
@@ -1108,7 +1063,6 @@ window.WebLearn = {
     clearCode,
     saveCode,
     startQuiz: startAdvancedQuiz,
-    toggleTheme,
     logToConsole,
     showNotification,
     nextQuestion,
@@ -1391,7 +1345,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initMobileNavigation();
     initProgressTracking();
     initScrollAnimations();
-    initThemeToggle();
     
     // 페이지별 기능 초기화
     if (document.querySelector('.practice-container')) {
